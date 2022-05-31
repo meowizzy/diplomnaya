@@ -1,12 +1,15 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap');
 
-.title {
-    width: 271px;
-    height: 38px;
-    left: 165px;
-    top: 117px;
-
+*{
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    font-family: "Roboto";
+    -moz-box-sizing: border-box; /* Для Firefox */  
+    box-sizing: border-box; 
+    font-size: 18px;
+}
+.form_title {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
