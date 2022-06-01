@@ -1,4 +1,4 @@
-.button {
+%base {
     width: 300px;
     height: 45px;
     background-color: #ffffff;
@@ -6,4 +6,30 @@
     border-radius: 25px;
     font-weight: bold;
     margin: 62px 0px 43px;
+    border: none;
+    // text
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    cursor: pointer;
+    // color: #ffffff;
+}
+.button:disabled {
+    @extend %base;
+    background: linear-gradient(270deg, #3548F5 -37.7%, #F58747 134.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // color: linear-gradient(270deg, #3548F5 -37.7%, #F58747 134.43%);
+    background-clip: text;
+}
+
+.button {
+    @extend %base;
+    color: #ffffff;
+    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.3);
+
 }

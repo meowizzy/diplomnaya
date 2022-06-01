@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    position: relative;
     input::placeholder{
         opacity: 50%;
     }
@@ -16,6 +17,7 @@
     border: 1px solid linear-gradient(#e66465, #9198e5);
     padding-left: 20px;
     font-size: 18px;
+    outline: none;
 }
 .label{
     text-align: left;

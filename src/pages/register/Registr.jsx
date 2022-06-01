@@ -36,7 +36,7 @@ export const Registr = () => {
   return (
     <div className={s.cont}>
       <form className={s.form} onSubmit={formik.handleSubmit}>
-        <p
+        <p 
           style={{
             fontSize: "32px",
             fontWeight: "700",
