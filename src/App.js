@@ -1,10 +1,10 @@
 import Auth from "./pages/auth/Auth";
 import { Registr } from "./pages/register/Registr";
-import "./App.scss"
+import "./App.scss";
 function App() {
   return (
     <div className="App">
-      {/* <Auth /> */}
+      <Auth />
       <Registr />
     </div>
   );
