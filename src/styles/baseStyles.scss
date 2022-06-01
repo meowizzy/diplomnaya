@@ -1,0 +1,29 @@
+
+#dragon {
+    background: white;
+    position: relative;
+    animation: myfirst 7s ;
+    animation-direction: initial;
+
+  }
+  
+  @keyframes myfirst {
+    0%   {left: -900px; top: 0px;}
+// //   50%  { left: 750px; top: 0px; }
+//   50%  {left: 200px; top: 400px;}
+  100%  { left: 1200px; top: 300px; }
+//   100% {left: 0px; top: 0px;}
+//   50%  {left: 200px; top: 400px;}
+//   75%  { left: 0px; top: 200px;}
+//   100% {left: 0px; top: 0px;}
+  }
+
+#dragon {
+    position: absolute;
+    top: -100;
+    left: -1000px;
+    overflow: hidden;
+}
+.dragon {
+    width: 800px;
+}
