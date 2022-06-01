@@ -7,10 +7,10 @@ function App() {
   return (
     <div className="App">
       {/* <Auth /> */}
-      {/* <Registr /> */}
+      <Registr />
       {/* <Protocol /> */}
       {/* <ForgotPassword /> */}
-      <FeedBack />
+      {/* <FeedBack /> */}
       {/* <NewPassword /> */}
       {/* <Registr /> */}
     </div>
