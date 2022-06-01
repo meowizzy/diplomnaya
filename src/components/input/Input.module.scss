@@ -8,14 +8,22 @@
     }
 }
 .input {
-    width: 300px;
-    height: 45px;
-    background: #FFFFFF;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
     border-radius: 25px;
-    margin-bottom: 20px;
-    border: 1px solid linear-gradient(#e66465, #9198e5);
     padding-left: 20px;
-    font-size: 18px;
+    border: none;
+}
+.gradient{
+    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    border-radius: 25px;
+    height: 45px;
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 2px;
+    display: inline-block;
 }
 .label{
     text-align: left;
