@@ -7,6 +7,10 @@ const Auth = () => {
     <form>
       <p className="title">ФЕДЕРАЦИЯ УШУ</p>
       <Input placeholder="email" value="email" />
+      <Input placeholder="email" value="email" />
+      <p>Забыли пароль?</p>
+      <button>ВОЙТИ</button>
+      <p>Зарегистрироваться</p>
     </form>
   );
 };
