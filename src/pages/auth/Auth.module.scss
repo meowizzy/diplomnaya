@@ -1,0 +1,53 @@
+.auth_cont {
+    width: 500px;
+    height: 600px;
+    background-color: #FFFCF9;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 35px;
+    margin: 0 auto;
+    display: flex;
+    z-index: 999;
+}
+.register_text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    cursor: pointer;
+}
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 100vh;
+}
+.authh {
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // margin: auto;
+    height: 100vh;
+    
+}
+.simple_text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000000;
+}
+.input_cont {
+    position: relative;
+}
+.dragon {
+    background: white;
+}

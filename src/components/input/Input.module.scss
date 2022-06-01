@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: left;
+    position: relative;
     input::placeholder{
         opacity: 50%;
     }
@@ -24,6 +25,8 @@
     margin-bottom: 20px;
     padding: 2px;
     display: inline-block;
+    font-size: 18px;
+    outline: none;
 }
 .label{
     text-align: left;

@@ -36,7 +36,7 @@ export const Registr = () => {
   return (
     <div className={s.cont}>
       <form className={s.form} onSubmit={formik.handleSubmit}>
-        <p
+        <p 
           style={{
             fontSize: "32px",
             fontWeight: "700",
@@ -144,7 +144,7 @@ export const Registr = () => {
           onChange={formik.handleChange}
           name="city"
         />
-        <div style={{margin:"50px 0px 60px"}}><Button text="ЗАРЕГИСТРИРОВАТЬСЯ" type="submit"/></div>
+        {/* <div style={{margin:"50px 0px 60px"}}> */}<Button text="ЗАРЕГИСТРИРОВАТЬСЯ" type="submit"/>{/* </div> */}
       </form>
     </div>
   );
