@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap');
 
-*{
+* {
     padding: 0px;
     margin: 0px;
     text-decoration: none;
     font-family: "Roboto";
-    -moz-box-sizing: border-box; /* Для Firefox */  
-    box-sizing: border-box; 
+    -moz-box-sizing: border-box;
+    /* Для Firefox */
+    box-sizing: border-box;
     font-size: 18px;
 }
+
 .form_title {
     font-family: 'Roboto';
     font-style: normal;
@@ -18,4 +20,21 @@
     text-align: center;
 
     color: #000000;
+}
+
+//Меняет скролл
+::-webkit-scrollbar {
+    width: 1.5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+//Выключает фокус на бордерах при нажатии
+:active,
+:hover,
+:focus {
+    outline: 0;
+    outline-offset: 0;
 }
