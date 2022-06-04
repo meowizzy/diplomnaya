@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import  Button  from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import s from "./Registr.module.scss";
@@ -23,9 +23,9 @@ export const Registr = () => {
 
   const [open, setOpen] = useState(false);
 
-  const toggle = () => {
+  const toggle = useCallback( () => {
     setOpen(!open);
-  };
+  },[open])
 
   const [secondOpen, setSecondOpen] = useState(false);
 

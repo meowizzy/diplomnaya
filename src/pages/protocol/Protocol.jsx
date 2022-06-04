@@ -5,8 +5,8 @@ export const Protocol = () => {
   return (
     <div className={s.wrapper}>
       <div className={s.header}>
-        <p style={{ margin: "0px 0 30px", fontSize: "32px" }}>ПРОТОКОЛ</p>
-        <p style={{ margin: "0px 0 20px", fontSize: "32px" }}>
+        <p style={{ margin: "0px 0 30px", fontSize: "30px" }}>ПРОТОКОЛ</p>
+        <p style={{ margin: "0px 0 20px", fontSize: "30px" }}>
           Чемпионат Кыргызской Респубики по традиционному ушу
         </p>
         <p style={{ margin: "0px 0 60px", fontWeight: "normal" }}>
@@ -26,7 +26,7 @@ export const Protocol = () => {
           Время: 10:15
         </p>
         <p style={{ marginBottom: "20px" }}>
-          Подгруппа 1.
+          Подгруппа 1. {""}
           <span style={{ fontWeight: "normal", fontSize: "24px" }}>
             Дуйлянь, 8-10 лет
           </span>
@@ -38,10 +38,10 @@ export const Protocol = () => {
 
       <div className={s.tabel}>
         <div className={s.line}>
-          <p style={{ flex: "0.7" }}>№</p>
-          <p style={{ flex: "3" }}>ФИО участника</p>
-          <p style={{ flex: "3" }}>Школа, клуб</p>
-          <p style={{ flex: "3" }}>Примечание</p>
+          <p style={{ flex: "0.7", fontWeight:"bold" }}>№</p>
+          <p style={{ flex: "3", fontWeight:"bold" }}>ФИО участника</p>
+          <p style={{ flex: "3" , fontWeight:"bold" }}>Школа, клуб</p>
+          <p style={{ flex: "3" , fontWeight:"bold" }}>Примечание</p>
         </div>
         <div className={s.line}>
           <p style={{ flex: "0.7" }}>1</p>

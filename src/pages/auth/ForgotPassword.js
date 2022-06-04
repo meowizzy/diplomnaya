@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import registerStyles from "../register/Registr.module.scss";
 import s from "./Auth.module.scss";
 import Button from "../../components/button/Button";
+import { Link } from "react-router-dom";
 
 const ForgotPassword = () => {
   const [text, setText] = useState(false);
@@ -43,7 +44,7 @@ const ForgotPassword = () => {
           <br />
           <br />
           <Button type="submit" disabled={!formik.values.email} text="ДАЛЕЕ" />
-          <p className="grey_text">Обратная связь</p>
+          <Link to="/FeedBack" className="grey_text">Обратная связь</Link>
         </form>
       </div>
     </div>

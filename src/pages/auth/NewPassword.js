@@ -13,6 +13,11 @@ const NewPassword = () => {
     setOpen(!open);
   };
 
+  const [secondOpen, setSecondOpen] = useState(true);
+
+  const foggle = () => {
+    setSecondOpen(!secondOpen);
+  };
   const formik = useFormik({
     initialValues: {
       confirm_password: "",
@@ -46,15 +51,15 @@ const NewPassword = () => {
             <Input
               placeholder="******"
               valueLabel="Подтвердить пароль"
-              type={open ? "password" : "text"}
+              type={secondOpen ? "password" : "text"}
               // value={formik.values.name}
               onChange={formik.handleChange}
               name="confirm_password"
             />
-            {open === false ? (
-              <div onClick={toggle} className={registerStyles.open_eye} />
+            {secondOpen === false ? (
+              <div onClick={foggle} className={registerStyles.open_eye} />
             ) : (
-              <div onClick={toggle} className={registerStyles.close_eye} />
+              <div onClick={foggle} className={registerStyles.close_eye} />
             )}
           </div>
           <Button

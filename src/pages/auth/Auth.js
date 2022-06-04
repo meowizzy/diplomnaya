@@ -6,6 +6,7 @@ import registerStyles from "../register/Registr.module.scss";
 import s from "./Auth.module.scss";
 import Button from "../../components/button/Button";
 import "../../styles/baseStyles.scss";
+import { Link } from "react-router-dom";
 
 const Auth = () => {
   const [open, setOpen] = useState(true);
@@ -55,7 +56,7 @@ const Auth = () => {
               )}
             </div>
 
-            <p className="grey_text">Забыли пароль?</p>
+            <Link to="/ForgotPassword" className="grey_text">Забыли пароль?</Link>
             <Button
               type="submit"
               disabled={!(formik.values.email && formik.values.password)}
