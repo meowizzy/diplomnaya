@@ -13,8 +13,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/*" element={<Protocol />}/>
-        <Route path="/Routing/*" element={<Routing />}/>
-        <Route path="/*Registr" element={<Registr />}/>
+        <Route path="/auth" element={<Auth />}/>
+        <Route path="/registr" element={<Registr />}/>
       </Routes>
       {/* <Auth /> */}
       {/* <Registr /> */}
