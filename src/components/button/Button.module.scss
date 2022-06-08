@@ -42,6 +42,7 @@
 }
 
 .button {
+    cursor: pointer;
     @extend %base;
     color: #ffffff;
     background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);

@@ -62,7 +62,7 @@ const Auth = () => {
               disabled={!(formik.values.email && formik.values.password)}
               text="ВОЙТИ"
             />
-            <p className={s.register_text}>Зарегистрироваться</p>
+            <Link to="/registr"><p className={s.register_text}>Зарегистрироваться</p></Link>
           </form>
         </div>
       </div>

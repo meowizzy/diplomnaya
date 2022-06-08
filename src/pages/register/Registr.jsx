@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import React, { useCallback, useState } from "react";
-import  Button  from "../../components/button/Button";
+import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import s from "./Registr.module.scss";
 
@@ -9,6 +9,7 @@ export const Registr = () => {
     initialValues: {
       name: "",
       surname: "",
+      position: "",
       email: "",
       number: "",
       password: "",
@@ -23,9 +24,9 @@ export const Registr = () => {
 
   const [open, setOpen] = useState(false);
 
-  const toggle = useCallback( () => {
+  const toggle = useCallback(() => {
     setOpen(!open);
-  },[open])
+  }, [open]);
 
   const [secondOpen, setSecondOpen] = useState(false);
 
@@ -60,6 +61,13 @@ export const Registr = () => {
           value={formik.values.surname}
           onChange={formik.handleChange}
           name="surname"
+        />
+        <Input
+          placeholder="Введите должность"
+          valueLabel="Должность"
+          value={formik.values.position}
+          onChange={formik.handleChange}
+          name="position"
         />
         <Input
           placeholder="Введите Email"
