@@ -2,10 +2,13 @@
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
-
+    .header{
+        max-width: 1000px;
+        width: 90%;
+        margin: 0 auto;
+    }
     .button {
         text-align: right;
-        margin-right: 120px;
     }
 
     .footer {
