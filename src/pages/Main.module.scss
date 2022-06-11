@@ -1,0 +1,14 @@
+.container{
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    padding: 30px;
+    .navbar{
+        flex: 0.9;
+        margin-right: 30px;
+    }
+    .content{
+        flex:4.1;
+    }
+}
