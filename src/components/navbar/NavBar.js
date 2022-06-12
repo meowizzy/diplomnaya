@@ -11,7 +11,7 @@ export const NavBar = () => {
       <NavLink to="/main/events" className={setActive}>
         Мероприятия
       </NavLink>
-      <NavLink to="" className={setActive}>Новости</NavLink>
+      <NavLink to="/main/news" className={setActive}>Новости</NavLink>
       <NavLink to="" className={setActive}>Пользователи</NavLink>
       <NavLink to="" className={setActive}>Протоколы</NavLink>
       <NavLink to="" className={setActive}>Клубы</NavLink>
