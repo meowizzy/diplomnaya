@@ -4,15 +4,20 @@ import { news_img1, news_img2, news_img3} from "../../../images";
 import dfEventStyles from "./../../events/defaultEvents/DefaultEvents.module.scss"
 import s from "./DefaultNews.module.scss"
 import ArrowButton from "../../../components/arrowButton/ArrowButton";
+import OptionButton from "../../../components/optionButton/OptionButton";
+import {useNavigate} from "react-router";
+import {Link} from "react-router-dom";
 
 const DefaultNews = () => {
-    const [openCard, setOpenCard] = useState("");
+    // const [openCard, setOpenCard] = useState("");
+    const [openOption, setOpenOption] = useState(true);
+    const handleOpenOption = () => {
+        setOpenOption(!openOption)
+    }
+
+    // const navigate = useNavigate()
     return (
         <div className={dfEventStyles.cont}>
-            {/*{*/}
-            {/*    openCard*/}
-            {/*}*/}
-
             <div className={s.tab}>
                 <div style={{marginBottom: 0}} className={dfEventStyles.link_cont}>
                     <p className={dfEventStyles.link}>Все новости</p>
@@ -25,6 +30,11 @@ const DefaultNews = () => {
                 <div style={{background: `url(${news_img1}) no-repeat`}} className={`${s.card} ${s.card_top}`}>
                     <p className={s.card__title}>В номинации “первое место” </p>
                     <p className={s.card__date}>17.04.2022г.</p>
+                    <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
+                    <div className={ openOption ? s.closed_option_cont : s.option_cont}>
+                        <Link to="/main/news/edit_news"><Button margin="0" width="200px" text="Редактировать"/></Link>
+                        <Button margin="0" width="200px" text="Удалить"/>
+                    </div>
                 </div>
                 <p className={s.text}>В мае в ЦДТ «Шайыр балалык» состоялись Детские соревнования по традиционному ушу им. Г. Сулеймановой. В соревнованиях приняли участие около 50-ти юных ушуистов из различных клубов ушу Федерации традиционного ушу КР.<br/>
                     <br/><br/>

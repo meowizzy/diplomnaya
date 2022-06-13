@@ -5,6 +5,7 @@ import { ChangeEvents } from "./events/changeEvents/ChangeEvents";
 import { DefaultEvents } from "./events/defaultEvents/DefaultEvents";
 import s from "./Main.module.scss"
 import DefaultNews from "./news/defaultNews/DefaultNews";
+import {News} from "./news/News";
 
 export const Main = () => {
   return (
@@ -15,7 +16,7 @@ export const Main = () => {
       <div className={s.content}>
       <Routes>
           <Route path="/events" element={<ChangeEvents />} />
-          <Route path="/news" element={<DefaultNews />} />
+          <Route path="/news/*" element={<News />} />
       </Routes>
       </div>
     </div>

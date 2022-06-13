@@ -8,7 +8,7 @@
   }
   
   @keyframes myfirst {
-    0%   {left: -900px; top: 0px;}
+    0%   {left: -900px; top: 0;}
 // //   50%  { left: 750px; top: 0px; }
 //   50%  {left: 200px; top: 400px;}
   100%  { left: 1200px; top: 300px; }
@@ -26,4 +26,17 @@
 }
 .dragon {
     width: 800px;
+}
+.container {
+  width: 1090px;
+  background: #FDFDFF;
+  opacity: 0.99;
+  box-shadow: 0 0 16px rgba(44, 44, 44, 0.15);
+  border-radius: 35px;
+  position: relative;
+}
+.container_data_flexed {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
 }
