@@ -1,30 +1,20 @@
 import React from "react";
 import { useState } from "react";
-import BackButton from "../../../components/arrowButton/BackButton";
 import ForwardButton from "../../../components/arrowButton/ForwardButton";
-import Button from "../../../components/button/Button";
-import { Delete } from "../../../components/delete/Delete";
+import ArrowButton from "../../../components/arrowButton/ForwardButton";
 import s from ".././defaultEvents/DefaultEvents.module.scss";
-import ss from "./ChangeEvents.module.scss";
-import { ChangeForm } from "./ChangeForm";
+import ss from "../changeEvents/ChangeEvents.module.scss";
 
-export const Card = ({ text }) => {
+export const DefaultCard = ({ text }) => {
   const [card, setCard] = useState(true);
 
   const toggle = () => {
     setCard(!card);
   };
 
-  const [change, setChange] = useState(true);
-
-  const foggle = () => {
-    setChange(!change);
-  };
   return (
     <>
-      {change === false ? (
-        <ChangeForm onClick={foggle} />
-      ) : card === true ? (
+      {card === true ? (
         <div className={s.box}>
           <p className={s.text}>
             Чемпионат Кыргызской Респубики по традиционному ушу
@@ -37,10 +27,7 @@ export const Card = ({ text }) => {
         </div>
       ) : (
         <div className={ss.box}>
-          <span className={ss.back}>
-            <BackButton onClick={toggle} />
-          </span>
-          <div>
+          <div onClick={toggle}>
             <p className={s.text}>
               Чемпионат Кыргызской Респубики по традиционному ушу
             </p>
@@ -56,14 +43,6 @@ export const Card = ({ text }) => {
             <p className={s.note}>
               Тренерам необходимо подать заявку до 20.06.2022г.
             </p>
-          </div>
-          <div className={ss.footer}>
-            <span onClick={foggle} className={ss.span}>
-              <Button text="ИЗМЕНИТЬ ДАННЫЕ" margin="auto auto" />
-            </span>
-            <span className={ss.delete}>
-              <Delete />
-            </span>
           </div>
         </div>
       )}

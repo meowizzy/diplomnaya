@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./ArrowButton.module.scss";
 
-const ArrowButton = ({ type, disabled }) => {
+const ForwardButton = ({ type, disabled }) => {
   return (
     <button disabled={disabled} className={s.button} type={type}>
       <div className={s.img}></div>
@@ -9,4 +9,4 @@ const ArrowButton = ({ type, disabled }) => {
   );
 };
 
-export default ArrowButton;
+export default ForwardButton;

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import  ArrowButton  from "../../../components/arrowButton/ArrowButton";
+import ForwardButton from "../../../components/arrowButton/ForwardButton";
+import { DefaultCard } from "./DefaultCard";
 import s from "./DefaultEvents.module.scss";
 
 export const DefaultEvents = () => {
@@ -27,31 +28,11 @@ export const DefaultEvents = () => {
           <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
           <p>Информация о мероприятии</p>
           <div className={s.arrow_button}>
-            <ArrowButton />
+            <ForwardButton />
           </div>
         </div>
-
-        <div className={s.box}>
-          <p className={s.text}>
-            Чемпионат Кыргызской Респубики по традиционному ушу
-          </p>
-          <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
-          <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
-          <div className={s.arrow_button}>
-            <ArrowButton />
-          </div>
-        </div>
-
-        <div className={s.box}>
-          <p className={s.text}>
-            Чемпионат Кыргызской Респубики по традиционному ушу
-          </p>
-          <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
-          <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
-          <div className={s.arrow_button}>
-            <ArrowButton />
-          </div>
-        </div>
+        <DefaultCard />
+        <DefaultCard />
       </div>
     </div>
   );

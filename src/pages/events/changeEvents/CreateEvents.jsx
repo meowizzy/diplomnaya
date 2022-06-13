@@ -1,32 +1,34 @@
-import { useFormik } from "formik";
 import React from "react";
-import BackButton from "../../../components/arrowButton/BackButton";
-import Button from "../../../components/button/Button";
 import Input from "../../../components/input/Input";
+import { useFormik } from "formik";
 import s from "./ChangeEvents.module.scss";
+import Button from "../../../components/button/Button";
+import BackButton from "../../../components/arrowButton/BackButton";
 
-export const ChangeForm = ({ onClick }) => {
+export const CreateEvents = ({ active, setActive }) => {
   const formik = useFormik({
     initialValues: {
-      name: "Чемпионат Кыргызской Респубики по традиционному ушу",
-      date: "29.06.2022г. - 30.06.2022г.",
-      place: "Дворец спорта им. К. Кожомкула",
-      referee: "Белоусова Карина",
-      secretary: "Елена Малышева",
-      note: "Тренерам необходимо подать заявку до 20.06.2022г.",
-      agePre: "С 9",
-      ageAfter: "По 15",
+      name: "",
+      date: "",
+      place: "",
+      referee: "",
+      secretary: "",
+      note: "",
+      agePre: "",
+      ageAfter: "",
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
   });
   return (
-    <div className={s.cont}>
+    <div className={active ? s.cont : s.unactive}>
       <span className={s.back}>
-        <BackButton onClick={onClick}/>
+        <BackButton onClick={() => setActive(false)}/>
       </span>
-      <p style={{ fontSize: "30px", marginBottom: "40px" }}>Мероприятие</p>
+      <p style={{ fontSize: "30px", marginBottom: "40px" }}>
+        Создание мероприятие
+      </p>
       <form onSubmit={formik.handleSubmit}>
         <Input
           valueLabel="Наименование мероприятия"
@@ -91,7 +93,23 @@ export const ChangeForm = ({ onClick }) => {
             <span className={s.age_span}></span>
           </div>
         </div>
-          <Button width="600px" text="СОХРАНИТЬ" type="submit"/>
+        <Button
+          text="СОЗДАТЬ"
+          disabled={
+            !(
+              formik.values.name &&
+              formik.values.date &&
+              formik.values.place &&
+              formik.values.referee &&
+              formik.values.secretary &&
+              formik.values.ageAfter &&
+              formik.values.agePre &&
+              formik.values.note
+            )
+          }
+          width="600px"
+          type="submit"
+        />
       </form>
     </div>
   );

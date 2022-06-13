@@ -1,12 +1,17 @@
 import React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import ArrowButton from "../../../components/arrowButton/ArrowButton";
+import ForwardButton from "../../../components/arrowButton/ForwardButton";
 import Button from "../../../components/button/Button";
 import s from ".././defaultEvents/DefaultEvents.module.scss";
 import { Card } from "./Card";
 import ss from "./ChangeEvents.module.scss";
+import { CreateEvents } from "./CreateEvents";
 
 export const ChangeEvents = () => {
+
+  const [active, setActive] = useState(false)
+
   return (
     <div className={s.cont}>
       <div className={s.link_cont}>
@@ -21,11 +26,14 @@ export const ChangeEvents = () => {
         </NavLink>
 
         <div className={ss.button}>
-          <Button margin="0 0" text="СОЗДАТЬ" />
+          <Button margin="0 0" text="СОЗДАТЬ" onClick={()=>setActive(true)}/>
         </div>
       </div>
 
       <div className={s.content}>
+
+        <CreateEvents active={active} setActive={setActive} />
+
         <div className={s.box_first}>
           <p className={s.text}>
             Чемпионат Кыргызской Респубики по традиционному ушу
@@ -34,7 +42,7 @@ export const ChangeEvents = () => {
           <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
           <p>Информация о мероприятии</p>
           <div className={s.arrow_button}>
-            <ArrowButton />
+            <ForwardButton />
           </div>
         </div>
 

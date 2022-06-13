@@ -17,3 +17,16 @@
         position: absolute;
     }
 }
+.cont{
+    padding: 50px 0;
+    p{
+        font-size: 22px;
+        font-weight: bold;
+        align-items: center;
+        text-align: center;
+    }
+    .flex{
+        display: flex;
+        justify-content: space-around;
+    }
+}
