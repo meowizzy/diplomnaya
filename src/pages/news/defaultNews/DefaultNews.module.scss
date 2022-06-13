@@ -5,6 +5,19 @@
     justify-content: space-between;
     margin-bottom: 43px;
 }
+.link {
+    color: #4254EC;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 40px;
+}
+.link_cont {
+    margin-bottom: 43px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
 .card_top {
     width: 100% !important;
     height: 471px !important;
