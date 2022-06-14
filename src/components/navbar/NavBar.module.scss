@@ -10,21 +10,28 @@
     text-align: left;
     font-weight: bold;
 
-    .active_link {
+    .unactive_link {
         width: 260px;
         height: 50px;
         margin-bottom: 16px;
         color: white;
         padding-left: 50px;
+        align-items: center;
+        display: flex;
+        // justify-content: center;
     }
 
-    .unactive_link {
-        width: 260px;
+    .active_link {
+        width: 247px;
         margin-bottom: 16px;
         height: 50px;
-        color: black;
-        padding-left: 50px;
-
+        color: #4254EC;
+        background-color: #fff;
+        padding-left: 30px;
+        align-items: center;
+        display: flex;
+        border-radius: 25px 0px 0px 25px;
+        margin-left: 20px;
     }
     .exit{
         width: 260px;

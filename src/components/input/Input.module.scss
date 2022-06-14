@@ -20,12 +20,12 @@
 .gradient{
     background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
     border-radius: 25px;
+    display: flex;
     height: 45px;
     width: 300px;
     margin-bottom: 20px;
     padding: 2px;
     display: inline-block;
-    font-size: 18px;
     outline: none;
 }
 .label{

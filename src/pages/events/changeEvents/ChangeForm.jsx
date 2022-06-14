@@ -23,9 +23,9 @@ export const ChangeForm = ({ onClick }) => {
   });
   return (
     <div className={s.cont}>
-      <span className={s.back}>
+ 
         <BackButton onClick={onClick}/>
-      </span>
+    
       <p style={{ fontSize: "30px", marginBottom: "40px" }}>Мероприятие</p>
       <form onSubmit={formik.handleSubmit}>
         <Input

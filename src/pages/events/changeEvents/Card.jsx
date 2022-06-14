@@ -37,9 +37,9 @@ export const Card = ({ text }) => {
         </div>
       ) : (
         <div className={ss.box}>
-          <span className={ss.back}>
+        
             <BackButton onClick={toggle} />
-          </span>
+        
           <div>
             <p className={s.text}>
               Чемпионат Кыргызской Респубики по традиционному ушу

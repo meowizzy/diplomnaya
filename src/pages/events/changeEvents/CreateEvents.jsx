@@ -23,9 +23,9 @@ export const CreateEvents = ({ active, setActive }) => {
   });
   return (
     <div className={active ? s.cont : s.unactive}>
-      <span className={s.back}>
+    
         <BackButton onClick={() => setActive(false)}/>
-      </span>
+ 
       <p style={{ fontSize: "30px", marginBottom: "40px" }}>
         Создание мероприятие
       </p>
