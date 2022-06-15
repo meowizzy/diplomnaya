@@ -4,18 +4,16 @@ import { Modal } from "../../../components/modal/Modal";
 import { Pagination } from "../../../components/pagination/Pagination";
 import s from "./Registered.module.scss";
 import { UserInfo } from "./UserInfo";
+import { Link } from "react-router-dom";
 
 export const Registered = () => {
-  const [active, setActive] = useState(false);
-
-  const onClick = () => {
-    setActive(!active);
-  };
   return (
     <>
-      <Input placeholder="Поиск" />
+      <div className={s.search}>
+        <Input placeholder="Поиск" minWidth="100%" maxWidth="100%" />
+      </div>
 
-      <div className={s.title} style={{ fontWeight: "bold" }}>
+      <div className={s.title} style={{ fontWeight: "500" }}>
         <p className={s.first_p}>№</p>
         <p>Имя</p>
         <p>Фамилия</p>
@@ -23,9 +21,8 @@ export const Registered = () => {
         <p>Клуб</p>
         <p>Почта</p>
       </div>
-
-      {active === false ? (
-        <div className={s.title} onClick={onClick}>
+      <Link to="/main/users/registered/userInfo">
+        <div className={s.title}>
           <p className={s.first_p}>1</p>
           <p>Карина</p>
           <p>Белоусова</p>
@@ -33,22 +30,7 @@ export const Registered = () => {
           <p>Золотой дракон</p>
           <p>Admin111@gmal.com</p>
         </div>
-      ) : (
-        <UserInfo onClick={onClick} />
-      )}
-
-      {active === false ? (
-        <div className={s.title} onClick={onClick}>
-          <p className={s.first_p}>2</p>
-          <p>Карина</p>
-          <p>Белоусова</p>
-          <p>Тренер</p>
-          <p>Золотой дракон</p>
-          <p>Admin111@gmal.com</p>
-        </div>
-      ) : (
-        <UserInfo onClick={onClick} />
-      )}
+      </Link>
       <Pagination />
     </>
   );

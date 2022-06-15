@@ -11,13 +11,14 @@ const Input = ({
   type,
   maxWidth,
   width,
-  margin
+  margin,
+  minWidth
 }) => {
 
   return (
     <div className={s.input_container}>
       <label className={s.label}>{valueLabel}</label>
-      <div className={s.gradient} style={{maxWidth:maxWidth, width:width, margin:margin}}>
+      <div className={s.gradient} style={{maxWidth:maxWidth, width:width, margin:margin, minWidth:minWidth}}>
         <input
           className={s.input}
           placeholder={placeholder}

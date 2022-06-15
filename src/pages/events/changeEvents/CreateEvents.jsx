@@ -23,14 +23,14 @@ export const CreateEvents = ({ active, setActive }) => {
   });
   return (
     <div className={active ? s.cont : s.unactive}>
-    
-        <BackButton onClick={() => setActive(false)}/>
- 
+      <BackButton onClick={() => setActive(false)} />
+
       <p style={{ fontSize: "30px", marginBottom: "40px" }}>
         Создание мероприятие
       </p>
       <form onSubmit={formik.handleSubmit}>
         <Input
+          placeholder="Название"
           valueLabel="Наименование мероприятия"
           value={formik.values.name}
           onChange={formik.handleChange}
@@ -38,6 +38,7 @@ export const CreateEvents = ({ active, setActive }) => {
           width="600px"
         />
         <Input
+          placeholder="Дата"
           valueLabel="Введите дату"
           value={formik.values.date}
           onChange={formik.handleChange}
@@ -45,6 +46,7 @@ export const CreateEvents = ({ active, setActive }) => {
           width="600px"
         />
         <Input
+          placeholder="Адрес"
           valueLabel="Место проведения"
           value={formik.values.place}
           onChange={formik.handleChange}
@@ -52,6 +54,7 @@ export const CreateEvents = ({ active, setActive }) => {
           name="place"
         />
         <Input
+          placeholder="Главный судья"
           valueLabel="Информация о мероприятии - главный судья"
           value={formik.values.referee}
           onChange={formik.handleChange}
@@ -59,6 +62,7 @@ export const CreateEvents = ({ active, setActive }) => {
           name="referee"
         />
         <Input
+          placeholder="Секретарь"
           valueLabel="Информация о мероприятии- секретарь"
           value={formik.values.secretary}
           onChange={formik.handleChange}
@@ -66,6 +70,7 @@ export const CreateEvents = ({ active, setActive }) => {
           name="secretary"
         />
         <Input
+          placeholder="Примечание"
           valueLabel="Примечание"
           value={formik.values.note}
           onChange={formik.handleChange}
@@ -76,6 +81,7 @@ export const CreateEvents = ({ active, setActive }) => {
         <div className={s.age}>
           <div>
             <Input
+              placeholder="с"
               width="285px"
               valueLabel="Возрастная категория"
               value={formik.values.agePre}
@@ -84,6 +90,7 @@ export const CreateEvents = ({ active, setActive }) => {
             />
 
             <Input
+              placeholder="по"
               valueLabel=""
               width="285px"
               value={formik.values.ageAfter}

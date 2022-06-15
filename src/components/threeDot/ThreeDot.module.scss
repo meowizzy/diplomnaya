@@ -58,15 +58,37 @@
 	border-radius: 35px;
 }
 .content{
-    z-index: 999;
+    z-index: 100000;
 	position: relative;
 	padding: 30px 25px;
     display: flex;
     flex-direction: column;
+    .edit{
+        width: 200px;
+        height: 45px;
+        margin-bottom: 20px;
+        box-shadow: 1px 3px 18px rgba(0, 0, 0, 0.16);
+        border-radius: 35px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .delete{
+        width: 200px;
+        height: 45px;
+        box-shadow: 1px 3px 18px rgba(0, 0, 0, 0.16);
+        border-radius: 35px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
 }
 .pos{
     position: absolute;
     right: 30px;
     top: 110px;
-
 }
