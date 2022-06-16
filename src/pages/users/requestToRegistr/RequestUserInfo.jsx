@@ -22,12 +22,6 @@ export const RequestUserInfo = () => {
           alert(JSON.stringify(values, null, 2));
         },
       });
-    
-      const [buttonState, setButtonState] = useState(true)
-    
-      const foggle = () =>{
-        setButtonState(!buttonState)
-      }
      
       return (
         <>

@@ -9,6 +9,8 @@ import { UserInfo } from "./registered/UserInfo";
 import { CreateUser } from "./createUser/CreateUser";
 import { RequestToRegistr } from "./requestToRegistr/RequestToRegistr";
 import { RequestUserInfo } from "./requestToRegistr/RequestUserInfo";
+import { RecoveryRequest } from "./recoveryRequest/RecoveryRequest";
+import { RecoveryInfo } from "./recoveryRequest/RecoveryInfo";
 
 export const UsersRoute = () => {
 
@@ -50,9 +52,11 @@ export const UsersRoute = () => {
         <Routes>
           <Route path="/registered" element={<Registered />} />
           <Route path="/requestToRegistr" element={<RequestToRegistr />} />
+          <Route path="/recoveryRequest" element={< RecoveryRequest/>} />
           <Route path="/createUser" element={<CreateUser />} />
           <Route path="/registered/userInfo" element={<UserInfo />} />
           <Route path="/requestToRegistr/requestUserInfo" element={<RequestUserInfo />} />
+          <Route path="/recoveryRequest/recoveryInfo" element={<RecoveryInfo />} />
         </Routes>
       </div>
     </>
