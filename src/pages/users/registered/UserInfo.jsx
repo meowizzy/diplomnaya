@@ -32,86 +32,85 @@ export const UserInfo = () => {
  
   return (
     <>
-        <div className={s.info}>
-         <Link to="/main/users/registered"><BackButton /></Link> 
-          <p style={{ fontSize: "22px", marginBottom: "30px" }}>
-            Информация о пользователе
-          </p>
-          {buttonState === false ? (
-            <div className={s.button_cont}>
-            <Button width="600px" text="СОХРАНИТЬ"/>
+      <div className={s.info}>
+        <Link to="/main/users/registered">
+          <BackButton />
+        </Link>
+        <p className={s.text}>Информация о пользователе</p>
+        {buttonState === false ? (
+          <div className={s.button_cont}>
+            <Button width="600px" text="СОХРАНИТЬ" margin="0px 0" />
           </div>
-            
-          ) : (
-            <ThreeDot onClick={foggle}/>
-          )}
+        ) : (
+          <ThreeDot onClick={foggle} />
+        )}
 
-          <form onSubmit={formik.handleSubmit}>
-            <Input
-              valueLabel="Имя"
-              value={formik.values.name}
-              onChange={formik.handleChange}
-              name="name"
-              width="600px"
-            />
-            <Input
-              valueLabel="Фамилия"
-              value={formik.values.surname}
-              onChange={formik.handleChange}
-              name="surname"
-              width="600px"
-            />
-            <Input
-              valueLabel="Должность"
-              value={formik.values.position}
-              onChange={formik.handleChange}
-              width="600px"
-              name="position"
-            />
-            <Input
-              valueLabel="Номер телефона"
-              value={formik.values.phone}
-              onChange={formik.handleChange}
-              width="600px"
-              name="phone"
-            />
-            <Input
-              valueLabel="Электронная почта"
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              width="600px"
-              name="email"
-              type="email"
-            />
-            <Input
-              valueLabel="Страна, город"
-              value={formik.values.city}
-              onChange={formik.handleChange}
-              width="600px"
-              name="city"
-            />
-            <Input
-              valueLabel="Клуб"
-              value={formik.values.club}
-              onChange={formik.handleChange}
-              width="600px"
-              name="club"
-            />
-            <Input
-              valueLabel="Пароль"
-              value={formik.values.password}
-              onChange={formik.handleChange}
-              width="600px"
-              type="password"
-              name="password"
-              margin="0 0 32px"
-            />
-            <label className={s.status}>
-              <p>Статус</p>
-              <input type="radio" className={s.input} />
-            </label>
-          </form>
-        </div>
+        <form onSubmit={formik.handleSubmit}>
+          <Input
+            valueLabel="Имя"
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            name="name"
+            width="600px"
+          />
+          <Input
+            valueLabel="Фамилия"
+            value={formik.values.surname}
+            onChange={formik.handleChange}
+            name="surname"
+            width="600px"
+          />
+          <Input
+            valueLabel="Должность"
+            value={formik.values.position}
+            onChange={formik.handleChange}
+            width="600px"
+            name="position"
+          />
+          <Input
+            valueLabel="Номер телефона"
+            value={formik.values.phone}
+            onChange={formik.handleChange}
+            width="600px"
+            name="phone"
+          />
+          <Input
+            valueLabel="Электронная почта"
+            value={formik.values.email}
+            onChange={formik.handleChange}
+            width="600px"
+            name="email"
+            type="email"
+          />
+          <Input
+            valueLabel="Страна, город"
+            value={formik.values.city}
+            onChange={formik.handleChange}
+            width="600px"
+            name="city"
+          />
+          <Input
+            valueLabel="Клуб"
+            value={formik.values.club}
+            onChange={formik.handleChange}
+            width="600px"
+            name="club"
+          />
+          <Input
+            valueLabel="Пароль"
+            value={formik.values.password}
+            onChange={formik.handleChange}
+            width="600px"
+            type="password"
+            name="password"
+            margin="0 0 32px"
+          />
+          <label className={s.status}>
+            <p>Статус</p>
+            <input type="radio" className={s.input} />
+          </label>
+        </form>
+      </div>
     </>
   );
 };

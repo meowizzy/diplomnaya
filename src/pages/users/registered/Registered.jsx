@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 export const Registered = () => {
   return (
-    <>
+    <div className={s.table_content}>
       <div className={s.search}>
         <Input placeholder="Поиск" minWidth="100%" maxWidth="100%" />
       </div>
@@ -32,6 +32,6 @@ export const Registered = () => {
         </div>
       </Link>
       <Pagination />
-    </>
+    </div>
   );
 };

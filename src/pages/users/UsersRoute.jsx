@@ -7,6 +7,8 @@ import { NavLink, Link } from "react-router-dom";
 import Button from "../../components/button/Button";
 import { UserInfo } from "./registered/UserInfo";
 import { CreateUser } from "./createUser/CreateUser";
+import { RequestToRegistr } from "./requestToRegistr/RequestToRegistr";
+import { RequestUserInfo } from "./requestToRegistr/RequestUserInfo";
 
 export const UsersRoute = () => {
 
@@ -29,8 +31,8 @@ export const UsersRoute = () => {
           Зарегистрированные
         </NavLink>
         <NavLink
-          to="/main/users/registrationRequest"
-          className={linkActiveClassName("registrationRequest")}
+          to="/main/users/requestToRegistr"
+          className={linkActiveClassName("requestToRegistr")}
         >
           Запросы на регистрацию
         </NavLink>
@@ -47,8 +49,10 @@ export const UsersRoute = () => {
       <div className={s.cont}>
         <Routes>
           <Route path="/registered" element={<Registered />} />
+          <Route path="/requestToRegistr" element={<RequestToRegistr />} />
           <Route path="/createUser" element={<CreateUser />} />
           <Route path="/registered/userInfo" element={<UserInfo />} />
+          <Route path="/requestToRegistr/requestUserInfo" element={<RequestUserInfo />} />
         </Routes>
       </div>
     </>

@@ -18,10 +18,12 @@
     flex-basis: 1090px;
     box-shadow: 0px 0px 16px rgba(44, 44, 44, 0.15);
     border-radius: 35px;
-    padding: 20px 8px;
+    padding-bottom: 50px;
     position: relative;
 }
-
+.table_content{
+    padding: 20px 8px;
+}
 .title {
     display: flex;
     justify-content: center;
@@ -46,8 +48,13 @@
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    padding: 50px 0;
-    min-height: 980px;
+    padding: 0px 0;
+    min-height: 930px;
+    .text{
+        font-size: 22px;
+        margin-bottom: 30px;
+        margin-top: 50px;
+    }
 }
 .status{
     display: flex;
@@ -60,7 +67,7 @@
 }
 .button_cont{
     position: absolute;
-    bottom: 7px;
+    bottom: 0px;
 }
 .search{
     padding-left: 12px;
