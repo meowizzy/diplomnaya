@@ -27,7 +27,7 @@ export const CreateUser = () => {
      <NavLink to="/main/users/registered">
         <BackButton />
       </NavLink>
-      <p style={{ fontSize: "22px", marginBottom: "30px" }}>
+      <p style={{ fontSize: "22px", marginBottom: "30px", marginTop:"50px" }}>
       Создание пользователя
       </p>
       <form onSubmit={formik.handleSubmit}>
@@ -113,7 +113,7 @@ export const CreateUser = () => {
               formik.values.club &&
               formik.values.password
             )
-          }/>
+          } margin="82px 0 0"/>
       </form>
     </div>
   );
