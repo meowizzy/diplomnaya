@@ -10,9 +10,10 @@ import {useFormik} from "formik";
 import {useNavigate} from "react-router";
 import {camera_icon, checkbox_icon_turned_on} from "../../../images";
 import NewsTab from "../defaultNews/NewsTab";
-import SuccessModal from "../../../components/modals/SuccessModal";
+// import SuccessModal from "../../../components/modals/SuccessModal";
 import ForwardButton from "../../../components/arrowButton/ForwardButton";
 import BackButton from "../../../components/arrowButton/BackButton";
+import SuccessModal from "../../../components/modals/SuccessModal";
 
 const CreateNews = () => {
     // const classname = classNames()
