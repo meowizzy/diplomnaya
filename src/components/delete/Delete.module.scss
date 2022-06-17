@@ -1,0 +1,32 @@
+.delete{
+    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    border-radius: 25px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    position: relative;
+
+    div {
+        background-image: url(./delete.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 14px;
+        height: 16px;
+        top: 17px;
+        left: 18px;
+        position: absolute;
+    }
+}
+.cont{
+    padding: 50px 0;
+    p{
+        font-size: 22px;
+        font-weight: bold;
+        align-items: center;
+        text-align: center;
+    }
+    .flex{
+        display: flex;
+        justify-content: space-around;
+    }
+}

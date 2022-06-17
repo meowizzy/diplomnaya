@@ -3,28 +3,22 @@ import s from "./Input.module.scss";
 import registerStyles from "../../pages/register/Registr.module.scss";
 
 const Input = ({
-    open,
-    setOpen,
-    placeholder,
-    value,
-    valueLabel,
-    onChange,
-    name,
-    width,
-    type,
+  placeholder,
+  value,
+  valueLabel,
+  onChange,
+  name,
+  type,
+  maxWidth,
+  width,
+  margin,
+  minWidth
 }) => {
-  const toggle = () => {
-    setOpen(!open);
-  };
-
-  // const foggle = () => {
-  //   setSecondOpen(!secondOpen);
-  // };
 
   return (
     <div className={s.input_container}>
       <label className={s.label}>{valueLabel}</label>
-      <div  style={{width:width}} className={s.gradient}>
+      <div className={s.gradient} style={{maxWidth:maxWidth, width:width, margin:margin, minWidth:minWidth}}>
         <input
           className={s.input}
           placeholder={placeholder}

@@ -3,7 +3,7 @@ import Input from "../../../components/input/Input";
 import s from "./../editNews/EditNews.module.scss"
 import ss from "./CreateNews.module.scss"
 import Button from "../../../components/button/Button";
-import ArrowButton from "../../../components/arrowButton/ArrowButton";
+// import ArrowButton from "../../../components/arrowButton/ForwardButton";
 import inputStyles from "../../../components/input/Input.module.scss";
 import classNames from "classnames";
 import {useFormik} from "formik";
@@ -11,6 +11,8 @@ import {useNavigate} from "react-router";
 import {camera_icon, checkbox_icon_turned_on} from "../../../images";
 import NewsTab from "../defaultNews/NewsTab";
 import SuccessModal from "../../../components/modals/SuccessModal";
+import ForwardButton from "../../../components/arrowButton/ForwardButton";
+import BackButton from "../../../components/arrowButton/BackButton";
 
 const CreateNews = () => {
     // const classname = classNames()
@@ -39,7 +41,7 @@ const CreateNews = () => {
                 <NewsTab/>
                 <div className="container container_data_flexed">
                     <div onClick={ () => navigate("/main/news")} className={s.prev_button}>
-                        <ArrowButton rotate="rotate(180deg)" />
+                        <BackButton rotate="rotate(180deg)" />
                     </div>
 
                     <form onSubmit={formik.handleSubmit} style={{width: 600}}>

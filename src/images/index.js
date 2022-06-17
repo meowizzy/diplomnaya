@@ -7,6 +7,8 @@ import option_button from "./option_button.svg"
 import camera_icon from "./camera_icon.svg"
 import checkbox_icon_turned_on from "./checkbox_icon_turned_on.svg"
 import done_icon from "./done_icon.svg"
+import empty_checkbox from "./empty_checkbox.svg"
+import full_checkbox from "./full_checkbox.svg"
 
 export {
     open_eye,
@@ -18,4 +20,6 @@ export {
     camera_icon,
     checkbox_icon_turned_on,
     done_icon,
+    empty_checkbox,
+    full_checkbox,
 }

@@ -8,7 +8,7 @@ import NewPassword from './NewPassword'
 export const Routing = () => {
   return (
     <Routes>
-        <Route path="/Auth" element={<Auth/>}/>
+        <Route path="/*" element={<Auth/>}/>
         <Route path="/NewPassword" element={<NewPassword/>}/>
         <Route path="/ForgotPassword" element={<ForgotPassword/>}/>
         <Route path="/FeedBack" element={<FeedBack/>}/>

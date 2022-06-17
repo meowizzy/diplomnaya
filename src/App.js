@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router";
 import { NotRegistered } from "./pages/notRegistered/NotRegistered";
 import { Main } from "./pages/Main";
 import DefaultNews from "./pages/news/defaultNews/DefaultNews";
+import {Routing} from "./pages/auth/Routing";
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Route path="/*" element={<NotRegistered />}/>
           {/*<Route path="/*" element={<DefaultNews />}/>*/}
         <Route path="/main/*" element={<Main />}/>
-        <Route path="/auth" element={<Auth />}/>
+        <Route path="/auth/*" element={<Routing />}/>
         <Route path="/registr" element={<Registr />}/>
       </Routes>
       {/* <Auth /> */}

@@ -1,3 +1,19 @@
+.link{
+  color: #4254EC;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 40px;
+  white-space: nowrap;
+}
+.active_link{
+  color: #4254EC;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 40px;
+  border-bottom: #4254EC 3px solid;
+  
+  white-space: nowrap;
+}
 
 #dragon {
     background: white;
