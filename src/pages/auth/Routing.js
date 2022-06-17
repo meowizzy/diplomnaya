@@ -4,6 +4,7 @@ import Auth from './Auth'
 import FeedBack from './FeedBack'
 import ForgotPassword from './ForgotPassword'
 import NewPassword from './NewPassword'
+// vbnm,
 
 export const Routing = () => {
   return (
