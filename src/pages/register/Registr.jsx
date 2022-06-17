@@ -70,8 +70,8 @@ export const Registr = () => {
           name="position"
         />
         <Input
-          placeholder="Введите Email"
-          valueLabel="Email"
+          placeholder="Введите почту"
+          valueLabel="Почта"
           value={formik.values.email}
           onChange={formik.handleChange}
           name="email"

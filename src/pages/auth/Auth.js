@@ -39,8 +39,8 @@ const Auth = () => {
           <form onSubmit={formik.handleSubmit} className={registerStyles.form}>
             <p className="form_title">ФЕДЕРАЦИЯ УШУ</p>
             <Input
-              placeholder="Введите Email"
-              valueLabel="Email"
+              placeholder="Введите Почту"
+              valueLabel="Почта"
               // value={formik.values.name}
               onChange={formik.handleChange}
               name="email"
