@@ -12,7 +12,7 @@ import Options from "../../../components/options/Options";
 
 const DefaultNews = () => {
     // const [openCard, setOpenCard] = useState("");
-    const [openOption, setOpenOption] = useState(true);
+    const [openOption, setOpenOption] = useState(false);
     const handleOpenOption = () => {
         setOpenOption(!openOption)
     }
