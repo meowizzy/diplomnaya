@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Button from "../button/Button"
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import ButtonForActiveChanges from "../buttonForActiveChanges/ButtonForActiveChanges";
 
 const style = {
     position: 'absolute',
@@ -42,8 +43,8 @@ export default function DeleteModal({open, handleClose}) {
                         Вы уверены, что хотите удалить данную статью?
                     </Typography>
                     <div className="flex">
-                        <Button margin="68px 0 0" width="210px" text="ДА" />
-                        <Button margin="68px 0 0" width="210px" text="НЕТ"/>
+                        <ButtonForActiveChanges classname="yes_button" margin="68px 0 0" width="210px" text="ДА" />
+                        <ButtonForActiveChanges classname="no_button" margin="68px 0 0" width="210px" text="НЕТ"/>
                     </div>
                 </Box>
             </Modal>

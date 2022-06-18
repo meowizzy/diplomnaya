@@ -1,0 +1,81 @@
+%active_state {
+  background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  color: #FFFFFF;
+}
+%hover_state {
+  background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+  border-radius: 25px;
+  color: #FFFFFF;
+}
+%white_active_state {
+  background: #FFFFFF;
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+}
+.button {
+  width: 200px;
+  height: 45px;
+  background: #FFFFFF;
+  border-radius: 25px;
+  filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.2));
+  border-radius: 25px;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #000000;
+}
+.button:hover {
+  @extend %hover_state
+}
+.button:active {
+  @extend %active_state;
+}
+.yes_button {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.2));
+  background: linear-gradient(270deg, #3548F5 -37.7%, #F58747 134.43%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  cursor: pointer;
+  height: 45px;
+}
+.yes_button:active {
+  @extend %active_state;
+  -webkit-text-fill-color: white;
+}
+.yes_button:hover {
+  @extend %hover_state;
+  -webkit-text-fill-color: white;
+}
+.yes_button:active .no_button {
+  background: black;
+
+}
+.no_button {
+  cursor: pointer;
+  width: 300px;
+  height: 45px;
+  background: #ffffff;
+  border-radius: 25px;
+  font-weight: bold;
+  margin: 62px 0 43px;
+  border: none;
+  color: #ffffff;
+  background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+}
+.no_button:active {
+  @extend %active_state;
+}
+.white_button {
+
+}
