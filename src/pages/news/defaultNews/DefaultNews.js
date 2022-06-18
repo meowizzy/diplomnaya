@@ -40,7 +40,7 @@ const DefaultNews = () => {
                         <p className={s.card__title}>В номинации “Первое место” </p>
                         <p className={s.card__date}>17.04.2022г.</p>
                         <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
-                        { openOption && <Options handleOpenDeleteModal={handleOpenDeleteModal}/>}
+                        { openOption && <Options  link="/main/news/edit_news" handleOpenDeleteModal={handleOpenDeleteModal}/>}
                     </div>
                     <p className={s.text}>В мае в ЦДТ «Шайыр балалык» состоялись Детские соревнования по традиционному ушу им. Г. Сулеймановой. В соревнованиях приняли участие около 50-ти юных ушуистов из различных клубов ушу Федерации традиционного ушу КР.<br/>
                         <br/><br/>
@@ -58,7 +58,7 @@ const DefaultNews = () => {
                     }
                 </div>
             </div>
-            { openDeleteModal && <DeleteModal open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
+            { openDeleteModal && <DeleteModal text="Вы уверены, что хотите удалить данную статью?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
         </>
 
     );

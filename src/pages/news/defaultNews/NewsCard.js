@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import s from "./DefaultNews.module.scss";
-import {news_img1, news_img3} from "../../../images";
+import {news_img1} from "../../../images";
 import ForwardButton from "../../../components/arrowButton/ForwardButton";
 import OptionButton from "../../../components/optionButton/OptionButton";
-import Button from "../../../components/button/Button";
 import BackButton from "../../../components/arrowButton/BackButton";
 import Options from "../../../components/options/Options";
 
-const NewsCard = ({openOption, handleOpenOption, navigate, handleOpenDeleteModal}) => {
-    // debugger;
+const NewsCard = ({openOption, handleOpenOption, handleOpenDeleteModal}) => {
 
     const [open, setOpen] = useState(true);
 
@@ -29,7 +27,7 @@ const NewsCard = ({openOption, handleOpenOption, navigate, handleOpenDeleteModal
                         <p className={s.card__title}>В номинации “Первое место” </p>
                         <p className={s.card__date}>17.04.2022г.</p>
                         <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
-                        {openOption && <Options  handleOpenDeleteModal={handleOpenDeleteModal}/>}
+                        {openOption && <Options link="/main/news/edit_news" handleOpenDeleteModal={handleOpenDeleteModal}/>}
                     </div>
                     <p className={s.text}>В мае в ЦДТ «Шайыр балалык» состоялись Детские соревнования по традиционному ушу им. Г. Сулеймановой. В соревнованиях приняли участие около 50-ти юных ушуистов из различных клубов ушу Федерации традиционного ушу КР.<br/>
                         <br/><br/>

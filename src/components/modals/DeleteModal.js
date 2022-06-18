@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from "../button/Button"
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import ButtonForActiveChanges from "../buttonForActiveChanges/ButtonForActiveChanges";
@@ -25,7 +24,7 @@ const title = {
     textAlign: "center",
 }
 
-export default function DeleteModal({open, handleClose}) {
+export default function DeleteModal({open, handleClose, text}) {
     // const [open, setOpen] = React.useState(false);
     // const handleOpen = () => setOpen(true);
     // const handleClose = () => setOpen(false);
@@ -40,7 +39,7 @@ export default function DeleteModal({open, handleClose}) {
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" sx={title} variant="h6" component="h2">
-                        Вы уверены, что хотите удалить данную статью?
+                        {text}
                     </Typography>
                     <div className="flex">
                         <ButtonForActiveChanges classname="yes_button" margin="68px 0 0" width="210px" text="ДА" />

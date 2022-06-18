@@ -11,7 +11,7 @@ const ClubsTab = () => {
             <div style={{marginBottom: 0}} className={s.link_cont}>
                 <p className={s.link}>Все клубы</p>
             </div>
-            <ButtonForActiveChanges classname="no_button" onClick={() => navigate("/main/news/create_news")} margin={0} text="СОЗДАТЬ"/>
+            <ButtonForActiveChanges classname="no_button" onClick={() => navigate("/main/clubs/createClub")} margin={0} text="СОЗДАТЬ"/>
         </div>
     );
 };
