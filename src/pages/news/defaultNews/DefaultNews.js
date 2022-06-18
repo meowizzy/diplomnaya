@@ -1,16 +1,14 @@
 import React, {useState} from 'react';
-import Button from "../../../components/button/Button";
 import { news_img1, news_img2, news_img3} from "../../../images";
 import dfEventStyles from "./../../events/defaultEvents/DefaultEvents.module.scss"
 import s from "./DefaultNews.module.scss"
-// import ArrowButton from "../../../components/arrowButton/ArrowButton";
 
 import OptionButton from "../../../components/optionButton/OptionButton";
 import {useNavigate} from "react-router";
-import {Link} from "react-router-dom";
 import NewsTab from "./NewsTab";
 import DeleteModal from "../../../components/modals/DeleteModal";
-import ForwardButton from "../../../components/arrowButton/ForwardButton";
+import NewsCard from "./NewsCard";
+import Options from "../../../components/options/Options";
 
 const DefaultNews = () => {
     // const [openCard, setOpenCard] = useState("");
@@ -24,19 +22,25 @@ const DefaultNews = () => {
     const handleOpenDeleteModal = () => setOpenDeleteModal(true);
     const handleCloseDeleteModal = () => setOpenDeleteModal(false);
 
+    const images = [
+        {news_img1},
+        {news_img2},
+        {news_img3},
+        {news_img2},
+        {news_img1},
+        {news_img3},
+    ]
+
     return (
         <>
             <div className={dfEventStyles.cont}>
                 <NewsTab/>
                 <div style={{marginBottom: 54}} className={s.cards}>
                     <div style={{background: `url(${news_img1}) no-repeat`}} className={`${s.card} ${s.card_top}`}>
-                        <p className={s.card__title}>В номинации “первое место” </p>
+                        <p className={s.card__title}>В номинации “Первое место” </p>
                         <p className={s.card__date}>17.04.2022г.</p>
                         <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
-                        <div className={ openOption ? s.closed_option_cont : s.option_cont}>
-                            <Button onClick={ () => navigate("/main/news/edit_news")} margin="0" width="200px" text="Редактировать"/>
-                            <Button onClick={handleOpenDeleteModal} margin="0" width="200px" text="Удалить"/>
-                        </div>
+                        { openOption && <Options handleOpenDeleteModal={handleOpenDeleteModal}/>}
                     </div>
                     <p className={s.text}>В мае в ЦДТ «Шайыр балалык» состоялись Детские соревнования по традиционному ушу им. Г. Сулеймановой. В соревнованиях приняли участие около 50-ти юных ушуистов из различных клубов ушу Федерации традиционного ушу КР.<br/>
                         <br/><br/>
@@ -47,47 +51,11 @@ const DefaultNews = () => {
                         17.05.2022г.</p>
                 </div>
                 <div className={s.cards}>
-                    <div className={s.card}>
-                        <img className={s.card__img} src={news_img1} alt="wrong" />
-                        <p className={s.card__title}>В номинации “первое место” </p>
-                        <p className={s.card__date}>17.04.2022г.</p>
-                        <div className={s.next_button}><ForwardButton/></div>
-
-                    </div>
-                    <div className={s.card}>
-                        <img className={s.card__img} src={news_img2} alt="wrong" />
-                        <p className={s.card__title}>В номинации “первое место” </p>
-                        <p className={s.card__date}>17.04.2022г.</p>
-                        <div className={s.next_button}><ForwardButton/></div>
-
-                    </div>
-                    <div className={s.card}>
-                        <img className={s.card__img} src={news_img3} alt="wrong" />
-                        <p className={s.card__title}>В номинации “первое место” </p>
-                        <p className={s.card__date}>17.04.2022г.</p>
-                        <div className={s.next_button}><ForwardButton/></div>
-
-                    </div>
-                    <div className={s.card}>
-                        <img className={s.card__img} src={news_img1} alt="wrong" />
-                        <p className={s.card__title}>В номинации “первое место” </p>
-                        <p className={s.card__date}>17.04.2022г.</p>
-                        <div className={s.next_button}><ForwardButton/></div>
-
-                    </div>
-                    <div className={s.card}>
-                        <img className={s.card__img} src={news_img2} alt="wrong" />
-                        <p className={s.card__title}>В номинации “первое место” </p>
-                        <p className={s.card__date}>17.04.2022г.</p>
-                        <div className={s.next_button}><ForwardButton/></div>
-
-                    </div>
-                    <div className={s.card}>
-                        <img className={s.card__img} src={news_img3} alt="wrong" />
-                        <p className={s.card__title}>В номинации “первое место” </p>
-                        <p className={s.card__date}>17.04.2022г.</p>
-                        <div className={s.next_button}><ForwardButton/></div>
-                    </div>
+                    {
+                        images.map(img => {
+                            return <NewsCard openOption={openOption} handleOpenDeleteModal={handleOpenDeleteModal} navigate={navigate} handleOpenOption={handleOpenOption} img={img} />
+                        })
+                    }
                 </div>
             </div>
             { openDeleteModal && <DeleteModal open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }

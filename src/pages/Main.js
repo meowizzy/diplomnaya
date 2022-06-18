@@ -6,6 +6,7 @@ import { DefaultEvents } from "./events/defaultEvents/DefaultEvents";
 import s from "./Main.module.scss";
 import { UsersRoute } from "./users/UsersRoute";
 import {News} from "./news/News";
+import DefaultClubs from "./clubs/defaultClubs/DefaultClubs";
 
 export const Main = () => {
   return (
@@ -18,6 +19,7 @@ export const Main = () => {
           <Route path="/users/*" element={<UsersRoute />} />
             <Route path="/events" element={<ChangeEvents />} />
             <Route path="/news/*" element={<News />} />
+            <Route path="/clubs/*" element={<DefaultClubs />} />
         </Routes>
       </div>
     </div>

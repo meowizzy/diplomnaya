@@ -12,6 +12,7 @@ import NewsTab from "../defaultNews/NewsTab";
 import SuccessModal from "../../../components/modals/SuccessModal";
 import ForwardButton from "../../../components/arrowButton/ForwardButton";
 import BackButton from "../../../components/arrowButton/BackButton";
+import ButtonForActiveChanges from "../../../components/buttonForActiveChanges/ButtonForActiveChanges";
 
 const EditNews = () => {
     // const classname = classNames()
@@ -33,9 +34,8 @@ const EditNews = () => {
             <div>
                 <NewsTab/>
                 <div className="container container_data_flexed">
-                    <div onClick={ () => navigate("/main/news")} className={s.prev_button}>
-                        <BackButton rotate="rotate(180deg)" />
-                    </div>
+                    {/*<divclassName={s.prev_button}>*/}
+                        <BackButton onClick={ () => navigate("/main/news")}  rotate="rotate(180deg)" />
 
                     <form onSubmit={formik.handleSubmit} style={{width: 600}}>
                         <h2 className="container_title">Новости</h2>
@@ -46,9 +46,9 @@ const EditNews = () => {
                         </div>
                         <Input onChange={formik.handleChange} value={formik.values} type="text" width="100%" valueLabel="Заголовок"/>
                         <Input onChange={formik.handleChange} value={formik.values} type="text" width="100%" valueLabel="Дата"/>
-                        <Input onChange={formik.handleChange} value={formik.values} type="text" width="100%" valuevalueLabel="Текст"/>
+                        <Input onChange={formik.handleChange} value={formik.values} type="text" width="100%" valueLabel="Текст"/>
                         <Input onChange={formik.handleChange} value={formik.values}  type="text" width="100%" valueLabel="Дополнительно"/>
-                        <Button  type="submit" width="100%" margin="70px 0px 0px" text="СОХРАНИТЬ"/>
+                        <ButtonForActiveChanges classname="no_button"  type="submit" width="100%" margin="70px 0px 0px" text="СОХРАНИТЬ"/>
                     </form>
 
                 </div>

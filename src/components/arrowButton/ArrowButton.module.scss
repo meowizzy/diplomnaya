@@ -37,6 +37,7 @@
     position: absolute;
     top: 30px;
     left: 30px;
+    z-index: 2;
     .img {
         background-image: url(./arrow.svg);
         background-repeat: no-repeat;

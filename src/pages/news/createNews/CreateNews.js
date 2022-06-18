@@ -13,6 +13,7 @@ import NewsTab from "../defaultNews/NewsTab";
 import SuccessModal from "../../../components/modals/SuccessModal";
 import ForwardButton from "../../../components/arrowButton/ForwardButton";
 import BackButton from "../../../components/arrowButton/BackButton";
+import ButtonForActiveChanges from "../../../components/buttonForActiveChanges/ButtonForActiveChanges";
 
 const CreateNews = () => {
     // const classname = classNames()
@@ -40,9 +41,7 @@ const CreateNews = () => {
             <div>
                 <NewsTab/>
                 <div className="container container_data_flexed">
-                    <div onClick={ () => navigate("/main/news")} className={s.prev_button}>
-                        <BackButton rotate="rotate(180deg)" />
-                    </div>
+                        <BackButton onClick={ () => navigate("/main/news")} rotate="rotate(180deg)" />
 
                     <form onSubmit={formik.handleSubmit} style={{width: 600}}>
                         <h2 className="container_title">Создание новости</h2>
@@ -51,6 +50,7 @@ const CreateNews = () => {
                             <img className={ss.img_icon} src={camera_icon} alt="wrong"/>
                             <label className={`${inputStyles.input} ${s.label_img}`} htmlFor="image"></label>
                             <input id="image" className={s.img_input} type="file"/>
+                            <p className={ss.img_text}>Добавить фото</p>
                         </div>
                         <Input name="title" placeholder="Добавить заголовок" onChange={formik.handleChange} type="text" width="100%" valueLabel="Заголовок"/>
                         <Input name="date" placeholder="Дата публикации" onChange={formik.handleChange} type="text" width="100%" valueLabel="Дата"/>
