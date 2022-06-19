@@ -1,0 +1,19 @@
+.button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    width: 6px;
+    height: 24px;
+    //background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    border-radius: 25px;
+
+    background-image: url(./dot.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 6px;
+    height: 24px;
+    top: 13px;
+    left: 22px;
+    position: absolute;
+}

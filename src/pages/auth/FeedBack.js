@@ -29,14 +29,21 @@ const FeedBack = () => {
             onChange={formik.handleChange}
             name="email"
           />
-          <TextArea
-            placeholder="Введите текст"
-            valueLabel="Обращение"
-            // value={formik.values.name}
-            onChange={formik.handleChange}
-            name="text"
-            type="textarea"
+          <Input
+              placeholder="Введите текст"
+              valueLabel="Обращение"
+              // value={formik.values.name}
+              onChange={formik.handleChange}
+              name="text"
           />
+          {/*<TextArea*/}
+          {/*  placeholder="Введите текст"*/}
+          {/*  valueLabel="Обращение"*/}
+          {/*  // value={formik.values.name}*/}
+          {/*  onChange={formik.handleChange}*/}
+          {/*  name="text"*/}
+          {/*  type="textarea"*/}
+          {/*/>*/}
           <Button
             type="submit"
             disabled={!(formik.values.email && formik.values.text)}

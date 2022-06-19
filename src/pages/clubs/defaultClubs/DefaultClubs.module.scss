@@ -1,0 +1,26 @@
+.form_cont {
+    width:600px;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.plus {
+    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    border-radius: 25px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    position: absolute;
+    top: 29px;
+    right: 7px;
+}
+.inp_plus_cont {
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}

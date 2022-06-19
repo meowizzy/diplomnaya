@@ -44,7 +44,9 @@ const ForgotPassword = () => {
           <br />
           <br />
           <Button type="submit" disabled={!formik.values.email} text="ДАЛЕЕ" />
-          <Link to="/FeedBack" className="grey_text">Обратная связь</Link>
+          <div className={s.forgot_p_cont}>
+            <Link to="/auth/FeedBack" className="grey_text">Обратная связь</Link>
+          </div>
         </form>
       </div>
     </div>

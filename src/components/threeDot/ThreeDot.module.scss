@@ -20,6 +20,11 @@
         position: absolute;
     }
 }
+.button:active {
+  background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+}
 
 .gradient {
     border-radius: 35px;
