@@ -146,7 +146,7 @@ export const Registr = () => {
           name="club"
         />
         <Input
-          placeholder="Веедите страну и город"
+          placeholder="Введите страну и город"
           valueLabel="Страна"
           value={formik.values.city}
           onChange={formik.handleChange}
