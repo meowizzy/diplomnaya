@@ -99,7 +99,7 @@ export const CreateUser = () => {
           margin="0 0 32px"
         />
         <label className={s.status}>
-          <p>Статус</p>
+          <p>Активен / Неактивен</p>
           <input type="radio" className={s.input} />
         </label>
         <Button width="600px" text="СОЗДАТЬ"  disabled={

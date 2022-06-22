@@ -27,7 +27,7 @@ export const ThreeDot = ({ disabled, type, onClick }) => {
           <div className={s.cont}>
             <div className={s.content}>
               <div className={s.edit} onClick={onClick}>Редактировать</div>
-              <div className={s.delete} onClick={() => setModalActive(true)}>удалить</div>
+              <div className={s.delete} onClick={() => setModalActive(true)}>Удалить</div>
             </div>
           </div>
         ) : (

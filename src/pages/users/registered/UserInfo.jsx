@@ -106,7 +106,7 @@ export const UserInfo = () => {
             margin="0 0 32px"
           />
           <label className={s.status}>
-            <p>Статус</p>
+            <p>Активен / Неактивен</p>
             <input type="radio" className={s.input} />
           </label>
         </form>

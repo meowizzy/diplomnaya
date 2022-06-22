@@ -16,7 +16,7 @@ export const DefaultCard = ({ text }) => {
     <>
       {card === true ? (
         <div className={s.box}>
-          <p className={s.text}>
+          <p className={s.text_card}>
             Чемпионат Кыргызской Респубики по традиционному ушу
           </p>
           <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
@@ -28,7 +28,7 @@ export const DefaultCard = ({ text }) => {
       ) : (
         <div className={ss.box}>
           <div onClick={toggle}>
-            <p className={s.text}>
+            <p className={s.text_card}>
               Чемпионат Кыргызской Респубики по традиционному ушу
             </p>
             <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
