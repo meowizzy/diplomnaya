@@ -24,7 +24,7 @@ export const NavBar = () => {
       <NavLink to="/main/clubs" className={linkActiveClassName('clubs')}>Клубы</NavLink>
       <NavLink to="/main/statistics" className={linkActiveClassName('statistics')}>Статистика</NavLink>
       <NavLink to="/main/documentation" className={linkActiveClassName('documentation')}>Документация</NavLink>
-      <NavLink to="/main/profile" className={linkActiveClassName('profile')}>Профиль</NavLink>
+      <NavLink to="/main/profile/" className={linkActiveClassName('profile')}>Профиль</NavLink>
       <NavLink to="/main/chat" className={linkActiveClassName('chat')}>Чат</NavLink>
 
       <NavLink to="" className={s.exit}>Выйти</NavLink>
