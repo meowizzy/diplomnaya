@@ -56,8 +56,17 @@
   justify-content: center;
   padding: 50px 0;
 }
-.flex {
+%flex {
   display: flex;
   justify-content: space-between;
   text-align: center;
+  align-items: center;
+}
+.flex {
+  @extend %flex;
+  align-items: end;
+}
+.input_flex {
+  @extend %flex;
+  gap: 30px;
 }

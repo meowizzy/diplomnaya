@@ -3,17 +3,13 @@ import Input from "../../../components/input/Input";
 import s from "./../editNews/EditNews.module.scss"
 import ss from "./CreateNews.module.scss"
 import Button from "../../../components/button/Button";
-// import ArrowButton from "../../../components/arrowButton/ForwardButton";
 import inputStyles from "../../../components/input/Input.module.scss";
-import classNames from "classnames";
 import {useFormik} from "formik";
 import {useNavigate} from "react-router";
 import {camera_icon, checkbox_icon_turned_on} from "../../../images";
 import NewsTab from "../defaultNews/NewsTab";
 import SuccessModal from "../../../components/modals/SuccessModal";
-import ForwardButton from "../../../components/arrowButton/ForwardButton";
 import BackButton from "../../../components/arrowButton/BackButton";
-import ButtonForActiveChanges from "../../../components/buttonForActiveChanges/ButtonForActiveChanges";
 
 const CreateNews = () => {
     // const classname = classNames()
@@ -49,7 +45,7 @@ const CreateNews = () => {
                         <div style={{width: "100%", height: "200px", position: "relative", textAlign: "center"}} className={inputStyles.gradient}>
                             <img className={ss.img_icon} src={camera_icon} alt="wrong"/>
                             <label className={`${inputStyles.input} ${s.label_img}`} htmlFor="image"></label>
-                            <input id="image" className={s.img_input} type="file"/>
+                            <input style={{paddingLeft: 0}} id="image" className={s.img_input} type="file"/>
                             <p className={ss.img_text}>Добавить фото</p>
                         </div>
                         <Input name="title" placeholder="Добавить заголовок" onChange={formik.handleChange} type="text" width="100%" valueLabel="Заголовок"/>
