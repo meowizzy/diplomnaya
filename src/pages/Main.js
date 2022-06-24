@@ -6,6 +6,7 @@ import s from "./Main.module.scss";
 import { UsersRoute } from "./users/UsersRoute";
 import {News} from "./news/News";
 import Clubs from "./clubs/Clubs";
+import Documentation from "./documentation/Documentation";
 
 export const Main = () => {
   return (
@@ -19,6 +20,7 @@ export const Main = () => {
             <Route path="/events" element={<ChangeEvents />} />
             <Route path="/news/*" element={<News />} />
             <Route path="/clubs/*" element={<Clubs />} />
+            <Route path="/documentation/*" element={<Documentation />} />
         </Routes>
       </div>
     </div>

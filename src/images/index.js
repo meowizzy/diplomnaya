@@ -11,6 +11,9 @@ import empty_checkbox from "./empty_checkbox.svg"
 import full_checkbox from "./full_checkbox.svg"
 import search_icon from "./search_icon.svg"
 import full_auth_checkbox from "./full_auth_checkbox.svg"
+import download from "./download.svg"
+import grey_circle_checkbox from "./grey_circle_checkbox.svg"
+import gradient_circle_checkbox from "./gradient_circle_checkbox.svg"
 
 export {
     open_eye,
@@ -26,4 +29,7 @@ export {
     full_auth_checkbox,
     full_checkbox,
     search_icon,
+    download,
+    grey_circle_checkbox,
+    gradient_circle_checkbox,
 }
