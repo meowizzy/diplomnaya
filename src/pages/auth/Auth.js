@@ -7,11 +7,10 @@ import s from "./Auth.module.scss";
 import Button from "../../components/button/Button";
 import "../../styles/baseStyles.scss";
 import { Link } from "react-router-dom";
-import {empty_checkbox} from "../../images";
 
 const Auth = () => {
   const [open, setOpen] = useState(true);
-  const [checkbox, setCheckbox] = useState(false)
+  const [checkbox, setCheckbox] = useState(true)
 
   const toggle = () => {
     setOpen(!open);
@@ -32,14 +31,14 @@ const Auth = () => {
   return (
     <div className={s.authh}>
       <div id="dragon">
-        <img className="dragon" src="https://i.gifer.com/XwYs.gif" />
+        <img className="dragon" src="https://i.gifer.com/XwYs.gif" alt=""/>
       </div>
       <div className={s.auth}>
         <div className={s.auth_cont}>
           <form onSubmit={formik.handleSubmit} className={registerStyles.form}>
             <p className="form_title">ФЕДЕРАЦИЯ УШУ</p>
             <Input
-              placeholder="Введите Почту"
+              placeholder="Введите почту"
               valueLabel="Почта"
               // value={formik.values.name}
               onChange={formik.handleChange}
@@ -62,7 +61,7 @@ const Auth = () => {
             </div>
             <div className={s.checkbox_con}>
               {/*<img src={empty_checkbox} alt="wrong"/>*/}
-              <p className={s.checkbox_text}>Сохранить пароль?</p>
+              <p onClick={checkboxToggle} className={checkbox ? s.checkbox_text : s.full_checkbox_text}>Сохранить пароль?</p>
             </div>
             <div className={s.forgot_p_cont}>
               <Link to="/auth/ForgotPassword" className="grey_text">Забыли пароль?</Link>
@@ -72,7 +71,7 @@ const Auth = () => {
               type="submit"
               disabled={!(formik.values.email && formik.values.password)}
               text="ВОЙТИ"
-              margin="30"
+              margin="35px"
             />
             <div className={s.forgot_p_cont}>
               <Link to="/registr"><p className={s.register_text}>Зарегистрироваться</p></Link>

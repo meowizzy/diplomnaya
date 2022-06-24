@@ -72,4 +72,10 @@
 .search{
     padding-left: 12px;
     padding-right: 12px;
+    position:relative;
+}
+.search_icon {
+    position: absolute;
+    top: 14px;
+    right: 36px;
 }

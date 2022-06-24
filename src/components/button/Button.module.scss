@@ -2,7 +2,7 @@
     width: 300px;
     height: 45px;
     background-color: #ffffff;
-    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+    //box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
     border-radius: 25px;
     font-weight: bold;
     // <<<<<<< HEAD
@@ -37,16 +37,42 @@
     background: linear-gradient(270deg, #3548F5 -37.7%, #F58747 134.43%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    // color: linear-gradient(270deg, #3548F5 -37.7%, #F58747 134.43%);
+    filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.2));
+    //filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.2));
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+     color: linear-gradient(270deg, #3548F5 -37.7%, #F58747 134.43%);
     //background-clip: text;
 }
+.button:active {
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+//.button:disabled {
+//    @extend %base;
+//    width: 300px;
+//    height: 45px;
+//    box-shadow: none;
+//    //background: linear-gradient(270deg, #3548F5 -37.7%, #F58747 134.43%);
+//    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+//    -webkit-background-clip: text;
+//    -webkit-text-fill-color: transparent;
+//    background: #FFFFFF;
+//    border-radius: 25px;
+//    //color: red;
+//    filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.2));
+//    color: linear-gradient(270deg, #3548F5 -37.7%, #F58747 134.43%);
+//
+//        filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.2));
+//
+//}
 
 .button {
     cursor: pointer;
     @extend %base;
     color: #ffffff;
     background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
-    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+    //box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
     // >>>>>>> dev-z
 }
 .base_button {

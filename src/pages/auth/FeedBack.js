@@ -5,7 +5,6 @@ import { useFormik } from "formik";
 import registerStyles from "../register/Registr.module.scss";
 import s from "./Auth.module.scss";
 import Button from "../../components/button/Button";
-import TextArea from "../../components/input/TextArea";
 
 const FeedBack = () => {
   const formik = useFormik({
@@ -23,8 +22,8 @@ const FeedBack = () => {
         <form onSubmit={formik.handleSubmit} className={registerStyles.form}>
           <p className="form_title">Обратная связь</p>
           <Input
-            placeholder="Введите Email"
-            valueLabel="Email"
+            placeholder="Введите почту"
+            valueLabel="Почта"
             // value={formik.values.name}
             onChange={formik.handleChange}
             name="email"

@@ -15,7 +15,7 @@ export const Main = () => {
       </div>
       <div className={s.content}>
         <Routes>
-          <Route path="/users/*" element={<UsersRoute />} />
+            <Route path="/users/*" element={<UsersRoute />} />
             <Route path="/events" element={<ChangeEvents />} />
             <Route path="/news/*" element={<News />} />
             <Route path="/clubs/*" element={<Clubs />} />
