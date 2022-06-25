@@ -3,7 +3,7 @@ import Button from "../button/Button";
 import { Modal } from "../modal/Modal";
 import s from "./Delete.module.scss";
 
-export const Delete = () => {
+export const Delete = ({text}) => {
   const [modalActive, setModalActive] = useState(false);
   const [state, setState] = useState(true)
   const toggle = () =>{
@@ -17,7 +17,7 @@ export const Delete = () => {
 
       <Modal active={modalActive} setActive={setModalActive} width="530px" height="265px">
         <div className={s.cont}>
-          <p>Вы уверены, что хотите удалить данное мероприятие?</p>
+          <p>{text}</p>
           <div className={s.flex}>
             <Button width="210px" text="ДА" disabled={state} onClick={toggle}/>
             <Button width="210px" text="НЕТ" onClick={() => setModalActive(false)}/>
