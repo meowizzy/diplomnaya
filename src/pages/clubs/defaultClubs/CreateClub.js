@@ -35,7 +35,7 @@ const CreateClub = () => {
                         <p className={s.plus}>+</p>
                     </div>
                 </div>
-                <Button onClick={handleOpenSuccessModal} disabled width="100%" text="СОЗДАТЬ"/>
+                <Button onClick={handleOpenSuccessModal} width="100%" text="СОЗДАТЬ"/>
             </div>
             {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно создали клуб!"/>}
         </>

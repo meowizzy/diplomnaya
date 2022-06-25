@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Input from "../../../components/input/Input";
-import { Modal } from "../../../components/modal/Modal";
 import { Pagination } from "../../../components/pagination/Pagination";
 import s from "./Registered.module.scss";
-import { UserInfo } from "./UserInfo";
 import { Link } from "react-router-dom";
+import {search_icon} from "../../../images";
 
 export const Registered = () => {
   return (
     <div className={s.table_content}>
       <div className={s.search}>
         <Input placeholder="Поиск" minWidth="100%" maxWidth="100%" />
+          <img className={s.search_icon} src={search_icon} alt="wrong"/>
       </div>
 
       <div className={s.title} style={{ fontWeight: "500" }}>

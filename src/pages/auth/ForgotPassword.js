@@ -24,8 +24,8 @@ const ForgotPassword = () => {
         <form onSubmit={formik.handleSubmit} className={registerStyles.form}>
           <p className="form_title">Забыли пароль?</p>
           <Input
-            placeholder="Введите Email"
-            valueLabel="Email"
+            placeholder="Введите почту"
+            valueLabel="Почта"
             value={formik.values.name}
             onChange={formik.handleChange}
             name="email"

@@ -1,11 +1,11 @@
 import React from 'react';
-import s from "../../users/registered/Registered.module.scss";
-import Input from "../../../components/input/Input";
+import s from "../../../users/registered/Registered.module.scss";
+import Input from "../../../../components/input/Input";
 import {Link} from "react-router-dom";
-import {Pagination} from "../../../components/pagination/Pagination";
-import {search_icon} from "../../../images";
+import {Pagination} from "../../../../components/pagination/Pagination";
+import {search_icon} from "../../../../images";
 
-const DefaultClubs = () => {
+const TrainerAllClubs = () => {
     return (
         <div>
             <div className={s.table_content}>
@@ -20,7 +20,7 @@ const DefaultClubs = () => {
                     <p>Адрес</p>
                     <p>Спортсмены</p>
                 </div>
-                <Link to="/main/clubs/clubDetails">
+                <Link to="/main/clubs/all_clubs/all_club_details">
                     <div className={s.title}>
                         <p className={s.first_p}>1</p>
                         <p>Золотой дракон</p>
@@ -35,4 +35,4 @@ const DefaultClubs = () => {
     );
 };
 
-export default DefaultClubs;
+export default TrainerAllClubs;

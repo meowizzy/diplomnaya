@@ -1,0 +1,55 @@
+.checkbox_circle {
+  position: absolute;
+  top: 11px;
+  left: 16px;
+}
+.checkbox_circle_wt_l {
+  position: absolute;
+  top: 11px;
+  left: 16px;
+}
+.format_gradient {
+  background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+  border-radius: 25px;
+  display: flex;
+  height: 45px;
+  margin-bottom: 20px;
+  padding: 2px;
+  width: 180px;
+  display: inline-block;
+  outline: none;
+}
+.format_text {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 25px;
+  padding-left: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding-top: 9px;
+  text-align: center;
+}
+.flex_format {
+  display: flex;
+  justify-content: space-between;
+  //padding-right: 10px;
+  flex: 6;
+  text-align: start;
+}
+.flex1 {
+  flex: 1;
+}
+.flex10 {
+  flex: 10;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  border-bottom: solid 1px #4254EC;
+  color: black;
+  padding: 0 10px
+}
