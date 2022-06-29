@@ -4,7 +4,7 @@ import "./Pagination.scss";
 
 export const Pagination = (props) => {
   const dispatch = useDispatch();
-  const pages = [1];
+  const pages = [1,2,3];
   const pagination = (next) => {
     dispatch(props.take(next));
   };

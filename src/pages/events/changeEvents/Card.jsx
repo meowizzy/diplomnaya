@@ -62,7 +62,7 @@ export const Card = ({ text }) => {
               <Button text="ИЗМЕНИТЬ ДАННЫЕ" margin="auto auto" />
             </span>
             <span className={ss.delete}>
-              <Delete />
+              <Delete text={"Вы уверены, что хотите удалить данное мероприятие?"}/>
             </span>
           </div>
         </div>
