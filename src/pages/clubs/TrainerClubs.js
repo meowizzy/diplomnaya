@@ -13,6 +13,7 @@ import MyClubsSportsmenDetails from "./trainerClubs/myClubs/MyClubsSportsmenDeta
 import EditMyClubsSportsmenDetails from "./trainerClubs/myClubs/EditMyClubsSportsmenDetails";
 import AllClubsSportsmenDetails from "./trainerClubs/allClubs/AllClubsSportsmenDetails";
 import SportsmenDetails from "./trainerClubs/clubSportsmen/SportsmenDetails";
+import CreateSportsman from "./trainerClubs/clubSportsmen/CreateSportsman";
 
 const TrainerClubs = () => {
     return (
@@ -35,6 +36,7 @@ const TrainerClubs = () => {
                     {/* sportsmen */}
                     <Route path="/sportsmen" element={<ClubsSportsmen />} />
                     <Route path="/sportsmen/sportsman_details" element={<SportsmenDetails />} />
+                    <Route path="/sportsmen/create" element={<CreateSportsman />} />
 
                     {/* statistics */}
                     <Route path="/statistics" element={<TrainerClubsStatistics />} />

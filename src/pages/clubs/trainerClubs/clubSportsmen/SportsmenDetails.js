@@ -18,7 +18,7 @@ const SportsmenDetails = () => {
             <Input valueLabel="Номер" width="600px" value="+996 000 123 456"/>
             <Input valueLabel="Адрес" width="600px" value="Солнечная система, млечный путь, планета Земля"/>
             <Input valueLabel="Средний балл ОФП" width="600px" value="4,5"/>
-            <label className={inputStyles.label}>Изображение</label>
+            <label className={inputStyles.label}>Медицинская справка</label>
             <div style={{width: "100%", height: "200px", position: "relative"}} className={inputStyles.gradient}>
                 <label className={`${inputStyles.input} ${s.label_img}`} htmlFor="image"></label>
                 <input id="image" className={s.img_input} type="file"/>
