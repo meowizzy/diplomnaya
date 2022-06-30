@@ -55,7 +55,7 @@ export const NavBar = () => {
         <div className={s.cont}>
           <NavLink to="/main/events" className={linkActiveClassName("events")}>Мероприятия</NavLink>
           <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
-          <NavLink to="/main/users/registered" className={linkActiveClassName('users')}>Заявки</NavLink>
+          <NavLink to="/main/applied/newApplied" className={linkActiveClassName('applied')}>Заявки</NavLink>
           <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
           <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Итоги</NavLink>
           <NavLink to="/main/statistics" className={linkActiveClassName('statistics')}>Статистика</NavLink>

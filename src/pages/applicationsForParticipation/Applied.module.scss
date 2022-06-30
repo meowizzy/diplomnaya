@@ -1,0 +1,17 @@
+.link_cont {
+    margin-bottom: 43px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.cont{
+    flex-basis: 1090px;
+    min-height: 815px;
+    box-shadow: 0px 0px 16px rgba(44, 44, 44, 0.15);
+    border-radius: 35px;
+    padding: 20px 10px;
+    position: relative;
+    // max-width: 1090px;
+}
