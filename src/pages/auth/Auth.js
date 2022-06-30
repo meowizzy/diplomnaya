@@ -7,6 +7,7 @@ import s from "./Auth.module.scss";
 import Button from "../../components/button/Button";
 import "../../styles/baseStyles.scss";
 import { Link } from "react-router-dom";
+import {useNavigate} from "react-router";
 
 const Auth = () => {
   const [open, setOpen] = useState(true);
@@ -19,6 +20,8 @@ const Auth = () => {
     setCheckbox(!checkbox);
   };
 
+  const navigate = useNavigate();
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -26,6 +29,7 @@ const Auth = () => {
     },
     onSubmit: (data) => {
       console.log(data);
+      navigate("/main/events")
     },
   });
   return (

@@ -4,7 +4,6 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    font-family: "Roboto";
     -moz-box-sizing: border-box; /* Для Firefox */
     box-sizing: border-box;
     font-size: 18px;
@@ -46,6 +45,13 @@
     font-size: 18px;
     line-height: 21px;
     text-align: center;
+}
+.sub_title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #2C2C2C;
 }
 
 //Меняет скролл
