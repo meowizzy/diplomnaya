@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Button from '../../components/button/Button';
 import s from "./NotRegistered.module.scss"
 import { Protocol } from './Protocol'
+import { Role } from './role';
 
 
 export const NotRegistered = () => {
@@ -15,6 +16,7 @@ export const NotRegistered = () => {
           </Link>
         </div>
       </header>
+      <Role />
       <Protocol />
       <Protocol />
       <footer className={s.footer}>

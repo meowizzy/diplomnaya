@@ -8,6 +8,7 @@ import {News} from "./news/News";
 import Clubs from "./clubs/Clubs";
 import { Profile } from "./profile/Profile";
 import Documentation from "./documentation/Documentation";
+import { AppliedRoutes } from "./applicationsForParticipation/AppliedRoutes";
 
 export const Main = () => {
   return (
@@ -23,6 +24,7 @@ export const Main = () => {
             <Route path="/clubs/*" element={<Clubs />} />
             <Route path="/profile/*" element={<Profile />} />
             <Route path="/documentation/*" element={<Documentation />} />
+            <Route path="/applied/*" element={<AppliedRoutes />} />
         </Routes>
       </div>
     </div>

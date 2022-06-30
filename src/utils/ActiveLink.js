@@ -1,4 +1,4 @@
-export const linkActiveClassName = (location,navLink, parent_link_order, default_classname, active_classname) => {
+export const linkActiveClassName = (location, navLink, parent_link_order, default_classname, active_classname) => {
     const currentParentPath = location.pathname.split("/")[parent_link_order];
     const isParentLinkActive = currentParentPath === navLink;
 
