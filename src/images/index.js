@@ -14,6 +14,9 @@ import full_auth_checkbox from "./full_auth_checkbox.svg"
 import download from "./download.svg"
 import grey_circle_checkbox from "./grey_circle_checkbox.svg"
 import gradient_circle_checkbox from "./gradient_circle_checkbox.svg"
+import plus from "./plus.svg"
+import minus from "./minus.svg"
+
 
 export {
     open_eye,
@@ -32,4 +35,6 @@ export {
     download,
     grey_circle_checkbox,
     gradient_circle_checkbox,
+    plus,
+    minus,
 }
