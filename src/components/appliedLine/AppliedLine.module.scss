@@ -1,79 +1,31 @@
-.title {
+.table_title{
     display: flex;
-    // justify-content: center;
-    align-items: center;
+    max-width: 100%;
+    // padding: 10px 0 0 0px;
     height: 50px;
     border-bottom: solid 1px #4254EC;
     color: black;
-    .first_p {
-        text-align: center;
-        flex: 50px;
-        min-width: 50px;
-        max-width: 50px;
-        padding: 16px;
-    }
-
-    p {
-        max-width: 400px;
-        flex: 400px;
-        padding:0px 0 0 10px;
-    }
-
-    .last_p {
-        max-width: 100%;
-        overflow: auto;
-    }
-
-}
-
-.clicked {
-    background-color: #F3F3FF;
-}
-.top_blank{
-    align-items: center;
-    text-align: center;
-    margin-bottom: 70px;
-    .blank_title {
-        font-size: 22px;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-    
-    .p_medium {
-        font-weight: 500;
-        margin-bottom: 20px;
-    }
-    .applied_number{
-        margin-bottom: 70px;
-    }
-}
-.content_table{
-    max-width: 1090px;
-}
-.table_title{
-    display: flex;
-    // padding: 10px 0 0 0px;
-    height: 100px;
-    border-bottom: solid 1px #4254EC;
-    color: black;
     border-top:solid 0.5px #4254EC;
+    input{
+        border: none;
+    }
     .first_p{
         text-align: center;
         flex: 50px;
-        padding-top: 10px;
+        // padding-top: 10px;
         min-width: 50px;
         max-width: 50px;
         // padding: 16px;
     }
     .three_hundred_fifty{
-        padding:10px 0 0 10px;
+        padding:0px 0 0 10px;
         flex: 350px;
         min-width: 350px;
         // max-width: 350px;
         border-left: solid 0.5px #4254EC;
     }
     .hundred_fifty{
-        padding:10px 0 0 10px;
+        padding:0px 0 0 10px;
         flex: 150px;
         min-width: 150px;
         // max-width: 350px;
@@ -81,7 +33,7 @@
 
     }
     .two_hundred_fifty{
-        padding:10px 0 0 10px;
+        padding:0px 0 0 10px;
         flex: 250px;
         min-width: 250px;
         border-left: solid 0.5px #4254EC;
@@ -115,20 +67,19 @@
         .under{
             display: flex;
             flex-direction: row;
-            height: 50px;
-            border-top:solid 1px #4254EC ;
+            height: 45px;
             .under_first{
                 min-width: 250px;
                 padding-left: 10px;
                 align-items: center;
-                display: flex;
+                // display: flex;
                 border-right:solid 1px #4254EC ;
             }
             .under_second{
                 padding-left: 10px;
                 min-width: 250px;
                 align-items: center;
-                display: flex;
+                // display: flex;
             }
         }
     }

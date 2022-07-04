@@ -1,11 +1,12 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import s from "./ArrowButton.module.scss";
 
-const ForwardButton = ({ type, disabled, onClick }) => {
+const ForwardButton = ({ onClick, to="" }) => {
   return (
-    <button disabled={disabled} className={s.button} type={type} onClick={onClick}>
+    <NavLink to={to}className={s.button} onClick={onClick}>
       <div className={s.img}></div>
-    </button>
+    </NavLink>
   );
 };
 
