@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const NewApplied = () => {
+export const SubmittedApplications = () => {
   return (
     <div>
-        
+        dsa
     </div>
   )
 }
