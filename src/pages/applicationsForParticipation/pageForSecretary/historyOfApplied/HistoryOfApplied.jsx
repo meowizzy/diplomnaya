@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Pagination } from '../../../../components/pagination/Pagination'
-import ss from '../../Applied.module.scss'
+import ss from '../../pageForSecretary/Applied.module.scss'
 import s from '../newApplied/NewApplied.module.scss'
 
 export const HistoryOfApplied = () => {

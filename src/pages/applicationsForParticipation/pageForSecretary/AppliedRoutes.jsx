@@ -1,15 +1,15 @@
 import React from "react";
 import { Route, Routes, useLocation } from "react-router";
 import { Link, NavLink } from "react-router-dom";
-import Button from "../../components/button/Button";
-import { linkActiveClassName } from "../../utils/ActiveLink";
-import { HistoryOfApplied } from "./pageForSecretary/historyOfApplied/HistoryOfApplied";
-import { DetailedInfoForNewApplied } from "./pageForSecretary/newApplied/DetailedInfoForNewApplied";
-import { NewApplied } from "./pageForSecretary/newApplied/NewApplied";
 import s from "./Applied.module.scss"
-import { DetailedInfoForHistoryOfApplied } from "./pageForSecretary/historyOfApplied/DetailedInfoForHistoryOfApplied";
-import { AppliedTemplate } from "./pageForSecretary/appliedTemplate/AppliedTemplate";
-import { SendTemplate } from "./pageForSecretary/sendTemplate/SendTemplate";
+import Button from "../../../components/button/Button";
+import { NewApplied } from "./newApplied/NewApplied";
+import { DetailedInfoForNewApplied } from "./newApplied/DetailedInfoForNewApplied";
+import { HistoryOfApplied } from "./historyOfApplied/HistoryOfApplied";
+import { DetailedInfoForHistoryOfApplied } from "./historyOfApplied/DetailedInfoForHistoryOfApplied";
+import { SendTemplate } from "./sendTemplate/SendTemplate";
+import { linkActiveClassName } from "../../../utils/ActiveLink";
+import { AppliedTemplate } from "./appliedTemplate/AppliedTemplate";
 
 
 export const AppliedRoutes = () => {

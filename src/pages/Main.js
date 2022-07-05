@@ -8,8 +8,9 @@ import {News} from "./news/News";
 import Clubs from "./clubs/Clubs";
 import { Profile } from "./profile/Profile";
 import Documentation from "./documentation/Documentation";
-import { AppliedRoutes } from "./applicationsForParticipation/AppliedRoutes";
 import Output from "./output/Output";
+import { AppliedRoutes } from "./applicationsForParticipation/pageForSecretary/AppliedRoutes";
+import { Application } from "./applicationsForParticipation/pageForTrainer/Application";
 
 export const Main = () => {
   return (
@@ -26,6 +27,7 @@ export const Main = () => {
             <Route path="/profile/*" element={<Profile />} />
             <Route path="/documentation/*" element={<Documentation />} />
             <Route path="/applied/*" element={<AppliedRoutes />} />
+            <Route path="/application/*" element={<Application />} />
             <Route path="/output/*" element={<Output />} />
         </Routes>
       </div>
