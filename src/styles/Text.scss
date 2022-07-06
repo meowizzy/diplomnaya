@@ -58,10 +58,13 @@
 //Меняет скролл
 ::-webkit-scrollbar {
     width: 1.5px;
+    height: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: gray;
+    background-color: #D7DAFD;
+    margin-top: 10px;
+    border-radius: 35px;
 }
 
 //Выключает фокус на бордерах при нажатии
