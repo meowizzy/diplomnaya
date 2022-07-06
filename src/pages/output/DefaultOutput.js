@@ -18,14 +18,14 @@ const DefaultOutput = () => {
                     <p className={ss.flex1}>№</p>
                     <p className={ss.flex10}>Соревнования</p>
                     <p className={ss.flex10}>Подгруппа</p>
-                    <p className={ss.flex10}>Кол-во спортсменов</p>
+                    <p className={ss.flex5}>Кол-во спортсменов</p>
                 </div>
                 <Link to="/main/output/all_output/details">
                     <div className={ss.title}>
                         <p className={ss.flex1}>1</p>
                         <p className={ss.flex10}>Чемпионат Кыргызстана по ушу</p>
                         <p className={ss.flex10}>Мальчики 10-12 лет Цюань шу 37 ф</p>
-                        <p className={ss.flex10}>6</p>
+                        <p className={ss.flex5}>6</p>
                     </div>
                 </Link>
                 <Pagination/>
