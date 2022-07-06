@@ -8,8 +8,8 @@ import {News} from "./news/News";
 import Clubs from "./clubs/Clubs";
 import { Profile } from "./profile/Profile";
 import Documentation from "./documentation/Documentation";
-import { AppliedRoutes } from "./applicationsForParticipation/AppliedRoutes";
 import Output from "./output/Output";
+import {AppliedRoutes} from "./applicationsForParticipation/pageForSecretary/AppliedRoutes";
 
 export const Main = () => {
   return (
