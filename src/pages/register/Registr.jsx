@@ -1,24 +1,28 @@
 import { useFormik } from "formik";
 import React, { useCallback, useState } from "react";
+import { useDispatch } from "react-redux";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
+import { postRegister } from "../../redux/slices/registerSlice";
 import s from "./Registr.module.scss";
 
 export const Registr = () => {
+  const dispatch = useDispatch()
   const formik = useFormik({
     initialValues: {
       name: "",
       surname: "",
-      position: "",
+      role: "",
       email: "",
       number: "",
       password: "",
       secondPassword: "",
-      club: "",
+      club: undefined,
       city: "",
+      referral_code:"",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      dispatch(postRegister(values))
     },
   });
 
@@ -65,9 +69,9 @@ export const Registr = () => {
         <Input
           placeholder="Введите должность"
           valueLabel="Должность"
-          value={formik.values.position}
+          value={formik.values.role}
           onChange={formik.handleChange}
-          name="position"
+          name="role"
         />
         <Input
           placeholder="Введите почту"
@@ -163,7 +167,7 @@ export const Registr = () => {
               formik.values.surname &&
               formik.values.number &&
               formik.values.city &&
-              formik.values.club &&
+              // formik.values.club &&
               formik.values.secondPassword
             )
           }
