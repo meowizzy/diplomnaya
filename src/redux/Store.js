@@ -1,5 +1,4 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import * as reducers from './';
 import reducer from "./slices/authSlice";
 
 // const middleware = getDefaultMiddleware({

@@ -20,7 +20,8 @@ const NewsCard = ({openOption, handleOpenOption, handleOpenDeleteModal}) => {
                     <img className={s.card__img} src={news_img1} alt="wrong" />
                     <p className={s.card__title}>В номинации “Первое место” </p>
                     <p className={s.card__date}>17.04.2022г.</p>
-                    <div className={s.next_button} onClick={handleOpen}><ForwardButton/></div>
+                    <ForwardButton className={s.next_button} onClick={handleOpen}/>
+                    {/*<div><ForwardButton/></div>*/}
                 </div>) : (<div style={{marginBottom: 54}} className={s.cards}>
                     <div style={{background: `url(${news_img1}) no-repeat`}} className={`${s.card} ${s.card_top}`}>
                         <BackButton onClick={handleOpen}/>
