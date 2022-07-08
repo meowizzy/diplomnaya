@@ -5,15 +5,18 @@ import { useFormik } from "formik";
 import registerStyles from "../register/Registr.module.scss";
 import s from "./Auth.module.scss";
 import Button from "../../components/button/Button";
+import {feedBack} from "../../redux/fetchFunctions";
 
 const FeedBack = () => {
   const formik = useFormik({
     initialValues: {
       email: "",
+      phone: "string",
       text: "",
     },
     onSubmit: (data) => {
       console.log(data);
+      feedBack(data);
     },
   });
   return (

@@ -8,7 +8,7 @@ import Button from "../../components/button/Button";
 import "../../styles/baseStyles.scss";
 import { Link } from "react-router-dom";
 import {useNavigate} from "react-router";
-import {requests} from "../../redux/api";
+import {auth} from "../../redux/fetchFunctions";
 
 const Auth = () => {
   const [open, setOpen] = useState(true);
@@ -30,8 +30,8 @@ const Auth = () => {
     },
     onSubmit: (data) => {
       console.log(data);
-      navigate("/main/events")
-      requests.auth(data).then((response) => {console.log(response)})
+      navigate("/main/events");
+      auth(data)
     },
   });
   return (
