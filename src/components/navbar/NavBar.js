@@ -20,7 +20,7 @@ export const NavBar = () => {
     <>
       {role==="admin"&& 
       <div className={s.cont}>
-        <NavLink to="/main/events" className={linkActiveClassName("events")}>Мероприятия</NavLink>
+        <NavLink to="/main/defaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
         <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
         <NavLink to="/main/users/registered" className={linkActiveClassName('users')}>Пользователи</NavLink>
         <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
@@ -36,9 +36,9 @@ export const NavBar = () => {
 
      {role==="trainer"&& 
       <div className={s.cont}>
-        <NavLink to="/main/events" className={linkActiveClassName("events")}>Мероприятия</NavLink>
+        <NavLink to="/main/defaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
         <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
-        <NavLink to="/main/application/SubmittedApplications" className={linkActiveClassName('applied')}>Заявки</NavLink>
+        <NavLink to="/main/application/submittedApplications" className={linkActiveClassName('application')}>Заявки</NavLink>
         <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
         <NavLink to="/main/output/all_output" className={linkActiveClassName('output')}>Итоги</NavLink>
         <NavLink to="/main/clubs/all_clubs" className={linkActiveClassName('clubs')}>Клубы</NavLink>
@@ -69,7 +69,7 @@ export const NavBar = () => {
 
       {role==="referee"&& 
         <div className={s.cont}>
-          <NavLink to="/main/events" className={linkActiveClassName("events")}>Мероприятия</NavLink>
+          <NavLink to="/main/defaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
           <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
           <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
           <NavLink to="/main/statistics" className={linkActiveClassName('statistics')}>Статистика</NavLink>

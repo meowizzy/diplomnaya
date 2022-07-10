@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../button/Button";
+import ButtonForActiveChanges from "../buttonForActiveChanges/ButtonForActiveChanges";
 import { Modal } from "../modal/Modal";
 import s from "./Delete.module.scss";
 
@@ -19,8 +20,8 @@ export const Delete = ({text}) => {
         <div className={s.cont}>
           <p>{text}</p>
           <div className={s.flex}>
-            <Button width="210px" text="ДА" disabled={state} onClick={toggle}/>
-            <Button width="210px" text="НЕТ" onClick={() => setModalActive(false)}/>
+            <ButtonForActiveChanges classname="button" width="210px" text="ДА" disabled={state} onClick={toggle}/>
+            <ButtonForActiveChanges classname="button" width="210px" text="НЕТ" onClick={() => setModalActive(false)}/>
           </div>
         </div>
       </Modal>
