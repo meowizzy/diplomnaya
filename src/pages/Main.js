@@ -10,6 +10,7 @@ import { Profile } from "./profile/Profile";
 import Documentation from "./documentation/Documentation";
 import Output from "./output/Output";
 import {AppliedRoutes} from "./applicationsForParticipation/pageForSecretary/AppliedRoutes";
+import Protocol from "./protocol/Protocol";
 
 export const Main = () => {
   return (
@@ -27,6 +28,7 @@ export const Main = () => {
             <Route path="/documentation/*" element={<Documentation />} />
             <Route path="/applied/*" element={<AppliedRoutes />} />
             <Route path="/output/*" element={<Output />} />
+            <Route path="/protocol/*" element={<Protocol />} />
         </Routes>
       </div>
     </div>
