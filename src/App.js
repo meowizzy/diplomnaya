@@ -2,8 +2,8 @@ import { Registr } from "./pages/register/Registr";
 import "./App.scss";
 import { Route, Routes } from "react-router";
 import { NotRegistered } from "./pages/notRegistered/NotRegistered";
-import { Main } from "./pages/Main";
 import { Routing } from "./pages/auth/Routing";
+import {Main} from "./pages/Main";
 
 function App() {
   return (

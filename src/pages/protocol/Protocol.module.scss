@@ -1,0 +1,98 @@
+.arena_place {
+  width: 33.3%;
+  height: 50%;
+  //width: 33.3%;
+
+  background: #F3F3FF;
+  text-align: start;
+  border: 0.5px solid #3548F5;
+  padding: 20px;
+}
+.arena {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  background: #f3f3ff;
+  padding: 0;
+}
+.wrapper2 {
+  background: #FDFDFF;
+  border-radius: 35px;
+  margin: 0 auto;
+  font-weight: normal;
+  padding: 50px 0 0 0;
+}
+.description2 {
+  padding-left: 50px;
+}
+.description3 {
+  padding-left: 70px;
+}
+.header2 {
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+  line-height: 28px;
+  text-align: center;
+  font-style: normal;
+}
+.referee_cont {
+  text-align: center;
+  margin-top: 40px;
+  position: relative;
+}
+
+.arena_cont {
+  margin: 0 auto;
+  width: 990px;
+}
+
+.arena_buttons {
+  position: relative;
+  width: 300px;
+  height: 50px;
+}
+
+.button_cont {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  width: 460px;
+  margin: 0 auto;
+}
+
+//.cont_wrapper {
+//  max-width: 1440px;
+//  width: 100%;
+//  margin: 0 auto;
+//  .header{
+//    max-width: 1000px;
+//    width: 90%;
+//    margin: 0 auto;
+//  }
+//  .button {
+//    text-align: right;
+//  }
+//
+//  .footer {
+//    margin-bottom: 120px;
+//    p {
+//      font-weight: bold;
+//      font-size: 26px;
+//      text-align: center;
+//    }
+//  }
+//}
+//
+//.arena_place:first-child {
+//  border-left-style: solid;
+//  border-top-left-radius: 35px;
+//  border-bottom-left-radius: 35px;
+//}
+//
+//.arena_place:last-child {
+//  border-right-style: solid;
+//  border-bottom-right-radius: 35px;
+//  border-top-right-radius: 35px;
+//}

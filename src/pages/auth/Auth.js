@@ -23,6 +23,13 @@ const Auth = () => {
 
   const navigate = useNavigate();
 
+  const queryParams = new URLSearchParams(window.location.search);
+  const id = queryParams.get('token');
+  const name = queryParams.get('name');
+  const type = queryParams.get('type');
+  console.log(id, name, type);
+  // console.log(queryParams.getAll());
+
   const formik = useFormik({
     initialValues: {
       email: "",
