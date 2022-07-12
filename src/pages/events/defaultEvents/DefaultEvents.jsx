@@ -28,7 +28,7 @@ export const DefaultEvents = () => {
           <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
           <p>Информация о мероприятии</p>
           <div className={s.arrow_button}>
-            <ForwardButton />
+            <ForwardButton to=""/>
           </div>
         </div>
         <DefaultCard />

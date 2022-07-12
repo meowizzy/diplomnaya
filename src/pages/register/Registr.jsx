@@ -1,24 +1,43 @@
 import { useFormik } from "formik";
 import React, { useCallback, useState } from "react";
+import { useDispatch } from "react-redux";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
+import { postRegister } from "../../redux/slices/registerSlice";
 import s from "./Registr.module.scss";
 
 export const Registr = () => {
+  const [roles, setRoles] = useState(false)
+  const clickRoles = () =>{
+    setRoles(!roles)
+  }
+  const [role, setRole] = useState("")
+  const clickAdmin = () => {
+    setRole('Админ')
+  }
+  const clickTrainer = () => {
+    setRole('Тренер')
+  }
+
+  const [club, setClub] = useState(false)
+  const clickClub = () =>{
+    setClub(!club)
+  }
+   const dispatch = useDispatch()
   const formik = useFormik({
     initialValues: {
       name: "",
       surname: "",
-      position: "",
       email: "",
       number: "",
       password: "",
       secondPassword: "",
-      club: "",
       city: "",
+      referral_code:"",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      console.log(values)
+      dispatch(postRegister(values))
     },
   });
 
@@ -33,6 +52,8 @@ export const Registr = () => {
   const foggle = () => {
     setSecondOpen(!secondOpen);
   };
+
+  
 
   return (
     <div className={s.cont}>
@@ -62,13 +83,75 @@ export const Registr = () => {
           onChange={formik.handleChange}
           name="surname"
         />
-        <Input
-          placeholder="Введите должность"
-          valueLabel="Должность"
-          value={formik.values.position}
-          onChange={formik.handleChange}
-          name="position"
-        />
+        <div style={{ position: "relative" }}>
+          {roles === false ? (
+            <>
+              <Input
+                placeholder="Введите должность"
+                valueLabel="Должность"
+                value={role}
+                onChange={formik.handleChange}
+                name="role"
+              />
+              <div className={s.list_img} onClick={clickRoles}></div>
+            </>
+          ) : (
+            <>
+              <Input
+                placeholder="Введите должность"
+                valueLabel="Должность"
+                value={role}
+                name="role"
+                margin="0 0 4px"
+              />
+              <span className={s.list_img} onClick={clickRoles}></span>
+              <div className={s.list}>
+                <label className={s.label}>
+                  {role === "Админ" ? (
+                    <p
+                      onClick={clickAdmin}
+                      style={{ backgroundColor: "#F3F3FF" }}
+                    >
+                      Админ
+                    </p>
+                  ) : (
+                    <p
+                      onClick={clickAdmin}
+                    >
+                      Админ
+                    </p>
+                  )}
+                  <input
+                    type="radio"
+                    value="1"
+                    onChange={formik.handleChange}
+                    name="role"
+                    className={s.radio}
+                  />
+                </label>
+                <label className={s.label}>
+                {role === "Тренер" ? (
+                    <p onClick={clickTrainer}
+                       style={{ backgroundColor: "#F3F3FF" }}>
+                       Тренер
+                    </p>
+                  ) : (
+                    <p onClick={clickTrainer}>
+                      Тренер
+                    </p>
+                  )}
+                  <input
+                    type="radio"
+                    value="2"
+                    onChange={formik.handleChange}
+                    name="role"
+                    className={s.radio}
+                  />
+                </label>
+              </div>
+            </>
+          )}
+        </div>
         <Input
           placeholder="Введите почту"
           valueLabel="Почта"
@@ -138,13 +221,53 @@ export const Registr = () => {
             />
           )}
         </div>
-        <Input
-          placeholder="Название клуба"
-          valueLabel="Клуб"
-          value={formik.values.club}
-          onChange={formik.handleChange}
-          name="club"
-        />
+
+        <div style={{ position: "relative" }}>
+          {club === false ? (
+            <>
+              <Input
+                placeholder="Название клуба"
+                valueLabel="Клуб"
+                value={formik.values.club}
+                name="club"
+              />
+              <div className={s.list_img} onClick={clickClub}></div>
+            </>
+          ) : (
+            <>
+              <Input
+                placeholder="Название клуба"
+                valueLabel="Клуб"
+                value={formik.values.club}
+                name="club"
+                margin="0 0 4px"
+              />
+              <span className={s.list_img} onClick={clickClub}></span>
+              <div className={s.list}>
+                <label className={s.label}>
+                  <p onClick={clickAdmin}>Золотой дракон</p>
+                  <input
+                    type="radio"
+                    value="Золотой дракон"
+                    onChange={formik.handleChange}
+                    name="club"
+                    className={s.radio}
+                  />
+                </label>
+                <label className={s.label}>
+                  <p onClick={clickTrainer}>Панда</p>
+                  <input
+                    type="radio"
+                    value="Панда"
+                    onChange={formik.handleChange}
+                    name="club"
+                    className={s.radio}
+                  />
+                </label>
+              </div>
+            </>
+          )}
+        </div>
         <Input
           placeholder="Введите страну и город"
           valueLabel="Страна"
@@ -163,7 +286,7 @@ export const Registr = () => {
               formik.values.surname &&
               formik.values.number &&
               formik.values.city &&
-              formik.values.club &&
+              // formik.values.club &&
               formik.values.secondPassword
             )
           }

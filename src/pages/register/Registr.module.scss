@@ -29,3 +29,33 @@
     top:30px;
     right: 15px;
 }
+.list{
+    display: flex;
+    flex-direction: column;
+    p{
+        width: 300px;
+        height: 45px;
+        // background-color: #F3F3FF;
+        border-radius: 25px;
+        padding-left: 20px;
+        padding-top: 12px;
+        cursor: pointer;
+        margin-bottom: 4px;
+    }
+}
+.list_img{
+    background-image: url(./list_img.svg);
+    width: 17px;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top:40px;
+    right: 22px;
+    cursor: pointer;
+}
+.label{
+    .radio{
+        display: none;
+    }
+}
