@@ -12,11 +12,10 @@ const EditClub = () => {
     const handleOpenSuccessModal = () => setOpenSuccessModal(true);
     const handleCloseSuccessModal = () => setOpenSuccessModal(false);
 
-    const navigate = useNavigate()
     return (
         <>
             <div className={s.form_cont}>
-                <BackButton onClick={() => navigate("/main/clubs/clubDetails")}/>
+                <BackButton to="/main/clubs/clubDetails"/>
                 <p className="container_title">Информация о клубе</p>
                 <Input valueLabel="Клуб" width="100%" value="Золотой дракон"/>
                 <Input valueLabel="Адрес" width="100%" value="Бишкек, 7 микр. 20 школа"/>

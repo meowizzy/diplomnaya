@@ -22,7 +22,7 @@
 }
 .register_text:active {
     background: #FFFFFF;
-    box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
     border-radius: 35px;
     width: 300px;
     padding: 13px;
@@ -67,6 +67,7 @@
 }
 .checkbox_text {
     display: flex;
+    font-weight: bold;
     gap: 34px;
 }
 .checkbox_text:before {
@@ -75,6 +76,7 @@
 .full_checkbox_text {
     display: flex;
     gap: 34px;
+    font-weight: bold;
 }
 .full_checkbox_text:before {
     content: url("../../images/full_auth_checkbox.svg");

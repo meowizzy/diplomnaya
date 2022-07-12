@@ -9,18 +9,18 @@ const TrainerMyClubs = () => {
             <div className={s.table_content}>
                 <div className={s.title} style={{ fontWeight: "500" }}>
                     <p className={s.first_p}>№</p>
-                    <p>Название клуба</p>
-                    <p>Тренер</p>
-                    <p>Адрес</p>
-                    <p>Спортсмены</p>
+                    <p style={{flex: 7}}>Название клуба</p>
+                    <p style={{flex: 7}}>Тренер</p>
+                    <p style={{flex: 9}}>Адрес</p>
+                    <p style={{flex: 5}}>Спортсмены</p>
                 </div>
                 <Link to="/main/clubs/my_clubs/my_clubs_details/list_sportsmen">
                     <div className={s.title}>
                         <p className={s.first_p}>1</p>
-                        <p>Золотой дракон</p>
-                        <p>Александр Сергеевич</p>
-                        <p>Бишкек, 7 микр. 20 школа</p>
-                        <p>16 человек</p>
+                        <p style={{flex: 7}}>Золотой дракон</p>
+                        <p style={{flex: 7}}>Александр Сергеевич</p>
+                        <p style={{flex: 9}}>Бишкек, 7 микр. 20 школа</p>
+                        <p style={{flex: 5}}>16 человек</p>
                     </div>
                 </Link>
                 <Pagination/>

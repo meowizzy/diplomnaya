@@ -11,8 +11,6 @@ import DeleteModal from "../../../../components/modals/DeleteModal";
 
 const MyClubsSportsmenDetails = () => {
 
-    const navigate = useNavigate()
-
     const [openOption, setOpenOption] = useState(false);
     const handleOpenOption = () => {setOpenOption(!openOption)}
 
@@ -23,10 +21,10 @@ const MyClubsSportsmenDetails = () => {
     return (
         <>
             <div className={dfClubsStyles.form_cont}>
-                <BackButton onClick={() => navigate("/main/clubs/my_clubs/my_clubs_details/list_sportsmen")}/>
+                <BackButton to="/main/clubs/my_clubs/my_clubs_details/list_sportsmen"/>
                 <p className="container_title">Информация о спортсмене</p>
                 <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
-                {openOption && <Options link="/main/clubs/my_clubs/my_clubs_details/list_sportsmen/sportsman_details/edit_details" handleOpenDeleteModal={handleOpenDeleteModal}/>}
+                {openOption && <Options link="/main/clubs/my_clubs/my_clubs_details/sportsman_details/edit_details" handleOpenDeleteModal={handleOpenDeleteModal}/>}
                 <Input valueLabel="ФИО" width="600px" value="Стёпка Киборг Убийца "/>
                 <Input valueLabel="Дата рождения" width="600px" value="20.02.2002 г."/>
                 <Input valueLabel="Номер" width="600px" value="+996 000 123 456"/>
@@ -64,7 +62,7 @@ const MyClubsSportsmenDetails = () => {
                     <Input valueLabel="Баллы" width="285px" value="10"/>
                 </div>
             </div>
-            { openDeleteModal && <DeleteModal text="Вы уверены, что хотите удалить данный клуб?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
+            { openDeleteModal && <DeleteModal text="Вы уверены, что хотите удалить данного спортсмена?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
         </>
 
     );

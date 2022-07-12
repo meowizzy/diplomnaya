@@ -12,11 +12,10 @@ const CreateClub = () => {
     const handleOpenSuccessModal = () => setOpenSuccessModal(true);
     const handleCloseSuccessModal = () => setOpenSuccessModal(false);
 
-    const navigate = useNavigate()
     return (
         <>
             <div className={s.form_cont}>
-                <BackButton onClick={() => navigate("/main/clubs")}/>
+                <BackButton to="/main/clubs/all_clubs" />
                 <p className="container_title">Создать клуб</p>
                 <Input valueLabel="Клуб" width="100%" placeholder="Название клуба"/>
                 <Input valueLabel="Адрес" width="100%" placeholder="Адрес клуба"/>

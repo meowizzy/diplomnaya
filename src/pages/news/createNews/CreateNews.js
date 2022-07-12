@@ -12,8 +12,6 @@ import SuccessModal from "../../../components/modals/SuccessModal";
 import BackButton from "../../../components/arrowButton/BackButton";
 
 const CreateNews = () => {
-    // const classname = classNames()
-    const navigate = useNavigate()
 
     const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
     const handleOpenSuccessModal = () => setOpenSuccessModal(true);
@@ -37,7 +35,7 @@ const CreateNews = () => {
             <div>
                 <NewsTab/>
                 <div className="container container_data_flexed">
-                        <BackButton onClick={ () => navigate("/main/news")} rotate="rotate(180deg)" />
+                        <BackButton to="/main/news/all_news" rotate="rotate(180deg)" />
 
                     <form onSubmit={formik.handleSubmit} style={{width: 600}}>
                         <h2 className="container_title">Создание новости</h2>
@@ -56,7 +54,7 @@ const CreateNews = () => {
                             <p className="basic_text">Отправить всем?</p>
                             <img src={checkbox_icon_turned_on} alt="wrong"/>
                         </div>
-                        <Button disabled={!(formik.values.date && formik.values.title && formik.values.text && formik.values.more)} type="submit" width="100%" margin="70px 0px 0px" text="СОХРАНИТЬ"/>
+                        <Button disabled={!(formik.values.date && formik.values.title && formik.values.text && formik.values.more)} type="submit" width="100%" margin="70px 0px 0px" text="СОЗДАТЬ"/>
                     </form>
                 </div>
             </div>

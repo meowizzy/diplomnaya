@@ -5,12 +5,12 @@ import { ChangeEvents } from "./events/changeEvents/ChangeEvents";
 import s from "./Main.module.scss";
 import { UsersRoute } from "./users/UsersRoute";
 import {News} from "./news/News";
-import Clubs from "./clubs/Clubs";
 import { Profile } from "./profile/Profile";
 import Documentation from "./documentation/Documentation";
 import Output from "./output/Output";
 import {AppliedRoutes} from "./applicationsForParticipation/pageForSecretary/AppliedRoutes";
 import Protocol from "./protocol/Protocol";
+import Clubs from "./clubs/Clubs";
 
 export const Main = () => {
   return (

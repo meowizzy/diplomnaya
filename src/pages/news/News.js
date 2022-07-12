@@ -7,8 +7,10 @@ import CreateNews from "./createNews/CreateNews";
 export const News = () => {
     return (
         <Routes>
-            <Route path="/*" element={<DefaultNews/>}/>
-            <Route path="/edit_news" element={<EditNews/>}/>
+            <Route path="/all_news" element={<DefaultNews/>}/>
+            <Route path="/2022_news" element={<DefaultNews/>}/>
+            <Route path="/2021_news" element={<DefaultNews/>}/>
+            <Route path="/all_news/edit_new" element={<EditNews/>}/>
             <Route path="/create_news" element={<CreateNews/>}/>
         </Routes>
     )

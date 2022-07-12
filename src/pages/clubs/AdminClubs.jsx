@@ -7,13 +7,13 @@ import ClubDetails from "./defaultClubs/ClubDetails";
 import CreateClub from "./defaultClubs/CreateClub";
 import EditClub from "./defaultClubs/EditClub";
 
-const Clubs = () => {
+const AdminClubs = () => {
     return (
         <div>
             <ClubsTab/>
             <div className={s.cont}>
                 <Routes>
-                    <Route path="/*" element={<DefaultClubs />} />
+                    <Route path="/all_clubs" element={<DefaultClubs />} />
                     <Route path="/clubDetails" element={<ClubDetails />} />
                     <Route path="/createClub" element={<CreateClub />} />
                     <Route path="/editClub" element={<EditClub />} />
@@ -23,4 +23,4 @@ const Clubs = () => {
     );
 };
 
-export default Clubs;
+export default AdminClubs;

@@ -1,22 +1,14 @@
 import React from 'react';
 import Input from "../../../components/input/Input";
 import s from "./EditNews.module.scss"
-import Button from "../../../components/button/Button";
-// import ArrowButton from "../../../components/arrowButton/ArrowButton";
 import inputStyles from "../../../components/input/Input.module.scss";
-import classNames from "classnames";
 import {useFormik} from "formik";
-import {useNavigate} from "react-router";
-import {News} from "../News";
 import NewsTab from "../defaultNews/NewsTab";
 import SuccessModal from "../../../components/modals/SuccessModal";
-import ForwardButton from "../../../components/arrowButton/ForwardButton";
 import BackButton from "../../../components/arrowButton/BackButton";
 import ButtonForActiveChanges from "../../../components/buttonForActiveChanges/ButtonForActiveChanges";
 
 const EditNews = () => {
-    // const classname = classNames()
-    const navigate = useNavigate()
 
     const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
     const handleOpenSuccessModal = () => setOpenSuccessModal(true);
@@ -35,7 +27,7 @@ const EditNews = () => {
                 <NewsTab/>
                 <div className="container container_data_flexed">
                     {/*<divclassName={s.prev_button}>*/}
-                        <BackButton onClick={ () => navigate("/main/news")}  rotate="rotate(180deg)" />
+                        <BackButton to="/main/news/all_news"  rotate="rotate(180deg)" />
 
                     <form onSubmit={formik.handleSubmit} style={{width: 600}}>
                         <h2 className="container_title">Новости</h2>

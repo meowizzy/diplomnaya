@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import {Pagination} from "../../../../components/pagination/Pagination";
 import {search_icon} from "../../../../images";
 
-const ClubSportsmen = () => {
+const ClubsTrainers = () => {
     return (
         <div>
             <div className={s.table_content}>
@@ -15,18 +15,18 @@ const ClubSportsmen = () => {
                 </div>
                 <div className={s.title} style={{ fontWeight: "500" }}>
                     <p className={s.first_p}>№</p>
-                    <p style={{ flex: 7}}>ФИО</p>
-                    <p style={{ flex: 5}}>Дата рождения</p>
-                    <p style={{ flex: 5}}>Номер</p>
-                    <p style={{ flex: 10}}>Адрес</p>
+                    <p  style={{flex: 10}}>ФИО</p>
+                    <p style={{flex: 8}}>Номер</p>
+                    <p style={{flex: 11}}>Почта</p>
+                    <p style={{flex: 8}}>Город / страна</p>
                 </div>
-                <Link to="/main/clubs/sportsmen/sportsman_details">
+                <Link to="/main/clubs/trainers/details">
                     <div className={s.title}>
                         <p className={s.first_p}>1</p>
-                        <p style={{ flex: 7}}>Стёпка Киборг Убийца</p>
-                        <p style={{ flex: 5}}>20.02.2002 г.</p>
-                        <p style={{ flex: 5}}>+996 000 123 456</p>
-                        <p style={{ flex: 10}}>Солнечная система, галактика Млечн ...</p>
+                        <p style={{flex: 10}}>Леонид Ильич Брежневе</p>
+                        <p style={{flex: 8}}>+996 000 123 456</p>
+                        <p style={{flex: 11}}>leonid_ilic_brezhnev@gmail.com</p>
+                        <p style={{flex: 8}}>Бишкек, Кыргызстан</p>
                     </div>
                 </Link>
                 <Pagination/>
@@ -35,4 +35,4 @@ const ClubSportsmen = () => {
     );
 };
 
-export default ClubSportsmen;
+export default ClubsTrainers;

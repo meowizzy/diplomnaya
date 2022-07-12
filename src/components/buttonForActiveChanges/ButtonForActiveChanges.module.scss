@@ -49,17 +49,28 @@
   cursor: pointer;
   height: 45px;
 }
-.yes_button:active {
-  @extend %active_state;
-  -webkit-text-fill-color: white;
-}
+
 .yes_button:hover {
-  @extend %hover_state;
+  //@extend %hover_state;
   -webkit-text-fill-color: white;
+  cursor: pointer;
+  width: 300px;
+  height: 45px;
+  background: #ffffff;
+  border-radius: 25px;
+  font-weight: bold;
+  margin: 62px 0 43px;
+  border: none;
+  color: #ffffff;
+  background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+  box-shadow: none;
 }
+.yes_button:active {
+   @extend %active_state;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.3);
+ }
 .yes_button:active .no_button {
   background: black;
-
 }
 .no_button {
   cursor: pointer;

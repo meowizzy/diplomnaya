@@ -15,18 +15,18 @@ const TrainerAllClubs = () => {
                 </div>
                 <div className={s.title} style={{ fontWeight: "500" }}>
                     <p className={s.first_p}>№</p>
-                    <p>Название клуба</p>
-                    <p>Тренер</p>
-                    <p>Адрес</p>
-                    <p>Спортсмены</p>
+                    <p style={{flex: 5}}>Название клуба</p>
+                    <p style={{flex: 5}}>Тренер</p>
+                    <p style={{flex: 11}}>Адрес</p>
+                    <p style={{flex: 5}}>Спортсмены</p>
                 </div>
                 <Link to="/main/clubs/all_clubs/all_club_details">
                     <div className={s.title}>
                         <p className={s.first_p}>1</p>
-                        <p>Золотой дракон</p>
-                        <p>Кот  Леопольд</p>
-                        <p>Бишкек, 7 микр. 20 школа</p>
-                        <p>16 человек</p>
+                        <p style={{flex: 5}}>Золотой дракон</p>
+                        <p style={{flex: 5}}>Кот  Леопольд</p>
+                        <p style={{flex: 11}}>Бишкек, 7 микр. 20 школа</p>
+                        <p style={{flex: 5}}>16 человек</p>
                     </div>
                 </Link>
                 <Pagination/>

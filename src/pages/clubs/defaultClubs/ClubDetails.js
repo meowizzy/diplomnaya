@@ -16,11 +16,10 @@ const ClubDetails = () => {
     const handleOpenDeleteModal = () => {setOpenDeleteModal(true)}
     const handleCloseDeleteModal = () => {setOpenDeleteModal(false)}
 
-    const navigate = useNavigate()
     return (
         <>
             <div className={s.form_cont}>
-                <BackButton onClick={() => navigate("/main/clubs")}/>
+                <BackButton to="/main/clubs/all_clubs" />
                 <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
                 {openOption && <Options link="/main/clubs/editClub" handleOpenDeleteModal={handleOpenDeleteModal}/>}
                 <p className="container_title">Информация о клубе</p>

@@ -9,8 +9,8 @@ const Options = ({handleOpenDeleteModal, link, setEditButton, closeOption}) => {
     const navigate =useNavigate()
 
     const func = () => {
-        setEditButton(true)
-        closeOption(false)
+        setEditButton && setEditButton(true);
+        closeOption && closeOption(false);
         navigate(link)
     }
 
