@@ -1,12 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import Button from "../button/Button";
-import { Delete } from "../delete/Delete";
 import s from "./ThreeDot.module.scss";
 import ss from '../delete/Delete.module.scss'
 import { Modal } from "../modal/Modal";
+import ButtonForActiveChanges from "../buttonForActiveChanges/ButtonForActiveChanges";
 
-export const ThreeDot = ({ disabled, type, onClick }) => {
+export const ThreeDot = ({ disabled, type, onClick, text }) => {
   const [state, setState] = useState(false);
   const toggle = () => {
     setState(!state);
@@ -26,8 +25,10 @@ export const ThreeDot = ({ disabled, type, onClick }) => {
         {state === true ? (
           <div className={s.cont}>
             <div className={s.content}>
-              <div className={s.edit} onClick={onClick}>Редактировать</div>
-              <div className={s.delete} onClick={() => setModalActive(true)}>Удалить</div>
+              {/* <div className={s.edit} onClick={onClick}>Редактировать</div>
+              <div className={s.delete} onClick={() => setModalActive(true)}>Удалить</div> */}
+              <ButtonForActiveChanges text="Редактировать" onClick={onClick} classname="button" margin="0 0 20px"/>
+              <ButtonForActiveChanges text="Удалить" onClick={() => setModalActive(true)} classname="button"/>
             </div>
           </div>
         ) : (
@@ -41,13 +42,14 @@ export const ThreeDot = ({ disabled, type, onClick }) => {
         height="265px"
       >
         <div className={ss.cont}>
-          <p>Вы уверены, что хотите удалить данное мероприятие?</p>
+          <p>{text}</p>
           <div className={ss.flex}>
-            <Button width="210px" text="ДА" disabled={state} onClick={toggle} />
-            <Button
+            <ButtonForActiveChanges width="210px" text="ДА" disabled={state} onClick={toggle} classname="button"/>
+            <ButtonForActiveChanges
               width="210px"
               text="НЕТ"
               onClick={() => setModalActive(false)}
+              classname="button"
             />
           </div>
         </div>

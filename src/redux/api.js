@@ -11,7 +11,7 @@ const fetchAPI = axios.create({
 });
 
 export const requests = {
-    authApi: (data) => fetchAPI.post("login/", data),
+    authApi: (data) => fetchAPI.post("/login/", data),
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     register: (formData) => fetchAPI.post('registration/', formData)

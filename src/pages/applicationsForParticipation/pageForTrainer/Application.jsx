@@ -1,16 +1,19 @@
 import React from 'react'
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
 import { linkActiveClassName } from '../../../utils/ActiveLink'
-import s from '../pageForSecretary/Applied.module.scss'
 import { CurrentApplications } from './currentApplications/CurrentApplications'
 import { NewApplications } from './newApplications/NewApplications'
 import { SubmittedApplications } from './submittedApplications/SubmittedApplications'
+import s from '../pageForSecretary/Applied.module.scss'
+import ss from "./Application.module.scss"
+import { Detail } from './submittedApplications/Detail'
+import { DetailCurrent } from './currentApplications/DetailCurrent'
 
 export const Application = () => {
 const location = useLocation()
   return (
     <>
-      <div className={s.link_cont}>
+      <div className={ss.link_cont}>
         <div className={s.navlink_cont}>
           <NavLink
             to="/main/application/submittedApplications"
@@ -28,14 +31,16 @@ const location = useLocation()
             to="/main/application/newApplications"
             className={linkActiveClassName(location,"newApplications", 3, "link", "active_link")}
           >
-            Новая заявка
+            Подать заявку
           </NavLink>
         </div>
       </div>
       <>
         <Routes>
           <Route path="/submittedApplications" element={<SubmittedApplications />} />
+          <Route path="/submittedApplications/detail" element={<Detail />} />
           <Route path="/currentApplications" element={<CurrentApplications />} />
+          <Route path="/currentApplications/detail" element={<DetailCurrent />} />
           <Route path="/newApplications" element={<NewApplications />} />
         </Routes>
       </>

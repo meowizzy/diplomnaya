@@ -1,5 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import reducer from "./slices/authSlice";
+import registerSlice from './slices/registerSlice';
 
 // const middleware = getDefaultMiddleware({
 //     immutableCheck: false,
@@ -8,6 +9,9 @@ import reducer from "./slices/authSlice";
 // });
 
 export const store = configureStore({
-    reducer: reducer,
-    // devTools: process.env.NODE_ENV !== 'production',
+  reducer: { reducer, 
+    register:registerSlice
+},
+
+  // devTools: process.env.NODE_ENV !== 'production',
 });

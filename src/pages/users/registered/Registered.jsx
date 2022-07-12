@@ -3,7 +3,7 @@ import Input from "../../../components/input/Input";
 import { Pagination } from "../../../components/pagination/Pagination";
 import s from "./Registered.module.scss";
 import { Link } from "react-router-dom";
-import {search_icon} from "../../../images";
+import { search_icon } from "../../../images";
 
 export const Registered = () => {
   return (

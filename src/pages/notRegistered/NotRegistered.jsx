@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import Button from '../../components/button/Button';
 import s from "./NotRegistered.module.scss"
@@ -7,6 +7,9 @@ import { Role } from './role';
 
 
 export const NotRegistered = () => {
+  useEffect(() => {
+    localStorage.removeItem('role')
+  },[]);
   return (
     <div className={s.wrapper}>
       <header className={s.header}>

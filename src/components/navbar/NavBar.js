@@ -20,7 +20,7 @@ export const NavBar = () => {
     <>
       {role==="admin"&& 
       <div className={s.cont}>
-        <NavLink to="/main/events" className={linkActiveClassName("events")}>Мероприятия</NavLink>
+        <NavLink to="/main/defaultEvents" className={linkActiveClassName("events")}>Мероприятия</NavLink>
         <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
         <NavLink to="/main/users/registered" className={linkActiveClassName('users')}>Пользователи</NavLink>
         <NavLink to="/main/protocol/all_protocols" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
@@ -36,7 +36,7 @@ export const NavBar = () => {
 
      {role==="trainer"&& 
       <div className={s.cont}>
-        <NavLink to="/main/events" className={linkActiveClassName("events")}>Мероприятия</NavLink>
+        <NavLink to="/main/defaultEvents" className={linkActiveClassName("events")}>Мероприятия</NavLink>
         <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
         <NavLink to="/main/application/SubmittedApplications" className={linkActiveClassName('applied')}>Заявки</NavLink>
         <NavLink to="/main/protocol/all_protocols" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
@@ -69,7 +69,7 @@ export const NavBar = () => {
 
       {role==="referee"&& 
         <div className={s.cont}>
-          <NavLink to="/main/events" className={linkActiveClassName("events")}>Мероприятия</NavLink>
+          <NavLink to="/main/defaultEvents" className={linkActiveClassName("events")}>Мероприятия</NavLink>
           <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
           <NavLink to="/main/protocol/new_protocols" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
           <NavLink to="/main/statistics" className={linkActiveClassName('statistics')}>Статистика</NavLink>
