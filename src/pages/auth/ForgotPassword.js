@@ -6,6 +6,7 @@ import registerStyles from "../register/Registr.module.scss";
 import s from "./Auth.module.scss";
 import Button from "../../components/button/Button";
 import { Link } from "react-router-dom";
+import {resetPassword} from "../../redux/fetchFunctions";
 
 const ForgotPassword = () => {
   const [text, setText] = useState(false);
@@ -15,6 +16,7 @@ const ForgotPassword = () => {
     },
     onSubmit: (data) => {
       console.log(data);
+      resetPassword(data);
       setText(true);
     },
   });

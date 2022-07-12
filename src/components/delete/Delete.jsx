@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "../button/Button";
 import ButtonForActiveChanges from "../buttonForActiveChanges/ButtonForActiveChanges";
 import { Modal } from "../modal/Modal";
 import s from "./Delete.module.scss";

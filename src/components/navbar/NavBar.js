@@ -20,10 +20,10 @@ export const NavBar = () => {
     <>
       {role==="admin"&& 
       <div className={s.cont}>
-        <NavLink to="/main/defaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
+        <NavLink to="/main/defaultEvents" className={linkActiveClassName("events")}>Мероприятия</NavLink>
         <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
         <NavLink to="/main/users/registered" className={linkActiveClassName('users')}>Пользователи</NavLink>
-        <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
+        <NavLink to="/main/protocol/all_protocols" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
         <NavLink to="/main/clubs/all_clubs" className={linkActiveClassName('clubs')}>Клубы</NavLink>
         <NavLink to="/main/statistics" className={linkActiveClassName('statistics')}>Статистика</NavLink>
         <NavLink to="/main/documentation/all_documentation" className={linkActiveClassName('documentation')}>Документация</NavLink>
@@ -36,10 +36,10 @@ export const NavBar = () => {
 
      {role==="trainer"&& 
       <div className={s.cont}>
-        <NavLink to="/main/defaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
+        <NavLink to="/main/defaultEvents" className={linkActiveClassName("events")}>Мероприятия</NavLink>
         <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
-        <NavLink to="/main/application/submittedApplications" className={linkActiveClassName('application')}>Заявки</NavLink>
-        <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
+        <NavLink to="/main/application/SubmittedApplications" className={linkActiveClassName('applied')}>Заявки</NavLink>
+        <NavLink to="/main/protocol/all_protocols" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
         <NavLink to="/main/output/all_output" className={linkActiveClassName('output')}>Итоги</NavLink>
         <NavLink to="/main/clubs/all_clubs" className={linkActiveClassName('clubs')}>Клубы</NavLink>
         <NavLink to="/main/trainers" className={linkActiveClassName('trainers')}>Тренеры</NavLink>
@@ -56,7 +56,7 @@ export const NavBar = () => {
           <NavLink to="/main/events" className={linkActiveClassName("events")}>Мероприятия</NavLink>
           <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
           <NavLink to="/main/applied/newApplied" className={linkActiveClassName('applied')}>Заявки</NavLink>
-          <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
+          <NavLink to="/main/protocol/all_events" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
             <NavLink to="/main/output/all_output" className={linkActiveClassName('output')}>Итоги</NavLink>
             <NavLink to="/main/statistics" className={linkActiveClassName('statistics')}>Статистика</NavLink>
           <NavLink to="/main/documentation/all_documentation" className={linkActiveClassName('documentation')}>Документация</NavLink>
@@ -69,9 +69,9 @@ export const NavBar = () => {
 
       {role==="referee"&& 
         <div className={s.cont}>
-          <NavLink to="/main/defaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
+          <NavLink to="/main/defaultEvents" className={linkActiveClassName("events")}>Мероприятия</NavLink>
           <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
-          <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
+          <NavLink to="/main/protocol/new_protocols" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
           <NavLink to="/main/statistics" className={linkActiveClassName('statistics')}>Статистика</NavLink>
             <NavLink to="/main/output/all_output" className={linkActiveClassName('output')}>Итоги</NavLink>
             <NavLink to="/main/documentation/all_documentation" className={linkActiveClassName('documentation')}>Документация</NavLink>
