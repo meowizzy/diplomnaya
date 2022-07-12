@@ -15,4 +15,5 @@ export const requests = {
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     register: (formData) => fetchAPI.post('registration/', formData)
+    // newPassword: (data) => fetchAPI.post("password-reset/", data),
 }
