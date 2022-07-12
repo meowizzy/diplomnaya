@@ -60,7 +60,7 @@ export const Registr = () => {
       <form className={s.form} onSubmit={formik.handleSubmit}>
         <p
           style={{
-            fontSize: "32px",
+            fontSize: "26px",
             fontWeight: "700",
             textAlign: "center",
             margin: "60px 0px 50px",
