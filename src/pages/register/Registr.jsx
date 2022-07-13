@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
+import { useSelector } from "react-redux/es/exports";
 import { postRegister } from "../../redux/slices/registerSlice";
 import s from "./Registr.module.scss";
 
@@ -26,7 +27,11 @@ export const Registr = () => {
   }
   const navigate = useNavigate()
 
-   const dispatch = useDispatch()
+  const err = useSelector(state=>state.register.error);
+  // console.log(err)
+
+  const dispatch = useDispatch();
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -41,7 +46,11 @@ export const Registr = () => {
     onSubmit: (values) => {
       console.log(values)
       dispatch(postRegister(values))
-      navigate('./auth')
+      navigate('/auth')
+
+      // if(err===null){
+      //   navigate('/auth')
+      // }
     },
   });
 
@@ -226,7 +235,7 @@ export const Registr = () => {
           )}
         </div>
 
-        <div style={{ position: "relative" }}>
+        {/* <div style={{ position: "relative" }}>
           {club === false ? (
             <>
               <Input
@@ -271,7 +280,7 @@ export const Registr = () => {
               </div>
             </>
           )}
-        </div>
+        </div> */}
         <Input
           placeholder="Введите страну и город"
           valueLabel="Страна, город"
