@@ -1,27 +1,29 @@
 import React from "react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import ForwardButton from "../../../components/arrowButton/ForwardButton";
+import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import Button from "../../../components/button/Button";
+import { linkActiveClassName } from "../../../utils/ActiveLink";
 import s from ".././defaultEvents/DefaultEvents.module.scss";
-import { Card } from "./Card";
+import { AllEvents } from "./allEvents/AllEvents";
 import ss from "./ChangeEvents.module.scss";
-import { CreateEvents } from "./CreateEvents";
+import { Events_2021 } from "./events_2021/Events_2021";
+import { Events_2022 } from "./events_2022/Events_2022";
 
 export const ChangeEvents = () => {
 
   const [active, setActive] = useState(false)
 
+  const location = useLocation()
   return (
     <div className={s.cont}>
       <div className={s.link_cont}>
-        <NavLink to="" className={s.link}>
+        <NavLink to="/main/events/allEvents" className={linkActiveClassName(location,"allEvents", 3, "link", "active_link")}>
           Все мероприятия
         </NavLink>
-        <NavLink to="" className={s.link}>
+        <NavLink to="/main/events/events_2022" className={linkActiveClassName(location,"events_2022", 3, "link", "active_link")}>
           Мероприятия за 2022г.
         </NavLink>
-        <NavLink to="" className={s.link}>
+        <NavLink to="/main/events/events_2021" className={linkActiveClassName(location,"events_2021", 3, "link", "active_link")}>
           Мероприятия за 2021г.
         </NavLink>
 
@@ -32,23 +34,11 @@ export const ChangeEvents = () => {
 
       <div className={s.content}>
 
-        <CreateEvents active={active} setActive={setActive} />
-
-        <div className={s.box_first}>
-          <p className={s.text}>
-            Чемпионат Кыргызской Респубики по традиционному ушу
-          </p>
-          <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
-          <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
-          <p>Информация о мероприятии</p>
-          <div className={s.arrow_button}>
-            <ForwardButton />
-          </div>
-        </div>
-
-        <Card />
-        <Card />
-        <Card />
+        <Routes>
+          <Route path="/allEvents" element={<AllEvents />} />
+          <Route path="/events_2022" element={<Events_2022 />} />
+          <Route path="/events_2021" element={<Events_2021 />} />
+        </Routes>
       </div>
     </div>
   );

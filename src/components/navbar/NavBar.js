@@ -20,7 +20,7 @@ export const NavBar = () => {
     <>
       {role==="admin"&& 
       <div className={s.cont}>
-        <NavLink to="/main/defaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
+        <NavLink to="/main/defaultEvents/allDefaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
         <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
         <NavLink to="/main/users/registered" className={linkActiveClassName('users')}>Пользователи</NavLink>
         <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
@@ -53,7 +53,7 @@ export const NavBar = () => {
 
       {role==="secretary"&& 
         <div className={s.cont}>
-          <NavLink to="/main/events" className={linkActiveClassName("events")}>Мероприятия</NavLink>
+          <NavLink to="/main/events/allEvents" className={linkActiveClassName("events")}>Мероприятия</NavLink>
           <NavLink to="/main/news" className={linkActiveClassName('news')}>Новости</NavLink>
           <NavLink to="/main/applied/newApplied" className={linkActiveClassName('applied')}>Заявки</NavLink>
           <NavLink to="/main/protocol" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
