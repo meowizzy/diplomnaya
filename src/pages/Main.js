@@ -21,7 +21,12 @@ export const Main = () => {
       <div className={s.content}>
         <Routes>
             <Route path="/users/*" element={<UsersRoute />} />
+<<<<<<< HEAD
             <Route path="/events" element={<ChangeEvents />} />
+=======
+            <Route path="/events/*" element={<ChangeEvents />} />
+            <Route path="/defaultEvents/*" element={<DefaultEvents />} />
+>>>>>>> WHUS-373-event-logic
             <Route path="/news/*" element={<News />} />
             <Route path="/clubs/*" element={<Clubs />} />
             <Route path="/profile/*" element={<Profile />} />

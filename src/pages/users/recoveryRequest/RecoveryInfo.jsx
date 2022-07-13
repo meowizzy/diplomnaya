@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { useFormik } from "formik";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -5,9 +6,12 @@ import BackButton from "../../../components/arrowButton/BackButton";
 import Button from "../../../components/button/Button";
 import Input from "../../../components/input/Input";
 import TextArea from "../../../components/input/TextArea";
+import SuccessModal from "../../../components/modals/SuccessModal";
 import s from "./RecoveryRequest.module.scss";
 
 export const RecoveryInfo = () => {
+
+
   const formik = useFormik({
     initialValues: {
       recovery: "Помогите, пожалуйста, восстановить пароль",
@@ -25,7 +29,7 @@ export const RecoveryInfo = () => {
           <BackButton />
         </Link>
         <p className={s.text}>Информация о пользователе</p>
-        <p style={{ fontWeight: "normal" }}>Заявка № 1</p>
+        <p className={s.second_p}>Заявка № 1</p>
 
         <form onSubmit={formik.handleSubmit}>
           <Input
@@ -60,6 +64,7 @@ export const RecoveryInfo = () => {
           <Button width="210px" text="ДА" margin="31px 0 0" type="submit" />
         </form>
       </div>
+    
     </>
   );
 };

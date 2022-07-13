@@ -11,6 +11,7 @@ import { RequestToRegistr } from "./requestToRegistr/RequestToRegistr";
 import { RequestUserInfo } from "./requestToRegistr/RequestUserInfo";
 import { RecoveryRequest } from "./recoveryRequest/RecoveryRequest";
 import { RecoveryInfo } from "./recoveryRequest/RecoveryInfo";
+import { ReferalLink } from "./referalLink/ReferalLink";
 
 export const UsersRoute = () => {
 
@@ -30,19 +31,25 @@ export const UsersRoute = () => {
           to="/main/users/registered"
           className={linkActiveClassName("registered")}
         >
-          Зарегистрированные
+          Пользователи
         </NavLink>
         <NavLink
           to="/main/users/requestToRegistr"
           className={linkActiveClassName("requestToRegistr")}
         >
-          Запросы на регистрацию
+          Регистрация
         </NavLink>
         <NavLink
           to="/main/users/recoveryRequest"
           className={linkActiveClassName("recoveryRequest")}
         >
-          Запросы на восстановление
+          Восстановление
+        </NavLink>
+        <NavLink
+          to="/main/users/referalLink"
+          className={linkActiveClassName("referalLink")}
+        >
+          Реферальная ссылка
         </NavLink>
         <Link to="/main/users/createUser">
           <Button margin="0 0" text="СОЗДАТЬ" />
@@ -57,6 +64,7 @@ export const UsersRoute = () => {
           <Route path="/registered/userInfo" element={<UserInfo />} />
           <Route path="/requestToRegistr/requestUserInfo" element={<RequestUserInfo />} />
           <Route path="/recoveryRequest/recoveryInfo" element={<RecoveryInfo />} />
+          <Route path="/referalLink" element={<ReferalLink />} />
         </Routes>
       </div>
     </>

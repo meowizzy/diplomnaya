@@ -5,8 +5,12 @@ import s from '../registered/Registered.module.scss'
 import Button from '../../../components/button/Button';
 import Input from '../../../components/input/Input';
 import { useFormik } from 'formik';
+import SuccessModal from '../../../components/modals/SuccessModal';
 
 export const CreateUser = () => {
+  const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
+  const handleOpenSuccessModal = () => setOpenSuccessModal(true);
+  const handleCloseSuccessModal = () => setOpenSuccessModal(false);
     const formik = useFormik({
         initialValues: {
           name: "",
@@ -113,8 +117,15 @@ export const CreateUser = () => {
               formik.values.club &&
               formik.values.password
             )
-          } margin="82px 0 0"/>
+          } margin="82px 0 0" onClick={handleOpenSuccessModal}/>
       </form>
+      {openSuccessModal && (
+        <SuccessModal
+          open={openSuccessModal}
+          handleClose={handleCloseSuccessModal}
+          title="Вы успешно отредактировали данные о пользователе!"
+        />
+      )}
     </div>
   );
 }

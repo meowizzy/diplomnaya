@@ -23,13 +23,14 @@ export const Registr = () => {
   const clickClub = () =>{
     setClub(!club)
   }
+
    const dispatch = useDispatch()
   const formik = useFormik({
     initialValues: {
       name: "",
       surname: "",
       email: "",
-      number: "",
+      number: "+996",
       password: "",
       secondPassword: "",
       city: "",
@@ -83,14 +84,14 @@ export const Registr = () => {
           onChange={formik.handleChange}
           name="surname"
         />
-        <div style={{ position: "relative" }}>
+        <div style={{ position: "relative" }} >
           {roles === false ? (
             <>
               <Input
                 placeholder="Введите должность"
                 valueLabel="Должность"
                 value={role}
-                onChange={formik.handleChange}
+                // onChange={formik.handleChange}
                 name="role"
               />
               <div className={s.list_img} onClick={clickRoles}></div>
@@ -154,7 +155,7 @@ export const Registr = () => {
         </div>
         <Input
           placeholder="Введите почту"
-          valueLabel="Почта"
+          valueLabel="Введите почту"
           value={formik.values.email}
           onChange={formik.handleChange}
           name="email"
@@ -227,7 +228,7 @@ export const Registr = () => {
             <>
               <Input
                 placeholder="Название клуба"
-                valueLabel="Клуб"
+                valueLabel="Выберите клуб"
                 value={formik.values.club}
                 name="club"
               />
@@ -237,7 +238,7 @@ export const Registr = () => {
             <>
               <Input
                 placeholder="Название клуба"
-                valueLabel="Клуб"
+                valueLabel="Выберите клуб"
                 value={formik.values.club}
                 name="club"
                 margin="0 0 4px"
@@ -270,7 +271,7 @@ export const Registr = () => {
         </div>
         <Input
           placeholder="Введите страну и город"
-          valueLabel="Страна"
+          valueLabel="Страна, город"
           value={formik.values.city}
           onChange={formik.handleChange}
           name="city"
