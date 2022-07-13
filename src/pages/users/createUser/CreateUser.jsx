@@ -16,7 +16,7 @@ export const CreateUser = () => {
           name: "",
           surname: "",
           position: "",
-          phone: "",
+          phone: "+996",
           email: "",
           city: "",
           club: "",
@@ -28,9 +28,9 @@ export const CreateUser = () => {
       });
   return (
      <div className={s.info}>
-     <NavLink to="/main/users/registered">
-        <BackButton />
-      </NavLink>
+  
+        <BackButton to="/main/users/registered"/>
+  
       <p style={{ fontSize: "22px", marginBottom: "30px", marginTop:"50px" }}>
       Создание пользователя
       </p>
@@ -69,7 +69,7 @@ export const CreateUser = () => {
         />
         <Input
          placeholder="Введите Email"
-          valueLabel="Электронная почта"
+          valueLabel="Почта"
           value={formik.values.email}
           onChange={formik.handleChange}
           width="600px"
@@ -78,7 +78,7 @@ export const CreateUser = () => {
         />
         <Input
          placeholder="Веедите страну и город"
-          valueLabel="Страна, город"
+          valueLabel="введите страну и город"
           value={formik.values.city}
           onChange={formik.handleChange}
           width="600px"

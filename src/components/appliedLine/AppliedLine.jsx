@@ -14,6 +14,7 @@ export const AppliedLine = ({
   partnerName,
   numberOfteam,
   note,
+  number,
   onSubmit,
 }) => {
   const formik = useFormik({
@@ -37,7 +38,7 @@ export const AppliedLine = ({
 
   return (
     <form className={s.table_title} onSubmit={formik.handleSubmit}>
-      <p className={s.first_p}>1</p>
+      <p className={s.first_p}>{number}</p>
       <input
         placeholder="ФИО спортсмена"
         className={s.three_hundred_fifty}

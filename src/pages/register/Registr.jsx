@@ -1,6 +1,7 @@
 import { useFormik } from "formik";
 import React, { useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import { postRegister } from "../../redux/slices/registerSlice";
@@ -23,6 +24,7 @@ export const Registr = () => {
   const clickClub = () =>{
     setClub(!club)
   }
+  const navigate = useNavigate()
 
    const dispatch = useDispatch()
   const formik = useFormik({
@@ -39,6 +41,7 @@ export const Registr = () => {
     onSubmit: (values) => {
       console.log(values)
       dispatch(postRegister(values))
+      navigate('./auth')
     },
   });
 

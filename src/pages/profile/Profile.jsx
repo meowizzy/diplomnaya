@@ -68,7 +68,7 @@ export const Profile = () => {
             name="phone"
           />
           <Input
-            valueLabel="Электронная почта"
+            valueLabel="Почта"
             value={formik.values.email}
             onChange={formik.handleChange}
             width="600px"

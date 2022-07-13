@@ -72,6 +72,7 @@ export const DetailedInfoForHistoryOfApplied = () => {
             numberOfteam="Золотой Дракон"
             note="Золотой Дракон"
           />
+          <div className="margin_for_scroll"></div>
         </div>
         
       <div className={ss.center}>

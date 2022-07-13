@@ -6,6 +6,7 @@ import { linkActiveClassName } from "../../../utils/ActiveLink";
 import s from ".././defaultEvents/DefaultEvents.module.scss";
 import { AllEvents } from "./allEvents/AllEvents";
 import ss from "./ChangeEvents.module.scss";
+import { CreateEvents } from "./CreateEvents";
 import { Events_2021 } from "./events_2021/Events_2021";
 import { Events_2022 } from "./events_2022/Events_2022";
 
@@ -28,12 +29,12 @@ export const ChangeEvents = () => {
         </NavLink>
 
         <div className={ss.button}>
-          <Button margin="0 0" text="СОЗДАТЬ" onClick={()=>setActive(true)}/>
+          <Button margin="0 0" text="СОЗДАТЬ" onClick={()=>setActive(!active)}/>
         </div>
       </div>
 
       <div className={s.content}>
-
+      <CreateEvents active={active} setActive={setActive} />
         <Routes>
           <Route path="/allEvents" element={<AllEvents />} />
           <Route path="/events_2022" element={<Events_2022 />} />

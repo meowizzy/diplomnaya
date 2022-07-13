@@ -56,6 +56,7 @@ export const Detail = () => {
           partnerName="Золотой Дракон"
           numberOfteam="Золотой Дракон"
           note="Золотой Дракон"
+          number="1"
         />
         <AppliedLine
           fullName="Карина"
@@ -68,6 +69,7 @@ export const Detail = () => {
           tsise="Золотой Дракон"
           partnerName="Золотой Дракон"
           numberOfteam="Золотой Дракон"
+          number="2"
           note="Золотой Дракон"
         />
       </div>

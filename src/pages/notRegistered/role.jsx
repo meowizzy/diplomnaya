@@ -7,19 +7,19 @@ export const Role = () => {
   const navigate=useNavigate()
     const trainerSignIn = () => {
       // localStorage.removeItem('role')
-      navigate("/main/events");
+      navigate("/main/defaultEvents/allDefaultEvents");
       localStorage.setItem("role", "trainer");
     };
     const adminSignIn = () => {
-      navigate("/main/events");
+      navigate("/main/defaultEvents/allDefaultEvents");
       localStorage.setItem("role", "admin");
     };
     const refereeSignIn = () => {
-      navigate("/main/events");
+      navigate("/main/defaultEvents/allDefaultEvents");
       localStorage.setItem("role", "referee");
     };
     const secretarySignIn = () => {
-      navigate("/main/events");
+      navigate("/main/events/allEvents");
       localStorage.setItem("role", "secretary");
     };
 
