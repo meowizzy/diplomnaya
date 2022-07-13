@@ -87,7 +87,7 @@ const Auth = () => {
               text="ВОЙТИ"
               margin="35px"
             />
-            <ButtonForActiveChanges type="submit" disabled={!(formik.values.email && formik.values.password)} margin="35px" classname="back_button" text="ВОЙТИ"/>
+            {/*<ButtonForActiveChanges type="submit" disabled={!(formik.values.email && formik.values.password)} margin="35px" classname="back_button" text="ВОЙТИ"/>*/}
             <div className={s.forgot_p_cont}>
               <Link to="/registr"><p className={s.register_text}>Зарегистрироваться</p></Link>
             </div>
