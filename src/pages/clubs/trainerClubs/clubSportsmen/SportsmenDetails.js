@@ -8,10 +8,9 @@ import s from "../../../news/editNews/EditNews.module.scss";
 
 const SportsmenDetails = () => {
 
-    const navigate = useNavigate()
     return (
         <div className={dfClubsStyles.form_cont}>
-            <BackButton onClick={() => navigate("/main/clubs/sportsmen")}/>
+            <BackButton to="/main/clubs/sportsmen" />
             <p className="container_title">Информация о спортсмене</p>
             <Input valueLabel="ФИО" width="600px" value="Стёпка Киборг Убийца "/>
             <Input valueLabel="Дата рождения" width="600px" value="20.02.2002 г."/>

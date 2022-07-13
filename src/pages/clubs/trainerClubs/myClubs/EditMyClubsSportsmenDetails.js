@@ -11,8 +11,6 @@ import {useFormik} from "formik";
 
 const EditMyClubsSportsmenDetails = () => {
 
-    const navigate = useNavigate()
-
     const [openSuccessModal, setOpenSuccessModal] = useState(false);
     const handleOpenSuccessModal = () => setOpenSuccessModal(true);
     const handleCloseSuccessModal = () => setOpenSuccessModal(false);
@@ -28,7 +26,7 @@ const EditMyClubsSportsmenDetails = () => {
     return (
         <>
             <form onClick={formik.handleSubmit} className={dfClubsStyles.form_cont}>
-                <BackButton onClick={() => navigate("/main/clubs/my_clubs/my_clubs_details/list_sportsmen/sportsman_details")}/>
+                <BackButton to="/main/clubs/my_clubs/my_clubs_details/sportsman_details" />
                 <p className="container_title">Информация о спортсмене</p>
                 <Input valueLabel="ФИО" width="600px" value="Стёпка Киборг Убийца "/>
                 <Input valueLabel="Дата рождения" width="600px" value="20.02.2002 г."/>
@@ -68,7 +66,7 @@ const EditMyClubsSportsmenDetails = () => {
                 </div>
                 <Button type="submit" width="600px" text="СОХРАНИТЬ"/>
             </form>
-            { openSuccessModal && <SuccessModal title="Вы успешно отредактировали данную новость!" open={openSuccessModal} handleClose={handleCloseSuccessModal}/>}
+            { openSuccessModal && <SuccessModal title="Вы успешно отредактировали данные о спортсмене!" open={openSuccessModal} handleClose={handleCloseSuccessModal}/>}
         </>
 
     );

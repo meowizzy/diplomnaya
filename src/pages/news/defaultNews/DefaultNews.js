@@ -22,6 +22,8 @@ const DefaultNews = () => {
     const handleOpenDeleteModal = () => setOpenDeleteModal(true);
     const handleCloseDeleteModal = () => setOpenDeleteModal(false);
 
+    const role = localStorage.getItem('role');
+
     const images = [
         {news_img1},
         {news_img2},
@@ -39,10 +41,15 @@ const DefaultNews = () => {
                     <div style={{background: `url(${news_img1}) no-repeat`}} className={`${s.card} ${s.card_top}`}>
                         <p className={s.card__title}>В номинации “Первое место” </p>
                         <p className={s.card__date}>17.04.2022г.</p>
-                        <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
-                        { openOption && <Options  link="/main/news/edit_news" handleOpenDeleteModal={handleOpenDeleteModal}/>}
+                        {
+                            role === "admin" &&
+                            <>
+                                <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
+                                { openOption && <Options  link="/main/news/all_news/edit_new" handleOpenDeleteModal={handleOpenDeleteModal}/>}
+                            </>
+                        }
                     </div>
-                    <p className={s.text}>В мае в ЦДТ «Шайыр балалык» состоялись Детские соревнования по традиционному ушу им. Г. Сулеймановой. В соревнованиях приняли участие около 50-ти юных ушуистов из различных клубов ушу Федерации традиционного ушу КР.<br/>
+                    <p className={s.text}>В мае в ЦДТ «Шайыр балалык» состоялись Детские соревнования по традиционному ушу им. Г. Сулеймановой. В соревнованиях приняли участие около 50-ти юных ушуистов из различных клубов ушу Федерации традиционного ушу КР.
                         <br/><br/>
                         Спортсмены выступали в двух видах программы: стандартные парные таолу и техника традиционных таолу.
                         <br/><br/>
