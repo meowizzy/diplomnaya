@@ -4,14 +4,16 @@
   font-size: 20px;
   margin-right: 40px;
   white-space: nowrap;
+  height: 27px;
 }
 .active_link{
   color: #4254EC;
   font-weight: bold;
   font-size: 20px;
   margin-right: 40px;
-  border-bottom: #4254EC 3px solid;
-  
+  height: 27px;
+  border-bottom: #4254EC 2.5px solid;
+  border-radius: 1px;
   white-space: nowrap;
 }
 
@@ -59,6 +61,7 @@
   border-radius: 35px;
   position: relative;
   padding: 20px 10px;
+  min-height: 815px;
 }
 .container_data_flexed {
   display: flex;
@@ -78,4 +81,7 @@
 .input_flex {
   @extend %flex;
   gap: 30px;
+}
+.margin_for_scroll{
+margin-top: 16px;
 }

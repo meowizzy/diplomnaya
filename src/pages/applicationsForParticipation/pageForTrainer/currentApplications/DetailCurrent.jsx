@@ -71,7 +71,8 @@ export const DetailCurrent = () => {
             tsise="Золотой Дракон"
             partnerName="Золотой Дракон"
             numberOfteam="Золотой Дракон"
-            note="Золотой Дракон"
+          number="1"
+          note="Золотой Дракон"
           />
           <AppliedLine
             fullName="Карина"
@@ -84,13 +85,14 @@ export const DetailCurrent = () => {
             tsise="Золотой Дракон"
             partnerName="Золотой Дракон"
             numberOfteam="Золотой Дракон"
-            note="Золотой Дракон"
+          number="2"
+          note="Золотой Дракон"
           />
         </div>
       </div>
       {state && (
         <div className={ss.bottom_btn}>
-          <Button width="600px" text="СОХРАНИТЬ" onClick={()=>setOpenSuccessModal(!openSuccessModal)}/>
+          <Button width="600px" text="СОХРАНИТЬ" onClick={()=>setOpenSuccessModal(!openSuccessModal)} margin="42px 0 0"/>
         </div>
       )}
       {openSuccessModal && (

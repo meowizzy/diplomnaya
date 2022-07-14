@@ -5,14 +5,18 @@ import s from '../registered/Registered.module.scss'
 import Button from '../../../components/button/Button';
 import Input from '../../../components/input/Input';
 import { useFormik } from 'formik';
+import SuccessModal from '../../../components/modals/SuccessModal';
 
 export const CreateUser = () => {
+  const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
+  const handleOpenSuccessModal = () => setOpenSuccessModal(true);
+  const handleCloseSuccessModal = () => setOpenSuccessModal(false);
     const formik = useFormik({
         initialValues: {
           name: "",
           surname: "",
           position: "",
-          phone: "",
+          phone: "+996",
           email: "",
           city: "",
           club: "",
@@ -24,9 +28,9 @@ export const CreateUser = () => {
       });
   return (
      <div className={s.info}>
-     <NavLink to="/main/users/registered">
-        <BackButton />
-      </NavLink>
+  
+        <BackButton to="/main/users/registered"/>
+  
       <p style={{ fontSize: "22px", marginBottom: "30px", marginTop:"50px" }}>
       Создание пользователя
       </p>
@@ -65,7 +69,7 @@ export const CreateUser = () => {
         />
         <Input
          placeholder="Введите Email"
-          valueLabel="Электронная почта"
+          valueLabel="Почта"
           value={formik.values.email}
           onChange={formik.handleChange}
           width="600px"
@@ -74,7 +78,7 @@ export const CreateUser = () => {
         />
         <Input
          placeholder="Веедите страну и город"
-          valueLabel="Страна, город"
+          valueLabel="введите страну и город"
           value={formik.values.city}
           onChange={formik.handleChange}
           width="600px"
@@ -113,8 +117,15 @@ export const CreateUser = () => {
               formik.values.club &&
               formik.values.password
             )
-          } margin="82px 0 0"/>
+          } margin="82px 0 0" onClick={handleOpenSuccessModal}/>
       </form>
+      {openSuccessModal && (
+        <SuccessModal
+          open={openSuccessModal}
+          handleClose={handleCloseSuccessModal}
+          title="Вы успешно отредактировали данные о пользователе!"
+        />
+      )}
     </div>
   );
 }

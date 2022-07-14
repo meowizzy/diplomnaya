@@ -1,10 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { requests } from "../api";
+import { useNavigate } from "react-router";
+import { withoutToken } from "../api";
 
 const initialState = {
   user: {},
+  error:{}
 };
 
+// const navigate = useNavigate()
 export const postRegister = createAsyncThunk(
   "register/postRegister",
  
@@ -13,9 +16,9 @@ export const postRegister = createAsyncThunk(
     // dispatch(userRegister(res.formData));
     try {
     //   body:JSON.stringify(formData)
-      const res = await requests.register(formData);
+      const res = await withoutToken.register(formData);
       if (!res.ok) {
-        throw new Error("Server Error!");
+        throw new Error(true);
       }
       
       const data = await res.json();
@@ -40,7 +43,7 @@ const registerSlice = createSlice({
   extraReducers: {
     [postRegister.pending]: (state) => {
       state.status = "loading";
-      state.error = null;
+      // state.error = null;
     },
     [postRegister.fulfilled]: (state) => {
       state.status = "resolved";

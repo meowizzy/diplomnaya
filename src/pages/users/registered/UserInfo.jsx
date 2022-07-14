@@ -6,8 +6,14 @@ import { ThreeDot } from "../../../components/threeDot/ThreeDot";
 import s from "./Registered.module.scss";
 import Button from '../../../components/button/Button' 
 import { Link } from "react-router-dom"
+import { plus } from "../../../images";
+import SuccessModal from "../../../components/modals/SuccessModal";
 
 export const UserInfo = () => {
+  const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
+  const handleOpenSuccessModal = () => setOpenSuccessModal(true);
+  const handleCloseSuccessModal = () => setOpenSuccessModal(false);
+
   const formik = useFormik({
     initialValues: {
       name: "Карина",
@@ -24,26 +30,19 @@ export const UserInfo = () => {
     },
   });
 
-  const [buttonState, setButtonState] = useState(true)
+  const [buttonState, setButtonState] = useState(true);
 
-  const foggle = () =>{
-    setButtonState(!buttonState)
-  }
- 
+  const foggle = () => {
+    setButtonState(!buttonState);
+  };
+
   return (
     <>
       <div className={s.info}>
-        <Link to="/main/users/registered">
-          <BackButton />
-        </Link>
+        <BackButton to="/main/users/registered" />
+
         <p className={s.text}>Информация о пользователе</p>
-        {buttonState === false ? (
-          <div className={s.button_cont}>
-            <Button width="600px" text="СОХРАНИТЬ" margin="0px 0" />
-          </div>
-        ) : (
-          <ThreeDot onClick={foggle} />
-        )}
+        {buttonState === true && <ThreeDot onClick={foggle} />}
 
         <form onSubmit={formik.handleSubmit}>
           <Input
@@ -60,13 +59,18 @@ export const UserInfo = () => {
             name="surname"
             width="600px"
           />
-          <Input
-            valueLabel="Должность"
-            value={formik.values.position}
-            onChange={formik.handleChange}
-            width="600px"
-            name="position"
-          />
+          <div style={{ position: "relative" }}>
+            <Input
+              valueLabel="Должность"
+              value={formik.values.position}
+              onChange={formik.handleChange}
+              width="600px"
+              name="position"
+            />
+            {buttonState === false && (
+              <img src={plus} alt="wrong" className={s.plus} />
+            )}
+          </div>
           <Input
             valueLabel="Номер телефона"
             value={formik.values.phone}
@@ -74,8 +78,9 @@ export const UserInfo = () => {
             width="600px"
             name="phone"
           />
+
           <Input
-            valueLabel="Электронная почта"
+            valueLabel="Почта"
             value={formik.values.email}
             onChange={formik.handleChange}
             width="600px"
@@ -109,8 +114,24 @@ export const UserInfo = () => {
             <p>Активен / Неактивен</p>
             <input type="radio" className={s.input} />
           </label>
+
+          {buttonState === false && (
+            <Button
+              width="600px"
+              text="СОХРАНИТЬ"
+              margin="70px 0 0"
+              onClick={handleOpenSuccessModal}
+            />
+          )}
         </form>
       </div>
+      {openSuccessModal && (
+        <SuccessModal
+          open={openSuccessModal}
+          handleClose={handleCloseSuccessModal}
+          title="Вы успешно отредактировали данные о пользователе!"
+        />
+      )}
     </>
   );
 };

@@ -1,38 +1,33 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import ForwardButton from "../../../components/arrowButton/ForwardButton";
-import { DefaultCard } from "./DefaultCard";
+import { NavLink, Route, Routes, useLocation } from "react-router-dom";
+import { linkActiveClassName } from "../../../utils/ActiveLink";
+import { AllDefaultEvents } from "./allDefaultEvents/AllDefaultEvents";
 import s from "./DefaultEvents.module.scss";
+import { DefaultEvents_2021 } from "./defaultEvents_2021/DefaultEvents_2021";
+import { DefaultEvents_2022 } from "./defaultEvents_2022/DefaultEvents_2022";
 
 export const DefaultEvents = () => {
+  const location = useLocation()
   return (
     <div className={s.cont}>
       <div className={s.link_cont}>
-        <NavLink to="" className={s.link}>
+      <NavLink to="/main/defaultEvents/allDefaultEvents" className={linkActiveClassName(location,"allDefaultEvents", 3, "link", "active_link")}>
           Все мероприятия
         </NavLink>
-        <NavLink to="" className={s.link}>
+        <NavLink to="/main/defaultEvents/defaultEvents_2022" className={linkActiveClassName(location,"defaultEvents_2022", 3, "link", "active_link")}>
           Мероприятия за 2022г.
         </NavLink>
-        <NavLink to="" className={s.link}>
+        <NavLink to="/main/defaultEvents/defaultEvents_2021" className={linkActiveClassName(location,"defaultEvents_2021", 3, "link", "active_link")}>
           Мероприятия за 2021г.
         </NavLink>
       </div>
 
       <div className={s.content}>
-        <div className={s.box_first}>
-          <p className={s.text}>
-            Чемпионат Кыргызской Респубики по традиционному ушу
-          </p>
-          <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
-          <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
-          <p>Информация о мероприятии</p>
-          <div className={s.arrow_button}>
-            <ForwardButton to=""/>
-          </div>
-        </div>
-        <DefaultCard />
-        <DefaultCard />
+        <Routes>
+          <Route path="/allDefaultEvents" element={<AllDefaultEvents />} />
+          <Route path="/defaultEvents_2022" element={<DefaultEvents_2022 />} />
+          <Route path="/defaultEvents_2021" element={<DefaultEvents_2021 />} />
+        </Routes>
       </div>
     </div>
   );

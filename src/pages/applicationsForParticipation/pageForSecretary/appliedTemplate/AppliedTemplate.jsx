@@ -76,6 +76,7 @@ export const AppliedTemplate = () => {
           numberOfteam=""
           note=""
         />
+        <div className="margin_for_scroll"></div>
       </div>
       <div className={ss.center}>
         <Button width="600px" text="СОХРАНИТЬ" />

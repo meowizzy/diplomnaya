@@ -11,6 +11,8 @@ import Output from "./output/Output";
 import {AppliedRoutes} from "./applicationsForParticipation/pageForSecretary/AppliedRoutes";
 import Protocol from "./protocol/Protocol";
 import Clubs from "./clubs/Clubs";
+import { DefaultEvents } from "./events/defaultEvents/DefaultEvents";
+import { Application } from "./applicationsForParticipation/pageForTrainer/Application";
 
 export const Main = () => {
   return (
@@ -21,12 +23,14 @@ export const Main = () => {
       <div className={s.content}>
         <Routes>
             <Route path="/users/*" element={<UsersRoute />} />
-            <Route path="/events" element={<ChangeEvents />} />
+            <Route path="/events/*" element={<ChangeEvents />} />
+            <Route path="/defaultEvents/*" element={<DefaultEvents />} />
             <Route path="/news/*" element={<News />} />
             <Route path="/clubs/*" element={<Clubs />} />
             <Route path="/profile/*" element={<Profile />} />
             <Route path="/documentation/*" element={<Documentation />} />
             <Route path="/applied/*" element={<AppliedRoutes />} />
+            <Route path="/application/*" element={<Application />} />
             <Route path="/output/*" element={<Output />} />
             <Route path="/protocol/*" element={<Protocol />} />
         </Routes>

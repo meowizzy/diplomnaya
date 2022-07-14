@@ -56,10 +56,12 @@ export const NewApplications = () => {
           tsise=""
           partnerName=""
           numberOfteam=""
+          number="1"
           note=""
         />
         <AppliedLine
           fullName=""
+          number="2"
           club=""
           gender=""
           age=""
@@ -74,6 +76,7 @@ export const NewApplications = () => {
         <AppliedLine
           fullName=""
           club=""
+          number="3"
           gender=""
           age=""
           complex=""
@@ -89,7 +92,7 @@ export const NewApplications = () => {
     </div>
     <div className={ss.center}>
       <Button text='ДОБАВИТЬ СТРОКУ' width="600px" disabled margin="70px auto 180px"/>
-      <Button text='ПОДАТЬ ЗАЯВКУ' width="600px" onClick={()=>setOpenSuccessModal(!openSuccessModal)}/>
+      <Button text='ПОДАТЬ ЗАЯВКУ' width="600px" onClick={()=>setOpenSuccessModal(!openSuccessModal)} disabled/>
     </div>
     {openSuccessModal && (
         <SuccessModal

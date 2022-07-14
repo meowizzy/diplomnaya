@@ -26,7 +26,7 @@ export const ChangeForm = ({ onClick }) => {
  
         <BackButton onClick={onClick}/>
     
-      <p style={{ fontSize: "30px", marginBottom: "40px" }}>Мероприятие</p>
+      <p style={{ fontSize: "30px", marginBottom: "40px" }}>Информация о мероприятии</p>
       <form onSubmit={formik.handleSubmit}>
         <Input
           valueLabel="Наименование мероприятия"

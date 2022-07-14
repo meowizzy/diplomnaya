@@ -10,7 +10,7 @@ export const NewApplied = () => {
   const toggle=()=>{
     setClickColor(true)
   }
-
+  
   return (
     <div className={ss.cont}>
       <div className={s.title} style={{ fontWeight: "500" }}>

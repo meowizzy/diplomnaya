@@ -23,14 +23,14 @@ export const CreateEvents = ({ active, setActive }) => {
   });
   return (
     <div className={active ? s.cont : s.unactive}>
-      <BackButton onClick={() => setActive(false)} />
+      <BackButton onClick={() => setActive(false)} to="/main/events/allEvents"/>
 
       <p style={{ fontSize: "30px", marginBottom: "40px" }}>
         Создание мероприятие
       </p>
       <form onSubmit={formik.handleSubmit}>
         <Input
-          placeholder="Название"
+          placeholder="Введите название"
           valueLabel="Наименование мероприятия"
           value={formik.values.name}
           onChange={formik.handleChange}
@@ -38,7 +38,7 @@ export const CreateEvents = ({ active, setActive }) => {
           width="600px"
         />
         <Input
-          placeholder="Дата"
+          placeholder="Введите дату"
           valueLabel="Введите дату"
           value={formik.values.date}
           onChange={formik.handleChange}
@@ -46,7 +46,7 @@ export const CreateEvents = ({ active, setActive }) => {
           width="600px"
         />
         <Input
-          placeholder="Адрес"
+          placeholder="Введите место"
           valueLabel="Место проведения"
           value={formik.values.place}
           onChange={formik.handleChange}
@@ -70,7 +70,7 @@ export const CreateEvents = ({ active, setActive }) => {
           name="secretary"
         />
         <Input
-          placeholder="Примечание"
+          placeholder="Введите текст"
           valueLabel="Примечание"
           value={formik.values.note}
           onChange={formik.handleChange}
@@ -81,7 +81,7 @@ export const CreateEvents = ({ active, setActive }) => {
         <div className={s.age}>
           <div>
             <Input
-              placeholder="с"
+              placeholder="С"
               width="285px"
               valueLabel="Возрастная категория"
               value={formik.values.agePre}
@@ -90,7 +90,7 @@ export const CreateEvents = ({ active, setActive }) => {
             />
 
             <Input
-              placeholder="по"
+              placeholder="По"
               valueLabel=""
               width="285px"
               value={formik.values.ageAfter}

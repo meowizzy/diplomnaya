@@ -3,7 +3,10 @@
     display: flex;
     justify-content: center;
     margin-top: 56px;
-    position: relative;
+    position: absolute;
+    bottom: 20px;
+    left: 42%;
+    // margin-left: 40%;
     div{
         margin-right: 20px;
     }
