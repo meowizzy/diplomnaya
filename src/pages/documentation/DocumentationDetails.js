@@ -26,12 +26,11 @@ const DocumentationDetails = () => {
     return (
         <>
             <div className={s.form_cont}>
-                <BackButton onClick={() => navigate("/main/documentation/all_documentation")}/>
+                <BackButton to="/main/documentation/all_documentation" />
                 <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
                 {openOption && <Options link="/main/documentation/all_documentation/doc_details/edit_details" handleOpenDeleteModal={handleOpenDeleteModal}/>}
                 <p className="container_title">Информация о документе</p>
                 <Input valueLabel="Название" width="100%" value="Единые всекыргызские правила соревнований по ушу    2022 года"/>
-                <Input valueLabel="Ссылка" width="100%" value="https://www.figma.com/file/g2ESTCOXgCeKng9V6hXi2m/%D0%A3%D1%88%D1%83"/>
                 <label className={inpStyles.label}>Формат</label>
                 <div style={{marginTop: 4}} className="flex">
                     <div className={ss.format_gradient} style={{position: 'relative', cursor: 'pointer'}} onClick={() => handleChooseFormat("word")}>
@@ -44,11 +43,11 @@ const DocumentationDetails = () => {
                     </div>
                     <div className={ss.format_gradient} style={{position: 'relative', cursor: 'pointer'}} onClick={() => handleChooseFormat("pdf")}>
                         {format === "pdf" ? <img className={ss.checkbox_circle} src={gradient_circle_checkbox} alt=""/> : <img className={ss.checkbox_circle} src={grey_circle_checkbox} alt=""/>}
-                        <p className={ss.format_text}>Pdf</p>
+                        <p className={ss.format_text}>PDF</p>
                     </div>
                 </div>
                 <div style={{margin: "30px 20px 0"}}  className="input_flex">
-                    <p className="basic_text">Загрузить файл</p>
+                    <p className="basic_text">Скачать файл</p>
                     <img style={{cursor: "pointer"}} src={download} alt="wrong"/>
                 </div>
             </div>

@@ -20,7 +20,6 @@ const CreateDocumentation = () => {
                 <BackButton onClick={() => navigate("/main/documentation/all_documentation")}/>
                 <p className="container_title">Создать документ</p>
                 <Input valueLabel="Название" width="100%" placeholder="Название документа"/>
-                <Input valueLabel="Ссылка" width="100%" placeholder="Вставить ссылку"/>
                 <label className={inpStyles.label}>Формат</label>
                 <div style={{marginTop: 4}} className="flex">
                     <div className={ss.format_gradient} style={{position: 'relative', cursor: 'pointer'}} onClick={() => handleChooseFormat("word")}>
@@ -33,7 +32,7 @@ const CreateDocumentation = () => {
                     </div>
                     <div className={ss.format_gradient} style={{position: 'relative', cursor: 'pointer'}} onClick={() => handleChooseFormat("pdf")}>
                         {format === "pdf" ? <img className={ss.checkbox_circle} src={gradient_circle_checkbox} alt=""/> : <img className={ss.checkbox_circle} src={grey_circle_checkbox} alt=""/>}
-                        <p className={ss.format_text}>Pdf</p>
+                        <p className={ss.format_text}>PDF</p>
                     </div>
                 </div>
                 <Button disabled width="100%" classname="button" text="СОЗДАТЬ"/>
