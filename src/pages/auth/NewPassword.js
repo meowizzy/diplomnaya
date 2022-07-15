@@ -18,10 +18,15 @@ const NewPassword = () => {
   const foggle = () => {
     setSecondOpen(!secondOpen);
   };
+
+  let params = new URLSearchParams(document.location.search);
+  let token = params.get("token");
+  console.log("token: ", token)
+
   const formik = useFormik({
     initialValues: {
-      confirm_password: "",
       password: "",
+      token: "",
     },
     onSubmit: (data) => {
       console.log(data);
@@ -53,7 +58,7 @@ const NewPassword = () => {
               valueLabel="Подтвердить пароль"
               type={secondOpen ? "password" : "text"}
               // value={formik.values.name}
-              onChange={formik.handleChange}
+              // onChange={formik.handleChange}
               name="confirm_password"
             />
             {secondOpen === false ? (
@@ -64,9 +69,7 @@ const NewPassword = () => {
           </div>
           <Button
             type="submit"
-            disabled={
-              !(formik.values.confirm_password && formik.values.password)
-            }
+            disabled={!formik.values.password}
             text="СОХРАНИТЬ"
           />
         </form>

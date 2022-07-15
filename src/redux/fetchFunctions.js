@@ -16,3 +16,8 @@ export const feedBack = async (data) => {
     const res = await requests.feedbackApi(data);
     console.log(res);
 }
+
+export const newPassword = async (data) => {
+    const res = await requests.newPasswordApi(data);
+    console.log(res);
+}
