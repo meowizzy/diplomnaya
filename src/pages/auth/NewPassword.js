@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 import registerStyles from "../register/Registr.module.scss";
 import s from "./Auth.module.scss";
 import Button from "../../components/button/Button";
-import {newPassword} from "../../redux/fetchFunctions";
+import {auth, newPassword} from "../../redux/fetchFunctions";
 
 const NewPassword = () => {
   const [open, setOpen] = useState(true);
@@ -32,6 +32,7 @@ const NewPassword = () => {
     onSubmit: (data) => {
       console.log(data);
       newPassword(data);
+      auth(data);
     },
   });
   return (
