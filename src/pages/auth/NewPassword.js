@@ -32,7 +32,6 @@ const NewPassword = () => {
     onSubmit: (data) => {
       console.log(data);
       newPassword(data);
-      auth(data);
     },
   });
   return (
