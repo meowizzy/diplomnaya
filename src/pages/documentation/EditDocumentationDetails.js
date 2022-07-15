@@ -25,7 +25,6 @@ const EditDocumentationDetails = () => {
                 <BackButton onClick={() => navigate("/main/documentation/all_documentation/doc_details")}/>
                 <p className="container_title">Редактировать документ</p>
                 <Input valueLabel="Название" width="100%" value="Единые всекыргызские правила соревнований по ушу    2022 года"/>
-                <Input valueLabel="Ссылка" width="100%" value="https://www.figma.com/file/g2ESTCOXgCeKng9V6hXi2m/%D0%A3%D1%88%D1%83"/>
                 <label className={inpStyles.label}>Формат</label>
                 <div style={{marginTop: 4}} className="flex">
                     <div className={ss.format_gradient} style={{position: 'relative', cursor: 'pointer'}} onClick={() => handleChooseFormat("word")}>
@@ -38,7 +37,7 @@ const EditDocumentationDetails = () => {
                     </div>
                     <div className={ss.format_gradient} style={{position: 'relative', cursor: 'pointer'}} onClick={() => handleChooseFormat("pdf")}>
                         {format === "pdf" ? <img className={ss.checkbox_circle} src={gradient_circle_checkbox} alt=""/> : <img className={ss.checkbox_circle} src={grey_circle_checkbox} alt=""/>}
-                        <p className={ss.format_text}>Pdf</p>
+                        <p className={ss.format_text}>PDF</p>
                     </div>
                 </div>
                 <Button onClick={handleOpenSuccessModal} width="100%" className="button" text="СОХРАНИТЬ" />

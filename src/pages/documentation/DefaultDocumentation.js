@@ -16,13 +16,13 @@ const DefaultDocumentation = () => {
                     <img className={s.search_icon} src={search_icon} alt="wrong"/>
                 </div>
                 <div className={ss.title} style={{ fontWeight: "500" }}>
-                    <p className={ss.flex1}>№</p>
+                    <p style={{width: "11px"}}>№</p>
                     <p className={ss.flex10}>Название документа</p>
                     <p className={ss.flex_format}>Формат файла</p>
                 </div>
                 <Link to="/main/documentation/all_documentation/doc_details">
                     <div className={ss.title}>
-                        <p className={ss.flex1}>1</p>
+                        <p style={{width: "11px"}}>1</p>
                         <p className={ss.flex10}>Единые всекыргызские правила соревнований по ушу    2022 года</p>
                         <div className={ss.flex_format}>
                             <p>Word</p>

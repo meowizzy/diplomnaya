@@ -6,7 +6,7 @@ const fetchAPI = axios.create({
     baseURL: "http://wushu-federation.tk/",
     headers: {
         "Content-type": "application/json",
-        Authorization: `Bearer ${token}`,
+        // Authorization: `Bearer ${token}`,
     },
 });
 
@@ -18,7 +18,7 @@ const notToken = axios.create({
 });
 
 export const requests = {
-    authApi: (data) => fetchAPI.post("/login/", data),
+    authApi: (data) => fetchAPI.post("login/", data),
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     getEvents:() => fetchAPI.get('event/')
