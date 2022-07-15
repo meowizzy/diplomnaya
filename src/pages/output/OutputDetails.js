@@ -30,7 +30,7 @@ const OutputDetails = () => {
         <>
             <div className={ownStyles.form_container}>
                 {
-                   editButton ? <BackButton onClick={() => setEditButton(false)}/> : <BackButton onClick={() => navigate("/main/output/all_output")}/>
+                   editButton ? <BackButton onClick={() => setEditButton(false)}/> : <BackButton to="/main/output/all_output" />
                 }
                 {!editButton && (<OptionButton onClick={handleOpenOption} top="30px" right="30px"/>)}
                 {openOption && <Options closeOption={handleOpenOption} setEditButton={setEditButton} handleOpenDeleteModal={handleOpenDeleteModal}/>}
@@ -84,8 +84,8 @@ const OutputDetails = () => {
                 {editButton ? <Button onClick={handleOpenSuccessModal} margin="108px auto 50px" width="600px" classname="button" text="СОХРАНИТЬ"/> : <Button margin="108px auto 50px" width="600px" classname="button" text="ПЕЧАТЬ"/>}
 
             </div>
-            {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно отредактировали данные о клубе!"/>}
-            { openDeleteModal && <DeleteModal text="Вы уверены, что хотите удалить данный клуб?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
+            {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно отредактировали данные об итогах соревнования!"/>}
+            { openDeleteModal && <DeleteModal text="Вы уверены, что хотите удалить данный документ?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
         </>
     );
 };

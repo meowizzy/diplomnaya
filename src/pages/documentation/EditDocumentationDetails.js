@@ -22,7 +22,7 @@ const EditDocumentationDetails = () => {
     return (
         <>
             <div className={s.form_cont}>
-                <BackButton onClick={() => navigate("/main/documentation/all_documentation/doc_details")}/>
+                <BackButton to="/main/documentation/all_documentation/doc_details" />
                 <p className="container_title">Редактировать документ</p>
                 <Input valueLabel="Название" width="100%" value="Единые всекыргызские правила соревнований по ушу    2022 года"/>
                 <label className={inpStyles.label}>Формат</label>

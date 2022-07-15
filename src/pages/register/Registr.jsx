@@ -86,7 +86,7 @@ export const Registr = () => {
         />
         <Input
           placeholder="Введите фамилию"
-          valueLabel="Фамилие"
+          valueLabel="Фамилия"
           value={formik.values.surname}
           onChange={formik.handleChange}
           name="surname"

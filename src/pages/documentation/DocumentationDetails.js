@@ -51,7 +51,7 @@ const DocumentationDetails = () => {
                     <img style={{cursor: "pointer"}} src={download} alt="wrong"/>
                 </div>
             </div>
-            { openDeleteModal && <DeleteModal text="Вы уверены, что хотите удалить данный клуб?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
+            { openDeleteModal && <DeleteModal text="Вы уверены, что хотите удалить данный документ?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
         </>
 
     );
