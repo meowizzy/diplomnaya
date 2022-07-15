@@ -26,7 +26,7 @@ const NewPassword = () => {
   const formik = useFormik({
     initialValues: {
       password: "",
-      token: "",
+      token: token,
     },
     onSubmit: (data) => {
       console.log(data);
