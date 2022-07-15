@@ -13,12 +13,12 @@ export const getEvents = createAsyncThunk(
     try {
       const res = await requests.getEvents();
       console.log(res)
-      if (!res.ok) {
-        throw new Error("ERROR");
-      }
-      const data = await res.json();
-      console.log(data)
-      return data
+      // if (!res) {
+      //   throw new Error("ERROR");
+      // }
+      // const data = await res.json();
+      console.log(res)
+      // return res
     } catch (error) {
         return rejectWithValue(error.message)
     }
