@@ -48,7 +48,8 @@ export const AppliedTemplate = () => {
           tsise=""
           partnerName=""
           numberOfteam=""
-          note=""
+              number="1"
+              note=""
         />
         <AppliedLine
           fullName=""
@@ -61,7 +62,8 @@ export const AppliedTemplate = () => {
           tsise=""
           partnerName=""
           numberOfteam=""
-          note=""
+              number="2"
+              note=""
         />
         <AppliedLine
           fullName=""
@@ -74,7 +76,8 @@ export const AppliedTemplate = () => {
           tsise=""
           partnerName=""
           numberOfteam=""
-          note=""
+              number="3"
+              note=""
         />
         <div className="margin_for_scroll"></div>
       </div>

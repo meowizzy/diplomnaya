@@ -78,6 +78,7 @@ export const DetailedInfoForNewApplied = () => {
               partnerName="Золотой Дракон"
               numberOfteam="Золотой Дракон"
               note="Золотой Дракон"
+              number="1"
             />
             <AppliedLine
               fullName="Карина"
@@ -90,6 +91,7 @@ export const DetailedInfoForNewApplied = () => {
               tsise="Золотой Дракон"
               partnerName="Золотой Дракон"
               numberOfteam="Золотой Дракон"
+              number="2"
               note="Золотой Дракон"
             />
             <div className="margin_for_scroll"></div>
@@ -119,6 +121,7 @@ export const DetailedInfoForNewApplied = () => {
               value={formik.values.explanation}
               onChange={formik.handleChange}
               valueLabel="Причина отклонения"
+              name="explanation"
               width="600px"
             />
             <Button

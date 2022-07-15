@@ -3,6 +3,7 @@ import Button from "../../components/button/Button";
 import s from "./Profile.module.scss";
 import { useFormik } from "formik";
 import Input from "../../components/input/Input";
+import { close_eye, open_eye } from "../../images";
 
 export const Profile = () => {
   const formik = useFormik({
@@ -25,6 +26,11 @@ export const Profile = () => {
     setState(!state)
   }
 
+  const [eye, setEye] = useState(false)
+
+  const foggle = () =>{
+    setEye(!eye)
+  } 
   return (
     <div className={s.wrapper}>
       <div className={s.header}>
@@ -75,16 +81,18 @@ export const Profile = () => {
             name="email"
             type="email"
           />
+          <div className="relative">
           <Input
             valueLabel="Пароль"
             value={formik.values.password}
             onChange={formik.handleChange}
             width="600px"
-            type="password"
+            type={eye===true?"text":"password"}
             name="password"
             margin="0 0 32px"
           />
-
+          <img src={eye===true?open_eye:close_eye} onClick={foggle} className="pass"/>
+          </div>
           {state === true ? (
             <Button
               margin="106px 0 0"

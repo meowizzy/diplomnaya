@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 260px;
-    height: 900px;
+    height: 95vh;
     background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
     border-radius: 35px;
     color: #fff;
@@ -11,7 +11,8 @@
     font-weight: bold;
     margin-right: 30px;
     position:fixed;
-   
+    overflow-x: scroll;
+    
     .unactive_link {
         width: 260px;
         height: 50px;

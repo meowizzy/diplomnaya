@@ -57,7 +57,8 @@ export const DetailedInfoForHistoryOfApplied = () => {
             tsise="Золотой Дракон"
             partnerName="Золотой Дракон"
             numberOfteam="Золотой Дракон"
-            note="Золотой Дракон"
+              number="1"
+              note="Золотой Дракон"
           />
           <AppliedLine
             fullName="Карина"
@@ -70,7 +71,8 @@ export const DetailedInfoForHistoryOfApplied = () => {
             tsise="Золотой Дракон"
             partnerName="Золотой Дракон"
             numberOfteam="Золотой Дракон"
-            note="Золотой Дракон"
+              number="2"
+              note="Золотой Дракон"
           />
           <div className="margin_for_scroll"></div>
         </div>

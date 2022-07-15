@@ -25,9 +25,8 @@ export const RecoveryInfo = () => {
   return (
     <>
       <div className={s.info}>
-        <Link to="/main/users/recoveryRequest">
-          <BackButton />
-        </Link>
+        <BackButton to="/main/users/recoveryRequest" />
+
         <p className={s.text}>Информация о пользователе</p>
         <p className={s.second_p}>Заявка № 1</p>
 
@@ -40,14 +39,20 @@ export const RecoveryInfo = () => {
             width="600px"
             type="email"
           />
-          <Input
+          <div className="relative">
+            <p className={s.obr}>Обращение</p>
+            <div className={s.help}>
+              Помогите, пожалуйста, восстановить пароль
+            </div>
+          </div>
+          {/* <Input
             valueLabel="Обращение"
             value={formik.values.recovery}
             onChange={formik.handleChange}
             name="surname"
             width="600px"
             minHeight="200px"
-          />
+          /> */}
           {/* <div className={s.area_container}>
             <label className={s.label}>dsa</label>
             <textarea
@@ -64,7 +69,6 @@ export const RecoveryInfo = () => {
           <Button width="210px" text="ДА" margin="31px 0 0" type="submit" />
         </form>
       </div>
-    
     </>
   );
 };

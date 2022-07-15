@@ -3,25 +3,21 @@ import { withoutToken } from "../api";
 
 const initialState = {
   user: {},
-  error:{}
 };
 
 export const postRegister = createAsyncThunk(
   "register/postRegister",
  
-  async (formData, { rejectWithValue, dispatch }) => {
-    console.log("form", formData)
-    // dispatch(userRegister(res.formData));
+  async (formData ,{ rejectWithValue, dispatch }) => {
+    // console.log("form", formData)
     try {
-    //   body:JSON.stringify(formData)
-      const res = await withoutToken.register(formData);
-      if (!res.ok) {
+      const res = await withoutToken.register(formData.values);
+      console.log("res", res)
+      if (!res) {
         throw new Error("ERROR");
       }
-      
-      const data = await res.json();
-      console.log(data)
-      return data
+      formData.navigate('/auth')
+      // return res
     } catch (error) {
         return rejectWithValue(error.message)
     }
@@ -32,7 +28,7 @@ const registerSlice = createSlice({
   name: "register",
   initialState,
   status: null,
-  error: null,
+  error: true,
   reducers: {
     userRegister: (state, action) => {
       state.user = action.payload;
@@ -41,10 +37,11 @@ const registerSlice = createSlice({
   extraReducers: {
     [postRegister.pending]: (state) => {
       state.status = "loading";
-      // state.error = null;
+      state.error = null;
     },
     [postRegister.fulfilled]: (state) => {
       state.status = "resolved";
+      state.error = null
       console.log("fullfiled");
     },
     [postRegister.rejected]: (state, action) => {

@@ -84,3 +84,36 @@
     font-weight: normal;
     margin-bottom: 30px;
 }
+
+.help {
+    position: relative;
+    width: 600px;
+    height: 200px;
+    // margin: 30px;
+    border-radius: 30px;
+    background: #fff;
+    text-align: left;
+    padding-top: 12px;
+    padding-left: 20px;
+    font-weight: normal;
+  }
+  
+  .help::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    border-radius: 34px;
+    z-index: -1;
+  }
+  .obr{
+    font-weight: 700;
+font-size: 14px;
+color: #989797;
+margin-bottom: 5px;
+text-align: left;
+margin-left: 22px;
+  }

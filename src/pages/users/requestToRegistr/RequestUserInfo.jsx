@@ -26,7 +26,7 @@ export const RequestUserInfo = () => {
       return (
         <>
             <div className={ss.info}>
-             <Link to="/main/users/requestToRegistr"><BackButton /></Link> 
+           <BackButton to="/main/users/requestToRegistr"/>
               <p className={ss.text}>
                 Информация о пользователе
               </p>          

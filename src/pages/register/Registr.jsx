@@ -27,7 +27,7 @@ export const Registr = () => {
   }
   const navigate = useNavigate()
 
-  const err = useSelector(state=>state.register.error);
+  const err = useSelector(state=>state.register);
   // console.log(err)
 
   const dispatch = useDispatch();
@@ -45,12 +45,8 @@ export const Registr = () => {
     },
     onSubmit: (values) => {
       console.log(values)
-      dispatch(postRegister(values))
-      navigate('/auth')
-
-      // if(err===null){
-      //   navigate('/auth')
-      // }
+      let data = {values, navigate}
+      dispatch(postRegister(data))
     },
   });
 
@@ -66,7 +62,6 @@ export const Registr = () => {
     setSecondOpen(!secondOpen);
   };
 
-  
 
   return (
     <div className={s.cont}>
@@ -288,6 +283,7 @@ export const Registr = () => {
           onChange={formik.handleChange}
           name="city"
         />
+       {err.status==="rejected"&&<p className={s.err}>Что-то пошло не так...</p>} 
         {/* <div style={{margin:"50px 0px 60px"}}> */}
         <Button
           text="ЗАРЕГИСТРИРОВАТЬСЯ"

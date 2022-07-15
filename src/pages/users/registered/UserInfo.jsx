@@ -6,7 +6,7 @@ import { ThreeDot } from "../../../components/threeDot/ThreeDot";
 import s from "./Registered.module.scss";
 import Button from '../../../components/button/Button' 
 import { Link } from "react-router-dom"
-import { plus } from "../../../images";
+import { close_eye, open_eye, plus } from "../../../images";
 import SuccessModal from "../../../components/modals/SuccessModal";
 
 export const UserInfo = () => {
@@ -36,13 +36,20 @@ export const UserInfo = () => {
     setButtonState(!buttonState);
   };
 
+
+  const [eye, setEye] = useState(false)
+
+  const toggle = () =>{
+    setEye(!eye)
+  } 
+
   return (
     <>
       <div className={s.info}>
         <BackButton to="/main/users/registered" />
 
         <p className={s.text}>Информация о пользователе</p>
-        {buttonState === true && <ThreeDot onClick={foggle} />}
+        {buttonState === true && <ThreeDot onClick={foggle} text="Вы уверены, что хотите удалить данного пользователя?"/>}
 
         <form onSubmit={formik.handleSubmit}>
           <Input
@@ -101,15 +108,18 @@ export const UserInfo = () => {
             width="600px"
             name="club"
           />
+          <div className="relative">
           <Input
             valueLabel="Пароль"
             value={formik.values.password}
             onChange={formik.handleChange}
             width="600px"
-            type="password"
+            type={eye===true?"text":"password"}
             name="password"
             margin="0 0 32px"
           />
+          <img src={eye===true?open_eye:close_eye} onClick={toggle} className="pass"/>
+          </div>
           <label className={s.status}>
             <p>Активен / Неактивен</p>
             <input type="radio" className={s.input} />

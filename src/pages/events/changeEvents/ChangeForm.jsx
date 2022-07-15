@@ -3,9 +3,14 @@ import React from "react";
 import BackButton from "../../../components/arrowButton/BackButton";
 import Button from "../../../components/button/Button";
 import Input from "../../../components/input/Input";
+import SuccessModal from "../../../components/modals/SuccessModal";
 import s from "./ChangeEvents.module.scss";
 
 export const ChangeForm = ({ onClick }) => {
+  const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
+  const handleOpenSuccessModal = () => setOpenSuccessModal(true);
+  const handleCloseSuccessModal = () => setOpenSuccessModal(false);
+
   const formik = useFormik({
     initialValues: {
       name: "Чемпионат Кыргызской Респубики по традиционному ушу",
@@ -19,6 +24,7 @@ export const ChangeForm = ({ onClick }) => {
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      handleOpenSuccessModal()
     },
   });
   return (
@@ -93,6 +99,13 @@ export const ChangeForm = ({ onClick }) => {
         </div>
           <Button width="600px" text="СОХРАНИТЬ" type="submit"/>
       </form>
+      {openSuccessModal && (
+        <SuccessModal
+          open={openSuccessModal}
+          handleClose={handleCloseSuccessModal}
+          title="Вы успешно отредактировали данные о мероприятии!"
+        />
+      )}
     </div>
   );
 };
