@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux/es/exports";
 import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import Button from "../../../components/button/Button";
+import { getEvents } from "../../../redux/slices/eventSlice";
 import { linkActiveClassName } from "../../../utils/ActiveLink";
 import s from ".././defaultEvents/DefaultEvents.module.scss";
 import { AllEvents } from "./allEvents/AllEvents";
@@ -13,6 +15,12 @@ import { Events_2022 } from "./events_2022/Events_2022";
 export const ChangeEvents = () => {
 
   const [active, setActive] = useState(false)
+
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(getEvents())
+  },[])
 
   const location = useLocation()
   return (

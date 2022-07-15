@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { useNavigate } from "react-router";
 import { withoutToken } from "../api";
 
 const initialState = {
@@ -7,7 +6,6 @@ const initialState = {
   error:{}
 };
 
-// const navigate = useNavigate()
 export const postRegister = createAsyncThunk(
   "register/postRegister",
  
@@ -18,7 +16,7 @@ export const postRegister = createAsyncThunk(
     //   body:JSON.stringify(formData)
       const res = await withoutToken.register(formData);
       if (!res.ok) {
-        throw new Error(true);
+        throw new Error("ERROR");
       }
       
       const data = await res.json();
@@ -59,22 +57,3 @@ const registerSlice = createSlice({
 export const { userRegister } = registerSlice.actions;
 
 export default registerSlice.reducer;
-
-// export const register = (formData) => {
-//     console.log("в экшыне",formData)
-//       return async (dispatch) => {
-//         return axios(API_POST_REGISTER_STAFF, {
-//           method: "POST",
-//           headers: {
-//             "Content-Type": "application/json"
-//           },
-//           data: JSON.stringify(formData),
-//         })
-//           .then(() => {
-//             dispatch({ type: REGISTER, payload: formData });
-//           })
-//           .catch((err) =>
-//             dispatch({ type: REGISTER_FAILURE, payload: err.response.data })
-//           );
-//       };
-//     };

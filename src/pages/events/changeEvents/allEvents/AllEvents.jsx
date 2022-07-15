@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import ForwardButton from '../../../../components/arrowButton/ForwardButton';
 import s from "../../defaultEvents/DefaultEvents.module.scss"
 import { Card } from '../Card';
@@ -6,6 +7,12 @@ import { CreateEvents } from '../CreateEvents';
 
 export const AllEvents = () => {
   const [active, setActive] = useState(false)
+
+  const dispatch = useDispatch()
+
+  const events = useSelector(state=>state.event)
+
+  console.log(events)
 
   return (
     <>
