@@ -85,7 +85,6 @@ const ProtocolDetails = () => {
             <p style={{ marginBottom: "30px", marginTop: "100px", fontWeight:"bold", textAlign: "center" }}>
                 Выберите номер подгруппы
             </p>
-            <Pagination/>
 
             <div className={ownStyles2.description2}>
                 <p style={{ marginBottom: "20px", marginTop: "70px", fontWeight:"bold" }}>
@@ -137,7 +136,7 @@ const ProtocolDetails = () => {
                     <input style={{borderRight: "none"}} className={ownStyles.input} type="text" value="Красная (первая)"/>
                 </div>
             </div>
-
+            <Pagination/>
         </div>
     );
 };

@@ -16,7 +16,9 @@ import grey_circle_checkbox from "./grey_circle_checkbox.svg"
 import gradient_circle_checkbox from "./gradient_circle_checkbox.svg"
 import plus from "./plus.svg"
 import minus from "./minus.svg"
-
+import file_download from "./file_download.svg"
+import message_unsend from "./message_unsend.svg"
+import message_sent from "./message_sent.svg"
 
 export {
     open_eye,
@@ -37,4 +39,7 @@ export {
     gradient_circle_checkbox,
     plus,
     minus,
+    file_download,
+    message_unsend,
+    message_sent
 }

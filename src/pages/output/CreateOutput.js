@@ -13,7 +13,7 @@ const CreateOutput = () => {
     return (
         <>
             <div className={ownStyles.form_container}>
-                <BackButton onClick={() => navigate("/main/output/all_output")}/>
+                <BackButton to="/main/output/all_output" />
                 <p style={{marginBottom: 50}} className="container_title">Создать документ с итогами соревнований</p>
                 <Input valueLabel="Соревнование" width="600px" placeholder="Введите название"/>
                 <Input valueLabel="Подгруппа" width="600px" placeholder="Введите название"/>

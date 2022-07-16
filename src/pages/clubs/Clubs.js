@@ -1,13 +1,14 @@
 import React from 'react';
 import AdminClubs from "./AdminClubs";
 import TrainerClubs from "./TrainerClubs";
+import {getCookie} from "../../utils/cookieFunction/cookieFunction";
 
 const Clubs = () => {
-    const role = localStorage.getItem('role');
+    const role = JSON.parse(getCookie("user_info"))
     return (
         <>
-            { role === "admin" && <AdminClubs /> }
-            { role === "trainer" && <TrainerClubs /> }
+            { role["user role"] === "ADMIN" && <AdminClubs /> }
+            { role["user role"] === "TRAINER" && <TrainerClubs /> }
         </>
     );
 };

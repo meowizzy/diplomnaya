@@ -5,6 +5,7 @@ import ForwardButton from "../../../components/arrowButton/ForwardButton";
 import OptionButton from "../../../components/optionButton/OptionButton";
 import BackButton from "../../../components/arrowButton/BackButton";
 import Options from "../../../components/options/Options";
+import {getCookie} from "../../../utils/cookieFunction/cookieFunction";
 
 const NewsCard = ({openOption, handleOpenOption, handleOpenDeleteModal}) => {
 
@@ -15,7 +16,7 @@ const NewsCard = ({openOption, handleOpenOption, handleOpenDeleteModal}) => {
         console.log(open)
     }
 
-    const role = localStorage.getItem("role")
+    const role = JSON.parse(getCookie("user_info"))
 
     return (
             open ? (<div className={s.card}>
@@ -30,7 +31,7 @@ const NewsCard = ({openOption, handleOpenOption, handleOpenDeleteModal}) => {
                         <p className={s.card__title}>В номинации “Первое место” </p>
                         <p className={s.card__date}>17.04.2022г.</p>
                         {
-                            role === "admin" &&
+                            role["user role"] === "ADMIN" &&
                             <>
                                 <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
                                 {openOption && <Options link="/main/news/all_news/edit_new" handleOpenDeleteModal={handleOpenDeleteModal}/>}

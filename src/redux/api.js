@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const token = localStorage.getItem("token");
+// const token = localStorage.getItem("token");
 
 const fetchAPI = axios.create({
     baseURL: "http://wushu-federation.tk/",
@@ -22,8 +22,9 @@ export const requests = {
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     getEvents:() => fetchAPI.get('event/'),
-    postEvents:(data) => fetchAPI.post('event/', data)
+    postEvents:(data) => fetchAPI.post('event/', data),
     // newPassword: (data) => fetchAPI.post("password-reset/", data),
+    newPasswordApi: (data) => fetchAPI.post("password-reset/confirm/", data),
 }
 
 export const withoutToken = {

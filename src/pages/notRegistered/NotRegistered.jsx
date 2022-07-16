@@ -19,7 +19,7 @@ export const NotRegistered = () => {
           </Link>
         </div>
       </header>
-      <Role />
+      {/*<Role />*/}
       <Protocol />
       <Protocol />
       <footer className={s.footer}>

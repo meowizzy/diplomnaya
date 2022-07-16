@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink,useLocation } from "react-router-dom";
 import s from "./NavBar.module.scss";
+import {getCookie} from "../../utils/cookieFunction/cookieFunction";
 
 export const NavBar = () => {
 
@@ -12,13 +13,15 @@ export const NavBar = () => {
       if (isParentLinkActive) return s.active_link;
       return s.unactive_link;
     };
-    const role = localStorage.getItem('role')
     const removeRole=()=>{
       localStorage.removeItem('role')
     }
+
+    const role = JSON.parse(getCookie("user_info"))
+    console.log(role)
   return (
     <>
-      {role === "admin" && (
+      {role["user role"] === "ADMIN" && (
         <div className={s.cont}>
           <NavLink
             to="/main/defaultEvents/allDefaultEvents"
@@ -96,7 +99,7 @@ export const NavBar = () => {
         </div>
       )}
 
-      {role === "trainer" && (
+      {role["user role"] === "TRAINER" && (
         <div className={s.cont}>
           <NavLink
             to="/main/defaultEvents/allDefaultEvents"
@@ -182,11 +185,11 @@ export const NavBar = () => {
         </div>
       )}
 
-      {role === "secretary" && (
+      {role.assistant === "True" && (
         <div className={s.cont}>
           <NavLink
-            to="/main/events/allEvents"
-            className={linkActiveClassName("events")}
+            to="/main/defaultEvents/allDefaultEvents"
+            className={linkActiveClassName("defaultEvents")}
           >
             <span className={s.top_curve}></span>
             Мероприятия
@@ -201,15 +204,15 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
-            to="/main/applied/newApplied"
-            className={linkActiveClassName("applied")}
+            to="/main/users/registered"
+            className={linkActiveClassName("users")}
           >
             <span className={s.top_curve}></span>
-            Заявки
+            Пользователи
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
-            to="/main/protocol/all_events"
+            to="/main/protocol/all_protocols"
             className={linkActiveClassName("protocol")}
           >
             <span className={s.top_curve}></span>
@@ -217,11 +220,11 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
-            to="/main/output/all_output"
-            className={linkActiveClassName("output")}
+            to="/main/clubs/all_clubs"
+            className={linkActiveClassName("clubs")}
           >
             <span className={s.top_curve}></span>
-            Итоги
+            Клубы
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
@@ -260,7 +263,7 @@ export const NavBar = () => {
         </div>
       )}
 
-      {role === "referee" && (
+      {role.judge === "True" && (
         <div className={s.cont}>
           <NavLink
             to="/main/defaultEvents/allDefaultEvents"
@@ -279,19 +282,19 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
-            to="/main/protocol/new_protocols"
+            to="/main/application/submittedApplications"
+            className={linkActiveClassName("application")}
+          >
+            <span className={s.top_curve}></span>
+            Заявки
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/protocol/all_protocols"
             className={linkActiveClassName("protocol")}
           >
             <span className={s.top_curve}></span>
             Протоколы
-            <span className={s.bottom_curve}></span>
-          </NavLink>
-          <NavLink
-            to="/main/statistics"
-            className={linkActiveClassName("statistics")}
-          >
-            <span className={s.top_curve}></span>
-            Статистика
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
@@ -300,6 +303,22 @@ export const NavBar = () => {
           >
             <span className={s.top_curve}></span>
             Итоги
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/clubs/all_clubs"
+            className={linkActiveClassName("clubs")}
+          >
+            <span className={s.top_curve}></span>
+            Клубы
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/trainers"
+            className={linkActiveClassName("trainers")}
+          >
+            <span className={s.top_curve}></span>
+            Тренер
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink

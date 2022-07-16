@@ -38,8 +38,8 @@ const Auth = () => {
     },
     onSubmit: (data) => {
       console.log(data);
-      navigate("/main/events");
-      auth(data)
+      // navigate("/main/events");
+      auth(data, navigate)
     },
   });
   return (
