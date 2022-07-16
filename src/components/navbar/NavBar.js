@@ -18,69 +18,317 @@ export const NavBar = () => {
     }
   return (
     <>
-      {role==="admin"&& 
-      <div className={s.cont}>
-        <NavLink to="/main/defaultEvents/allDefaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
-        <NavLink to="/main/news/all_news" className={linkActiveClassName('news')}>Новости</NavLink>
-        <NavLink to="/main/users/registered" className={linkActiveClassName('users')}>Пользователи</NavLink>
-        <NavLink to="/main/protocol/all_protocols" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
-        <NavLink to="/main/clubs/all_clubs" className={linkActiveClassName('clubs')}>Клубы</NavLink>
-        <NavLink to="/main/statistics" className={linkActiveClassName('statistics')}>Статистика</NavLink>
-        <NavLink to="/main/documentation/all_documentation" className={linkActiveClassName('documentation')}>Документация</NavLink>
-        <NavLink to="/main/profile" className={linkActiveClassName('profile')}>Профиль</NavLink>
-        <NavLink to="/main/chat" className={linkActiveClassName('chat')}>Чат</NavLink>
-
-        <NavLink to="/" className={s.exit} onClick={removeRole}>Выйти</NavLink>
-      </div>
-      }
-
-     {role==="trainer"&& 
-      <div className={s.cont}>
-        <NavLink to="/main/defaultEvents/allDefaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
-        <NavLink to="/main/news/all_news" className={linkActiveClassName('news')}>Новости</NavLink>
-        <NavLink to="/main/application/submittedApplications" className={linkActiveClassName('application')}>Заявки</NavLink>
-        <NavLink to="/main/protocol/all_protocols" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
-        <NavLink to="/main/output/all_output" className={linkActiveClassName('output')}>Итоги</NavLink>
-        <NavLink to="/main/clubs/all_clubs" className={linkActiveClassName('clubs')}>Клубы</NavLink>
-        <NavLink to="/main/trainers" className={linkActiveClassName('trainers')}>Тренеры</NavLink>
-        <NavLink to="/main/documentation/all_documentation" className={linkActiveClassName('documentation')}>Документация</NavLink>
-        <NavLink to="/main/profile" className={linkActiveClassName('profile')}>Профиль</NavLink>
-        <NavLink to="/main/chat" className={linkActiveClassName('chat')}>Чат</NavLink>
-
-        <NavLink to="/" className={s.exit} onClick={removeRole}>Выйти</NavLink>
-      </div>
-      }
-
-      {role==="secretary"&& 
+      {role === "admin" && (
         <div className={s.cont}>
-          <NavLink to="/main/events/allEvents" className={linkActiveClassName("events")}>Мероприятия</NavLink>
-          <NavLink to="/main/news/all_news" className={linkActiveClassName('news')}>Новости</NavLink> 
-          <NavLink to="/main/applied/newApplied" className={linkActiveClassName('applied')}>Заявки</NavLink>
-          <NavLink to="/main/protocol/all_events" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
-            <NavLink to="/main/output/all_output" className={linkActiveClassName('output')}>Итоги</NavLink>
-            <NavLink to="/main/statistics" className={linkActiveClassName('statistics')}>Статистика</NavLink>
-          <NavLink to="/main/documentation/all_documentation" className={linkActiveClassName('documentation')}>Документация</NavLink>
-          <NavLink to="/main/profile" className={linkActiveClassName('profile')}>Профиль</NavLink>
-          <NavLink to="/main/chat" className={linkActiveClassName('chat')}>Чат</NavLink>
+          <NavLink
+            to="/main/defaultEvents/allDefaultEvents"
+            className={linkActiveClassName("defaultEvents")}
+          >
+            <span className={s.top_curve}></span>
+            Мероприятия
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/news/all_news"
+            className={linkActiveClassName("news")}
+          >
+            <span className={s.top_curve}></span>
+            Новости
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/users/registered"
+            className={linkActiveClassName("users")}
+          >
+            <span className={s.top_curve}></span>
+            Пользователи
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/protocol/all_protocols"
+            className={linkActiveClassName("protocol")}
+          >
+            <span className={s.top_curve}></span>
+            Протоколы
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/clubs/all_clubs"
+            className={linkActiveClassName("clubs")}
+          >
+            <span className={s.top_curve}></span>
+            Клубы
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/statistics"
+            className={linkActiveClassName("statistics")}
+          >
+            <span className={s.top_curve}></span>
+            Статистика
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/documentation/all_documentation"
+            className={linkActiveClassName("documentation")}
+          >
+            <span className={s.top_curve}></span>
+            Документация
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/profile"
+            className={linkActiveClassName("profile")}
+          >
+            <span className={s.top_curve}></span>
+            Профиль
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink to="/main/chat" className={linkActiveClassName("chat")}>
+            <span className={s.top_curve}></span>
+            Чат
+            <span className={s.bottom_curve}></span>
+          </NavLink>
 
-          <NavLink to="/" className={s.exit} onClick={removeRole}>Выйти</NavLink>
+          <NavLink to="/" className={s.exit} onClick={removeRole}>
+            Выйти
+          </NavLink>
         </div>
-      }
+      )}
 
-      {role==="referee"&& 
+      {role === "trainer" && (
         <div className={s.cont}>
-          <NavLink to="/main/defaultEvents/allDefaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
-          <NavLink to="/main/news/all_news" className={linkActiveClassName('news')}>Новости</NavLink>
-          <NavLink to="/main/protocol/new_protocols" className={linkActiveClassName('protocol')}>Протоколы</NavLink>
-          <NavLink to="/main/statistics" className={linkActiveClassName('statistics')}>Статистика</NavLink>
-            <NavLink to="/main/output/all_output" className={linkActiveClassName('output')}>Итоги</NavLink>
-            <NavLink to="/main/documentation/all_documentation" className={linkActiveClassName('documentation')}>Документация</NavLink>
-          <NavLink to="/main/profile" className={linkActiveClassName('profile')}>Профиль</NavLink>
-          <NavLink to="/main/chat" className={linkActiveClassName('chat')}>Чат</NavLink>
+          <NavLink
+            to="/main/defaultEvents/allDefaultEvents"
+            className={linkActiveClassName("defaultEvents")}
+          >
+            <span className={s.top_curve}></span>
+            Мероприятия
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/news/all_news"
+            className={linkActiveClassName("news")}
+          >
+            <span className={s.top_curve}></span>
+            Новости
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/application/submittedApplications"
+            className={linkActiveClassName("application")}
+          >
+            <span className={s.top_curve}></span>
+            Заявки
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/protocol/all_protocols"
+            className={linkActiveClassName("protocol")}
+          >
+            <span className={s.top_curve}></span>
+            Протоколы
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/output/all_output"
+            className={linkActiveClassName("output")}
+          >
+            <span className={s.top_curve}></span>
+            Итоги
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/clubs/all_clubs"
+            className={linkActiveClassName("clubs")}
+          >
+            <span className={s.top_curve}></span>
+            Клубы
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/trainers"
+            className={linkActiveClassName("trainers")}
+          >
+            <span className={s.top_curve}></span>
+            Тренер
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/documentation/all_documentation"
+            className={linkActiveClassName("documentation")}
+          >
+            <span className={s.top_curve}></span>
+            Документация
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/profile"
+            className={linkActiveClassName("profile")}
+          >
+            <span className={s.top_curve}></span>
+            Профиль
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink to="/main/chat" className={linkActiveClassName("chat")}>
+            <span className={s.top_curve}></span>
+            Чат
+            <span className={s.bottom_curve}></span>
+          </NavLink>
 
-          <NavLink to="/" className={s.exit} onClick={removeRole}>Выйти</NavLink>
+          <NavLink to="/" className={s.exit} onClick={removeRole}>
+            Выйти
+          </NavLink>
         </div>
-      }
-  </>
+      )}
+
+      {role === "secretary" && (
+        <div className={s.cont}>
+          <NavLink
+            to="/main/events/allEvents"
+            className={linkActiveClassName("events")}
+          >
+            <span className={s.top_curve}></span>
+            Мероприятия
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/news/all_news"
+            className={linkActiveClassName("news")}
+          >
+            <span className={s.top_curve}></span>
+            Новости
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/applied/newApplied"
+            className={linkActiveClassName("applied")}
+          >
+            <span className={s.top_curve}></span>
+            Заявки
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/protocol/all_events"
+            className={linkActiveClassName("protocol")}
+          >
+            <span className={s.top_curve}></span>
+            Протоколы
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/output/all_output"
+            className={linkActiveClassName("output")}
+          >
+            <span className={s.top_curve}></span>
+            Итоги
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/statistics"
+            className={linkActiveClassName("statistics")}
+          >
+            <span className={s.top_curve}></span>
+            Статистика
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/documentation/all_documentation"
+            className={linkActiveClassName("documentation")}
+          >
+            <span className={s.top_curve}></span>
+            Документация
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/profile"
+            className={linkActiveClassName("profile")}
+          >
+            <span className={s.top_curve}></span>
+            Профиль
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink to="/main/chat" className={linkActiveClassName("chat")}>
+            <span className={s.top_curve}></span>
+            Чат
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+
+          <NavLink to="/" className={s.exit} onClick={removeRole}>
+            Выйти
+          </NavLink>
+        </div>
+      )}
+
+      {role === "referee" && (
+        <div className={s.cont}>
+          <NavLink
+            to="/main/defaultEvents/allDefaultEvents"
+            className={linkActiveClassName("defaultEvents")}
+          >
+            <span className={s.top_curve}></span>
+            Мероприятия
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/news/all_news"
+            className={linkActiveClassName("news")}
+          >
+            <span className={s.top_curve}></span>
+            Новости
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/protocol/new_protocols"
+            className={linkActiveClassName("protocol")}
+          >
+            <span className={s.top_curve}></span>
+            Протоколы
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/statistics"
+            className={linkActiveClassName("statistics")}
+          >
+            <span className={s.top_curve}></span>
+            Статистика
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/output/all_output"
+            className={linkActiveClassName("output")}
+          >
+            <span className={s.top_curve}></span>
+            Итоги
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/documentation/all_documentation"
+            className={linkActiveClassName("documentation")}
+          >
+            <span className={s.top_curve}></span>
+            Документация
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/profile"
+            className={linkActiveClassName("profile")}
+          >
+            <span className={s.top_curve}></span>
+            Профиль
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink to="/main/chat" className={linkActiveClassName("chat")}>
+            <span className={s.top_curve}></span>
+            Чат
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+
+          <NavLink to="/" className={s.exit} onClick={removeRole}>
+            Выйти
+          </NavLink>
+        </div>
+      )}
+    </>
   );
 };

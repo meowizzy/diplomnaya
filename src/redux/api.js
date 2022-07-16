@@ -21,7 +21,8 @@ export const requests = {
     authApi: (data) => fetchAPI.post("login/", data),
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
-    getEvents:() => fetchAPI.get('event/')
+    getEvents:() => fetchAPI.get('event/'),
+    postEvents:(data) => fetchAPI.post('event/', data)
     // newPassword: (data) => fetchAPI.post("password-reset/", data),
 }
 

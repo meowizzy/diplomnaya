@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux/es/exports";
 import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import Button from "../../../components/button/Button";
-import { getEvents } from "../../../redux/slices/eventSlice";
+import { getEvent } from "../../../redux/slices/eventSlice";
 import { linkActiveClassName } from "../../../utils/ActiveLink";
 import s from ".././defaultEvents/DefaultEvents.module.scss";
 import { AllEvents } from "./allEvents/AllEvents";
@@ -19,7 +19,7 @@ export const ChangeEvents = () => {
   const dispatch = useDispatch()
 
   useEffect(()=>{
-    dispatch(getEvents())
+    dispatch(getEvent())
   },[])
 
   const location = useLocation()

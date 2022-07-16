@@ -4,21 +4,34 @@ import { useFormik } from "formik";
 import s from "./ChangeEvents.module.scss";
 import Button from "../../../components/button/Button";
 import BackButton from "../../../components/arrowButton/BackButton";
+import { createEvent } from "../../../redux/slices/eventSlice";
+import { useDispatch } from "react-redux/es/exports";
+
 
 export const CreateEvents = ({ active, setActive }) => {
+
+  const dispatch = useDispatch()
+
   const formik = useFormik({
     initialValues: {
       name: "",
-      date: "",
+      finish_datetime: "",
+      start_datetime:"",
       place: "",
-      referee: "",
-      secretary: "",
+      lead_judge: "",
+      assistant: "",
       note: "",
-      agePre: "",
-      ageAfter: "",
+      age_groupe: [
+        {
+          min_age: 2,
+          max_age: 2,
+          name: "",
+        },
+      ],
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      dispatch(createEvent(values));
+      // alert(JSON.stringify(values, null, 2));
     },
   });
   return (
@@ -38,11 +51,19 @@ export const CreateEvents = ({ active, setActive }) => {
           width="600px"
         />
         <Input
-          placeholder="Введите дату"
-          valueLabel="Введите дату"
-          value={formik.values.date}
+          placeholder="Введите дату начала"
+          valueLabel="Введите дату начала"
+          value={formik.values.start_datetime}
           onChange={formik.handleChange}
-          name="date"
+          name="start_datetime"
+          width="600px"
+        />
+         <Input
+          placeholder="Введите дату конца"
+          valueLabel="Введите дату конца"
+          value={formik.values.finish_datetime}
+          onChange={formik.handleChange}
+          name="finish_datetime"
           width="600px"
         />
         <Input
@@ -56,18 +77,18 @@ export const CreateEvents = ({ active, setActive }) => {
         <Input
           placeholder="Главный судья"
           valueLabel="Информация о мероприятии - главный судья"
-          value={formik.values.referee}
+          value={formik.values.lead_judge}
           onChange={formik.handleChange}
           width="600px"
-          name="referee"
+          name="lead_judge"
         />
         <Input
           placeholder="Секретарь"
           valueLabel="Информация о мероприятии- секретарь"
-          value={formik.values.secretary}
+          value={formik.values.assistant}
           onChange={formik.handleChange}
           width="600px"
-          name="secretary"
+          name="assistant"
         />
         <Input
           placeholder="Введите текст"
@@ -84,18 +105,19 @@ export const CreateEvents = ({ active, setActive }) => {
               placeholder="С"
               width="285px"
               valueLabel="Возрастная категория"
-              value={formik.values.agePre}
+              value={formik.values.age_groupe[0].min_age}
+              // value={formik.values.age_groupe.forEach(el=>{return el.min_age})}
               onChange={formik.handleChange}
-              name="agePre"
+              name="age_groupe[0].min_age"
             />
 
             <Input
               placeholder="По"
               valueLabel=""
               width="285px"
-              value={formik.values.ageAfter}
+              value={formik.values.age_groupe[0].max_age}
               onChange={formik.handleChange}
-              name="ageAfter"
+              name="age_groupe[0].max_age"
             />
             <span className={s.age_span}></span>
           </div>
@@ -105,12 +127,13 @@ export const CreateEvents = ({ active, setActive }) => {
           disabled={
             !(
               formik.values.name &&
-              formik.values.date &&
+              formik.values.finish_datetime &&
+              formik.values.start_datetime&&
               formik.values.place &&
-              formik.values.referee &&
-              formik.values.secretary &&
-              formik.values.ageAfter &&
-              formik.values.agePre &&
+              formik.values.lead_judge &&
+              formik.values.assistant &&
+              // formik.values.age_groupe.forEach(el=>{return el.max_age}) &&
+              // formik.values.age_groupe.forEach(el=>{return el.min_age}) &&
               formik.values.note
             )
           }

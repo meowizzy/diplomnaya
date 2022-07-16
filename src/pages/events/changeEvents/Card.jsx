@@ -8,7 +8,7 @@ import s from ".././defaultEvents/DefaultEvents.module.scss";
 import ss from "./ChangeEvents.module.scss";
 import { ChangeForm } from "./ChangeForm";
 
-export const Card = ({ text }) => {
+export const Card = ({ note,name,start_date,finish_date,place,referee,secretary,min_age,max_age,max_age_second,min_age_second }) => {
   const [card, setCard] = useState(true);
 
   const toggle = () => {
@@ -23,38 +23,57 @@ export const Card = ({ text }) => {
   return (
     <>
       {change === false ? (
-        <ChangeForm onClick={foggle} />
+        <ChangeForm
+          onClick={foggle}
+          assistant={secretary}
+          finish_datetime={finish_date}
+          lead_judge={referee}
+          max_age={max_age}
+          max_age_second={max_age_second}
+          min_age={min_age}
+          min_age_second={min_age_second}
+          name={name}
+          note={note}
+          place={place}
+          start_datetime={start_date}
+        />
       ) : card === true ? (
         <div className={s.box}>
           <p className={s.text_card}>
-            Чемпионат Кыргызской Респубики по традиционному ушу
+            {name}
           </p>
-          <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
-          <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
+          <p className={s.text_date}>
+            {start_date}. - {finish_date}.
+          </p>
+          <p className={s.text_title}>{place}</p>
           <div className={s.arrow_button} onClick={toggle}>
             <ForwardButton />
           </div>
         </div>
       ) : (
         <div className={ss.box}>
-        
-            <BackButton onClick={toggle} />
-        
+          <BackButton onClick={toggle} />
+
           <div>
             <p className={s.text_card}>
-              Чемпионат Кыргызской Респубики по традиционному ушу
+              {name}
             </p>
-            <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
-            <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
+            <p className={s.text_date}>
+              {start_date} - {finish_date}.
+            </p>
+            <p className={s.text_title}>{place}</p>
             <p>Информация о мероприятии</p>
             <div className={s.info}>
-              <p>Главный судья: Белоусова Карина</p>
-              <p>Секретарь: Елена Малышева</p>
-              <p>Возрастная категория: с 9 до 15, с 16 до 20</p>
+              <p>Главный судья: {referee}</p>
+              <p>Секретарь: {secretary}</p>
+              <p>
+                Возрастная категория: с {min_age} до {max_age}, с{" "}
+                {min_age_second} до {max_age_second}
+              </p>
             </div>
             <p>Примечание</p>
             <p className={s.note}>
-              Тренерам необходимо подать заявку до 20.06.2022г.
+              {note}
             </p>
           </div>
           <div className={ss.footer}>
@@ -62,7 +81,9 @@ export const Card = ({ text }) => {
               <Button text="ИЗМЕНИТЬ ДАННЫЕ" margin="auto auto" />
             </span>
             <span className={ss.delete}>
-              <Delete text={"Вы уверены, что хотите удалить данное мероприятие?"}/>
+              <Delete
+                text={"Вы уверены, что хотите удалить данное мероприятие?"}
+              />
             </span>
           </div>
         </div>

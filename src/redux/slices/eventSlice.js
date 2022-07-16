@@ -3,20 +3,37 @@ import { requests } from "../api";
 
 
 const initialState = {
-  events: [],
+  event: [],
   error:{}
 };
 
-export const getEvents = createAsyncThunk(
+export const getEvent = createAsyncThunk(
   "event/getEvents",
   async function(_,{ rejectWithValue}){
     try {
       const res = await requests.getEvents();
-      console.log(res)
+      console.log(res.data)
       if (!res) {
         throw new Error("ERROR");
       }
-      // return res
+      return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+
+export const createEvent = createAsyncThunk(
+  "event/createEvents",
+ 
+  async (formData ,{ rejectWithValue }) => {
+    console.log("form", formData)
+    try {
+      const res = await requests.postEvents(formData);
+      console.log("res", res)
+      if (!res) {
+        throw new Error("ERROR");
+      }
     } catch (error) {
         return rejectWithValue(error.message)
     }
@@ -29,27 +46,40 @@ const eventSlice = createSlice({
   status: null,
   error: null,
   reducers: {
-    getEvents: (state, action) => {
-      state.user = action.payload;
+    getEvent: (state, action) => {
+      state.event = action.payload;
     },
   },
   extraReducers: {
-    [getEvents.pending]: (state) => {
+    [getEvent.pending]: (state) => {
       state.status = "loading";
       state.error = null;
     },
-    [getEvents.fulfilled]: (state, action) => {
+    [getEvent.fulfilled]: (state, action) => {
       state.status = "resolved";
-      state.events = action.payload
+      state.event = action.payload
       console.log("fullfiled");
     },
-    [getEvents.rejected]: (state, action) => {
+    [getEvent.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+    [createEvent.pending]: (state) => {
+      state.status = "loading";
+      state.error = null;
+    },
+    [createEvent.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.event = action.payload
+      console.log("fullfiled");
+    },
+    [createEvent.rejected]: (state, action) => {
       state.status = "rejected";
       state.error = action.payload;
     },
   },
 });
 
-export const { events } = eventSlice.actions;
+export const { event } = eventSlice.actions;
 
 export default eventSlice.reducer;
