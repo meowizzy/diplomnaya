@@ -150,14 +150,6 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
-            to="/main/trainers"
-            className={linkActiveClassName("trainers")}
-          >
-            <span className={s.top_curve}></span>
-            Тренер
-            <span className={s.bottom_curve}></span>
-          </NavLink>
-          <NavLink
             to="/main/documentation/all_documentation"
             className={linkActiveClassName("documentation")}
           >

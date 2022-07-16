@@ -8,7 +8,19 @@ import s from ".././defaultEvents/DefaultEvents.module.scss";
 import ss from "./ChangeEvents.module.scss";
 import { ChangeForm } from "./ChangeForm";
 
-export const Card = ({ note,name,start_date,finish_date,place,referee,secretary,min_age,max_age,max_age_second,min_age_second }) => {
+export const Card = ({
+  note,
+  name,
+  start_date,
+  finish_date,
+  place,
+  referee,
+  secretary,
+  min_age,
+  max_age,
+  max_age_second,
+  min_age_second,
+}) => {
   const [card, setCard] = useState(true);
 
   const toggle = () => {
@@ -39,9 +51,7 @@ export const Card = ({ note,name,start_date,finish_date,place,referee,secretary,
         />
       ) : card === true ? (
         <div className={s.box}>
-          <p className={s.text_card}>
-            {name}
-          </p>
+          <p className={s.text_card}>{name}</p>
           <p className={s.text_date}>
             {start_date}. - {finish_date}.
           </p>
@@ -55,9 +65,7 @@ export const Card = ({ note,name,start_date,finish_date,place,referee,secretary,
           <BackButton onClick={toggle} />
 
           <div>
-            <p className={s.text_card}>
-              {name}
-            </p>
+            <p className={s.text_card}>{name}</p>
             <p className={s.text_date}>
               {start_date} - {finish_date}.
             </p>
@@ -72,9 +80,7 @@ export const Card = ({ note,name,start_date,finish_date,place,referee,secretary,
               </p>
             </div>
             <p>Примечание</p>
-            <p className={s.note}>
-              {note}
-            </p>
+            <p className={s.note}>{note}</p>
           </div>
           <div className={ss.footer}>
             <span onClick={foggle} className={ss.span}>
