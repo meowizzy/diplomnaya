@@ -2,14 +2,15 @@ import React from 'react';
 import AdminProtocols from "./admin/AdminProtocols";
 import SecretaryProtocol from "./secretary/SecretaryProtocol";
 import RefereeProtocol from "./referee/RefereeProtocol";
+import {getCookie} from "../../utils/cookieFunction/cookieFunction";
 
 const Protocol = () => {
-    const role = localStorage.getItem('role');
+    const role = JSON.parse(getCookie("user_info"))
     return (
         <>
-            {(role === 'admin' || role === 'trainer') && <AdminProtocols/>}
-            {role === 'secretary' && <SecretaryProtocol />}
-            {role === 'referee' && <RefereeProtocol />}
+            {(role["user role"] === 'ADMIN' || role["user role"] === 'TRAINER') && <AdminProtocols/>}
+            {role.assistant === 'True' && <SecretaryProtocol />}
+            {role.judge === 'True' && <RefereeProtocol />}
         </>
     );
 };

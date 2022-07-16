@@ -4,11 +4,12 @@ import s from "./DefaultNews.module.scss";
 import ButtonForActiveChanges from "../../../components/buttonForActiveChanges/ButtonForActiveChanges";
 import {NavLink} from "react-router-dom";
 import {linkActiveClassName} from "../../../utils/ActiveLink";
+import {getCookie} from "../../../utils/cookieFunction/cookieFunction";
 
 const NewsTab = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    const role = localStorage.getItem("role");
+    const role = JSON.parse(getCookie("user_info"))
     return (
         <div className={s.tab}>
             <div style={{marginBottom: 0}} className={s.link_cont}>
@@ -17,7 +18,7 @@ const NewsTab = () => {
                 <NavLink className={linkActiveClassName(location,"2021_news", 3, s.link, s.active_link)} to="/main/news/2021_news">Новости за 2021г.</NavLink>
             </div>
             {
-                role === "admin" && <ButtonForActiveChanges classname="no_button" onClick={() => navigate("/main/news/create_news")} margin={0} text="СОЗДАТЬ"/>
+                role["user role"] === "ADMIN" && <ButtonForActiveChanges classname="no_button" onClick={() => navigate("/main/news/create_news")} margin={0} text="СОЗДАТЬ"/>
             }
 
         </div>

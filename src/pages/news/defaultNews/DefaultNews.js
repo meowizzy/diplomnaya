@@ -9,6 +9,7 @@ import NewsTab from "./NewsTab";
 import DeleteModal from "../../../components/modals/DeleteModal";
 import NewsCard from "./NewsCard";
 import Options from "../../../components/options/Options";
+import {getCookie} from "../../../utils/cookieFunction/cookieFunction";
 
 const DefaultNews = () => {
     // const [openCard, setOpenCard] = useState("");
@@ -22,7 +23,8 @@ const DefaultNews = () => {
     const handleOpenDeleteModal = () => setOpenDeleteModal(true);
     const handleCloseDeleteModal = () => setOpenDeleteModal(false);
 
-    const role = localStorage.getItem('role');
+    const role = JSON.parse(getCookie("user_info"))
+
 
     const images = [
         {news_img1},
@@ -42,7 +44,7 @@ const DefaultNews = () => {
                         <p className={s.card__title}>В номинации “Первое место” </p>
                         <p className={s.card__date}>17.04.2022г.</p>
                         {
-                            role === "admin" &&
+                            role["user role"] === "ADMIN" &&
                             <>
                                 <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
                                 { openOption && <Options  link="/main/news/all_news/edit_new" handleOpenDeleteModal={handleOpenDeleteModal}/>}

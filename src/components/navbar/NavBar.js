@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink,useLocation } from "react-router-dom";
 import s from "./NavBar.module.scss";
+import {getCookie} from "../../utils/cookieFunction/cookieFunction";
 
 export const NavBar = () => {
 
@@ -12,13 +13,15 @@ export const NavBar = () => {
       if (isParentLinkActive) return s.active_link;
       return s.unactive_link;
     };
-    const role = localStorage.getItem('role')
     const removeRole=()=>{
       localStorage.removeItem('role')
     }
+
+    const role = JSON.parse(getCookie("user_info"))
+    console.log(role)
   return (
     <>
-      {role==="admin"&& 
+      {role["user role"] ==="ADMIN"&&
       <div className={s.cont}>
         <NavLink to="/main/defaultEvents/allDefaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
         <NavLink to="/main/news/all_news" className={linkActiveClassName('news')}>Новости</NavLink>
@@ -34,7 +37,7 @@ export const NavBar = () => {
       </div>
       }
 
-     {role==="trainer"&& 
+     {role["user role"] === "TRAINER"&&
       <div className={s.cont}>
         <NavLink to="/main/defaultEvents/allDefaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
         <NavLink to="/main/news/all_news" className={linkActiveClassName('news')}>Новости</NavLink>
@@ -51,7 +54,7 @@ export const NavBar = () => {
       </div>
       }
 
-      {role==="secretary"&& 
+      {role.assistant==="True"&&
         <div className={s.cont}>
           <NavLink to="/main/events/allEvents" className={linkActiveClassName("events")}>Мероприятия</NavLink>
           <NavLink to="/main/news/all_news" className={linkActiveClassName('news')}>Новости</NavLink> 
@@ -67,7 +70,7 @@ export const NavBar = () => {
         </div>
       }
 
-      {role==="referee"&& 
+      {role.judge ==="True"&&
         <div className={s.cont}>
           <NavLink to="/main/defaultEvents/allDefaultEvents" className={linkActiveClassName("defaultEvents")}>Мероприятия</NavLink>
           <NavLink to="/main/news/all_news" className={linkActiveClassName('news')}>Новости</NavLink>
