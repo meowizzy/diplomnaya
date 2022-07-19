@@ -8,7 +8,8 @@ const Protocol = () => {
     const role = JSON.parse(getCookie("user_info"))
     return (
         <>
-            {(role["user role"] === 'ADMIN' || role["user role"] === 'TRAINER') && <AdminProtocols/>}
+            {role["user role"] === 'ADMIN' && <AdminProtocols/>}
+            {(role["user role"] === 'TRAINER' && role.assistant === "False") && <AdminProtocols/>}
             {role.assistant === 'True' && <SecretaryProtocol />}
             {role.judge === 'True' && <RefereeProtocol />}
         </>

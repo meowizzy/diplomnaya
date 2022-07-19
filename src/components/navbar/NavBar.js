@@ -99,7 +99,7 @@ export const NavBar = () => {
         </div>
       )}
 
-      {role["user role"] === "TRAINER" && (
+      {(role["user role"] === "TRAINER" && role.assistant === "False") && (
         <div className={s.cont}>
           <NavLink
             to="/main/defaultEvents/allDefaultEvents"
@@ -212,7 +212,7 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
-            to="/main/protocol/all_protocols"
+            to="/main/protocol/all_events"
             className={linkActiveClassName("protocol")}
           >
             <span className={s.top_curve}></span>
