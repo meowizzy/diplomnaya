@@ -19,7 +19,7 @@ const location = useLocation()
             to="/main/application/submittedApplications"
             className={linkActiveClassName(location,"submittedApplications", 3, "link", "active_link")}
           >
-            Поданные заявки
+            История заявок
           </NavLink>
           <NavLink
             to="/main/application/currentApplications"

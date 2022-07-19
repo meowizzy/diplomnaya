@@ -1,25 +1,69 @@
 import React, { useState } from 'react'
 import ForwardButton from '../../../../components/arrowButton/ForwardButton'
+import ss from "../../changeEvents/ChangeEvents.module.scss"
 import s from "../DefaultEvents.module.scss"
 import { DefaultCard } from '../DefaultCard'
+import { useSelector } from 'react-redux'
+import BackButton from '../../../../components/arrowButton/BackButton'
 
 export const DefaultEvents_2022 = () => {
+  const [card, setCard] = useState(true);
 
+  const toggle = () => {
+    setCard(!card);
+  };
+  const events = useSelector(state=>state.event.event)
   return (
     <>
-     <div className={s.box_first}>
-          <p className={s.text}>
-            Чемпионат Кыргызской Респубики по традиционному ушу
-          </p>
-          <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
-          <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
-          <p>Информация о мероприятии</p>
-          <div className={s.arrow_button}>
-            <ForwardButton to=""/>
-          </div>
+      {card === true ? ( 
+      <div className={s.box_first}>
+        <p className={s.text_card}>
+          Чемпионат Кыргызской Респубики по традиционному ушу
+        </p>
+        <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
+        <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
+        <p>Информация о мероприятии</p>
+        <div className={s.arrow_button}>
+          <ForwardButton onClick={toggle}/>
         </div>
-        <DefaultCard />
-        <DefaultCard />
+      </div>
+      ):(
+      <div className={ss.box_start}>
+        <BackButton onClick={toggle} />
+      <div>
+        <p className={s.text_card}>
+          Чемпионат Кыргызской Респубики по традиционному ушу
+        </p>
+        <p className={s.text_date}>29.06.2022г. - 30.06.2022г.</p>
+        <p className={s.text_title}>Дворец спорта им. К. Кожомкула</p>
+        <p>Информация о мероприятии</p>
+        <div className={s.info}>
+          <p>Главный судья: Карина Белоусова</p>
+          <p>Секретарь: Саша Белый</p>
+          <p>Возрастная категория: с 5 до 8, с 16 до 20</p>
+        </div>
+        <p>Примечание</p>
+        <p className={s.note}>
+          Тренерам необходимо подать заявку до 20.06.2022г.
+        </p>
+      </div>
+    </div>)}
+        {events.map((el, index) => (
+        <DefaultCard
+        name={el.name}
+        note={el.note}
+          key={index}
+          finish_date={el.finish_datetime}
+          max_age={el.age_groups[0].max_age}
+          min_age={el.age_groups[0].min_age}
+          max_age_second={el.age_groups[1].max_age}
+          min_age_second={el.age_groups[1].min_age}
+          place={el.place}
+          referee={el.lead_judge.name}
+          secretary={el.assistant.name}
+          start_date={el.start_datetime}
+        />
+      ))}
     </>
   )
 }

@@ -131,7 +131,7 @@ export const Registr = () => {
                   )}
                   <input
                     type="radio"
-                    value="1"
+                    value="ADMIN"
                     onChange={formik.handleChange}
                     name="role"
                     className={s.radio}
@@ -150,7 +150,7 @@ export const Registr = () => {
                   )}
                   <input
                     type="radio"
-                    value="2"
+                    value="TRAINER"
                     onChange={formik.handleChange}
                     name="role"
                     className={s.radio}
@@ -202,7 +202,7 @@ export const Registr = () => {
             />
           )}
         </div>
-        <div style={{ position: "relative" }}>
+        {/* <div style={{ position: "relative" }}>
           <Input
             placeholder="Введите пароль"
             valueLabel="Подтвердить пароль"
@@ -228,7 +228,7 @@ export const Registr = () => {
               }
             />
           )}
-        </div>
+        </div> */}
 
         {/* <div style={{ position: "relative" }}>
           {club === false ? (
@@ -294,9 +294,9 @@ export const Registr = () => {
               formik.values.name &&
               formik.values.surname &&
               formik.values.number &&
-              formik.values.city &&
+              formik.values.city 
               // formik.values.club &&
-              formik.values.secondPassword
+              // formik.values.secondPassword
             )
           }
           type="submit"

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { NavLink, Route, Routes, useLocation } from "react-router-dom";
+import { getEvent } from "../../../redux/slices/eventSlice";
 import { linkActiveClassName } from "../../../utils/ActiveLink";
 import { AllDefaultEvents } from "./allDefaultEvents/AllDefaultEvents";
 import s from "./DefaultEvents.module.scss";
@@ -8,6 +10,12 @@ import { DefaultEvents_2022 } from "./defaultEvents_2022/DefaultEvents_2022";
 
 export const DefaultEvents = () => {
   const location = useLocation()
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(getEvent())
+  },[])
+
   return (
     <div className={s.cont}>
       <div className={s.link_cont}>
