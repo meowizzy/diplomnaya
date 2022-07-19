@@ -1,0 +1,119 @@
+.link{
+  color: #4254EC;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 40px;
+  white-space: nowrap;
+  height: 27px;
+}
+.active_link{
+  color: #4254EC;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 40px;
+  height: 27px;
+  border-bottom: #4254EC 2.5px solid;
+  border-radius: 1px;
+  white-space: nowrap;
+}
+
+#dragon {
+    background: white;
+    position: relative;
+    animation: myfirst 7s ;
+    animation-direction: initial;
+
+  }
+  
+  @keyframes myfirst {
+    0%   {left: -900px; top: 0;}
+// //   50%  { left: 750px; top: 0px; }
+//   50%  {left: 200px; top: 400px;}
+  100%  { left: 1200px; top: 300px; }
+//   100% {left: 0px; top: 0px;}
+//   50%  {left: 200px; top: 400px;}
+//   75%  { left: 0px; top: 200px;}
+//   100% {left: 0px; top: 0px;}
+  }
+
+#dragon {
+    position: absolute;
+    top: -100;
+    left: -1000px;
+    overflow: hidden;
+}
+
+#dragon_for_empty_protocol {
+  background: white;
+  position: relative;
+  animation: for_empty_protocol 7s ;
+  animation-direction: initial;
+
+}
+
+@keyframes for_empty_protocol {
+  0%   {left: -900px; top: 0;}
+  // //   50%  { left: 750px; top: 0px; }
+  //   50%  {left: 200px; top: 400px;}
+  100%  { left: 1200px; top: 50px; }
+  //   100% {left: 0px; top: 0px;}
+  //   50%  {left: 200px; top: 400px;}
+  //   75%  { left: 0px; top: 200px;}
+  //   100% {left: 0px; top: 0px;}
+}
+
+#dragon_for_empty_protocol {
+  position: absolute;
+  top: -100;
+  left: -1000px;
+  overflow: hidden;
+}
+
+.container {
+  width: 1090px;
+  background: #FDFDFF;
+  opacity: 0.99;
+  box-shadow: 0 0 16px rgba(44, 44, 44, 0.15);
+  border-radius: 35px;
+  position: relative;
+}
+.cont{
+  width: 1090px;
+  background: #FDFDFF;
+  opacity: 0.99;
+  box-shadow: 0 0 16px rgba(44, 44, 44, 0.15);
+  border-radius: 35px;
+  position: relative;
+  padding: 20px 10px;
+  min-height: 815px;
+}
+.container_data_flexed {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+%flex {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+.flex {
+  @extend %flex;
+  align-items: end;
+}
+.input_flex {
+  @extend %flex;
+  gap: 30px;
+}
+.margin_for_scroll{
+margin-top: 16px;
+}
+.relative{
+  position: relative;
+}
+.pass{
+  position: absolute;
+  top:30px;
+  right: 15px;
+}

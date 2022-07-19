@@ -1,0 +1,26 @@
+.title{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    align-items: center;
+    text-align: center;
+}
+.table_content{
+    overflow-x:auto ;
+    width: 100%;
+    font-weight: 500;
+    max-width: 1090px;
+}
+.content{
+    box-shadow: 0 0 16px rgba(44, 44, 44, 0.15);
+    border-radius: 35px;
+    min-height: 815px;
+    padding: 50px 0;
+}
+.for_scroll{
+    margin-bottom: 16px;
+}
+.center{
+    align-items: center;
+    text-align: center;
+}

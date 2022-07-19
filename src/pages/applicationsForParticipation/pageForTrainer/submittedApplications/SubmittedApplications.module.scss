@@ -1,0 +1,41 @@
+.table_content{
+    padding: 20px 8px;
+    box-shadow: 0 0 16px rgba(44, 44, 44, 0.15);
+border-radius: 35px;
+min-height: 815px;
+text-align: center;
+align-items: center;
+position: relative;
+}
+.title {
+    display: flex;
+    // justify-content: center;
+    align-items:center;
+    height: 50px;
+    border-bottom: solid 1px #4254EC;
+    color: black;
+    text-align: left;
+    .first_p {
+        text-align: center;
+        flex: 50px;
+        max-width: 50px;
+        min-width: 50px;
+    }
+    .name{
+        max-width: 480px;
+        min-width: 480px;
+    }
+    p {
+        flex: 208px 1;
+    }
+}
+.search{
+    padding-left: 12px;
+    padding-right: 12px;
+    position:relative;
+}
+.search_icon {
+    position: absolute;
+    top: 14px;
+    right: 36px;
+}
