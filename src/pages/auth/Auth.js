@@ -9,7 +9,6 @@ import "../../styles/baseStyles.scss";
 import { Link } from "react-router-dom";
 import {useNavigate} from "react-router";
 import {auth} from "../../redux/fetchFunctions";
-import ButtonForActiveChanges from "../../components/buttonForActiveChanges/ButtonForActiveChanges";
 
 const Auth = () => {
   const [open, setOpen] = useState(true);
@@ -45,7 +44,7 @@ const Auth = () => {
   return (
     <div className={s.authh}>
       <div id="dragon">
-        <img className="dragon" src="https://i.gifer.com/XwYs.gif" alt=""/>
+        <img style={{width: "800px"}} className="dragon" src="https://i.gifer.com/XwYs.gif" alt=""/>
       </div>
       <div className={s.auth}>
         <div className={s.auth_cont}>

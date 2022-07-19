@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router";
 import { NotRegistered } from "./pages/notRegistered/NotRegistered";
 import { Routing } from "./pages/auth/Routing";
 import {Main} from "./pages/Main";
+import EmptyProtocol from "./pages/notRegistered/EmptyProtocol";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/main/*" element={<Main />} />
         <Route path="/auth/*" element={<Routing />} />
         <Route path="/registr" element={<Registr />} />
+          <Route path="/empty_protocol" element={<EmptyProtocol />} />
       </Routes>
       {/* <Auth /> */}
       {/* <Registr /> */}

@@ -42,9 +42,33 @@
     left: -1000px;
     overflow: hidden;
 }
-.dragon {
-    width: 800px;
+
+#dragon_for_empty_protocol {
+  background: white;
+  position: relative;
+  animation: for_empty_protocol 7s ;
+  animation-direction: initial;
+
 }
+
+@keyframes for_empty_protocol {
+  0%   {left: -900px; top: 0;}
+  // //   50%  { left: 750px; top: 0px; }
+  //   50%  {left: 200px; top: 400px;}
+  100%  { left: 1200px; top: 50px; }
+  //   100% {left: 0px; top: 0px;}
+  //   50%  {left: 200px; top: 400px;}
+  //   75%  { left: 0px; top: 200px;}
+  //   100% {left: 0px; top: 0px;}
+}
+
+#dragon_for_empty_protocol {
+  position: absolute;
+  top: -100;
+  left: -1000px;
+  overflow: hidden;
+}
+
 .container {
   width: 1090px;
   background: #FDFDFF;

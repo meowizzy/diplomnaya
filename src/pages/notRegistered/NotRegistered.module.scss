@@ -20,6 +20,26 @@
         }
     }
 }
+.empty_pr_text {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 30px;
+    text-align: center;
+    color: #2C2C2C;
+    z-index: 999;
+}
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 100vh;
+}
+.empty_pro_button {
+    position: absolute;
+    right: 120px;
+    top: 40px;
+}
 
 .role{
     display: flex;
