@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import ButtonForActiveChanges from "../buttonForActiveChanges/ButtonForActiveChanges";
+import {useDispatch} from "react-redux";
+import {useNavigate} from "react-router";
 
 const style = {
     position: 'absolute',
@@ -24,10 +26,23 @@ const title = {
     textAlign: "center",
 }
 
-export default function DeleteModal({open, handleClose, text}) {
+export default function DeleteModal({open, handleClose, text, dispatchFunc, nav_link}) {
     // const [open, setOpen] = React.useState(false);
     // const handleOpen = () => setOpen(true);
     // const handleClose = () => setOpen(false);
+
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const deleteFunc = () => {
+        dispatch(dispatchFunc);
+        navigate(nav_link)
+    }
+
+    const cancelFunc = () => {
+        handleClose()
+    }
+
 
     return (
         <div>
@@ -41,10 +56,10 @@ export default function DeleteModal({open, handleClose, text}) {
                     <Typography id="modal-modal-title" sx={title} variant="h6" component="h2">
                         {text}
                     </Typography>
-                    <div className="flex">
-                        <ButtonForActiveChanges classname="yes_button" margin="68px 0 0" width="210px" text="ДА" />
-                        <ButtonForActiveChanges classname="no_button" margin="68px 0 0" width="210px" text="НЕТ"/>
-                    </div>
+                    <form className="flex">
+                        <ButtonForActiveChanges onClick={deleteFunc} classname="yes_button" margin="68px 0 0" width="210px" text="ДА" />
+                        <ButtonForActiveChanges onClick={cancelFunc} classname="no_button" margin="68px 0 0" width="210px" text="НЕТ"/>
+                    </form>
                 </Box>
             </Modal>
         </div>

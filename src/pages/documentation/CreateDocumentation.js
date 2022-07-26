@@ -3,67 +3,67 @@ import Input from "../../components/input/Input";
 import s from "../clubs/defaultClubs/DefaultClubs.module.scss"
 import newsStyles from "../news/editNews/EditNews.module.scss"
 import newsStyles2 from "../news/createNews/CreateNews.module.scss"
-import ss from "./Documentation.module.scss"
 import BackButton from "../../components/arrowButton/BackButton";
 import {useNavigate} from "react-router";
-import inpStyles from "../../components/input/Input.module.scss"
-import {camera_icon, file_download, gradient_circle_checkbox, grey_circle_checkbox} from "../../images";
+import {
+    file_download,
+    file_downloaded,
+} from "../../images";
 import Button from "../../components/button/Button";
 import inputStyles from "../../components/input/Input.module.scss";
 import {useFormik} from "formik";
-import {auth} from "../../redux/fetchFunctions";
 import SuccessModal from "../../components/modals/SuccessModal";
+import {useDispatch} from "react-redux";
+import {requests} from "../../redux/api";
 
 const CreateDocumentation = () => {
-
-    const [format, setFormat] = useState("");
-    const handleChooseFormat = (format) => {setFormat(format)}
 
     const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
     const handleOpenSuccessModal = () => setOpenSuccessModal(true);
     const handleCloseSuccessModal = () => setOpenSuccessModal(false);
 
+    const [file, setFile] = useState();
+
     const navigate = useNavigate()
 
     const formik = useFormik({
         initialValues: {
-            name: "",
+            title: "",
+            // file: {file},
         },
         onSubmit: (data) => {
+            const fData = new FormData();
+            fData.append("file", file);
+            fData.append("title", data.title);
             console.log(data);
-            handleOpenSuccessModal()
+            // dispatch(createDoc(fData))
+            requests.postDoc(fData).then(res => {
+                console.log("new_doc: ", res.data)
+                // dispatch(postMessage(response.data))
+                handleOpenSuccessModal()
+                setTimeout(() => navigate("/main/documentation/all_documentation"), 1500)
+            })
+
         },
     });
+
+
 
     return (
         <>
             <form onSubmit={formik.handleSubmit} className={s.form_cont}>
                 <BackButton to="/main/documentation/all_documentation" />
                 <p className="container_title">Создать документ</p>
-                <Input onChange={formik.handleChange} name="name" valueLabel="Название" width="100%" placeholder="Название документа"/>
-                <label className={inpStyles.label}>Формат</label>
-                <div style={{marginTop: 4}} className="flex">
-                    <div className={ss.format_gradient} style={{position: 'relative', cursor: 'pointer'}} onClick={() => handleChooseFormat("word")}>
-                        {format === "word" ? <img className={ss.checkbox_circle} src={gradient_circle_checkbox} alt=""/> : <img className={ss.checkbox_circle} src={grey_circle_checkbox} alt=""/>}
-                        <p className={ss.format_text}>Word</p>
-                    </div>
-                    <div className={ss.format_gradient} style={{position: 'relative', cursor: 'pointer'}} onClick={() => handleChooseFormat("excel")}>
-                        {format === "excel" ? <img className={ss.checkbox_circle} src={gradient_circle_checkbox} alt=""/> : <img className={ss.checkbox_circle} src={grey_circle_checkbox} alt=""/>}
-                        <p className={ss.format_text}>Excel</p>
-                    </div>
-                    <div className={ss.format_gradient} style={{position: 'relative', cursor: 'pointer'}} onClick={() => handleChooseFormat("pdf")}>
-                        {format === "pdf" ? <img className={ss.checkbox_circle} src={gradient_circle_checkbox} alt=""/> : <img className={ss.checkbox_circle} src={grey_circle_checkbox} alt=""/>}
-                        <p className={ss.format_text}>PDF</p>
-                    </div>
-                </div>
+                <Input margin="0 0 70px 0" onChange={formik.handleChange} name="title" valueLabel="Название" width="100%" placeholder="Название документа"/>
+                {/*<label className={inpStyles.label}>Формат</label>*/}
                 <div style={{width: "100%", height: "112px", position: "relative", textAlign: "center"}} className={inputStyles.gradient}>
-                    <img style={{top: "20%"}} className={newsStyles2.img_icon} src={file_download} alt="wrong"/>
+                    <img style={file ? {color: "black", top: "20%"} : {top: "20%"}} className={newsStyles2.img_icon} src={file ? file_downloaded : file_download} alt="wrong"/>
                     <label className={`${inputStyles.input} ${newsStyles.label_img}`} htmlFor="image"></label>
-                    <input style={{paddingLeft: 0}} id="image" className={newsStyles.img_input} type="file"/>
-                    <p style={{top: "70%"}} className={newsStyles2.img_text}>Файл загружен</p>
+                    <input onChange={(e) => setFile(e.target.files[0])} name="file" style={{paddingLeft: 0}} id="image" className={newsStyles.img_input} type="file"/>
+                    <p style={file ? {color: "black", top: "70%"} : {top: "70%"}} className={newsStyles2.img_text}>{ file ? "Файл загружен" : "Загрузить файл" }</p>
                 </div>
-                <Button disabled width="100%" margin="40px auto 199px" classname="button" text="ЗАГРУЗИТЬ ДОКУМЕНТ"/>
-                <Button disabled={!formik.values.name} width="100%" margin="0" classname="button" text="СОЗДАТЬ"/>
+                {/*<Button disabled width="100%" margin="40px auto 199px" classname="button" text="ЗАГРУЗИТЬ ДОКУМЕНТ"/>*/}
+                <Button disabled={!(formik.values.title && file)} type="submit" width="100%" margin="24px 0 0 0" classname="button" text="СОЗДАТЬ"/>
             </form>
             {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно создали документ!"/>}
         </>

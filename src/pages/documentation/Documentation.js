@@ -15,8 +15,8 @@ const Documentation = () => {
                 <Routes>
                     <Route path="/all_documentation" element={<DefaultDocumentation />} />
                     <Route path="/all_documentation/create_doc" element={<CreateDocumentation />} />
-                    <Route path="/all_documentation/doc_details" element={<DocumentationDetails />} />
-                    <Route path="/all_documentation/doc_details/edit_details" element={<EditDocumentationDetails />} />
+                    <Route path="/all_documentation/doc_details/:id" element={<DocumentationDetails />} />
+                    <Route path="/all_documentation/doc_details/edit_details/:id" element={<EditDocumentationDetails />} />
                 </Routes>
             </div>
         </div>

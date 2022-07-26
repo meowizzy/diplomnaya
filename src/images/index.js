@@ -1,5 +1,6 @@
 import open_eye from "./open_eye.svg"
 import close_eye from "./close_eye.svg"
+import closed_eye from "./closed_eye.svg"
 import news_img2 from "./news_img2.svg"
 import news_img3 from "./news_img3.svg"
 import news_img1 from "./news_img11.svg"
@@ -17,12 +18,14 @@ import gradient_circle_checkbox from "./gradient_circle_checkbox.svg"
 import plus from "./plus.svg"
 import minus from "./minus.svg"
 import file_download from "./file_download.svg"
+import file_downloaded from "./file_downloaded.svg"
 import message_unsend from "./message_unsend.svg"
 import message_sent from "./message_sent.svg"
 
 export {
     open_eye,
     close_eye,
+    closed_eye,
     news_img2,
     news_img3,
     news_img1,
@@ -40,6 +43,7 @@ export {
     plus,
     minus,
     file_download,
+    file_downloaded,
     message_unsend,
     message_sent
 }

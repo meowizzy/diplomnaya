@@ -14,20 +14,22 @@
     width: 300px;
 }
 .open_eye{
-    background-image: url(./open_eye.svg);
+    background-image: url(./opened_eye.svg);
     width: 30px;
     height: 29px;
     position: absolute;
-    top:30px;
-    right: 15px;
+    top:36px;
+    right: 10px;
+    background-repeat: no-repeat;
 }
 .close_eye{
-    background-image: url(./close_eye.svg);
+    background-image: url(./closed_eye.svg);
     width: 30px;
     height: 29px;
     position: absolute;
-    top:29px;
-    right: 15px;
+    top: 33px;
+    right: 10px;
+    background-repeat: no-repeat;
 }
 .list{
     display: flex;

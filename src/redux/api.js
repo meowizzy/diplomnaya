@@ -3,7 +3,7 @@ import axios from "axios";
 // const token = localStorage.getItem("token");
 
 const fetchAPI = axios.create({
-    baseURL: "http://wushu-federation.tk/",
+    baseURL: "http://142.93.181.60/",
     headers: {
         "Content-type": "application/json",
         // Authorization: `Bearer ${token}`,
@@ -23,8 +23,14 @@ export const requests = {
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     getEvents:() => fetchAPI.get('event/'),
     postEvents:(data) => fetchAPI.post('event/', data),
-    // newPassword: (data) => fetchAPI.post("password-reset/", data),
     newPasswordApi: (data) => fetchAPI.post("password-reset/confirm/", data),
+
+    // documentation
+    getDocs: () => fetchAPI.get("documents/document/"),
+    getDoc: (id) => fetchAPI.get(`documents/document/${id}/`),
+    postDoc: (data) => fetchAPI.post("documents/document/", data),
+    editDoc: (data) => fetchAPI.patch(`documents/document/${data.id}/`, data.fData),
+    deleteDoc: (id) => fetchAPI.delete(`documents/document/${id}/`),
 }
 
 export const withoutToken = {
