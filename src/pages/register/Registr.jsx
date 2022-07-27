@@ -16,9 +16,13 @@ export const Registr = () => {
   const [role, setRole] = useState("")
   const clickAdmin = () => {
     setRole('Админ')
+    setRoles(!roles)
+
   }
   const clickTrainer = () => {
     setRole('Тренер')
+    setRoles(!roles)
+
   }
 
   const [club, setClub] = useState(false)
@@ -32,6 +36,8 @@ export const Registr = () => {
 
   const dispatch = useDispatch();
 
+  const [pass,setPass] = useState(false)
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -44,9 +50,13 @@ export const Registr = () => {
       referral_code:"",
     },
     onSubmit: (values) => {
-      console.log(values)
-      let data = {values, navigate}
-      dispatch(postRegister(data))
+      if(values.secondPassword===values.password){
+        let data = {values, navigate}
+        dispatch(postRegister(data))
+        setPass(false)
+      }else{
+        setPass(true)
+      }
     },
   });
 
@@ -202,7 +212,7 @@ export const Registr = () => {
             />
           )}
         </div>
-        {/* <div style={{ position: "relative" }}>
+        <div style={{ position: "relative" }}>
           <Input
             placeholder="Введите пароль"
             valueLabel="Подтвердить пароль"
@@ -228,7 +238,7 @@ export const Registr = () => {
               }
             />
           )}
-        </div> */}
+        </div>
 
         {/* <div style={{ position: "relative" }}>
           {club === false ? (
@@ -283,7 +293,8 @@ export const Registr = () => {
           onChange={formik.handleChange}
           name="city"
         />
-       {err.status==="rejected"&&<p className={s.err}>Что-то пошло не так...</p>} 
+       {err.status==="rejected"&&<p className={s.err}>Такая почта или номер телефона уже существуют...</p>} 
+       {pass===true&&<p className={s.err}>Пароли не похожи...</p>}
         {/* <div style={{margin:"50px 0px 60px"}}> */}
         <Button
           text="ЗАРЕГИСТРИРОВАТЬСЯ"
@@ -294,9 +305,10 @@ export const Registr = () => {
               formik.values.name &&
               formik.values.surname &&
               formik.values.number &&
-              formik.values.city 
+              formik.values.city &&
+              // formik.values.secondPassword===formik.values.password&&
               // formik.values.club &&
-              // formik.values.secondPassword
+              formik.values.secondPassword
             )
           }
           type="submit"

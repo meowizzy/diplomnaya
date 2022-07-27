@@ -14,6 +14,7 @@ import Clubs from "./clubs/Clubs";
 import { DefaultEvents } from "./events/defaultEvents/DefaultEvents";
 import { Application } from "./applicationsForParticipation/pageForTrainer/Application";
 import Chat from "./chat/Chat";
+import { Statistics } from "./statistics/Statistics";
 
 export const Main = () => {
   return (
@@ -35,6 +36,7 @@ export const Main = () => {
             <Route path="/output/*" element={<Output />} />
             <Route path="/protocol/*" element={<Protocol />} />
             <Route path="/chat/*" element={<Chat />} />
+            <Route path="/statistics/*" element={<Statistics />} />
         </Routes>
       </div>
     </div>

@@ -15,19 +15,23 @@
 }
 .open_eye{
     background-image: url(./open_eye.svg);
-    width: 30px;
-    height: 29px;
+    width: 22px;
+    height: 13px;
     position: absolute;
-    top:30px;
+    top:36.8px;
+    background-repeat: no-repeat;
     right: 15px;
+
 }
 .close_eye{
     background-image: url(./close_eye.svg);
-    width: 30px;
-    height: 29px;
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 18px;
     position: absolute;
-    top:29px;
+    top:34px;
     right: 15px;
+
 }
 .list{
     display: flex;
@@ -62,4 +66,5 @@
 }
 .err{
     color: red;
+    white-space: nowrap;
 }
