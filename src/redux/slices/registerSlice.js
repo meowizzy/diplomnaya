@@ -28,7 +28,7 @@ const registerSlice = createSlice({
   name: "register",
   initialState,
   status: null,
-  error: true,
+  error: null,
   reducers: {
     userRegister: (state, action) => {
       state.user = action.payload;

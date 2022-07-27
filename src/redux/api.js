@@ -11,7 +11,7 @@ const fetchAPI = axios.create({
 });
 
 const notToken = axios.create({
-    baseURL: "http://wushu-federation.tk/",
+    baseURL: "http://142.93.181.60/",
     headers: {
         "Content-type": "application/json",
     },
