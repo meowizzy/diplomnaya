@@ -31,6 +31,13 @@ export const requests = {
     postDoc: (data) => fetchAPI.post("documents/document/", data),
     editDoc: (data) => fetchAPI.patch(`documents/document/${data.id}/`, data.fData),
     deleteDoc: (id) => fetchAPI.delete(`documents/document/${id}/`),
+
+    // news
+    getNewsApi: () => fetchAPI.get("createnew/"),
+    getNewApi: (id) => fetchAPI.get(`deletenew/${id}`),
+    createNewsApi: (data) => fetchAPI.post("createnew/", data),
+    editNewsApi: (data) => fetchAPI.patch(`deletenew/${data.id}`, data.data),
+    deleteNewsApi: (id) => fetchAPI.delete(`deletenew/${id}`),
 }
 
 export const withoutToken = {
