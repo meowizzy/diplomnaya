@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3869330e-45d7-4bdb-9c91-c32492a819cb" name="Changes" comment="WHUS-390 made logical part of news section">
-      <change afterPath="$PROJECT_DIR$/src/redux/slices/newsSlice.js" afterDir="false" />
+    <list default="true" id="3869330e-45d7-4bdb-9c91-c32492a819cb" name="Changes" comment="WHUS-397 made logical part of documentation section">
+      <change afterPath="$PROJECT_DIR$/src/images/closed_eye.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/file_downloaded.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/register/closed_eye.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/register/opened_eye.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/slices/docSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/modals/DeleteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/DeleteModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/chat/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/chat/Chat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/chat/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/chat/Chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/News.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/createNews/CreateNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/createNews/CreateNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/CreateDocumentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/CreateDocumentation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/Documentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/Documentation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DocumentationDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DocumentationDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/EditDocumentationDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/EditDocumentationDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/news/createNews/CreateNews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/createNews/CreateNews.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/defaultNews/DefaultNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/defaultNews/DefaultNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/defaultNews/DefaultNews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/defaultNews/DefaultNews.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/defaultNews/NewsCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/defaultNews/NewsCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/editNews/EditNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/editNews/EditNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/register/Registr.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/register/Registr.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
     </list>
@@ -25,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="WHUS-362-empty_protocol_unregist_users" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,23 +48,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu/src/redux/slices&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.1.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Admin/WebstormProjects/whushu/src/pages/register",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.1.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\redux\slices" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\pages\register" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\images" />
     </key>
@@ -92,8 +94,6 @@
       <workItem from="1658370366261" duration="453000" />
       <workItem from="1658402866901" duration="1748000" />
       <workItem from="1658856845802" duration="13047000" />
-      <workItem from="1658879063119" duration="14605000" />
-      <workItem from="1658999247868" duration="16028000" />
     </task>
     <task id="LOCAL-00001" summary="WHUS-362 made empty protocol page for unregistered users">
       <created>1658197972779</created>
@@ -130,8 +130,7 @@
     <MESSAGE value="WHUS-362 made empty protocol page for unregistered users" />
     <MESSAGE value="commited" />
     <MESSAGE value="WHUS-397 made logical part of documentation section" />
-    <MESSAGE value="WHUS-390 made logical part of news section" />
-    <option name="LAST_COMMIT_MESSAGE" value="WHUS-390 made logical part of news section" />
+    <option name="LAST_COMMIT_MESSAGE" value="WHUS-397 made logical part of documentation section" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
