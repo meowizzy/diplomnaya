@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Input from "../../../components/input/Input";
 import s from "./../editNews/EditNews.module.scss"
 import ss from "./CreateNews.module.scss"
@@ -10,6 +10,7 @@ import {camera_icon, checkbox_icon_turned_on} from "../../../images";
 import NewsTab from "../defaultNews/NewsTab";
 import SuccessModal from "../../../components/modals/SuccessModal";
 import BackButton from "../../../components/arrowButton/BackButton";
+import {requests} from "../../../redux/api";
 
 const CreateNews = () => {
 
@@ -17,17 +18,36 @@ const CreateNews = () => {
     const handleOpenSuccessModal = () => setOpenSuccessModal(true);
     const handleCloseSuccessModal = () => setOpenSuccessModal(false);
 
+    const navigate = useNavigate()
+
+    const [img, setImg] = useState();
+    const [imgURL, setImgURL] = useState();
+    // const [selectedValue, setSelectValue] = useState("Должность");
+
+    const selectedImg = (event) => {
+        setImg(event.target.files[0]);
+        if (event.target.files && event.target.files[0]) {
+            setImgURL(URL.createObjectURL(event.target.files[0]));
+        }
+    };
     const formik = useFormik({
         initialValues: {
-            img: "",
             title: "",
-            date: null,
-            text: "",
-            more: ""
+            description: "",
         },
         onSubmit: data => {
-            console.log("data: ",data)
-            handleOpenSuccessModal()
+            const fData = new FormData();
+            fData.append("picture", img);
+            fData.append("title", data.title);
+            fData.append("description", data.description);
+            console.log(data);
+            // dispatch(createDoc(fData))
+            requests.createNewsApi(fData).then(res => {
+                console.log("new_new: ", res.data)
+                // dispatch(postMessage(response.data))
+                handleOpenSuccessModal()
+                setTimeout(() => navigate("/main/news/all_news"), 1500)
+            })
         }
     })
     return (
@@ -41,20 +61,21 @@ const CreateNews = () => {
                         <h2 className="container_title">Создание новости</h2>
                         <label className={inputStyles.label}>Изображение</label>
                         <div style={{width: "100%", height: "200px", position: "relative", textAlign: "center"}} className={inputStyles.gradient}>
-                            <img className={ss.img_icon} src={camera_icon} alt="wrong"/>
+                            {imgURL ? <img className={ss.img_icon_picture} src={imgURL} alt="wrong"/> :
+                                <img className={ss.img_icon} src={camera_icon} alt="wrong"/>}
                             <label className={`${inputStyles.input} ${s.label_img}`} htmlFor="image"></label>
-                            <input style={{paddingLeft: 0}} id="image" className={s.img_input} type="file"/>
-                            <p className={ss.img_text}>Добавить фото</p>
+                            <input onChange={selectedImg} style={{paddingLeft: 0}} id="image" className={s.img_input} type="file"/>
+                            {!imgURL && <p className={ss.img_text}>Добавить фото</p>}
                         </div>
                         <Input name="title" placeholder="Добавить заголовок" onChange={formik.handleChange} type="text" width="100%" valueLabel="Заголовок"/>
-                        <Input name="date" placeholder="Дата публикации" onChange={formik.handleChange} type="text" width="100%" valueLabel="Дата"/>
-                        <Input name="text" placeholder="Добавить описание" onChange={formik.handleChange} type="text" width="100%" valueLabel="Текст"/>
-                        <Input name="more" placeholder="Добавить текст" onChange={formik.handleChange} type="text" width="100%" valueLabel="Дополнительно"/>
+                        {/*<Input name="date" placeholder="Дата публикации" onChange={formik.handleChange} type="text" width="100%" valueLabel="Дата"/>*/}
+                        <Input name="description" placeholder="Добавить описание" onChange={formik.handleChange} type="text" width="100%" valueLabel="Текст"/>
+                        {/*<Input name="more" placeholder="Добавить текст" onChange={formik.handleChange} type="text" width="100%" valueLabel="Дополнительно"/>*/}
                         <div className={ss.checkbox_cont}>
                             <p className="basic_text">Отправить всем?</p>
                             <img src={checkbox_icon_turned_on} alt="wrong"/>
                         </div>
-                        <Button disabled={!(formik.values.date && formik.values.title && formik.values.text && formik.values.more)} type="submit" width="100%" margin="70px 0px 0px" text="СОЗДАТЬ"/>
+                        <Button disabled={!(formik.values.description && formik.values.title)} type="submit" width="100%" margin="70px 0px 0px" text="СОЗДАТЬ"/>
                     </form>
                 </div>
             </div>

@@ -27,16 +27,16 @@ const title = {
 }
 
 export default function DeleteModal({open, handleClose, text, dispatchFunc, nav_link}) {
-    // const [open, setOpen] = React.useState(false);
-    // const handleOpen = () => setOpen(true);
-    // const handleClose = () => setOpen(false);
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    console.log("dispatchFunc: ", dispatchFunc)
+
     const deleteFunc = () => {
         dispatch(dispatchFunc);
-        navigate(nav_link)
+        navigate(nav_link);
+        handleClose()
     }
 
     const cancelFunc = () => {
@@ -56,10 +56,10 @@ export default function DeleteModal({open, handleClose, text, dispatchFunc, nav_
                     <Typography id="modal-modal-title" sx={title} variant="h6" component="h2">
                         {text}
                     </Typography>
-                    <form className="flex">
+                    <div className="flex">
                         <ButtonForActiveChanges onClick={deleteFunc} classname="yes_button" margin="68px 0 0" width="210px" text="ДА" />
                         <ButtonForActiveChanges onClick={cancelFunc} classname="no_button" margin="68px 0 0" width="210px" text="НЕТ"/>
-                    </form>
+                    </div>
                 </Box>
             </Modal>
         </div>

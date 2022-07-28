@@ -10,7 +10,7 @@ export const News = () => {
             <Route path="/all_news" element={<DefaultNews/>}/>
             <Route path="/2022_news" element={<DefaultNews/>}/>
             <Route path="/2021_news" element={<DefaultNews/>}/>
-            <Route path="/all_news/edit_new" element={<EditNews/>}/>
+            <Route path="/all_news/edit_new/:id" element={<EditNews/>}/>
             <Route path="/create_news" element={<CreateNews/>}/>
         </Routes>
     )
