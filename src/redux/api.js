@@ -3,7 +3,7 @@ import axios from "axios";
 // const token = localStorage.getItem("token");
 
 const fetchAPI = axios.create({
-    baseURL: "https://cors-anywhere.herokuapp.com/http://142.93.181.60/",
+    baseURL: "http://142.93.181.60/",
     headers: {
         "Content-type": "application/json",
         // Authorization: `Bearer ${token}`,
@@ -11,7 +11,7 @@ const fetchAPI = axios.create({
 });
 
 const notToken = axios.create({
-    baseURL: "https://cors-anywhere.herokuapp.com/http://142.93.181.60/",
+    baseURL: "http://142.93.181.60/",
     headers: {
         "Content-type": "application/json",
     },
