@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2fe7c93a-b7ca-4607-a63d-9a2b89a5ab26" name="Changes" comment="fixed style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/chat/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/chat/Chat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/chat/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/chat/Chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/Documentation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/Documentation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +68,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3869330e-45d7-4bdb-9c91-c32492a819cb" name="Changes" comment="fixed" />
+      <changelist id="2fe7c93a-b7ca-4607-a63d-9a2b89a5ab26" name="Changes" comment="fixed style" />
       <created>1658192923310</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -82,6 +79,7 @@
       <workItem from="1658370366261" duration="453000" />
       <workItem from="1658402866901" duration="1748000" />
       <workItem from="1658856845802" duration="13047000" />
+      <workItem from="1659086373899" duration="1890000" />
     </task>
     <task id="LOCAL-00001" summary="WHUS-362 made empty protocol page for unregistered users">
       <created>1658197972779</created>
@@ -139,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659052125247</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixed style">
+      <created>1659054608349</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659054608349</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
