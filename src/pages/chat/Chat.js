@@ -24,7 +24,7 @@ const Chat = () => {
     }, [value])
 
     return (
-        <div style={{padding: 0}} className="container_chat">
+        // <div style={{padding: 0}} className="container_chat">
             <div className="row">
                 <div className="users">
                     <div className="search">
@@ -141,7 +141,7 @@ const Chat = () => {
                     </div>
                 </section>
             </div>
-        </div>
+        // </div>
     );
 };
 

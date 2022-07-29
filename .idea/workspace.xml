@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fe7c93a-b7ca-4607-a63d-9a2b89a5ab26" name="Changes" comment="testing api">
+    <list default="true" id="2fe7c93a-b7ca-4607-a63d-9a2b89a5ab26" name="Changes" comment="fixed style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/chat/Chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/chat/Chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/chat/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/chat/Chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/Documentation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/Documentation.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659051403612</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="testing api">
+      <created>1659052125247</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659052125247</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,7 +162,8 @@
     <MESSAGE value="WHUS-397 made logical part of documentation section" />
     <MESSAGE value="merged with news" />
     <MESSAGE value="testing api" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing api" />
+    <MESSAGE value="fixed style" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed style" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

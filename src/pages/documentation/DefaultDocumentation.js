@@ -40,16 +40,18 @@ const DefaultDocumentation = () => {
 
                     {
                         docs.map((doc, index) => {
-                            return <Link to={`/main/documentation/all_documentation/doc_details/${doc.id}`} >
-                                        <div className={ss.title}>
-                                            <p style={{width: "18px"}}>{index+1}</p>
-                                            <p className={ss.flex10}>{doc.title}</p>
-                                            <div className={ss.flex_format}>
-                                                <p>{formatMap[doc.file.slice(doc.file.lastIndexOf('.') + 1)]}</p>
-                                                <a href={doc.file} download={doc.file.slice(doc.file.lastIndexOf('.') + 1)}><img src={download} alt=""/></a>
-                                            </div>
-                                        </div>
-                                    </Link>
+                            return <div style={{position: "relative"}} >
+                                        <Link to={`/main/documentation/all_documentation/doc_details/${doc.id}`} >
+                                                <div className={ss.title}>
+                                                    <p style={{width: "18px"}}>{index+1}</p>
+                                                    <p className={ss.flex10}>{doc.title}</p>
+                                                    <div className={ss.flex_format}>
+                                                        <p>{formatMap[doc.file.slice(doc.file.lastIndexOf('.') + 1)]}</p>
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        <a className={ss.download_icon} href={doc.file} download={doc.file.slice(doc.file.lastIndexOf('.') + 1)}><img src={download} alt=""/></a>
+                                    </div>
                         })
 
                     }
