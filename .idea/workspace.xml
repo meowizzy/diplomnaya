@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fe7c93a-b7ca-4607-a63d-9a2b89a5ab26" name="Changes" comment="testing api">
+    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="ggfg">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
     </list>
@@ -13,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="WHUS-390-news-logic-part" />
+        <entry key="$PROJECT_DIR$" value="WHUS-400-chat-logical-part" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -151,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659123034075</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="ggfg">
+      <created>1659265709588</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1659265709588</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +182,8 @@
     <MESSAGE value="merged with news" />
     <MESSAGE value="fixed style" />
     <MESSAGE value="testing api" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing api" />
+    <MESSAGE value="ggfg" />
+    <option name="LAST_COMMIT_MESSAGE" value="ggfg" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

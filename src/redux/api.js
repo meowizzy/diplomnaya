@@ -3,7 +3,7 @@ import axios from "axios";
 // const token = localStorage.getItem("token");
 
 const fetchAPI = axios.create({
-    baseURL: "http://142.93.181.60/",
+    baseURL: "https://cors-gay-sex.herokuapp.com/http://142.93.181.60/",
     headers: {
         "Content-type": "application/json",
         // Authorization: `Bearer ${token}`,
@@ -11,7 +11,7 @@ const fetchAPI = axios.create({
 });
 
 const notToken = axios.create({
-    baseURL: "http://142.93.181.60/",
+    baseURL: "https://cors-gay-sex.herokuapp.com/http://142.93.181.60/",
     headers: {
         "Content-type": "application/json",
     },
