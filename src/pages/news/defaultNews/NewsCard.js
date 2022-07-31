@@ -28,12 +28,12 @@ const NewsCard = ({openOption, handleOpenOption, data}) => {
     return (
         <>
             {open ? (<div className={s.card}>
-                <img className={s.card__img} src={data.picture} alt="wrong"/>
+                <img className={s.card__img} src={data.picture.slice(0, 4) + data.picture.slice(5)} alt="wrong"/>
                 <p className={s.card__title}>{data.title} </p>
                 <p className={s.card__date}>{data.created_date}</p>
                 <ForwardButton className={s.next_button} onClick={handleOpen}/>
             </div>) : (<div style={{marginBottom: 54}} className={s.cards}>
-                <div style={{background: `url(${data.picture}) no-repeat`}} className={`${s.card} ${s.card_top}`}>
+                <div style={{background: `url(${data.picture.slice(0, 4) + data.picture.slice(5)}) no-repeat`}} className={`${s.card} ${s.card_top}`}>
                     <BackButton onClick={handleOpen}/>
                     <p className={s.card__title}>{data.title}</p>
                     <p className={s.card__date}>{data.created_date}</p>

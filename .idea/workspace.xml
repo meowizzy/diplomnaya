@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="ggfg">
+    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="testing api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/news/defaultNews/NewsCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/defaultNews/NewsCard.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659265709588</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="testing api">
+      <created>1659265969621</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1659265969621</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,9 +188,9 @@
     <MESSAGE value="WHUS-397 made logical part of documentation section" />
     <MESSAGE value="merged with news" />
     <MESSAGE value="fixed style" />
-    <MESSAGE value="testing api" />
     <MESSAGE value="ggfg" />
-    <option name="LAST_COMMIT_MESSAGE" value="ggfg" />
+    <MESSAGE value="testing api" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
