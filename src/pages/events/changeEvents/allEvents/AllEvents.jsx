@@ -14,7 +14,7 @@ export const AllEvents = () => {
   const [active, setActive] = useState(false)
   const events = useSelector(state=>state.event.event)
 
-  console.log(events)
+  // console.log(events)
   const [card, setCard] = useState(true);
 
   const toggle = () => {

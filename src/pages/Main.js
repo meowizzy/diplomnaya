@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Routes } from "react-router";
 import { NavBar } from "../components/navbar/NavBar";
 import { ChangeEvents } from "./events/changeEvents/ChangeEvents";
@@ -15,8 +15,13 @@ import { DefaultEvents } from "./events/defaultEvents/DefaultEvents";
 import { Application } from "./applicationsForParticipation/pageForTrainer/Application";
 import Chat from "./chat/Chat";
 import { Statistics } from "./statistics/Statistics";
+import { useDispatch } from "react-redux";
+import { getJudgeUser } from "../redux/slices/userSlice";
 
 export const Main = () => {
+
+ 
+
   return (
     <div className={s.container}>
       <div className={s.navbar}>

@@ -18,7 +18,7 @@ export const NavBar = () => {
     }
 
     const role = JSON.parse(getCookie("user_info"))
-    console.log(role)
+    // console.log(role)
   return (
     <>
       {role["user role"] === "ADMIN" && (
@@ -180,8 +180,8 @@ export const NavBar = () => {
       {role.assistant === "True" && (
         <div className={s.cont}>
           <NavLink
-            to="/main/defaultEvents/allDefaultEvents"
-            className={linkActiveClassName("defaultEvents")}
+            to="/main/events/allEvents"
+            className={linkActiveClassName("events")}
           >
             <span className={s.top_curve}></span>
             Мероприятия
@@ -220,7 +220,7 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
-            to="/main/statistics"
+            to="/main/statistics/progress"
             className={linkActiveClassName("statistics")}
           >
             <span className={s.top_curve}></span>

@@ -8,11 +8,11 @@ const initialState = {
 };
 
 export const getEvent = createAsyncThunk(
-  "event/getEvents",
+  "event/getEvent",
   async function(_,{ rejectWithValue}){
     try {
       const res = await requests.getEvents();
-      console.log(res.data)
+      // console.log(res.data)
       if (!res) {
         throw new Error("ERROR");
       }
@@ -24,13 +24,13 @@ export const getEvent = createAsyncThunk(
 );
 
 export const createEvent = createAsyncThunk(
-  "event/createEvents",
+  "event/createEvent",
  
   async (formData ,{ rejectWithValue }) => {
     console.log("form", formData)
     try {
       const res = await requests.postEvents(formData);
-      console.log("res", res)
+      // console.log("res", res)
       if (!res) {
         throw new Error("ERROR");
       }
@@ -40,6 +40,22 @@ export const createEvent = createAsyncThunk(
   }
 );
 
+export const editEvent = createAsyncThunk(
+  "event/editEvent",
+ 
+  async (formData ,{ rejectWithValue }) => {
+    console.log("form", formData)
+    try {
+      const res = await requests.postEvents(formData);
+      // console.log("res", res)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
 const eventSlice = createSlice({
   name: "event",
   initialState,
@@ -58,7 +74,7 @@ const eventSlice = createSlice({
     [getEvent.fulfilled]: (state, action) => {
       state.status = "resolved";
       state.event = action.payload
-      console.log("fullfiled");
+      // console.log("fullfiled");
     },
     [getEvent.rejected]: (state, action) => {
       state.status = "rejected";
@@ -71,7 +87,7 @@ const eventSlice = createSlice({
     [createEvent.fulfilled]: (state, action) => {
       state.status = "resolved";
       state.event = action.payload
-      console.log("fullfiled");
+      // console.log("fullfiled");
     },
     [createEvent.rejected]: (state, action) => {
       state.status = "rejected";

@@ -126,16 +126,11 @@ export const Registr = () => {
               <div className={s.list}>
                 <label className={s.label}>
                   {role === "Админ" ? (
-                    <p
-                      onClick={clickAdmin}
-                      style={{ backgroundColor: "#F3F3FF" }}
-                    >
+                    <p onClick={clickAdmin}style={{ backgroundColor: "#F3F3FF" }}>
                       Админ
                     </p>
                   ) : (
-                    <p
-                      onClick={clickAdmin}
-                    >
+                    <p onClick={clickAdmin}>
                       Админ
                     </p>
                   )}

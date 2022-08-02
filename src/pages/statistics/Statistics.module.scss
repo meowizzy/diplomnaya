@@ -82,6 +82,9 @@
 .footer{
     display: flex;
     justify-content: space-around;
+    // padding-right: 100px;
+    position: relative;
+    align-items: center;
         p{
             font-weight: bold;
         }
@@ -102,5 +105,25 @@
     height: 70px;
     align-items: center;
         border:1px solid #4254EC;
+    }
+}
+.button {
+    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    .img {
+        background-image: url(./arrow.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 22px;
+        height: 17px;
+        top: 14px;
+        left: 12px;
+        position: absolute;
     }
 }

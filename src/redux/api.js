@@ -23,6 +23,9 @@ export const requests = {
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     getEvents:() => fetchAPI.get('event/'),
     postEvents:(data) => fetchAPI.post('event/', data),
+    eidtEvents:(data) => fetchAPI.post('event/', data),
+    getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
+    getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
     newPasswordApi: (data) => fetchAPI.post("password-reset/confirm/", data),
 
     // documentation

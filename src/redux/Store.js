@@ -3,6 +3,7 @@ import reducer from "./slices/authSlice";
 import eventSlice from './slices/eventSlice';
 import registerSlice from './slices/registerSlice';
 import {docsSlice} from "./slices/docSlice";
+import userSlice from './slices/userSlice';
 
 // const middleware = getDefaultMiddleware({
 //     immutableCheck: false,
@@ -15,6 +16,7 @@ export const store = configureStore({
     register:registerSlice,
     event:eventSlice,
     docs: docsSlice,
+    user:userSlice
 },
 
   // devTools: process.env.NODE_ENV !== 'production',

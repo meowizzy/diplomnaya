@@ -21,6 +21,7 @@ import file_download from "./file_download.svg"
 import file_downloaded from "./file_downloaded.svg"
 import message_unsend from "./message_unsend.svg"
 import message_sent from "./message_sent.svg"
+import list_img from "./list_img.svg"
 
 export {
     open_eye,
@@ -45,5 +46,6 @@ export {
     file_download,
     file_downloaded,
     message_unsend,
-    message_sent
+    message_sent,
+    list_img
 }
