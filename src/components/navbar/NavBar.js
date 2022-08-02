@@ -99,7 +99,7 @@ export const NavBar = () => {
         </div>
       )}
 
-      {(role["user role"] === "TRAINER" && role.assistant === "False") && (
+      {(role["user role"] === "TRAINER" && role.assistant === "False" && role.judge === "False") && (
         <div className={s.cont}>
           <NavLink
             to="/main/defaultEvents/allDefaultEvents"
@@ -211,14 +211,14 @@ export const NavBar = () => {
             Протоколы
             <span className={s.bottom_curve}></span>
           </NavLink>
-          <NavLink
-            to="/main/clubs/all_clubs"
-            className={linkActiveClassName("clubs")}
-          >
-            <span className={s.top_curve}></span>
-            Клубы
-            <span className={s.bottom_curve}></span>
-          </NavLink>
+            <NavLink
+                to="/main/output/all_output"
+                className={linkActiveClassName("output")}
+            >
+                <span className={s.top_curve}></span>
+                Итоги
+                <span className={s.bottom_curve}></span>
+            </NavLink>
           <NavLink
             to="/main/statistics/progress"
             className={linkActiveClassName("statistics")}
@@ -274,15 +274,7 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
-            to="/main/application/submittedApplications"
-            className={linkActiveClassName("application")}
-          >
-            <span className={s.top_curve}></span>
-            Заявки
-            <span className={s.bottom_curve}></span>
-          </NavLink>
-          <NavLink
-            to="/main/protocol/all_protocols"
+            to="/main/protocol/new_protocols"
             className={linkActiveClassName("protocol")}
           >
             <span className={s.top_curve}></span>
@@ -297,22 +289,14 @@ export const NavBar = () => {
             Итоги
             <span className={s.bottom_curve}></span>
           </NavLink>
-          <NavLink
-            to="/main/clubs/all_clubs"
-            className={linkActiveClassName("clubs")}
-          >
-            <span className={s.top_curve}></span>
-            Клубы
-            <span className={s.bottom_curve}></span>
-          </NavLink>
-          <NavLink
-            to="/main/trainers"
-            className={linkActiveClassName("trainers")}
-          >
-            <span className={s.top_curve}></span>
-            Тренер
-            <span className={s.bottom_curve}></span>
-          </NavLink>
+            <NavLink
+                to="/main/statistics"
+                className={linkActiveClassName("statistics")}
+            >
+                <span className={s.top_curve}></span>
+                Статистика
+                <span className={s.bottom_curve}></span>
+            </NavLink>
           <NavLink
             to="/main/documentation/all_documentation"
             className={linkActiveClassName("documentation")}

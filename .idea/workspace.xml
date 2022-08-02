@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3869330e-45d7-4bdb-9c91-c32492a819cb" name="Changes" comment="WHUS-397 made logical part of documentation section">
-      <change afterPath="$PROJECT_DIR$/src/images/closed_eye.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/file_downloaded.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/register/closed_eye.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/register/opened_eye.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/slices/docSlice.js" afterDir="false" />
+    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="tested api">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_07_2022_6_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_07_2022_6_57__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals/DeleteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/DeleteModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/CreateDocumentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/CreateDocumentation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/Documentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/Documentation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DocumentationDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DocumentationDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/EditDocumentationDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/EditDocumentationDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/createNews/CreateNews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/createNews/CreateNews.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/register/Registr.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/register/Registr.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/protocol/Protocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/Protocol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/protocol/ProtocolTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/ProtocolTab.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +16,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="WHUS-362-empty_protocol_unregist_users" />
+        <entry key="$PROJECT_DIR$" value="WHUS-151-protocol" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,20 +36,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu/src/pages/register&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2022.1.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Admin/WebstormProjects/whushu",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.1.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\pages\register" />
@@ -83,7 +71,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3869330e-45d7-4bdb-9c91-c32492a819cb" name="Changes" comment="fixed" />
+      <changelist id="2fe7c93a-b7ca-4607-a63d-9a2b89a5ab26" name="Changes" comment="fixed style" />
       <created>1658192923310</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -94,6 +82,7 @@
       <workItem from="1658370366261" duration="453000" />
       <workItem from="1658402866901" duration="1748000" />
       <workItem from="1658856845802" duration="13047000" />
+      <workItem from="1659086373899" duration="3451000" />
     </task>
     <task id="LOCAL-00001" summary="WHUS-362 made empty protocol page for unregistered users">
       <created>1658197972779</created>
@@ -109,7 +98,77 @@
       <option name="project" value="LOCAL" />
       <updated>1658240599049</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="merged with news">
+      <created>1659049774150</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1659049774150</updated>
+    </task>
+    <task id="LOCAL-00004" summary="merged with news">
+      <created>1659050047819</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659050047819</updated>
+    </task>
+    <task id="LOCAL-00005" summary="merged with news">
+      <created>1659050086207</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1659050086207</updated>
+    </task>
+    <task id="LOCAL-00006" summary="testing api">
+      <created>1659051223900</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1659051223900</updated>
+    </task>
+    <task id="LOCAL-00007" summary="testing api">
+      <created>1659051403612</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1659051403612</updated>
+    </task>
+    <task id="LOCAL-00008" summary="testing api">
+      <created>1659052125247</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659052125247</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fixed style">
+      <created>1659054608349</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659054608349</updated>
+    </task>
+    <task id="LOCAL-00010" summary="testing api">
+      <created>1659123034075</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1659123034075</updated>
+    </task>
+    <task id="LOCAL-00011" summary="ggfg">
+      <created>1659265709588</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1659265709588</updated>
+    </task>
+    <task id="LOCAL-00012" summary="testing api">
+      <created>1659265969621</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1659265969621</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,7 +189,11 @@
     <MESSAGE value="WHUS-362 made empty protocol page for unregistered users" />
     <MESSAGE value="commited" />
     <MESSAGE value="WHUS-397 made logical part of documentation section" />
-    <option name="LAST_COMMIT_MESSAGE" value="WHUS-397 made logical part of documentation section" />
+    <MESSAGE value="merged with news" />
+    <MESSAGE value="fixed style" />
+    <MESSAGE value="ggfg" />
+    <MESSAGE value="testing api" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -10,13 +10,15 @@ import userSlice from './slices/userSlice';
 //     serializableCheck: false,
 //     thunk: true,
 // });
+import {newSlice} from "./slices/newsSlice";
 
 export const store = configureStore({
   reducer: { reducer, 
     register:registerSlice,
     event:eventSlice,
     docs: docsSlice,
-    user:userSlice
+    user:userSlice,
+    news: newSlice,
 },
 
   // devTools: process.env.NODE_ENV !== 'production',

@@ -1,11 +1,19 @@
-.container {
+.row {
     /*padding:0;*/
-    background-color: #FFF;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    height: 95vh;
+    /*background-color: #FFF;*/
+    /*box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);*/
+    height: 94vh;
     overflow: hidden;
-    position: fixed;
-    top: 4vh;
+    /*position: fixed;*/
+    top: 2vh;
+
+
+    width: 1090px;
+    background: #FDFDFF;
+    opacity: 0.99;
+    box-shadow: 0 0 16px rgba(44, 44, 44, 0.15);
+    border-radius: 35px;
+    position: relative;
 }
 
 /* ===== MENU ===== */
@@ -63,7 +71,7 @@
     width: 40%;
     padding: 30px 32px 0 20px;
     background: #FFFFFF;
-    box-shadow: 0px 0px 16px rgb(44 44 44 / 15%);
+    box-shadow: 0 0 16px rgb(44 44 44 / 15%);
 }
 .discussion {
     background: linear-gradient(270deg, #E4E6FF -4.17%, #FFECE4 110.83%);
@@ -195,7 +203,7 @@
 .count_message {
     background: #3548F5;
     border-radius: 25px;
-    padding: 4px 0px;
+    padding: 4px 0;
     text-align: center;
     font-weight: 400;
     font-size: 18px;
@@ -310,7 +318,7 @@
 .row {
     display: flex;
     position: relative;
-    height: 100%;
+    /*height: 100%;*/
 }
 
 .footer-chat {
@@ -321,7 +329,7 @@
     position: absolute;
     bottom: 30px;
     background: #FDFDFF;
-    box-shadow: 0px 0px 16px rgb(0 0 0 / 15%);
+    box-shadow: 0 0 16px rgb(0 0 0 / 15%);
     border-radius: 60px;
     justify-content: space-between;
 }

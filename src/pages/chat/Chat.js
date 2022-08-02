@@ -11,7 +11,6 @@ const Chat = () => {
     const [textArr, setTextArr] = useState([])
     const [inputValue, setInputValue] = useState("");
     const [value, setValue] = useState(" ");
-    const [reset, setReset] = useState(false);
 
 
     const sendMessage = () => {
@@ -25,7 +24,7 @@ const Chat = () => {
     }, [value])
 
     return (
-        <div style={{padding: 0}} className="container">
+        // <div style={{padding: 0}} className="container_chat">
             <div className="row">
                 <div className="users">
                     <div className="search">
@@ -142,7 +141,7 @@ const Chat = () => {
                     </div>
                 </section>
             </div>
-        </div>
+        // </div>
     );
 };
 
