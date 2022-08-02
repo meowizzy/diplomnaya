@@ -4,13 +4,18 @@ import { useFormik } from "formik";
 import s from "./ChangeEvents.module.scss";
 import Button from "../../../components/button/Button";
 import BackButton from "../../../components/arrowButton/BackButton";
-import { createEvent } from "../../../redux/slices/eventSlice";
+import { createEvent, getEvent } from "../../../redux/slices/eventSlice";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import ss from '../../register/Registr.module.scss'
 import { getJudgeUser, getSecretaryUser } from "../../../redux/slices/userSlice";
+import SuccessModal from "../../../components/modals/SuccessModal";
+import { useNavigate } from "react-router";
 
-export const CreateEvents = ({ active, setActive }) => {
+export const CreateEvents = () => {
 
+  const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
+  const handleOpenSuccessModal = () => setOpenSuccessModal(true);
+  const handleCloseSuccessModal = () => setOpenSuccessModal(false);
   const dispatch = useDispatch()
 
   useEffect(()=>{
@@ -19,69 +24,88 @@ export const CreateEvents = ({ active, setActive }) => {
   },[])
 
   const [judge, setJudje] = useState(false)
+  const [nameJudge, setNameJudge] = useState('')
+  const [judgeId, setJudgeId] = useState("")
   const clickJudge = () =>{
     setJudje(!judge)
   }
-
-  const [nameJudge, setNameJudge] = useState('')
-
   const nameJudgeClick = (name, id) =>{
     setNameJudge(name)
     clickJudge()
     setJudgeId(id)
   }
 
-  const [judgeId, setJudgeId] = useState("")
-  console.log(judgeId)
-
+  // console.log(judgeId)
   const [secretary, setSecretary] = useState(false)
+  const [nameSecretary, setNameSecretary] = useState('')
+  const [secretaryId, setSecretaryId] = useState('')
   const clickSecretary = () =>{
     setSecretary(!secretary)
   }
-
-  const [nameSecretary, setNameSecretary] = useState('')
-
-  const nameSecretaryClick = (name) =>{
+  const nameSecretaryClick = (name, id) =>{
     setNameSecretary(name)
     clickSecretary()
+    setSecretaryId(id)
   }
 
-  const [secretaryId, setSecretaryId] = useState('')
-
-  const [age_groups, setAge_groupe] = useState([{
-    min_age: 2,
-    max_age: 2,
-    name: "dsa",
-  }])
-
+  // console.log(age_groups)
+  
   const judgeUser = useSelector(state=>state.user.userJudge)
   const secretaryUser = useSelector(state=>state.user.userSecretary)
-
-  console.log(secretaryUser)
-
+  const status = useSelector(state=>state.event.status)
+  const navigate=useNavigate()
+  // console.log(status)
+  const [age_groups, setAge_groups] = useState([{
+    min_age: '5',
+    max_age: '9',
+    name: "dsa",
+  }])
+  // console.log(secretaryId)
   const formik = useFormik({
     initialValues: {
       name: "",
       finish_datetime: "",
       start_datetime:"",
       place: "",
-      lead_judge: Number(judgeId),
-      assistant: "",
+      assistant: "6",
+      lead_judge:'7',
       note: "",
       age_groups
     },
     onSubmit: (values) => {
-      // dispatch(createEvent(values));
-      alert(JSON.stringify(values, null, 2));
+      const data={values}
+      dispatch(createEvent(data));
+      if(status==="resolved"){
+        handleOpenSuccessModal()
+        navigate('/main/events/allEvents')
+      }else{
+        return console.log("dsa")
+      }
+      // alert(JSON.stringify(values, null, 2));
     },
   });
+  
+  const [state, setState] = useState({
+    min_age: '',
+    max_age: '',
+    name: "dsa",
+  })
 
   const plus = () =>{
-    setAge_groupe(...age_groups, )
+    setState(age_groups.unshift(state))
+    console.log(formik.values.age_groups)
   }
+  const minus = () =>{
+    setState(age_groups.pop())
+    console.log(formik.values.age_groups)
+  }
+  // useEffect(()=>{
+  //   plus()
+  // },[])
+
   return (
-    <div className={active ? s.cont : s.unactive}>
-      <BackButton onClick={() => setActive(false)} to="/main/events/allEvents"/>
+    <div className={ s.cont }>
+      <BackButton to="/main/events/allEvents"/>
 
       <p style={{ fontSize: "30px", marginBottom: "40px" }}>
         Создание мероприятие
@@ -96,7 +120,7 @@ export const CreateEvents = ({ active, setActive }) => {
           width="600px"
         />
         <Input
-          placeholder="Введите дату начала"
+          placeholder="2022-07-17T18:00:00+06:00"
           valueLabel="Введите дату начала"
           value={formik.values.start_datetime}
           onChange={formik.handleChange}
@@ -104,7 +128,7 @@ export const CreateEvents = ({ active, setActive }) => {
           width="600px"
         />
          <Input
-          placeholder="Введите дату конца"
+          placeholder="2022-07-17T18:00:00+06:00"
           valueLabel="Введите дату конца"
           value={formik.values.finish_datetime}
           onChange={formik.handleChange}
@@ -126,9 +150,9 @@ export const CreateEvents = ({ active, setActive }) => {
             placeholder="Главный судья"
             valueLabel="Информация о мероприятии - главный судья"
             value={nameJudge}
-            // onChange={formik.handleChange}
+            onChange={formik.handleChange}
             width="600px"
-            name="lead_judge"
+            // name="lead_judge"
             />
             <div className={ss.list_img} onClick={clickJudge}></div>
           </>
@@ -138,16 +162,16 @@ export const CreateEvents = ({ active, setActive }) => {
           placeholder="Главный судья"
           valueLabel="Информация о мероприятии - главный судья"
           value={nameJudge}
-          // onChange={formik.handleChange}
+          onChange={formik.handleChange}
           width="600px"
-          name="lead_judge"
+          // name="lead_judge"
           />
           <span className={ss.list_img} onClick={clickJudge}></span>
           {judgeUser.map(el=>(
           <div className={s.list}>
                 <label className={s.label}>
                   {judgeId === el.id ? (
-                    <p onClick={()=>nameJudgeClick(el.name, el.id)} style={{ backgroundColor: "#F3F3FF" }}>
+                    <p onClick={()=>nameJudgeClick(el.name, el.id)} style={{ backgroundColor: "#F3F3FF", paddingLeft:"20px" }}>
                       {el.name}
                     </p>
                   ) : (
@@ -158,8 +182,8 @@ export const CreateEvents = ({ active, setActive }) => {
                   <input
                     type="radio"
                     value={el.id}
-                    onChange={(e)=>setJudgeId(e.target.value)}
-                    name="judge"
+                    onChange={formik.handleChange}
+                    name="lead_judge"
                     className={s.radio}
                   />
                 </label>
@@ -197,11 +221,11 @@ export const CreateEvents = ({ active, setActive }) => {
           <div className={s.list}>
                 <label className={s.label}>
                   {secretaryId === el.id ? (
-                    <p onClick={()=>nameSecretaryClick(el.name)} style={{ backgroundColor: "#F3F3FF" }}>
+                    <p onClick={()=>nameSecretaryClick(el.name, el.id)} style={{ backgroundColor: "#F3F3FF" }}>
                       {el.name}
                     </p>
                   ) : (
-                    <p onClick={()=>nameSecretaryClick(el.name)}>
+                    <p onClick={()=>nameSecretaryClick(el.name, el.id)}>
                       {el.name}
                     </p>
                   )}
@@ -228,29 +252,29 @@ export const CreateEvents = ({ active, setActive }) => {
           name="note"
         />
 
+        {formik.values.age_groups.map(el=>(
         <div className={s.age}>
           <div>
             <Input
               placeholder="С"
               width="285px"
               valueLabel="Возрастная категория"
-              value={formik.values.age_groups[0].min_age}
-              // value={formik.values.age_groupe.forEach(el=>{return el.min_age})}
               onChange={formik.handleChange}
-              name="age_groupe[0].min_age"
+              name="min_age"
             />
 
             <Input
               placeholder="По"
               valueLabel=""
               width="285px"
-              value={formik.values.age_groups[0].max_age}
               onChange={formik.handleChange}
-              name="age_groupe[0].max_age"
+              name="max_age"
             />
-            <span className={s.age_span}></span>
-          </div>
+            <span className={s.age_span} onClick={plus}></span>
+            <span className={s.age_span} onClick={minus}></span>
         </div>
+        </div>
+        ))}
         <Button
           text="СОЗДАТЬ"
           disabled={
@@ -259,10 +283,10 @@ export const CreateEvents = ({ active, setActive }) => {
               formik.values.finish_datetime &&
               formik.values.start_datetime&&
               formik.values.place &&
-              // formik.values.lead_judge &&
-              // formik.values.assistant &&
-              // formik.values.age_groupe.forEach(el=>{return el.max_age}) &&
-              // formik.values.age_groupe.forEach(el=>{return el.min_age}) &&
+              formik.values.lead_judge &&
+              formik.values.assistant &&
+              formik.values.age_groupe.forEach(el=>{return el.max_age}) &&
+              formik.values.age_groupe.forEach(el=>{return el.min_age}) &&
               formik.values.note
             )
           }
@@ -270,6 +294,7 @@ export const CreateEvents = ({ active, setActive }) => {
           type="submit"
         />
       </form>
+      {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно создали мероприятие!"/>}
     </div>
   );
 };

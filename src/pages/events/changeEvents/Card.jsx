@@ -4,9 +4,13 @@ import BackButton from "../../../components/arrowButton/BackButton";
 import ForwardButton from "../../../components/arrowButton/ForwardButton";
 import Button from "../../../components/button/Button";
 import { Delete } from "../../../components/delete/Delete";
+import SuccessModal from "../../../components/modals/SuccessModal";
+import { deleteEvent, getEvent } from "../../../redux/slices/eventSlice";
 import s from ".././defaultEvents/DefaultEvents.module.scss";
 import ss from "./ChangeEvents.module.scss";
 import { ChangeForm } from "./ChangeForm";
+import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useDispatch } from "react-redux/es/hooks/useDispatch";
 
 export const Card = ({
   note,
@@ -16,16 +20,25 @@ export const Card = ({
   place,
   referee,
   secretary,
-  min_age,
-  max_age,
-  max_age_second,
-  min_age_second,
+  age,
+  id,
+  refereeId,
+  secretaryId
 }) => {
   const [card, setCard] = useState(true);
 
   const toggle = () => {
     setCard(!card);
   };
+const dispatch = useDispatch()
+  const status = useSelector(state=>state.event.deleteStatus)
+
+  const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
+  const handleOpenSuccessModal = () => {  
+    setOpenSuccessModal(true)
+    dispatch(getEvent())
+  };
+  const handleCloseSuccessModal = () => setOpenSuccessModal(false);
 
   const [change, setChange] = useState(true);
 
@@ -40,14 +53,14 @@ export const Card = ({
           assistant={secretary}
           finish_datetime={finish_date}
           lead_judge={referee}
-          max_age={max_age}
-          max_age_second={max_age_second}
-          min_age={min_age}
-          min_age_second={min_age_second}
+          lead_judgeId={refereeId}
+          assistantId={secretaryId}
+          age_groupe={age}
           name={name}
           note={note}
           place={place}
           start_datetime={start_date}
+          id={id}
         />
       ) : card === true ? (
         <div className={s.box}>
@@ -74,10 +87,13 @@ export const Card = ({
             <div className={s.info}>
               <p>Главный судья: {referee}</p>
               <p>Секретарь: {secretary}</p>
-              <p>
-                Возрастная категория: с {min_age} до {max_age}, с{" "}
-                {min_age_second} до {max_age_second}
-              </p>
+
+              <span>Возрастная категория:{' '}</span>
+              {age.map((el, index)=>(
+              <span key={index}>
+                с {el.min_age} до {el.max_age},
+              </span>
+              ))}
             </div>
             <p>Примечание</p>
             <p className={s.note}>{note}</p>
@@ -89,10 +105,23 @@ export const Card = ({
             <span className={ss.delete}>
               <Delete
                 text={"Вы уверены, что хотите удалить данное мероприятие?"}
+                take={deleteEvent}
+                id={id}
+                open={handleOpenSuccessModal}
+                status={status}
+                back={toggle}
               />
             </span>
           </div>
         </div>
+        
+      )}
+      {openSuccessModal && (
+        <SuccessModal
+          open={openSuccessModal}
+          handleClose={handleCloseSuccessModal}
+          title="Вы успешно удалили данное мероприятие!"
+        />
       )}
     </>
   );

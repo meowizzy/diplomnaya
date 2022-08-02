@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import ForwardButton from '../../../../components/arrowButton/ForwardButton'
 import s from "../../defaultEvents/DefaultEvents.module.scss"
@@ -9,9 +9,11 @@ import { ChangeForm } from '../ChangeForm'
 import BackButton from '../../../../components/arrowButton/BackButton'
 import Button from '../../../../components/button/Button'
 import { Delete } from '../../../../components/delete/Delete'
+import { getEvent } from '../../../../redux/slices/eventSlice'
+import { useDispatch } from 'react-redux/es/hooks/useDispatch'
 
 export const Events_2021 = () => {
-  const [active, setActive] = useState(false)
+
   const events = useSelector(state=>state.event.event)
 
   const [card, setCard] = useState(true);
@@ -25,10 +27,13 @@ export const Events_2021 = () => {
   const foggle = () => {
     setChange(!change);
   };
+  const dispatch = useDispatch() 
+  useEffect(()=>{
+    dispatch(getEvent())
+  },[])
 
   return (
     <>
-       <CreateEvents active={active} setActive={setActive} />
 
        {change === false ? (
         <ChangeForm onClick={foggle} />
@@ -81,10 +86,7 @@ export const Events_2021 = () => {
         note={el.note}
           key={index}
           finish_date={el.finish_datetime}
-          max_age={el.age_groups[0].max_age}
-          min_age={el.age_groups[0].min_age}
-          max_age_second={el.age_groups[1].max_age}
-          min_age_second={el.age_groups[1].min_age}
+          age={el.age_groups}
           place={el.place}
           referee={el.lead_judge.name}
           secretary={el.assistant.name}

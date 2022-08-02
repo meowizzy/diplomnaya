@@ -9,12 +9,14 @@ import ss from '../../changeEvents/ChangeEvents.module.scss'
 import { Card } from '../Card';
 import { ChangeForm } from '../ChangeForm';
 import { CreateEvents } from '../CreateEvents';
+import { getEvent } from '../../../../redux/slices/eventSlice';
 
 export const AllEvents = () => {
+ 
   const [active, setActive] = useState(false)
   const events = useSelector(state=>state.event.event)
 
-  // console.log(events)
+  console.log(events)
   const [card, setCard] = useState(true);
 
   const toggle = () => {
@@ -26,10 +28,14 @@ export const AllEvents = () => {
   const foggle = () => {
     setChange(!change);
   };
+  const dispatch = useDispatch() 
+  useEffect(()=>{
+    dispatch(getEvent())
+  },[])
 
   return (
     <>
-      <CreateEvents active={active} setActive={setActive} />
+      {/* <CreateEvents active={active} setActive={setActive} /> */}
 
       {change === false ? (
         <ChangeForm onClick={foggle} />
@@ -77,18 +83,18 @@ export const AllEvents = () => {
       )}
       {events.map((el, index) => (
         <Card
-        name={el.name}
-        note={el.note}
-          key={index}
-          finish_date={el.finish_datetime}
-          max_age={el.age_groups[0].max_age}
-          min_age={el.age_groups[0].min_age}
-          max_age_second={el.age_groups[1].max_age}
-          min_age_second={el.age_groups[1].min_age}
-          place={el.place}
-          referee={el.lead_judge.name}
-          secretary={el.assistant.name}
-          start_date={el.start_datetime}
+            name={el.name}
+            note={el.note}
+            key={index}
+            finish_date={el.finish_datetime}
+            age={el.age_groups}
+            place={el.place}
+            referee={el.lead_judge.name}
+            secretary={el.assistant.name}
+            refereeId={el.lead_judge.id}
+            secretaryId={el.assistant.id}
+            start_date={el.start_datetime}
+            id={el.id}
         />
       ))}
     </>

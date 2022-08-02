@@ -196,11 +196,11 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
-            to="/main/users/registered"
-            className={linkActiveClassName("users")}
+            to="/main/applied/newApplied"
+            className={linkActiveClassName("applied")}
           >
             <span className={s.top_curve}></span>
-            Пользователи
+            Заявки
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink

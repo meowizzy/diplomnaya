@@ -25,11 +25,11 @@ export const getEvent = createAsyncThunk(
 
 export const createEvent = createAsyncThunk(
   "event/createEvent",
- 
-  async (formData ,{ rejectWithValue }) => {
-    console.log("form", formData)
+  async (data ,{ rejectWithValue }) => {
+    console.log("form", data.values)
     try {
-      const res = await requests.postEvents(formData);
+      const res = await requests.postEvents(data.values);
+      data.handleOpneSuccessModal()
       // console.log("res", res)
       if (!res) {
         throw new Error("ERROR");
@@ -42,25 +42,44 @@ export const createEvent = createAsyncThunk(
 
 export const editEvent = createAsyncThunk(
   "event/editEvent",
- 
-  async (formData ,{ rejectWithValue }) => {
-    console.log("form", formData)
+  async (data, { rejectWithValue }) => {
+    console.log("form", data.values)
     try {
-      const res = await requests.postEvents(formData);
-      // console.log("res", res)
-      if (!res) {
-        throw new Error("ERROR");
-      }
+      const res = await requests.editEvents(data);
+      console.log("res", res)
+      // if (!res) {
+      //   throw new Error("ERROR");
+      // }
     } catch (error) {
         return rejectWithValue(error.message)
     }
   }
 );
+
+export const deleteEvent = createAsyncThunk(
+  "event/deleteEvent",
+ 
+  async (id ,{ rejectWithValue }) => {
+    console.log("form", id)
+    try {
+      const res = await requests.deleteEvents(id);
+      console.log("res", res)
+      // if (!res) {
+      //   throw new Error("ERROR");
+      // }
+      return id
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+
 const eventSlice = createSlice({
   name: "event",
   initialState,
   status: null,
   error: null,
+  deleteStatus:null,
   reducers: {
     getEvent: (state, action) => {
       state.event = action.payload;
@@ -93,9 +112,20 @@ const eventSlice = createSlice({
       state.status = "rejected";
       state.error = action.payload;
     },
+    [deleteEvent.rejected]: (state, action) => {
+      state.deleteStatus = "rejected";
+      state.error = action.payload;
+    },
+    [deleteEvent.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.event = state.event.filter(el=>(
+        el.id!==action.payload
+      ))
+      // console.log("fullfiled");
+    },
   },
 });
 
-export const { event } = eventSlice.actions;
+// export const { event } = eventSlice.actions;
 
 export default eventSlice.reducer;

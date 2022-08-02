@@ -18,10 +18,6 @@ export const ChangeEvents = () => {
 
   const dispatch = useDispatch()
 
-  useEffect(()=>{
-    dispatch(getEvent())
-  },[])
-
   const location = useLocation()
   return (
     <div className={s.cont}>
@@ -36,15 +32,15 @@ export const ChangeEvents = () => {
           Мероприятия за 2021г.
         </NavLink>
 
-        <div className={ss.button}>
-          <Button margin="0 0" text="СОЗДАТЬ" onClick={()=>setActive(!active)}/>
-        </div>
+        <NavLink to="/main/events/createEvents" className={ss.button} >
+          <Button margin="0 0" text="СОЗДАТЬ" />
+        </NavLink>
       </div>
 
       <div className={s.content}>
-      <CreateEvents active={active} setActive={setActive} />
         <Routes>
           <Route path="/allEvents" element={<AllEvents />} />
+          <Route path="/createEvents" element={<CreateEvents />} />
           <Route path="/events_2022" element={<Events_2022 />} />
           <Route path="/events_2021" element={<Events_2021 />} />
         </Routes>

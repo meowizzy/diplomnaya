@@ -21,13 +21,18 @@ export const requests = {
     authApi: (data) => fetchAPI.post("login/", data),
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
-    getEvents:() => fetchAPI.get('event/'),
-    postEvents:(data) => fetchAPI.post('event/', data),
-    eidtEvents:(data) => fetchAPI.post('event/', data),
-    getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
-    getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
     newPasswordApi: (data) => fetchAPI.post("password-reset/confirm/", data),
 
+    // Events
+    getEvents:() => fetchAPI.get('event/'),
+    postEvents:(data) => fetchAPI.post('event/', data),
+    editEvents:(data) => fetchAPI.patch(`event/${data.id}`, data.values),
+    deleteEvents:(id) => fetchAPI.delete(`event/${id}/`),
+
+    //User
+    getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
+    getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
+    
     // documentation
     getDocs: () => fetchAPI.get("documents/document/"),
     getDoc: (id) => fetchAPI.get(`documents/document/${id}/`),
