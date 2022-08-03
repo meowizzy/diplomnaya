@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="tested api">
+    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed navbar by roles">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_07_2022_6_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_07_2022_6_57__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/Protocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/Protocol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/ProtocolTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/ProtocolTab.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,19 +13,15 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="WHUS-151-protocol" />
+        <entry key="$PROJECT_DIR$" value="WHUS-388-styles" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/WebStorm2022.1/javascript/typings/react-router-dom/5.3.3/node_modules/@types/react/index.d.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/App.js" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2C8n910Sw9sYBmv091jjMyFJn5P" />
+  <component name="ProjectId" id="2CppGiK9xDa2zBRtqO1ujGmBmdG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -38,7 +31,6 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Git.Branch.Popup.ShowAllRemotes": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -46,16 +38,9 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.1.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\pages\register" />
-      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\images" />
-    </key>
-  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -71,104 +56,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2fe7c93a-b7ca-4607-a63d-9a2b89a5ab26" name="Changes" comment="fixed style" />
-      <created>1658192923310</created>
+      <changelist id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed navbar by roles" />
+      <created>1659509286870</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1658192923310</updated>
-      <workItem from="1658192932630" duration="4736000" />
-      <workItem from="1658227979117" duration="1315000" />
-      <workItem from="1658240509555" duration="20067000" />
-      <workItem from="1658370366261" duration="453000" />
-      <workItem from="1658402866901" duration="1748000" />
-      <workItem from="1658856845802" duration="13047000" />
-      <workItem from="1659086373899" duration="3451000" />
+      <updated>1659509286870</updated>
+      <workItem from="1659509300090" duration="532000" />
     </task>
-    <task id="LOCAL-00001" summary="WHUS-362 made empty protocol page for unregistered users">
-      <created>1658197972779</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1658197972779</updated>
-    </task>
-    <task id="LOCAL-00002" summary="commited">
-      <created>1658240599049</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1658240599049</updated>
-    </task>
-    <task id="LOCAL-00003" summary="merged with news">
-      <created>1659049774150</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1659049774150</updated>
-    </task>
-    <task id="LOCAL-00004" summary="merged with news">
-      <created>1659050047819</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1659050047819</updated>
-    </task>
-    <task id="LOCAL-00005" summary="merged with news">
-      <created>1659050086207</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1659050086207</updated>
-    </task>
-    <task id="LOCAL-00006" summary="testing api">
-      <created>1659051223900</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1659051223900</updated>
-    </task>
-    <task id="LOCAL-00007" summary="testing api">
-      <created>1659051403612</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1659051403612</updated>
-    </task>
-    <task id="LOCAL-00008" summary="testing api">
-      <created>1659052125247</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1659052125247</updated>
-    </task>
-    <task id="LOCAL-00009" summary="fixed style">
-      <created>1659054608349</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1659054608349</updated>
-    </task>
-    <task id="LOCAL-00010" summary="testing api">
-      <created>1659123034075</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1659123034075</updated>
-    </task>
-    <task id="LOCAL-00011" summary="ggfg">
-      <created>1659265709588</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1659265709588</updated>
-    </task>
-    <task id="LOCAL-00012" summary="testing api">
-      <created>1659265969621</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1659265969621</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,16 +78,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="WHUS-362 made empty protocol page for unregistered users" />
-    <MESSAGE value="commited" />
-    <MESSAGE value="WHUS-397 made logical part of documentation section" />
-    <MESSAGE value="merged with news" />
-    <MESSAGE value="fixed style" />
-    <MESSAGE value="ggfg" />
-    <MESSAGE value="testing api" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing api" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
