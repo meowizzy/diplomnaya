@@ -58,10 +58,7 @@ export const AllDefaultEvents = () => {
         note={el.note}
           key={index}
           finish_date={el.finish_datetime}
-          max_age={el.age_groups[0].max_age}
-          min_age={el.age_groups[0].min_age}
-          max_age_second={el.age_groups[1].max_age}
-          min_age_second={el.age_groups[1].min_age}
+          age={el.age_groups}
           place={el.place}
           referee={el.lead_judge.name}
           secretary={el.assistant.name}
