@@ -63,12 +63,13 @@
     width: 100%;
     justify-content: start;
     padding-left: 11px;
-    margin-bottom: 20px;
+    margin-bottom: 48px;
 }
-.checkbox_text {
+.checkbox_text, .error_text {
     display: flex;
     font-weight: bold;
     gap: 34px;
+    align-items: center;
 }
 .checkbox_text:before {
     content: url("../../images/empty_checkbox.svg");
@@ -77,6 +78,7 @@
     display: flex;
     gap: 34px;
     font-weight: bold;
+    align-items: center;
 }
 .full_checkbox_text:before {
     content: url("../../images/full_auth_checkbox.svg");

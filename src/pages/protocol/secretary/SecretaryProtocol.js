@@ -4,9 +4,11 @@ import {Route, Routes} from "react-router";
 import AllEvents from "./AllEvents";
 import ProtocolTab from "../ProtocolTab";
 import FormProtocol from "./FormProtocol.js";
-import ApproveFormedProtocol from "./ApproveFormedProtocol";
+import EventDetails from "./EventDetails";
 import ProtocolDetails from "./ProtocolDetails";
 import AllProtocols from "./AllProtocols";
+import FormArena from "./FormArena";
+import CreatedProtocol from "./CreatedProtocol";
 
 const SecretaryProtocol = () => {
     return (
@@ -15,8 +17,10 @@ const SecretaryProtocol = () => {
             <div className={s.cont}>
                 <Routes>
                     <Route path="/all_events" element={<AllEvents />} />
-                    <Route path="/all_events/form_protocol" element={<FormProtocol />} />
-                    <Route path="/all_events/form_protocol/approve_formed_protocol" element={<ApproveFormedProtocol />} />
+                    <Route path="/all_events/event_details" element={<EventDetails />} />
+                    <Route path="/all_events/event_details/form_protocol" element={<FormProtocol />} />
+                    <Route path="/all_events/event_details/form_protocol/form_arena" element={<FormArena />} />
+                    <Route path="/all_events/event_details/form_protocol/approve_formed_protocol" element={<CreatedProtocol />} />
 
                     {/* protocols */}
                     <Route path="/protocols" element={<AllProtocols />} />

@@ -8,9 +8,14 @@ import BackButton from "../../../components/arrowButton/BackButton";
 const FormProtocol = () => {
 
     const navigate = useNavigate();
+
+    const tempFunc = () => {
+        navigate("/main/protocol/all_events/event_details/form_protocol/form_arena");
+    }
+
     return (
         <div style={{textAlign: "center"}} className={ownStyles2.wrapper2}>
-            <BackButton to="/main/protocol/all_events" />
+            <BackButton to="/main/protocol/all_events/event_details" />
             <div className={ownStyles2.header2}>
                 <p style={{ margin: "0px 0 30px", fontSize: "26px", fontWeight:"bold" }}>ПРОТОКОЛ</p>
                 <p style={{ margin: "0px 0 20px", fontSize: "20px", fontWeight:"bold" }}>
@@ -41,8 +46,7 @@ const FormProtocol = () => {
                 <input className={ownStyles.input} type="text" placeholder="Введите число"/>
                 <input className={ownStyles.last_input} type="text" placeholder="Введите число"/>
             </div>
-            <Button onClick={() => navigate("/main/protocol/all_events/form_protocol/approve_formed_protocol")} width="600px" text="СФОРМИРОВАТЬ ПРОТОКОЛ" />
-
+            <Button onClick={tempFunc} width="600px" text="ДАЛЕЕ" />
         </div>
     );
 };
