@@ -105,7 +105,7 @@ export const Registr = () => {
           {roles === false ? (
             <>
               <Input
-                placeholder="Введите должность"
+                placeholder="Выберите должность"
                 valueLabel="Должность"
                 value={role}
                 // onChange={formik.handleChange}
@@ -116,7 +116,7 @@ export const Registr = () => {
           ) : (
             <>
               <Input
-                placeholder="Введите должность"
+                placeholder="Выберите должность"
                 valueLabel="Должность"
                 value={role}
                 name="role"
@@ -182,7 +182,7 @@ export const Registr = () => {
         />
         <div style={{ position: "relative" }}>
           <Input
-            placeholder="Введите пароль"
+            placeholder="******"
             valueLabel="Пароль"
             value={formik.values.password}
             type={open === false ? "password" : "text"}
@@ -209,7 +209,7 @@ export const Registr = () => {
         </div>
         <div style={{ position: "relative" }}>
           <Input
-            placeholder="Введите пароль"
+            placeholder="******"
             valueLabel="Подтвердить пароль"
             value={formik.values.secondPassword}
             onChange={formik.handleChange}

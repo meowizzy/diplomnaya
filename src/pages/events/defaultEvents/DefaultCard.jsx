@@ -14,10 +14,7 @@ export const DefaultCard = ({note,
   place,
   referee,
   secretary,
-  min_age,
-  max_age,
-  max_age_second,
-  min_age_second,
+  age
  }) => {
   const [card, setCard] = useState(true);
 
@@ -53,10 +50,12 @@ export const DefaultCard = ({note,
             <div className={s.info}>
               <p>Главный судья: {referee}</p>
               <p>Секретарь: {secretary}</p>
-              <p>
-                Возрастная категория: с {min_age} до {max_age}, с{" "}
-                {min_age_second} до {max_age_second}
-              </p>
+              <span>Возрастная категория:{' '}</span>
+              {age.map((el, index)=>(
+              <span key={index}>
+                с {el.min_age} до {el.max_age},
+              </span>
+              ))}
             </div>
             <p>Примечание</p>
             <p className={s.note}>{note}</p>
