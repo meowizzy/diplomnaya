@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed">
-      <change afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/CreatedProtocol.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/FormArena.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/register/error_eye.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/register/error_open_eye.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/Auth.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/Auth.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/Protocol.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/Protocol.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/admin/ProtocolDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/admin/ProtocolDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/AllEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/AllEvents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/ApproveFormedProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/EventDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/FormProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/FormProtocol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/SecretaryProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/SecretaryProtocol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/register/Registr.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/register/Registr.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/authSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/authSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/newsSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/newsSlice.js" afterDir="false" />
-    </list>
+    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +68,7 @@
       <option name="presentableId" value="Default" />
       <updated>1659509286870</updated>
       <workItem from="1659509300090" duration="12654000" />
-      <workItem from="1659603770930" duration="602000" />
+      <workItem from="1659603770930" duration="1031000" />
     </task>
     <task id="LOCAL-00001" summary="fixed">
       <created>1659519540447</created>
@@ -111,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659519834571</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed">
+      <created>1659604738561</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659604738561</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
