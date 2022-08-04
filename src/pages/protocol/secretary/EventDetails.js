@@ -1,22 +1,17 @@
 import React from 'react';
 import ownStyles from "../../output/Output.module.scss";
-import {Pagination} from "../../../components/pagination/Pagination";
 import ownStyles2 from "../Protocol.module.scss"
-import inputStyles from "../../../components/input/Input.module.scss";
 import BackButton from "../../../components/arrowButton/BackButton";
 import Button from "../../../components/button/Button";
-import SuccessModal from "../../../components/modals/SuccessModal";
+import {useNavigate} from "react-router";
 
-const ApproveFormedProtocol = () => {
+const EventDetails = () => {
 
-    const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
-    const handleOpenSuccessModal = () => setOpenSuccessModal(true);
-    const handleCloseSuccessModal = () => setOpenSuccessModal(false);
+    const navigate = useNavigate();
 
     return (
-        <>
         <div className={ownStyles2.wrapper2}>
-            <BackButton to="/main/protocol/all_events/form_protocol" />
+            <BackButton to="/main/protocol/all_events" />
             <div className={ownStyles2.header2}>
                 <p style={{ margin: "0 0 70px", fontSize: "26px", fontWeight:"bold" }}>Информация о протоколе</p>
                 <p style={{ margin: "0 0 20px", fontSize: "20px", fontWeight:"bold" }}>
@@ -90,49 +85,13 @@ const ApproveFormedProtocol = () => {
                 <input style={{flex: 5.5}} className={ownStyles.input} type="text" value="Красная (первая)"/>
                 <input style={{flex: 10}} className={ownStyles.last_input} type="text" value="Выступление с шестом"/>
             </div>
-            <p style={{ marginBottom: "30px", marginTop: "100px", fontWeight:"bold", textAlign: "center" }}>
-                Выберите номер подгруппы
-            </p>
-            <Pagination/>
 
-            <div className={ownStyles2.description3}>
-                <p style={{ marginBottom: "20px", marginTop: "70px", fontWeight:"bold" }}>
-                    Подгруппа 1. {""}
-                    <span style={{fontWeight:"normal" }}>
-                            Дуйлянь, 8-10 лет
-                          </span>
-                </p>
-                <p style={{ marginBottom: "20px" }}>
-                    Школа/клуб: Золотой дракон
-                </p>
-
-                <p style={{ marginBottom: "30px" }}>
-                    Время: 10:30
-                </p>
-            </div>
-
-            <div className={ownStyles2.arena_cont}>
-                <label className={inputStyles.label}>Арена</label>
-                <div style={{width: "100%", height: "200px", position: "relative", textAlign: "center"}} className={inputStyles.gradient}>
-                    <div className={`${inputStyles.input} ${ownStyles2.arena}`}>
-                        <div className={ownStyles2.arena_place}>Участник 1</div>
-                        <div className={ownStyles2.arena_place}>Участник 2</div>
-                        <div className={ownStyles2.arena_place}>Участник 3</div>
-                        <div className={ownStyles2.arena_place}>Участник 4</div>
-                        <div className={ownStyles2.arena_place}>Участник 5</div>
-                        <div className={ownStyles2.arena_place}>Участник 6</div>
-                    </div>
-                </div>
-
-            </div>
             <div style={{textAlign: 'center'}}>
-                <Button onClick={handleOpenSuccessModal} width="600px" text="СФОРМИРОВАТЬ ПРОТОКОЛ" />
+                <Button onClick={() => navigate("/main/protocol/all_events/event_details/form_protocol")} margin="70px auto 0" width="600px" text="СФОРМИРОВАТЬ АРЕНЫ" />
             </div>
 
         </div>
-            {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно создали протокол!"/>}
-        </>
     );
 };
 
-export default ApproveFormedProtocol;
+export default EventDetails;

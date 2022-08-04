@@ -47,5 +47,5 @@ export {
     file_downloaded,
     message_unsend,
     message_sent,
-    list_img
+    list_img,
 }

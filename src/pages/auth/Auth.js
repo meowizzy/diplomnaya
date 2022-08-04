@@ -8,7 +8,8 @@ import Button from "../../components/button/Button";
 import "../../styles/baseStyles.scss";
 import { Link } from "react-router-dom";
 import {useNavigate} from "react-router";
-import {auth} from "../../redux/fetchFunctions";
+import {useDispatch, useSelector} from "react-redux";
+import { userAuth} from "../../redux/slices/authSlice";
 
 const Auth = () => {
   const [open, setOpen] = useState(true);
@@ -22,23 +23,25 @@ const Auth = () => {
   };
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const authError = useSelector(state => state.auth.error)
 
   const queryParams = new URLSearchParams(window.location.search);
   const id = queryParams.get('token');
   const name = queryParams.get('name');
   const type = queryParams.get('type');
   console.log(id, name, type);
-  // console.log(queryParams.getAll());
 
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
-    onSubmit: (data) => {
-      console.log(data);
+    onSubmit: (authData) => {
+      console.log(authData);
       // navigate("/main/events");
-      auth(data, navigate)
+      const data = {authData: authData, navigate}
+      dispatch(userAuth(data))
     },
   });
   return (
@@ -53,29 +56,34 @@ const Auth = () => {
             <Input
               placeholder="Введите почту"
               valueLabel="Почта"
-              // value={formik.values.name}
               onChange={formik.handleChange}
               name="email"
+              background={authError && "red"}
             />
             <div className={s.input_cont}>
               <Input
                 placeholder="******"
                 valueLabel="Пароль"
                 type={open ? "password" : "text"}
-                // value={formik.values.name}
                 onChange={formik.handleChange}
                 name="password"
+                background={authError && "red"}
               />
               {open === false ? (
-                <div onClick={toggle} className={registerStyles.open_eye} />
+                <div onClick={toggle} className={authError ? registerStyles.error_open_eye : registerStyles.open_eye} />
               ) : (
-                <div onClick={toggle} className={registerStyles.close_eye} />
+                <div onClick={toggle} className={authError ? registerStyles.error_close_eye : registerStyles.close_eye} />
               )}
             </div>
-            <div className={s.checkbox_con}>
-              {/*<img src={empty_checkbox} alt="wrong"/>*/}
-              <p onClick={checkboxToggle} className={checkbox ? s.checkbox_text : s.full_checkbox_text}>Сохранить пароль?</p>
-            </div>
+
+            {
+              authError ? <div style={{paddingLeft: 0}} className={s.checkbox_con}>
+                              <p className="basic_text">Пароль или логин введен неверно</p>
+                          </div> :
+                          <div className={s.checkbox_con}>
+                            <p onClick={checkboxToggle} className={checkbox ? s.checkbox_text : s.full_checkbox_text}>Сохранить пароль?</p>
+                          </div>
+            }
             <div className={s.forgot_p_cont}>
               <Link to="/auth/ForgotPassword" className="grey_text">Забыли пароль?</Link>
             </div>

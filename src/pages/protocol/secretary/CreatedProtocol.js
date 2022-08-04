@@ -1,13 +1,19 @@
 import React from 'react';
 import ownStyles from "../../output/Output.module.scss";
+import {Pagination} from "../../../components/pagination/Pagination";
 import ownStyles2 from "../Protocol.module.scss"
 import inputStyles from "../../../components/input/Input.module.scss";
 import BackButton from "../../../components/arrowButton/BackButton";
+import Button from "../../../components/button/Button";
+import {useNavigate} from "react-router";
 
-const ProtocolDetails = () => {
+const CreatedProtocol = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className={ownStyles2.wrapper2}>
-            <BackButton to="/main/protocol/all_protocols"/>
+            <BackButton to="/main/protocol/all_events" />
             <div className={ownStyles2.header2}>
                 <p style={{ margin: "0 0 70px", fontSize: "26px", fontWeight:"bold" }}>Информация о протоколе</p>
                 <p style={{ margin: "0 0 20px", fontSize: "20px", fontWeight:"bold" }}>
@@ -48,7 +54,7 @@ const ProtocolDetails = () => {
                 <input style={{flex: 10}} disabled className={ownStyles.title} value="Примечание" />
             </div>
             <div className={ownStyles.input_cont}>
-                <input style={{fontWeight: "bold"}} className={ownStyles.input11} type="text" value="1" />
+                <input className={ownStyles.input11} type="text" value="1" />
                 <input style={{flex: 8}} className={ownStyles.input2} type="text" value="Стёпка Киборг Убийца"/>
                 <input style={{flex: 5.5}} className={ownStyles.input} type="text" value="Золотой дракон" />
                 <input style={{flex: 5.5}} className={ownStyles.input} type="text" value="Красная (первая)"/>
@@ -57,7 +63,7 @@ const ProtocolDetails = () => {
 
             <div className={ownStyles2.description2}>
                 <p style={{ marginBottom: "20px", marginTop: "100px", fontWeight:"bold" }}>
-                    Подгруппа 1.
+                    Подгруппа 1. {""}
                     <span style={{fontWeight:"normal" }}>
                             Дуйлянь, 8-10 лет
                           </span>
@@ -75,7 +81,7 @@ const ProtocolDetails = () => {
                 <input style={{flex: 10}} disabled className={ownStyles.title} value="Примечание" />
             </div>
             <div className={ownStyles.input_cont}>
-                <input style={{fontWeight: "bold"}} className={ownStyles.input11} type="text" value="1" />
+                <input className={ownStyles.input11} type="text" value="1" />
                 <input style={{flex: 8}} className={ownStyles.input2} type="text" value="Стёпка Киборг Убийца"/>
                 <input style={{flex: 5.5}} className={ownStyles.input} type="text" value="Золотой дракон" />
                 <input style={{flex: 5.5}} className={ownStyles.input} type="text" value="Красная (первая)"/>
@@ -84,8 +90,9 @@ const ProtocolDetails = () => {
             <p style={{ marginBottom: "30px", marginTop: "100px", fontWeight:"bold", textAlign: "center" }}>
                 Выберите номер подгруппы
             </p>
+            <Pagination/>
 
-            <div className={ownStyles2.description2}>
+            <div className={ownStyles2.description3}>
                 <p style={{ marginBottom: "20px", marginTop: "70px", fontWeight:"bold" }}>
                     Подгруппа 1. {""}
                     <span style={{fontWeight:"normal" }}>
@@ -115,27 +122,12 @@ const ProtocolDetails = () => {
                 </div>
 
             </div>
-
-            <div style={{marginBottom: 0}} className={ownStyles2.referee_cont}>
-                <p style={{margin: "0 0 30px", fontSize: "26px", fontWeight:"bold", paddingTop: "30px"}}>Судейская бригада</p>
-                <div className={ownStyles.input_cont} style={{fontWeight: "500", marginTop: 10}}>
-                    <input disabled className={ownStyles.title1} value="№"/>
-                    <input style={{flex: 5}} disabled className={ownStyles.title2} value="Время"/>
-                    <input style={{flex: 7}} disabled className={ownStyles.title} value="Подгруппа"/>
-                    <input style={{flex: 10}} disabled className={ownStyles.title} value="Судейская бригада" />
-                    <input style={{flex: 7}} disabled className={ownStyles.title} value="Арена" />
-                </div>
-                <div className={ownStyles.input_cont}>
-                    <input className={ownStyles.input11} type="text" value="1"/>
-                    <input style={{flex: 5}} className={ownStyles.input2} type="text" value="08:00 - 08:30"/>
-                    <input style={{flex: 7}} className={ownStyles.input} type="text" value="Мальчики, 8 - 12 лет"/>
-                    <input style={{flex: 10}} className={ownStyles.input} type="text" value="Тестовчи, Тестовна, Нетесник "/>
-                    <input style={{flex: 7, borderRight: "none"}} className={ownStyles.input} type="text" value="Красная (первая)"/>
-                </div>
+            <div style={{textAlign: 'center'}}>
+                <Button onClick={() => navigate("/main/protocol/all_events/event_details/form_protocol")} width="600px" text="СФОРМИРОВАТЬ ПРОТОКОЛ" />
             </div>
-            {/*<Pagination/>*/}
+
         </div>
     );
 };
 
-export default ProtocolDetails;
+export default CreatedProtocol;
