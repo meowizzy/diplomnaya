@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd306116-783b-4344-b161-364b8c210ead" name="Changes" comment="testing api">
+    <list default="true" id="fd306116-783b-4344-b161-364b8c210ead" name="Changes" comment="WHUS-415 made clubs and sportsman logical parts">
       <change afterPath="$PROJECT_DIR$/src/redux/slices/clubSlice.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/redux/slices/sportsmenSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -97,6 +97,14 @@
       <updated>1659509286870</updated>
       <workItem from="1659509300090" duration="532000" />
     </task>
+    <task id="LOCAL-00001" summary="WHUS-415 made clubs and sportsman logical parts">
+      <created>1659717735184</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1659717735184</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +123,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
+    <MESSAGE value="WHUS-415 made clubs and sportsman logical parts" />
+    <option name="LAST_COMMIT_MESSAGE" value="WHUS-415 made clubs and sportsman logical parts" />
   </component>
 </project>
