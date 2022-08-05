@@ -37,6 +37,7 @@ export const DetailedInfoForNewApplied = () => {
         </div>
         <div>
           <div className={s.table_content}>
+            <div>
             <div className={s.table_title}>
               <p className={s.first_p}>№</p>
               <p className={s.three_hundred_fifty}>ФИО</p>
@@ -95,6 +96,7 @@ export const DetailedInfoForNewApplied = () => {
               note="Золотой Дракон"
             />
             <div className="margin_for_scroll"></div>
+          </div>
           </div>
         </div>
         {state === false ? (

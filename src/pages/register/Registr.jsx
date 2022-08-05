@@ -14,29 +14,32 @@ export const Registr = () => {
     setRoles(!roles)
   }
   const [role, setRole] = useState("")
+  const [roleName, setRoleName] = useState('')
   const clickAdmin = () => {
     setRole('Админ')
     setRoles(!roles)
-
+    setRoleName("ADMIN")
   }
+  // console.log(roleName)
   const clickTrainer = () => {
     setRole('Тренер')
     setRoles(!roles)
-
+    setRoleName("TRAINER")
   }
+  console.log(roleName)
 
   const [club, setClub] = useState(false)
   const clickClub = () =>{
     setClub(!club)
   }
+  const [pass,setPass] = useState(false)
   const navigate = useNavigate()
+  const dispatch = useDispatch();
 
   const err = useSelector(state=>state.register);
   // console.log(err)
 
-  const dispatch = useDispatch();
 
-  const [pass,setPass] = useState(false)
 
   const formik = useFormik({
     initialValues: {
@@ -47,9 +50,11 @@ export const Registr = () => {
       password: "",
       secondPassword: "",
       city: "",
+      role:roleName,
       referral_code:"",
     },
     onSubmit: (values) => {
+      console.log(values)
       if(values.secondPassword===values.password){
         let data = {values, navigate}
         dispatch(postRegister(data))
@@ -134,13 +139,13 @@ export const Registr = () => {
                       Админ
                     </p>
                   )}
-                  <input
+                  {/* <input
                     type="radio"
                     value="ADMIN"
-                    onChange={formik.handleChange}
-                    name="role"
+                    // onChange={formik.handleChange}
+                    // name="role"
                     className={s.radio}
-                  />
+                  /> */}
                 </label>
                 <label className={s.label}>
                 {role === "Тренер" ? (
@@ -153,13 +158,13 @@ export const Registr = () => {
                       Тренер
                     </p>
                   )}
-                  <input
+                  {/* <input
                     type="radio"
                     value="TRAINER"
-                    onChange={formik.handleChange}
-                    name="role"
+                    // onChange={formik.handleChange}
+                    // name="role"
                     className={s.radio}
-                  />
+                  /> */}
                 </label>
               </div>
             </>
@@ -293,19 +298,19 @@ export const Registr = () => {
         {/* <div style={{margin:"50px 0px 60px"}}> */}
         <Button
           text="ЗАРЕГИСТРИРОВАТЬСЯ"
-          disabled={
-            !(
-              formik.values.email &&
-              formik.values.password &&
-              formik.values.name &&
-              formik.values.surname &&
-              formik.values.number &&
-              formik.values.city &&
-              // formik.values.secondPassword===formik.values.password&&
-              // formik.values.club &&
-              formik.values.secondPassword
-            )
-          }
+          // disabled={
+          //   !(
+          //     formik.values.email &&
+          //     formik.values.password &&
+          //     formik.values.name &&
+          //     formik.values.surname &&
+          //     formik.values.number &&
+          //     formik.values.city &&
+          //     // formik.values.secondPassword===formik.values.password&&
+          //     // formik.values.club &&
+          //     formik.values.secondPassword
+          //   )
+          // }
           type="submit"
         />
         {/* </div> */}

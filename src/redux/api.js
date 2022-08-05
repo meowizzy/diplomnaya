@@ -32,7 +32,6 @@ export const requests = {
     //User
     getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
     getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
-    getTrainerUser: () => fetchAPI.get('user/', { params: { is_judge: false, is_assistant: false, role: "TRAINER", } }),
     
     // documentation
     getDocs: () => fetchAPI.get("documents/document/"),
@@ -46,7 +45,11 @@ export const requests = {
     getNewApi: (id) => fetchAPI.get(`deletenew/${id}`),
     createNewsApi: (data) => fetchAPI.post("createnew/", data),
     editNewsApi: (data) => fetchAPI.patch(`deletenew/${data.id}`, data.data),
-    deleteNewsApi: (id) => fetchAPI.delete(`deletenew/${id}/`),
+    deleteNewsApi: (id) => fetchAPI.delete(`deletenew/${id}`),
+
+    //Applications
+    getApplication: () => fetchAPI.get("application/"),
+    // deleteNewsApi: (id) => fetchAPI.delete(`deletenew/${id}/`),
 
     // club
     getClubsApi: () => fetchAPI.get("club/"),

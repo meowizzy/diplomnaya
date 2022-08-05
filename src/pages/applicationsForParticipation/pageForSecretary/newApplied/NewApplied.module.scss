@@ -49,6 +49,7 @@
 }
 .content_table{
     max-width: 1090px;
+    // width: 100%;
     position: relative;
     padding-top: 50px;
 }
@@ -60,8 +61,10 @@
 //     background-color: gray;
 // }
 .table_content{
-    overflow-x:auto ;
-    width: 100%;
+    
+    max-width: 1090px;
+    overflow-x:auto;
+    // max-width: 100%;
     font-weight: 500;
 }
 .table_title{
@@ -69,9 +72,9 @@
     max-width: 100%;
     // padding: 10px 0 0 0px;
     height: 100px;
-    border-bottom: solid 1px #4254EC;
+    // border-bottom: solid 1px #4254EC;
     color: black;
-    border-top:solid 0.5px #4254EC;
+    // border-top:solid 0.5px #4254EC;
     
     .first_p{
         text-align: center;
@@ -79,7 +82,8 @@
         padding-top: 10px;
         min-width: 50px;
         max-width: 50px;
-        // padding: 16px;
+    border-top:solid 0.5px #4254EC;
+    // padding: 16px;
     }
     .three_hundred_fifty{
         padding:10px 0 0 10px;
@@ -87,6 +91,7 @@
         min-width: 350px;
         // max-width: 350px;
         border-left: solid 0.5px #4254EC;
+        border-top:solid 0.5px #4254EC;
     }
     .hundred_fifty{
         padding:10px 0 0 10px;
@@ -94,18 +99,21 @@
         min-width: 150px;
         // max-width: 350px;
         border-left: solid 0.5px #4254EC;
+    border-top:solid 0.5px #4254EC;
 
     }
     .two_hundred_fifty{
         padding:10px 0 0 10px;
         flex: 250px;
         min-width: 250px;
-        border-left: solid 0.5px #4254EC;
+    border-top:solid 0.5px #4254EC;
+    border-left: solid 0.5px #4254EC;
     }
     .two_hundred_fifty_double{
         flex: 250px;
         min-width: 250px;
-        border-left: solid 0.5px #4254EC;
+    border-top:solid 0.5px #4254EC;
+    border-left: solid 0.5px #4254EC;
         .fifty{
             height: 50px;
             padding: 14px 0 0 10px;
@@ -120,7 +128,8 @@
         // padding:10px 0 0 10px;
         flex: 500px;
         min-width: 500px;
-        border-left: solid 0.5px #4254EC;
+    border-top:solid 0.5px #4254EC;
+    border-left: solid 0.5px #4254EC;
         .top{
             height: 50px;
             align-items: center;

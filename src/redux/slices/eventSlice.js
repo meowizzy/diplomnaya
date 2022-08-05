@@ -46,10 +46,11 @@ export const editEvent = createAsyncThunk(
     console.log("form", data.values)
     try {
       const res = await requests.editEvents(data);
-      console.log("res", res)
+      console.log("res", data.values)
       // if (!res) {
       //   throw new Error("ERROR");
       // }
+      return res.data
     } catch (error) {
         return rejectWithValue(error.message)
     }

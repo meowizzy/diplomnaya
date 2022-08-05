@@ -9,6 +9,7 @@ import userSlice from './slices/userSlice';
 import {newSlice} from "./slices/newsSlice";
 import {clubsSlice} from "./slices/clubSlice";
 import {sportsmanSlice} from "./slices/sportsmenSlice";
+import applicationSlice from './slices/applicationSlice';
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     docs: docsSlice,
     user: userSlice,
     news: newSlice,
+    application:applicationSlice,
     auth: authSlices,
     clubs: clubsSlice,
     sportsmen: sportsmanSlice,
