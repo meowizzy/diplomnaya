@@ -1,12 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import { news_img1, news_img2, news_img3} from "../../../images";
 import dfEventStyles from "./../../events/defaultEvents/DefaultEvents.module.scss"
 import s from "./DefaultNews.module.scss"
 
 import {useNavigate} from "react-router";
 import NewsTab from "./NewsTab";
 import NewsCard from "./NewsCard";
-import {getCookie} from "../../../utils/cookieFunction/cookieFunction";
 import {useDispatch, useSelector} from "react-redux";
 import {getNews} from "../../../redux/slices/newsSlice";
 
@@ -23,6 +21,7 @@ const DefaultNews = () => {
 
     useEffect(() => {
         dispatch(getNews())
+        window.scrollTo(0, 0);
     }, [])
 
 

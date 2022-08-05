@@ -40,8 +40,7 @@ export const editNews = createAsyncThunk(
     async (data) => {
         const response = await requests.editNewsApi(data);
         console.log("edited_new: ", response.data)
-        data.navigate("/main/news/all_news")
-        setTimeout(() => data.handleOpenSuccessModal(), 1500)
+        setTimeout(() =>  data.navigate("/main/news/all_news"), 1500)
         data.handleOpenSuccessModal()
         return response.data;
     }

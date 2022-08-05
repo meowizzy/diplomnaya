@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd306116-783b-4344-b161-364b8c210ead" name="Changes" comment="fixed navbar by roles" />
+    <list default="true" id="fd306116-783b-4344-b161-364b8c210ead" name="Changes" comment="testing api">
+      <change afterPath="$PROJECT_DIR$/src/redux/slices/clubSlice.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/slices/sportsmenSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/AdminClubs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/AdminClubs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/TrainerClubs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/TrainerClubs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/ClubDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/ClubDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/CreateClub.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/CreateClub.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/DefaultClubs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/DefaultClubs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/EditClub.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/EditClub.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/allClubs/AllClubDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/allClubs/AllClubDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/allClubs/AllClubsSportsmenDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/allClubs/AllClubsSportsmenDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/allClubs/ListOfClubSportsmen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/allClubs/ListOfClubSportsmen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/allClubs/TrainerAllClubs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/allClubs/TrainerAllClubs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/ClubsSportsmen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/ClubsSportsmen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/CreateSportsman.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/CreateSportsman.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/SportsmenDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/SportsmenDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsTrainers/ClubsTrainers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsTrainers/ClubsTrainers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsTrainers/ClubsTrainersDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsTrainers/ClubsTrainersDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/news/defaultNews/DefaultNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/defaultNews/DefaultNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/news/editNews/EditNews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/editNews/EditNews.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/output/OutputDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/output/OutputDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/fetchFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/fetchFunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/docSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/docSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/newsSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/newsSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/userSlice.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +43,10 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/WebStorm2022.1/javascript/typings/react-router-dom/5.3.3/node_modules/@types/react/index.d.ts" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/App.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -26,18 +58,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Admin/WebstormProjects/whushu/src/redux/slices",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\redux\slices" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -79,19 +116,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fixed" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/pages/output/Output.js</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/pages/protocol/referee/RefereeProtocol.js</url>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

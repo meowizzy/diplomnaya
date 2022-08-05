@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "../../../users/registered/Registered.module.scss";
 import Input from "../../../../components/input/Input";
 import {Link} from "react-router-dom";
 import {Pagination} from "../../../../components/pagination/Pagination";
 import {search_icon} from "../../../../images";
+import {useDispatch, useSelector} from "react-redux";
+import {getTrainerUser} from "../../../../redux/slices/userSlice";
 
 const ClubsTrainers = () => {
+
+    const dispatch = useDispatch();
+    const trainers = useSelector(state => state.user.userTrainer)
+
+    useEffect(() => {
+        dispatch(getTrainerUser())
+    },[])
+
     return (
         <div>
             <div className={s.table_content}>
@@ -20,15 +30,20 @@ const ClubsTrainers = () => {
                     <p style={{flex: 11}}>Почта</p>
                     <p style={{flex: 8}}>Город / страна</p>
                 </div>
-                <Link to="/main/clubs/trainers/details">
-                    <div className={s.title}>
-                        <p className={s.first_p}>1</p>
-                        <p style={{flex: 10}}>Леонид Ильич Брежнев</p>
-                        <p style={{flex: 8}}>+996 000 123 456</p>
-                        <p style={{flex: 11}}>leonid_ilic_brezhnev@gmail.com</p>
-                        <p style={{flex: 8}}>Бишкек, Кыргызстан</p>
-                    </div>
-                </Link>
+                {
+                    trainers.map((trainer, index) => {
+                        return <Link to={`/main/clubs/trainers/details/${trainer.id}`}>
+                                    <div className={s.title}>
+                                        <p className={s.first_p}>{index+1}</p>
+                                        <p style={{flex: 10}}> {trainer.name} {trainer.surname}</p>
+                                        <p style={{flex: 8}}>{trainer.number}</p>
+                                        <p style={{flex: 11}}>{trainer.email}</p>
+                                        <p style={{flex: 8}}>{trainer.address}</p>
+                                    </div>
+                                </Link>
+                    })
+                }
+
                 <Pagination/>
             </div>
         </div>

@@ -14,9 +14,9 @@ const AdminClubs = () => {
             <div className={s.cont}>
                 <Routes>
                     <Route path="/all_clubs" element={<DefaultClubs />} />
-                    <Route path="/clubDetails" element={<ClubDetails />} />
+                    <Route path="/clubDetails/:id" element={<ClubDetails />} />
                     <Route path="/createClub" element={<CreateClub />} />
-                    <Route path="/editClub" element={<EditClub />} />
+                    <Route path="/editClub/:id" element={<EditClub />} />
                 </Routes>
             </div>
         </div>

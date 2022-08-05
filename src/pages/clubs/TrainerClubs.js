@@ -25,9 +25,9 @@ const TrainerClubs = () => {
                 <Routes>
                     {/* all clubs */}
                     <Route path="/all_clubs" element={<TrainerAllClubs />} />
-                    <Route path="/all_clubs/all_club_details" element={<AllClubDetails />} />
-                    <Route path="/all_clubs/all_club_details/list_sportsmen" element={<ListOfClubSportsmen />} />
-                    <Route path="/all_clubs/all_club_details/sportsman_details" element={<AllClubsSportsmenDetails />} />
+                    <Route path="/all_clubs/all_club_details/:id" element={<AllClubDetails />} />
+                    <Route path="/all_clubs/all_club_details/list_sportsmen/:id" element={<ListOfClubSportsmen />} />
+                    <Route path="/all_clubs/all_club_details/sportsman_details/:id" element={<AllClubsSportsmenDetails />} />
 
                     {/* my clubs */}
                     <Route path="/my_clubs" element={<TrainerMyClubs />} />
@@ -37,12 +37,12 @@ const TrainerClubs = () => {
 
                     {/* sportsmen */}
                     <Route path="/sportsmen" element={<ClubsSportsmen />} />
-                    <Route path="/sportsmen/sportsman_details" element={<SportsmenDetails />} />
+                    <Route path="/sportsmen/sportsman_details/:id" element={<SportsmenDetails />} />
                     <Route path="/sportsmen/create" element={<CreateSportsman />} />
 
                     {/* trainers */}
                     <Route path="/trainers" element={<ClubsTrainers />} />
-                    <Route path="/trainers/details" element={<ClubsTrainersDetails />} />
+                    <Route path="/trainers/details/:id" element={<ClubsTrainersDetails />} />
 
                     {/* statistics */}
                     <Route path="/statistics" element={<TrainerClubsStatistics />} />
