@@ -1,16 +1,25 @@
-import React from 'react'
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
-import { Pagination } from '../../../../components/pagination/Pagination'
-import ss from '../../pageForSecretary/Applied.module.scss'
-import s from './NewApplied.module.scss'
+import React from "react";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Pagination } from "../../../../components/pagination/Pagination";
+import ss from "../../pageForSecretary/Applied.module.scss";
+import s from "./NewApplied.module.scss";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { useEffect } from "react";
+import { getApplication } from "../../../../redux/slices/applicationSlice";
 
 export const NewApplied = () => {
-  const [clickColor, setClickColor] = useState(false)
-  const toggle=()=>{
-    setClickColor(true)
-  }
-  
+  const [clickColor, setClickColor] = useState(false);
+  const toggle = () => {
+    setClickColor(true);
+  };
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getApplication());
+  }, []);
+  const application = useSelector((state) => state.application.application);
+  console.log(application);
   return (
     <div className={ss.cont}>
       <div className={s.title} style={{ fontWeight: "500" }}>
@@ -37,7 +46,7 @@ export const NewApplied = () => {
           <p>Заявка на чемпионат ушу в Бишкеке</p>
         </div>
       </NavLink>
-<Pagination />
+      <Pagination />
     </div>
   );
-}
+};

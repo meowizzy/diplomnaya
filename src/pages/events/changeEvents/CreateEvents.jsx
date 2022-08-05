@@ -10,6 +10,7 @@ import ss from '../../register/Registr.module.scss'
 import { getJudgeUser, getSecretaryUser } from "../../../redux/slices/userSlice";
 import SuccessModal from "../../../components/modals/SuccessModal";
 import { useNavigate } from "react-router";
+import { minus } from "../../../images";
 
 export const CreateEvents = () => {
 
@@ -95,8 +96,8 @@ export const CreateEvents = () => {
     setState(age_groups.unshift(state))
     console.log(formik.values.age_groups)
   }
-  const minus = () =>{
-    setState(age_groups.pop())
+  const minusFunc = (index) =>{
+    setState(age_groups.splice(index, 1))
     console.log(formik.values.age_groups)
   }
   // useEffect(()=>{
@@ -252,12 +253,13 @@ export const CreateEvents = () => {
           name="note"
         />
 
-        {formik.values.age_groups.map(el=>(
+        {formik.values.age_groups.map((el, index)=>(
         <div className={s.age}>
           <div>
             <Input
               placeholder="С"
               width="285px"
+              value={el.min_age}
               valueLabel="Возрастная категория"
               onChange={formik.handleChange}
               name="min_age"
@@ -267,11 +269,12 @@ export const CreateEvents = () => {
               placeholder="По"
               valueLabel=""
               width="285px"
+              value={el.max_age}
               onChange={formik.handleChange}
               name="max_age"
             />
-            <span className={s.age_span} onClick={plus}></span>
-            <span className={s.age_span} onClick={minus}></span>
+            
+            {index<=0? <span className={s.age_span} onClick={plus}></span>: <img src={minus}className={s.age_span__minus} onClick={()=>minusFunc(index)} />}
         </div>
         </div>
         ))}

@@ -11,6 +11,7 @@ import userSlice from './slices/userSlice';
 //     thunk: true,
 // });
 import {newSlice} from "./slices/newsSlice";
+import applicationSlice from './slices/applicationSlice';
 
 export const store = configureStore({
   reducer: { reducer, 
@@ -19,6 +20,7 @@ export const store = configureStore({
     docs: docsSlice,
     user:userSlice,
     news: newSlice,
+    application:applicationSlice
 },
 
   // devTools: process.env.NODE_ENV !== 'production',

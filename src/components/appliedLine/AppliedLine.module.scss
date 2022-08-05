@@ -3,12 +3,12 @@
     max-width: 100%;
     // padding: 10px 0 0 0px;
     height: 50px;
-    border-bottom: solid 1px #4254EC;
+    // border-bottom: solid 1px #4254EC;
     color: black;
-    border-top:solid 0.5px #4254EC;
+    // border-top:solid 0.5px #4254EC;
     input{
         border: none;
-        opacity: 50%;
+        // opacity: 50%;
     }
     .first_p{
         text-align: center;
@@ -16,14 +16,18 @@
         padding-top: 14px;
         min-width: 50px;
         max-width: 50px;
-        // padding: 16px;
+    border-bottom:solid 0.1px #4254EC;
+    border-top:solid 0.1px #4254EC;
+    // padding: 16px;
     }
     .three_hundred_fifty{
         padding:0px 0 0 10px;
         flex: 350px;
         min-width: 350px;
         // max-width: 350px;
-        border-left: solid 0.5px #4254EC;
+    border-top:solid 0.2px #4254EC;
+    border-bottom:solid 0.2px #4254EC;
+    border-left: solid 0.5px #4254EC;
     }
     .hundred_fifty{
         padding:0px 0 0 10px;
@@ -31,18 +35,24 @@
         min-width: 150px;
         // max-width: 350px;
         border-left: solid 0.5px #4254EC;
+    border-bottom:solid 0.2px #4254EC;
+    border-top:solid 0.2px #4254EC;
 
     }
     .two_hundred_fifty{
         padding:0px 0 0 10px;
         flex: 250px;
         min-width: 250px;
-        border-left: solid 0.5px #4254EC;
+    border-top:solid 0.2px #4254EC;
+    border-bottom:solid 0.2px #4254EC;
+    border-left: solid 0.5px #4254EC;
     }
     .two_hundred_fifty_double{
         flex: 250px;
         min-width: 250px;
-        border-left: solid 0.5px #4254EC;
+    border-top:solid 0.2px #4254EC;
+    border-bottom:solid 0.2px #4254EC;
+    border-left: solid 0.5px #4254EC;
         .fifty{
             height: 50px;
             padding: 14px 0 0 10px;
@@ -57,7 +67,10 @@
         // padding:10px 0 0 10px;
         flex: 500px;
         min-width: 500px;
-        border-left: solid 0.5px #4254EC;
+    border-bottom:solid 0.2px #4254EC;
+    border-top:solid 0.1px #4254EC;
+    border-left: solid 0.5px #4254EC;
+    // z-index: 1;
         .top{
             height: 50px;
             align-items: center;

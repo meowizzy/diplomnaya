@@ -46,6 +46,9 @@ export const requests = {
     createNewsApi: (data) => fetchAPI.post("createnew/", data),
     editNewsApi: (data) => fetchAPI.patch(`deletenew/${data.id}`, data.data),
     deleteNewsApi: (id) => fetchAPI.delete(`deletenew/${id}`),
+
+    //Applications
+    getApplication: () => fetchAPI.get("application/"),
 }
 
 export const withoutToken = {

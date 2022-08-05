@@ -44,7 +44,7 @@ export const AppliedLine = ({
         className={s.three_hundred_fifty}
         value={formik.values.fullName}
         onChange={formik.handleChange}
-        name="fullname"
+        name="fullName"
       />
       <input
         placeholder="Пол"
