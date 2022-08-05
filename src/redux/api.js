@@ -32,6 +32,7 @@ export const requests = {
     //User
     getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
     getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
+    getTrainerUser: () => fetchAPI.get("user/", { params: { is_assistant: false, is_judge : false, role: "TRAINER" } }),
     
     // documentation
     getDocs: () => fetchAPI.get("documents/document/"),
