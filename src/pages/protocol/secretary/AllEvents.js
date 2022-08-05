@@ -20,7 +20,7 @@ const AllEvents = () => {
                     <p style={{flex: 4}}>Спортсмены</p>
                     <p style={{flex: 4}}>Судьи</p>
                 </div>
-                <Link to="/main/protocol/all_events/form_protocol">
+                <Link to="/main/protocol/all_events/event_details">
                     <div className={s.title}>
                         <p style={{flex: 1, textAlign: "center"}}>1</p>
                         <p style={{flex: 12}}>Чемпионат Кыргызской Республики по традицион ...</p>

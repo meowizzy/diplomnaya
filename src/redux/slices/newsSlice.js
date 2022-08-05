@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import {requests} from "../api";
 
 const initialState = {
@@ -43,7 +43,6 @@ export const editNews = createAsyncThunk(
         data.navigate("/main/news/all_news")
         setTimeout(() => data.handleOpenSuccessModal(), 1500)
         data.handleOpenSuccessModal()
-        // dispatch(postMessage(response.data))
         return response.data;
     }
 );

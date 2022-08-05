@@ -23,6 +23,25 @@
     background-repeat: no-repeat;
     right: 15px;
 }
+.error_open_eye{
+    background-repeat: no-repeat;
+    background-image: url(./error_open_eye.svg);
+    width: 22px;
+    height: 13px;
+    position: absolute;
+    top:36.8px;
+    background-repeat: no-repeat;
+    right: 15px;
+}
+.error_close_eye{
+    background-image: url(./error_eye.svg);
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 18px;
+    position: absolute;
+    top:34px;
+    right: 15px;
+}
 // .close_eye{
     // background-repeat: no-repeat;
     // background-image: url(./open_eye.svg);
