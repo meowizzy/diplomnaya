@@ -1,10 +1,11 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {requests} from "../api";
-import {setCookie} from "../../utils/cookieFunction/cookieFunction";
+import {getCookie, setCookie} from "../../utils/cookieFunction/cookieFunction";
 
 const initialState = {
     error: false,
 };
+const role = JSON.parse(getCookie("user_info"))
 
 export const userAuth = createAsyncThunk(
     'auth/userAuth',
@@ -12,7 +13,11 @@ export const userAuth = createAsyncThunk(
         const res = await requests.authApi(data.authData);
         console.log(res);
         setCookie("user_info", JSON.stringify(res.data), 100);
-        data.navigate("/main/defaultEvents/allDefaultEvents");
+        if(role.assistant === "True"){
+            data.navigate('/main/events/allEvents')
+        }else{
+            data.navigate("/main/defaultEvents/allDefaultEvents");
+        }
         return res.data;
     }
 );
@@ -21,7 +26,11 @@ export const auth = async (data, navigate) => {
     const res = await requests.authApi(data);
     console.log(res);
     setCookie("user_info", JSON.stringify(res.data), 100);
-    navigate("/main/defaultEvents/allDefaultEvents");
+    if(role.assistant === "True"){
+        navigate('/main/events/allEvents')
+    }else{
+        navigate("/main/defaultEvents/allDefaultEvents");
+    }
 }
 
 export const resetPassword = async (data) => {
