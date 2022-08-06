@@ -127,6 +127,8 @@ export const CreateEvents = () => {
           onChange={formik.handleChange}
           name="start_datetime"
           width="600px"
+          padding="0 15px 0 20px"
+          type="date"
         />
          <Input
           placeholder="2022-07-17T18:00:00+06:00"
@@ -135,6 +137,8 @@ export const CreateEvents = () => {
           onChange={formik.handleChange}
           name="finish_datetime"
           width="600px"
+          type="date"
+          padding="0 15px 0 20px"
         />
         <Input
           placeholder="Введите место"
@@ -288,8 +292,7 @@ export const CreateEvents = () => {
               formik.values.place &&
               formik.values.lead_judge &&
               formik.values.assistant &&
-              formik.values.age_groupe.forEach(el=>{return el.max_age}) &&
-              formik.values.age_groupe.forEach(el=>{return el.min_age}) &&
+              // formik.values.age_groupe &&
               formik.values.note
             )
           }
