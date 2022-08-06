@@ -49,6 +49,7 @@ export const requests = {
 
     //Applications
     getApplication: () => fetchAPI.get("application/"),
+    getApplicationById: (id) => fetchAPI.get(`application/${id}/`),
 }
 
 export const withoutToken = {
