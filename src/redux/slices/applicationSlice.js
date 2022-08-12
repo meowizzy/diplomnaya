@@ -7,6 +7,8 @@ const initialState = {
   applicationById:{},
   applicationTemplate:[],
   applicationTemplateId:{},
+  currentApplication:[],
+  historyApplication:[],
   error:{}
 };
 
@@ -30,7 +32,7 @@ export const getApplicationById = createAsyncThunk(
   async function(id,{ rejectWithValue}){
     try {
       const res = await requests.getApplicationById(id);
-      // console.log(res.data)
+      console.log("byid",res.data)
       if (!res) {
         throw new Error("ERROR");
       }
@@ -41,7 +43,37 @@ export const getApplicationById = createAsyncThunk(
   }
 );
 
-
+export const getCurrentApplication = createAsyncThunk(
+  "application/getCurrentApplication",
+  async function(data,{ rejectWithValue}){
+    // console.log(data)
+    try {
+      const res = await requests.getCurrentApplication(data);
+      // console.log("current",res.data)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+export const getHistoryApplication = createAsyncThunk(
+  "application/getHistoryApplication",
+  async function(data,{ rejectWithValue}){
+    try {
+      const res = await requests.getHistoryApplication(data);
+      // console.log("history",res.data)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
 export const editApplication = createAsyncThunk(
   'application/editApplication',
   async (data) => {
@@ -102,6 +134,23 @@ export const getApplicationTemplateById = createAsyncThunk(
       }
       // console.log("template_id",res)
       return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+
+export const deleteApplication = createAsyncThunk(
+  "application/deleteApplication",
+  async function(id,{ rejectWithValue}){
+    try {
+      const res = await requests.deleteApplicationById(id);
+      // console.log("delete",res.data)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      // console.log("template_id",res)
+      return id
     } catch (error) {
         return rejectWithValue(error.message)
     }
@@ -182,6 +231,39 @@ const applicationSlice = createSlice({
       [getApplicationTemplateById.rejected]: (state, action) => {
         state.statusById = "rejected";
         state.error = action.payload;
+      },
+      [getCurrentApplication.pending]: (state) => {
+        state.statusById = "loading";
+        state.error = null;
+      },
+      [getCurrentApplication.fulfilled]: (state, action) => {
+        state.statusById = "resolved";
+        state.currentApplication = action.payload
+        // console.log("fullfiled");
+      },
+      [getCurrentApplication.rejected]: (state, action) => {
+        state.statusById = "rejected";
+        state.error = action.payload;
+      },
+      [getHistoryApplication.pending]: (state) => {
+        state.statusById = "loading";
+        state.error = null;
+      },
+      [getHistoryApplication.fulfilled]: (state, action) => {
+        state.statusById = "resolved";
+        state.historyApplication = action.payload
+        // console.log("fullfiled");
+      },
+      [getHistoryApplication.rejected]: (state, action) => {
+        state.statusById = "rejected";
+        state.error = action.payload;
+      },
+      [deleteApplication.fulfilled]: (state, action) => {
+        state.statusById = "resolved";
+        state.currentApplication = state.currentApplication.filter(el=>(
+          el.id!==action.payload
+        ))
+        // console.log("fullfiled");
       },
     },
   });

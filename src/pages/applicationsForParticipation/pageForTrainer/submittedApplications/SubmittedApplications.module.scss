@@ -22,11 +22,15 @@ position: relative;
         min-width: 50px;
     }
     .name{
-        max-width: 480px;
-        min-width: 480px;
+        max-width: 350px;
+        min-width: 350px;
     }
     p {
         flex: 208px 1;
+    }
+    .date{
+        max-width: 300px;
+        min-width: 300px;
     }
 }
 .search{

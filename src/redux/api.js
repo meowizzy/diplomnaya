@@ -52,8 +52,11 @@ export const requests = {
     //Applications
     getApplication: () => fetchAPI.get("application/"),
     getApplicationById: (id) => fetchAPI.get(`application/${id}/`),
+    deleteApplicationById: (id) => fetchAPI.delete(`application/${id}/`),
     postApplication: (data) => fetchAPI.post(`application/`, data),
     editApplicationById: (data) => fetchAPI.patch(`application/${data.applicationId}/`, data),
+    getCurrentApplication:(data)=>fetchAPI.get(`application/?trainer=${data.id}&new_application=2022-09-12`),
+    getHistoryApplication:(data)=>fetchAPI.get(`application/?trainer=${data.id}&old_application=2022-09-12`),
     postApplicationTemplate: (data) => fetchAPI.post(`template_application/`, data),
     getApplicationTemplate:()=>fetchAPI.get("template_application/"),
     getApplicationTemplateById:(id)=>fetchAPI.get(`template_application/${id}`),
