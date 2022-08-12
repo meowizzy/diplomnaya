@@ -21,9 +21,8 @@ export const NewApplied = () => {
     dispatch(getApplication());
   }, []);
   const application = useSelector((state) => state.application.application);
-  const applicationById = useSelector(state=>state.application.applicationById)
-  console.log(applicationById)
-  // console.log(application);
+ 
+  console.log(application);
   return (
     <div className={ss.cont}>
       <div className={s.title} style={{ fontWeight: "500" }}>
@@ -38,7 +37,7 @@ export const NewApplied = () => {
         className={clickColor === true ? s.title : `${s.title} ${s.clicked}`}
         onClick={()=>toggle(el.id)}
       >
-        <p className={s.first_p}>1</p>
+        <p className={s.first_p}>{index+1}</p>
         <p>{el.trainer.surname} {el.trainer.name} </p>
         <p>{el.event.name}</p>
       </NavLink>

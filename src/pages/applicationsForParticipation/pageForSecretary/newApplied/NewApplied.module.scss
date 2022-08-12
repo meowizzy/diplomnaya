@@ -92,6 +92,7 @@
         // max-width: 350px;
         border-left: solid 0.5px #4254EC;
         border-top:solid 0.5px #4254EC;
+        position: relative;
     }
     .hundred_fifty{
         padding:10px 0 0 10px;
@@ -114,9 +115,14 @@
         min-width: 250px;
     border-top:solid 0.5px #4254EC;
     border-left: solid 0.5px #4254EC;
+    position: relative;
         .fifty{
             height: 50px;
-            padding: 14px 0 0 10px;
+            padding: 0px 0 0 10px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            text-align: left;
             border-top: solid 1px #4254EC;
         }
         .fifty_first{
@@ -130,6 +136,7 @@
         min-width: 500px;
     border-top:solid 0.5px #4254EC;
     border-left: solid 0.5px #4254EC;
+    position: relative;
         .top{
             height: 50px;
             align-items: center;

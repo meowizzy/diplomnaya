@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AppliedLine } from '../../../../components/appliedLine/AppliedLine'
 import BackButton from '../../../../components/arrowButton/BackButton'
 import Button from '../../../../components/button/Button'
@@ -6,10 +6,18 @@ import SuccessModal from '../../../../components/modals/SuccessModal'
 import { ThreeDot } from '../../../../components/threeDot/ThreeDot'
 import s from '../../pageForSecretary/newApplied/NewApplied.module.scss'
 import ss from './CurrentApplications.module.scss'
+import { useDispatch, useSelector } from "react-redux";
+import { getApplication } from '../../../../redux/slices/applicationSlice'
 
 export const DetailCurrent = () => {
+  const dispatch = useDispatch()
     const [state, setState] = useState(false)
+    useEffect(()=>{
+      dispatch(getApplication())
+    },[])
 
+    const appl = useSelector(state=>state.application.application)
+    console.log(appl)
     const [openSuccessModal, setOpenSuccessModal] = useState(false);
     const handleOpenSuccessModal = () => setOpenSuccessModal(true);
     const handleCloseSuccessModal = () => setOpenSuccessModal(false);

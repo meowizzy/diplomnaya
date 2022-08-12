@@ -8,6 +8,7 @@ import s from '../pageForSecretary/Applied.module.scss'
 import ss from "./Application.module.scss"
 import { Detail } from './submittedApplications/Detail'
 import { DetailCurrent } from './currentApplications/DetailCurrent'
+import { ListOfTemplate } from './newApplications/ListOfTemplate'
 
 export const Application = () => {
 const location = useLocation()
@@ -28,8 +29,8 @@ const location = useLocation()
             Текущие заявки
           </NavLink>
           <NavLink
-            to="/main/application/newApplications"
-            className={linkActiveClassName(location,"newApplications", 3, "link", "active_link")}
+            to="/main/application/listOfTemplate"
+            className={linkActiveClassName(location,"listOfTemplate", 3, "link", "active_link")}
           >
             Подать заявку
           </NavLink>
@@ -41,7 +42,8 @@ const location = useLocation()
           <Route path="/submittedApplications/detail" element={<Detail />} />
           <Route path="/currentApplications" element={<CurrentApplications />} />
           <Route path="/currentApplications/detail" element={<DetailCurrent />} />
-          <Route path="/newApplications" element={<NewApplications />} />
+          <Route path="/listOfTemplate/newApplications" element={<NewApplications />} />
+          <Route path="/listOfTemplate" element={<ListOfTemplate />} />
         </Routes>
       </>
     </>

@@ -8,6 +8,8 @@ import userSlice from './slices/userSlice';
 
 import {newSlice} from "./slices/newsSlice";
 import applicationSlice from './slices/applicationSlice';
+import disciplineSlice from './slices/disciplineSlice';
+import athletesSlice from './slices/athletesSlice';
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +20,8 @@ export const store = configureStore({
     news: newSlice,
     application:applicationSlice,
     auth: authSlices,
+    discipline:disciplineSlice,
+    athletes:athletesSlice,
 },
 
 });

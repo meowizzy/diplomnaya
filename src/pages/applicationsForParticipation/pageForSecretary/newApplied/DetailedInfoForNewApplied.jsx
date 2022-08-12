@@ -6,22 +6,33 @@ import ButtonForActiveChanges from '../../../../components/buttonForActiveChange
 import Input from '../../../../components/input/Input';
 import s from './NewApplied.module.scss'
 import { useFormik } from "formik";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { editApplication } from '../../../../redux/slices/applicationSlice';
 
-
+ 
 export const DetailedInfoForNewApplied = () => {
+  const applicationById = useSelector(state=>state.application.applicationById)
+  const applicationId = useSelector(state=>state.application.applicationById.id)
+  const status = useSelector(state=>state.application.statusById)
+  // console.log(applicationId)
 
+  const [choise, setChoise] = useState({is_confirmed:true, applicationId:applicationId })
   const [state, setState] = useState(false)
-
+  const [place, setPlace] = useState(false)
   const toggle = () =>{
     setState(!state)
+    // else {return setChoise({is_confirmed:true})}
   }
+  // console.log(choise)
+  const dispatch = useDispatch()
 
   const formik = useFormik({
-    initialValues: {
-      explanation: "",
-    },
+    initialValues: {choise, comment:{comment:'', applicationId:applicationId}},
     onSubmit: (values) => {
-      console.log(values)
+      const data = {values, state}
+      dispatch(editApplication(data))
+      setPlace(true)
+      // console.log(values)
     },
   });
 
@@ -31,9 +42,9 @@ export const DetailedInfoForNewApplied = () => {
         <BackButton to="/main/applied/newApplied" />
         <div className={s.top_blank}>
           <p className={s.blank_title}>Заявка на соревнования</p>
-          <p className={s.applied_number}>Заявка № 1</p>
-          <p className={s.p_medium}>Заявка на чемпионат ушу в Бишкеке</p>
-          <p className={s.p_medium}>Александр Сергеевич Пушкин</p>
+          <p className={s.applied_number}>Заявка № {applicationById.id}</p>
+          <p className={s.p_medium}>Заявка на {applicationById.event?.name}</p>
+          <p className={s.p_medium}>{applicationById.trainer?.surname} {applicationById.trainer?.name}</p>
         </div>
         <div>
           <div className={s.table_content}>
@@ -67,34 +78,23 @@ export const DetailedInfoForNewApplied = () => {
               </p>
               <p className={s.three_hundred_fifty}>Примечание</p>
             </div>
+            {status==="resolved"?applicationById.application_athlete.map((el, index)=>(
             <AppliedLine
-              fullName="Карина"
+              key={index}
+              fullName={el.athlete.surname +" "+ el.athlete.name}
               club="Золотой Дракон"
-              gender="Женщина"
+              gender={el.athlete.sex==="1"?"Женщина":"Мужчина"}
               age="18"
               complex="Золотой Дракон"
-              secondComplex="Золотой Дракон"
+              secondComplex={el.athlete.surname}
               tsuanshu="Золотой Дракон"
               tsise="Золотой Дракон"
               partnerName="Золотой Дракон"
-              numberOfteam="Золотой Дракон"
-              note="Золотой Дракон"
-              number="1"
+              numberOfteam={el.team_number}
+              note={el.comment}
+              number={index+1}
             />
-            <AppliedLine
-              fullName="Карина"
-              club="Золотой Дракон"
-              gender="Женщина"
-              age="18"
-              complex="Золотой Дракон"
-              secondComplex="Золотой Дракон"
-              tsuanshu="Золотой Дракон"
-              tsise="Золотой Дракон"
-              partnerName="Золотой Дракон"
-              numberOfteam="Золотой Дракон"
-              number="2"
-              note="Золотой Дракон"
-            />
+            )):<p>loading...</p>}
             <div className="margin_for_scroll"></div>
           </div>
           </div>
@@ -114,26 +114,34 @@ export const DetailedInfoForNewApplied = () => {
               margin="0 30px"
               width="210px"
               classname="no_button"
+              name="is_confirmed"
+              onClick={formik.handleSubmit}
+              type="submit"
             />
           </div>
         ) : (
           <div className={s.second_footer}>
+            {place===false?
+            <>
             <p className={s.accept}>Заявка не принята, опишите причину.</p>
             <Input
-              value={formik.values.explanation}
+              value={formik.values.comment.comment}
               onChange={formik.handleChange}
               valueLabel="Причина отклонения"
-              name="explanation"
+              margin="0px 0"
               width="600px"
+              name="comment.comment"
             />
             <Button
               text="ОТПРАВИТЬ"
               width="600px"
-              margin="40px 0"
-              onClick={toggle}
-              disabled={!(formik.values.explanation)}
+              onClick={formik.handleSubmit}
+              disabled={!(formik.values.comment.comment)}
               type="submit"
             />
+            </>:
+            <p className={s.accept}>Заявка не принята успешно!</p>
+          }
           </div>
         )}
       </div>

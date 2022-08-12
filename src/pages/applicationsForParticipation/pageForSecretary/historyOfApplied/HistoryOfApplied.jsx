@@ -1,10 +1,18 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { Pagination } from '../../../../components/pagination/Pagination'
+import { getApplicationById } from '../../../../redux/slices/applicationSlice'
 import ss from '../../pageForSecretary/Applied.module.scss'
 import s from '../newApplied/NewApplied.module.scss'
 
 export const HistoryOfApplied = () => {
+  const application = useSelector((state) => state.application.application);
+  const dispatch = useDispatch()
+  const toggle = (id) => {
+    // setClickColor(true);
+    dispatch(getApplicationById(id))
+  };
   return (
     <div className={ss.cont}>
     <div className={s.title} style={{ fontWeight: "500" }}>
@@ -12,23 +20,18 @@ export const HistoryOfApplied = () => {
       <p>Отправитель</p>
       <p>Название заявки</p>
     </div>
-    <NavLink
-      to="/main/applied/historyOfApplied/detailedInformation"
-      className={s.title}
-    >
-      <p className={s.first_p}>1</p>
-      <p>Александр Сергеевич Пушкин</p>
-      <p>Заявка на чемпионат ушу в Бишкеке</p>
-    </NavLink>
-    <NavLink to="/main/applied/historyOfApplied/detailedInformation">
-      <div
+    {application.map((el, index)=>(
+      <NavLink
+        key={index}
+        to="/main/applied/historyOfApplied/detailedInformation"
         className={s.title}
+        onClick={()=>toggle(el.id)}
       >
-        <p className={s.first_p}>2</p>
-        <p>Александр Сергеевич Пушкин</p>
-        <p>Заявка на чемпионат ушу в Бишкеке</p>
-      </div>
-    </NavLink>
+        <p className={s.first_p}>{index+1}</p>
+        <p>{el.trainer.surname} {el.trainer.name} </p>
+        <p>{el.event.name}</p>
+      </NavLink>
+      ))}
 <Pagination />
   </div>
   )

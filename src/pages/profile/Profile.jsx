@@ -1,22 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../../components/button/Button";
 import s from "./Profile.module.scss";
 import { useFormik } from "formik";
 import Input from "../../components/input/Input";
 import { close_eye, open_eye } from "../../images";
+import { useDispatch, useSelector } from "react-redux";
+import { editUser, getUserForProfilePage } from "../../redux/slices/userSlice";
+import SuccessModal from "../../components/modals/SuccessModal";
 
 export const Profile = () => {
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(getUserForProfilePage())
+  },[])
+  const [openSuccessModal, setOpenSuccessModal] = useState(false);
+  const handleOpenSuccessModal = () => setOpenSuccessModal(true);
+  const handleCloseSuccessModal = () => setOpenSuccessModal(false);
+  const user = useSelector(state=>state.user.user)
+  // const test = {dsa:"dsa"}
+  console.log(user)
+  const [check, setCheck] = useState({
+      name:"" + user.name,
+      surname: user.surname,
+      birthday: user.name,
+      number: user.number,
+      email: user.email,
+      password: user.passwrod,
+  })
+  console.log(check)
   const formik = useFormik({
     initialValues: {
-      name: "Кот",
-      surname: "Леопольд",
-      birthday: "20.20.1995г.",
-      phone: "+996 000 123 456",
-      email: "Admin111@gmail.com",
-      password: "******",
-    },
+      ...check,
+  },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      const id = user.id 
+      const data = {values, id, handleOpenSuccessModal}
+      dispatch(editUser(data))
+      // alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -50,28 +70,32 @@ export const Profile = () => {
             value={formik.values.name}
             onChange={formik.handleChange}
             name="name"
+            type="text"
             width="600px"
           />
           <Input
             valueLabel="Фамилия"
             value={formik.values.surname}
+            type="text"
             onChange={formik.handleChange}
             name="surname"
             width="600px"
           />
-          <Input
+          {/* <Input
             valueLabel="Дата рождения"
             value={formik.values.birthday}
             onChange={formik.handleChange}
+            type="text"
             width="600px"
             name="birthday"
-          />
+          /> */}
           <Input
+            type="number"
             valueLabel="Номер телефона"
-            value={formik.values.phone}
+            value={formik.values.number}
             onChange={formik.handleChange}
             width="600px"
-            name="phone"
+            name="number"
           />
           <Input
             valueLabel="Почта"
@@ -98,13 +122,21 @@ export const Profile = () => {
               margin="106px 0 0"
               width="600px"
               text="СОХРАНИТЬ"
-              onClick={toggle}
+              // onClick={toggle}
+              type="submit"
             />
           ) : (
             <></>
           )}
         </form>
       </div>
+      {openSuccessModal && (
+        <SuccessModal
+          open={openSuccessModal}
+          handleClose={handleCloseSuccessModal}
+          title="Вы успешно отредактировали личные данные!"
+        />
+      )}
     </div>
   );
 };

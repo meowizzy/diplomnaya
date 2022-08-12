@@ -26,12 +26,14 @@ export const requests = {
     // Events
     getEvents:() => fetchAPI.get('event/'),
     postEvents:(data) => fetchAPI.post('event/', data),
-    editEvents:(data) => fetchAPI.patch(`event/${data.id}`, data.values),
+    editEvents:(data) => fetchAPI.patch(`event/${data.id}/`, data.values),
     deleteEvents:(id) => fetchAPI.delete(`event/${id}/`),
 
     //User
     getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
     getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
+    getUserForProfile:(id) => fetchAPI.get(`user/${id}`),
+    editUser:(data) => fetchAPI.patch(`user/${data.id}/`, data.values),
     
     // documentation
     getDocs: () => fetchAPI.get("documents/document/"),
@@ -50,6 +52,18 @@ export const requests = {
     //Applications
     getApplication: () => fetchAPI.get("application/"),
     getApplicationById: (id) => fetchAPI.get(`application/${id}/`),
+    postApplication: (data) => fetchAPI.post(`application/`, data),
+    editApplicationById: (data) => fetchAPI.patch(`application/${data.applicationId}/`, data),
+    postApplicationTemplate: (data) => fetchAPI.post(`template_application/`, data),
+    getApplicationTemplate:()=>fetchAPI.get("template_application/"),
+    getApplicationTemplateById:(id)=>fetchAPI.get(`template_application/${id}`),
+
+    //Discipline
+    getDiscipline: () => fetchAPI.get(`discipline/`),
+
+    //Athletes
+    getAthletes: () => fetchAPI.get(`athletes/`),
+    
 }
 
 export const withoutToken = {

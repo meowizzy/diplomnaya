@@ -17,10 +17,19 @@
     background-repeat: no-repeat;
     background-image: url(./open_eye.svg);
     width: 22px;
-    height: 13px;
+    height: 19px;
     position: absolute;
-    top:36.8px;
+    top:36.7px;
     background-repeat: no-repeat;
+    right: 15px;
+}
+.close_eye{
+    background-image: url(./close_eye.svg);
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 19px;
+    position: absolute;
+    top:33.8px;
     right: 15px;
 }
 .error_open_eye{
@@ -53,15 +62,6 @@
     // right: 15px;
 
 // }
-.close_eye{
-    background-image: url(./close_eye.svg);
-    background-repeat: no-repeat;
-    width: 22px;
-    height: 18px;
-    position: absolute;
-    top:34px;
-    right: 15px;
-}
 .list{
     display: flex;
     flex-direction: column;

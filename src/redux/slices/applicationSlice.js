@@ -5,6 +5,8 @@ import { requests } from "../api";
 const initialState = {
   application: [],
   applicationById:{},
+  applicationTemplate:[],
+  applicationTemplateId:{},
   error:{}
 };
 
@@ -39,10 +41,93 @@ export const getApplicationById = createAsyncThunk(
   }
 );
 
+
+export const editApplication = createAsyncThunk(
+  'application/editApplication',
+  async (data) => {
+    console.log(data)
+      if(data.state===false){
+        const response = await requests.editApplicationById(data.values.choise);
+        console.log("edit: ", response.data)
+        return response.data
+      }else{
+        const response = await requests.editApplicationById(data.values.comment);
+        console.log("edit: ", response.data)
+        return response.data
+      }
+      // data.navigate("/main/news/all_news")
+      // setTimeout(() => data.handleOpenSuccessModal(), 1500)
+      // data.handleOpenSuccessModal()
+    }
+);
+
+export const postApplicationTemplate = createAsyncThunk(
+  'application/postApplicationTemplate',
+  async (data) => {
+    console.log(data)
+        const response = await requests.postApplicationTemplate(data);
+        console.log("post: ", response.data)
+        return response.data
+      
+      // data.navigate("/main/news/all_news")
+      // setTimeout(() => data.handleOpenSuccessModal(), 1500)
+      // data.handleOpenSuccessModal()
+    }
+);
+
+export const getApplicationTemplate = createAsyncThunk(
+  "application/getApplicationTemplate",
+  async function(_,{ rejectWithValue}){
+    try {
+      const res = await requests.getApplicationTemplate();
+      // console.log(res.data)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      // console.log("template",res)
+      return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+export const getApplicationTemplateById = createAsyncThunk(
+  "application/getApplicationTemplateById",
+  async function(id,{ rejectWithValue}){
+    try {
+      const res = await requests.getApplicationTemplateById(id);
+      // console.log(res.data)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      // console.log("template_id",res)
+      return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+
+export const postApplication = createAsyncThunk(
+  'application/postApplication',
+  async (data) => {
+        console.log(data)
+        const response = await requests.postApplication(data.values);
+        console.log("post: ", response.data)
+        
+        data.handleOpenSuccessModal()
+        return response.data
+      
+      // data.navigate("/main/news/all_news")
+      // setTimeout(() => data.handleOpenSuccessModal(), 1500)
+    }
+);
+
 const applicationSlice = createSlice({
     name: "application",
     initialState,
     status: null,
+    statusById: null,
     error: null,
     deleteStatus:null,
     extraReducers: {
@@ -60,16 +145,42 @@ const applicationSlice = createSlice({
         state.error = action.payload;
       },
       [getApplicationById.pending]: (state) => {
-        state.status = "loading";
+        state.statusById = "loading";
         state.error = null;
       },
       [getApplicationById.fulfilled]: (state, action) => {
-        state.status = "resolved";
+        state.statusById = "resolved";
         state.applicationById = action.payload
         // console.log("fullfiled");
       },
       [getApplicationById.rejected]: (state, action) => {
-        state.status = "rejected";
+        state.statusById = "rejected";
+        state.error = action.payload;
+      },
+      [getApplicationTemplate.pending]: (state) => {
+        state.statusById = "loading";
+        state.error = null;
+      },
+      [getApplicationTemplate.fulfilled]: (state, action) => {
+        state.statusById = "resolved";
+        state.applicationTemplate = action.payload
+        // console.log("fullfiled");
+      },
+      [getApplicationTemplate.rejected]: (state, action) => {
+        state.statusById = "rejected";
+        state.error = action.payload;
+      },
+      [getApplicationTemplateById.pending]: (state) => {
+        state.statusById = "loading";
+        state.error = null;
+      },
+      [getApplicationTemplateById.fulfilled]: (state, action) => {
+        state.statusById = "resolved";
+        state.applicationTemplateId = action.payload
+        // console.log("fullfiled");
+      },
+      [getApplicationTemplateById.rejected]: (state, action) => {
+        state.statusById = "rejected";
         state.error = action.payload;
       },
     },
