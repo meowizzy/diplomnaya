@@ -33,7 +33,7 @@ const DefaultDocumentation = () => {
                     <img className={s.search_icon} src={search_icon} alt="wrong"/>
                 </div>
                 <div className={ss.title} style={{ fontWeight: "500" }}>
-                    <p style={{width: "18px"}}>№</p>
+                    <p style={{width: "30px"}}>№</p>
                     <p className={ss.flex10}>Название документа</p>
                     <p className={ss.flex_format}>Формат файла</p>
                 </div>
@@ -43,7 +43,7 @@ const DefaultDocumentation = () => {
                             return <div style={{position: "relative"}} >
                                         <Link to={`/main/documentation/all_documentation/doc_details/${doc.id}`} >
                                                 <div className={ss.title}>
-                                                    <p style={{width: "18px"}}>{index+1}</p>
+                                                    <p style={{width: "30px"}}>{index+1}</p>
                                                     <p className={ss.flex10}>{doc.title}</p>
                                                     <div className={ss.flex_format}>
                                                         <p>{formatMap[doc.file.slice(doc.file.lastIndexOf('.') + 1)]}</p>

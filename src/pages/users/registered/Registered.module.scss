@@ -16,7 +16,7 @@
 .cont {
     // display: flex;
     // flex-basis: 1090px;
-    box-shadow: 0px 0px 16px rgba(44, 44, 44, 0.15);
+    box-shadow: 0 0 16px rgba(44, 44, 44, 0.15);
     border-radius: 35px;
     padding-bottom: 50px;
     position: relative;
@@ -34,9 +34,10 @@
     height: 50px;
     border-bottom: solid 1px #4254EC;
     color: black;
+    gap: 20px;
     .first_p {
         text-align: center;
-        flex: 50px;
+        flex: 11px;
     }
 
     p {
@@ -51,7 +52,7 @@
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    padding: 0px 0;
+    padding: 0 0;
     .text{
         font-size: 22px;
         margin-bottom: 30px;

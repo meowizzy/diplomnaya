@@ -135,7 +135,7 @@ const Chat = () => {
                     <div className="footer-chat">
                         {/*<i className="icon fa fa-smile-o clickable" style="font-size:25pt;" aria-hidden="true"></i>*/}
                         <input  onChange={(e) => setInputValue(e.target.value)} type="grey_text" className="write-message" placeholder="Введите текст...">
-                        </input> <img style={{marginRight: "18px"}} src={camera_icon} alt="/"/>
+                        </input> <img style={{marginRight: "22px"}} src={camera_icon} alt="/"/>
                         {/*<RiSendPlaneFill  onClick={sendMessage} className="icon send fa fa-paper-plane-o clickable"/>*/}
                         {/*<i className="icon send clickable" aria-hidden="true"></i>*/}
                     </div>

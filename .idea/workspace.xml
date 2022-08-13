@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd306116-783b-4344-b161-364b8c210ead" name="Changes" comment="created temp file">
-      <change afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/SportsmenFakeDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="merged">
+      <change afterPath="$PROJECT_DIR$/src/images/unswitched.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/chat/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/chat/Chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/myClubs/TrainerMyClubs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/myClubs/TrainerMyClubs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/CreateDocumentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/CreateDocumentation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/Documentation.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/Documentation.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DocumentationDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DocumentationDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/news/createNews/CreateNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/createNews/CreateNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/news/defaultNews/DefaultNews.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/defaultNews/DefaultNews.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/output/CreateOutput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/output/CreateOutput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/output/Output.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/output/Output.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/Registered.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/Registered.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,20 +44,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu/src/pages/clubs/trainerClubs/clubSportsmen&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Admin/WebstormProjects/whushu/src/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\images" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\pages\clubs\trainerClubs\clubSportsmen" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\redux\slices" />
     </key>

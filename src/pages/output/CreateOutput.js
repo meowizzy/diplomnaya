@@ -8,15 +8,13 @@ import {plus} from "../../images";
 
 const CreateOutput = () => {
 
-    const navigate = useNavigate()
-
     return (
         <>
             <div className={ownStyles.form_container}>
                 <BackButton to="/main/output/all_output" />
                 <p style={{marginBottom: 50}} className="container_title">Создать документ с итогами соревнований</p>
                 <Input valueLabel="Соревнование" width="600px" placeholder="Введите название"/>
-                <Input valueLabel="Подгруппа" width="600px" placeholder="Введите название"/>
+                <Input valueLabel="Подгруппа" width="600px" placeholder="Введите подгруппу"/>
 
                 <div className={ownStyles.input_cont} style={{ fontWeight: "500", marginTop: 10 }}>
                     {/*<p className={ownStyles.input1}>№</p>*/}
@@ -38,7 +36,7 @@ const CreateOutput = () => {
 
                 </div>
                 <div className={ownStyles.input_cont}>
-                    <input className={ownStyles.input1} type="text" placeholder="1"/>
+                    <input disabled className={ownStyles.input1} type="text" placeholder="1"/>
                     <input className={ownStyles.input2} style={{width: 300}} type="text" placeholder="ФИО спрортсмена"/>
                     <input className={ownStyles.input} type="text" placeholder="0"/>
                     <input className={ownStyles.input} type="text" placeholder="0"/>
@@ -47,7 +45,7 @@ const CreateOutput = () => {
                     <input style={{borderRight: "none"}} className={ownStyles.input} type="text" placeholder="0"/>
                 </div>
                 <div className={ownStyles.input_cont}>
-                    <input className={ownStyles.input1} type="text" placeholder="2"/>
+                    <input disabled className={ownStyles.input1} type="text" placeholder="2"/>
                     <input className={ownStyles.input2} style={{width: 300}} type="text" placeholder="ФИО спрортсмена"/>
                     <input className={ownStyles.input} type="text" placeholder="0"/>
                     <input className={ownStyles.input} type="text" placeholder="0"/>
@@ -56,7 +54,7 @@ const CreateOutput = () => {
                     <input style={{borderRight: "none"}} className={ownStyles.input} type="text" placeholder="0"/>
                 </div>
                 <div className={ownStyles.input_cont}>
-                    <input className={ownStyles.input1} type="text" placeholder="3"/>
+                    <input disabled className={ownStyles.input1} type="text" placeholder="3"/>
                     <input className={ownStyles.input2} style={{width: 300}} type="text" placeholder="ФИО спрортсмена"/>
                     <input className={ownStyles.input} type="text" placeholder="0"/>
                     <input className={ownStyles.input} type="text" placeholder="0"/>

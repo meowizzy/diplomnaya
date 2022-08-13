@@ -22,6 +22,7 @@ import file_downloaded from "./file_downloaded.svg"
 import message_unsend from "./message_unsend.svg"
 import message_sent from "./message_sent.svg"
 import list_img from "./list_img.svg"
+import unswitched from "./unswitched.svg"
 
 export {
     open_eye,
@@ -48,4 +49,5 @@ export {
     message_unsend,
     message_sent,
     list_img,
+    unswitched
 }

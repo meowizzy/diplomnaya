@@ -11,7 +11,7 @@ const TrainerMyClubs = () => {
                     <p className={s.first_p}>№</p>
                     <p style={{flex: 7}}>Название клуба</p>
                     <p style={{flex: 7}}>Тренер</p>
-                    <p style={{flex: 9}}>Адрес</p>
+                    <p style={{flex: 9}}>Номер</p>
                     <p style={{flex: 5}}>Спортсмены</p>
                 </div>
                 <Link to="/main/clubs/my_clubs/my_clubs_details/list_sportsmen">
@@ -19,7 +19,7 @@ const TrainerMyClubs = () => {
                         <p className={s.first_p}>1</p>
                         <p style={{flex: 7}}>Золотой дракон</p>
                         <p style={{flex: 7}}>Александр Сергеевич</p>
-                        <p style={{flex: 9}}>Бишкек, 7 микр. 20 школа</p>
+                        <p style={{flex: 9}}>+996 000 123 456</p>
                         <p style={{flex: 5}}>16 человек</p>
                     </div>
                 </Link>

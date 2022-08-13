@@ -13,7 +13,6 @@ import Button from "../../components/button/Button";
 import inputStyles from "../../components/input/Input.module.scss";
 import {useFormik} from "formik";
 import SuccessModal from "../../components/modals/SuccessModal";
-import {useDispatch} from "react-redux";
 import {requests} from "../../redux/api";
 
 const CreateDocumentation = () => {
@@ -54,7 +53,7 @@ const CreateDocumentation = () => {
             <form onSubmit={formik.handleSubmit} className={s.form_cont}>
                 <BackButton to="/main/documentation/all_documentation" />
                 <p className="container_title">Создать документ</p>
-                <Input margin="0 0 70px 0" onChange={formik.handleChange} name="title" valueLabel="Название" width="100%" placeholder="Название документа"/>
+                <Input margin="0 0 50px 0" onChange={formik.handleChange} name="title" valueLabel="Название" width="100%" placeholder="Название документа"/>
                 {/*<label className={inpStyles.label}>Формат</label>*/}
                 <div style={{width: "100%", height: "112px", position: "relative", textAlign: "center"}} className={inputStyles.gradient}>
                     <img style={file ? {color: "black", top: "20%"} : {top: "20%"}} className={newsStyles2.img_icon} src={file ? file_downloaded : file_download} alt="wrong"/>
@@ -63,7 +62,7 @@ const CreateDocumentation = () => {
                     <p style={file ? {color: "black", top: "70%"} : {top: "70%"}} className={newsStyles2.img_text}>{ file ? "Файл загружен" : "Загрузить файл" }</p>
                 </div>
                 {/*<Button disabled width="100%" margin="40px auto 199px" classname="button" text="ЗАГРУЗИТЬ ДОКУМЕНТ"/>*/}
-                <Button disabled={!(formik.values.title && file)} type="submit" width="100%" margin="24px 0 0 0" classname="button" text="СОЗДАТЬ"/>
+                <Button disabled={!(formik.values.title && file)} type="submit" width="100%" margin="44px 0 0 0" classname="button" text="СОЗДАТЬ"/>
             </form>
             {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно создали документ!"/>}
         </>
