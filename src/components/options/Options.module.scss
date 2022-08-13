@@ -1,0 +1,55 @@
+.option_cont {
+  position: absolute;
+  //border-image: 1px solid red linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%) !important;
+  //border: 1px solid cornflowerblue;
+  width: 250px;
+  height: 170px;
+  right: 30px;
+  top: 100px;
+  background: #FDFDFF;
+  opacity: 0.99;
+  border-radius: 35px;
+  //display: flex;
+  //flex-direction: column;
+  //align-items: center;
+  //justify-content: center;
+  //gap: 20px;
+  visibility: visible;
+  z-index: 3;
+}
+.option_cont:before{
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  bottom: 2px;
+  right: 2px;
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 35px;
+}
+
+.option_cont:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+  z-index: 1;
+  border-radius: 35px;
+}
+.content {
+  z-index: 100000;
+  position: relative;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.closed_option_cont {
+  visibility: hidden;
+}

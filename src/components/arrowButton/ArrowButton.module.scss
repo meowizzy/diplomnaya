@@ -1,0 +1,67 @@
+.button {
+    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    position: relative;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    z-index: 2;
+    cursor: pointer;
+    .img {
+        background-image: url(./arrow.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 22px;
+        height: 17px;
+        top: 14px;
+        left: 12px;
+        position: absolute;
+    }
+    .img_2 {
+        background-image: url(./back_arrow.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 26px;
+        height: 18px;
+        top: 16px;
+        left: 13px;
+        position: absolute;
+    }
+}
+
+.button_back {
+    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    position: relative;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 2;
+    cursor: pointer;
+    .img {
+        background-image: url(./arrow.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 22px;
+        height: 17px;
+        top: 14px;
+        left: 12px;
+        position: absolute;
+    }
+    .img_2 {
+        background-image: url(./back_arrow.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 22px;
+        height: 17px;
+        top: 14px;
+        left: 12px;
+        position: absolute;
+    }
+}

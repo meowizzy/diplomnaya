@@ -1,0 +1,129 @@
+.navlink_cont {
+    margin-bottom: 41px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+.top_text{
+    font-size: 22px;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+.bot_text{
+    font-size: 22px; 
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.title {
+    display: flex;
+    // justify-content: center;
+    align-items:center;
+    height: 50px;
+    border-bottom: solid 1px #4254EC;
+    color: black;
+    text-align: left;
+    .first_p {
+        text-align: center;
+        flex: 50px;
+        max-width: 50px;
+        min-width: 50px;
+    }
+    .name{
+        max-width: 300px;
+        min-width: 300px;
+    }
+    p {
+        flex: 208px 1;
+    }
+}
+.search{
+    padding-left: 12px;
+    padding-right: 12px;
+    position:relative;
+}
+.search_icon {
+    position: absolute;
+    top: 14px;
+    right: 36px;
+}
+.trainer_name{
+    font-size: 20px;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+}
+.half{
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+.bar_chart{
+    width: 800px;
+    height: 350px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.pie_chart__flex{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    justify-content: space-around;
+    margin-top:103px;
+    margin-bottom: 50px;
+}
+.footer{
+    display: flex;
+    justify-content: space-around;
+    // padding-right: 100px;
+    position: relative;
+    align-items: center;
+        p{
+            font-weight: bold;
+        }
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px 0 20px;
+    font-weight: 500;
+    margin-top: 44px;
+}
+.flex_second{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    p{
+    padding: 10px 70px 0 20px;
+    height: 70px;
+    align-items: center;
+        border:1px solid #4254EC;
+    }
+}
+.button {
+    background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    .img {
+        background-image: url(./arrow.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 22px;
+        height: 17px;
+        top: 14px;
+        left: 12px;
+        position: absolute;
+    }
+}
