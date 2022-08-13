@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd306116-783b-4344-b161-364b8c210ead" name="Changes" comment="merged">
+    <list default="true" id="fd306116-783b-4344-b161-364b8c210ead" name="Changes" comment="created temp file">
+      <change afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/SportsmenFakeDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="WHUS-415-club-logical-part" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,7 +38,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu/src/redux/slices&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu/src/pages/clubs/trainerClubs/clubSportsmen&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -47,6 +47,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\pages\clubs\trainerClubs\clubSportsmen" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\redux\slices" />
     </key>
   </component>
@@ -116,6 +117,7 @@
     <MESSAGE value="WHUS-415 made clubs and sportsman logical parts" />
     <MESSAGE value="merged" />
     <MESSAGE value="fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
+    <MESSAGE value="created temp file" />
+    <option name="LAST_COMMIT_MESSAGE" value="created temp file" />
   </component>
 </project>
