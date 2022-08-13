@@ -195,7 +195,7 @@ const CreateSportsman = () => {
                 <p className="basic_text" style={{margin: "70px auto 20px"}}>Достижения</p>
                 <div className={ownStyles.inp_plus_cont}>
                     <Input onChange={formik.handleChange} name="sportsman.achievements" valueLabel="Достижения" width="600px" placeholder="Введите спортивный достижения"/>
-                    <img className={ownStyles.plus} src={plus} alt="wrong"/>
+                    {/*<img className={ownStyles.plus} src={plus} alt="wrong"/>*/}
                 </div>
                 <p className="basic_text" style={{margin: "70px auto 20px"}}>Физические показатели</p>
                 <div className="flex">

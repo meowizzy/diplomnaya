@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="created temp file" />
+    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed">
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/CreateSportsman.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/CreateSportsman.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660367380244</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fixed">
+      <created>1660367623983</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1660367623983</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
