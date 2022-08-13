@@ -13,6 +13,7 @@ export const userAuth = createAsyncThunk(
         const res = await requests.authApi(data.authData);
         console.log(res);
         setCookie("user_info", JSON.stringify(res.data), 100);
+        localStorage.setItem('userId', res.data.user_id)
         if(role.assistant === "True"){
             data.navigate('/main/events/allEvents')
         }else{
@@ -60,7 +61,7 @@ const authSlice = createSlice({
         [userAuth.pending]: (state) => {
             state.error = false;
         },
-        [userAuth.fulfilled]: (state) => {
+        [userAuth.fulfilled]: (state, action) => {
             state.error = false;
         },
         [userAuth.rejected]: (state) => {

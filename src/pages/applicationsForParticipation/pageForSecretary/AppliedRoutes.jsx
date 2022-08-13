@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Routes, useLocation } from "react-router";
 import { Link, NavLink } from "react-router-dom";
 import s from "./Applied.module.scss"
@@ -15,6 +15,11 @@ import { AppliedTemplate } from "./appliedTemplate/AppliedTemplate";
 export const AppliedRoutes = () => {
   const location = useLocation()
   const temp = location.pathname.split("/")[3]
+
+  const [changeTemplate, setChangeTemplate] = useState(false)
+  const clickState=()=>{
+    setChangeTemplate(!changeTemplate)
+  }
   return (
     <>
       <div className={s.link_cont}>
@@ -39,9 +44,8 @@ export const AppliedRoutes = () => {
           </NavLink>
         </div>
         {temp === "appliedTemplate"? 
-        <Link to="/main/applied/createUser">
-          <Button margin="0 0" text="ИЗМЕНИТЬ ШАБЛОН" />
-        </Link>: 
+          <Button margin="0 0" text="ИЗМЕНИТЬ ШАБЛОН" onClick={clickState}/>
+       : 
         <Link to="/main/applied/sendTemplate">
           <Button margin="0 0" text="ОТПРАВИТЬ ШАБЛОН" />
         </Link>
@@ -53,7 +57,7 @@ export const AppliedRoutes = () => {
           <Route path="/newApplied/detailedInformation" element={<DetailedInfoForNewApplied />} />
           <Route path="/historyOfApplied" element={<HistoryOfApplied />} />
           <Route path="/historyOfApplied/detailedInformation" element={<DetailedInfoForHistoryOfApplied />} />
-          <Route path="/appliedTemplate" element={<AppliedTemplate />} />
+          <Route path="/appliedTemplate" element={<AppliedTemplate changeTemplate={changeTemplate}/>} />
           <Route path="/sendTemplate" element={<SendTemplate />} />
         </Routes>
       </>

@@ -274,6 +274,14 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
+            to="/main/application/submittedApplications"
+            className={linkActiveClassName("application")}
+          >
+            <span className={s.top_curve}></span>
+            Заявки
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
             to="/main/protocol/new_protocols"
             className={linkActiveClassName("protocol")}
           >

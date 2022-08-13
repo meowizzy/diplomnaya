@@ -4,13 +4,23 @@ import s from "./ThreeDot.module.scss";
 import ss from '../delete/Delete.module.scss'
 import { Modal } from "../modal/Modal";
 import ButtonForActiveChanges from "../buttonForActiveChanges/ButtonForActiveChanges";
+import { useDispatch } from "react-redux";
 
-export const ThreeDot = ({ disabled, type, onClick, text }) => {
+export const ThreeDot = ({ disabled, type, onClick, text, take, id, status, open, back  }) => {
   const [state, setState] = useState(false);
   const toggle = () => {
     setState(!state);
   };
   const [modalActive, setModalActive] = useState(false);
+  const dispatch = useDispatch()
+  const deleteThings = (id) =>{
+    if(status!=="rejected"){
+      dispatch(take(id))
+      open()
+      setModalActive(false)
+      back()
+    }
+  }
   return (
     <>
       <button
@@ -44,7 +54,7 @@ export const ThreeDot = ({ disabled, type, onClick, text }) => {
         <div className={ss.cont}>
           <p>{text}</p>
           <div className={ss.flex}>
-            <ButtonForActiveChanges width="210px" text="ДА" disabled={state} onClick={toggle} classname="button"/>
+            <ButtonForActiveChanges width="210px" text="ДА" onClick={()=>deleteThings(id)} classname="button"/>
             <ButtonForActiveChanges
               width="210px"
               text="НЕТ"
