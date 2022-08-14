@@ -23,6 +23,23 @@ export const postRegister = createAsyncThunk(
     }
   }
 );
+export const createUser = createAsyncThunk(
+  "register/createUser",
+  async (formData ,{ rejectWithValue }) => {
+    // console.log("form", formData)
+    try {
+      const res = await withoutToken.register(formData.values);
+      console.log("res", res)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      formData.handleOpenSuccessModal()
+      // return res
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
 
 const registerSlice = createSlice({
   name: "register",

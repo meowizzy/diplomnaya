@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import s from "./RequestToRegistr.module.scss";
 import ss from '../registered/Registered.module.scss'
+import { getAllUser, getUserById } from "../../../redux/slices/userSlice";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+
 
 export const RequestToRegistr = () => {
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(getAllUser())
+  },[])
+
+  const user = useSelector(state=>state.user.allUser)
+  
+  const getId =(id)=>{
+    dispatch(getUserById(id))
+    // localStorage.setItem("idForUser", id)
+  }
+
   return (
     <div className={ss.table_content}>
       <div className={s.title} style={{ fontWeight: "500" }}>
@@ -13,15 +28,17 @@ export const RequestToRegistr = () => {
         <p>Номер телефона</p>
         <p>Почта</p>
       </div>
-      <Link to="/main/users/requestToRegistr/requestUserInfo">
+     {user.map((el,index)=>(
+      <Link to="/main/users/requestToRegistr/requestUserInfo" key={index} onClick={()=>getId(el.id)}>
         <div className={s.title}>
-          <p className={s.first_p}>1</p>
-          <p>Карина</p>
-          <p>Белоусова</p>
-          <p>+996 000 123 456</p>
-          <p>Admin111@gmal.com</p>
+          <p className={s.first_p}>{index+1}</p>
+          <p>{el.name}</p>
+          <p>{el.surname}</p>
+          <p>{el.number}</p>
+          <p>{el.email}</p>
         </div>
       </Link>
+      ))}
     </div>
   );
 };

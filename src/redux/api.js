@@ -32,11 +32,12 @@ export const requests = {
     //User
     getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
     getAllUser:() => fetchAPI.get('user/'),
+    getNotRegisterUser:() => fetchAPI.get('user/'),
     getUserById:(id) => fetchAPI.get(`user/${id}`),
     getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
     getUserForProfile:(id) => fetchAPI.get(`user/${id}`),
+    deleteUser:(id) => fetchAPI.delete(`user/${id}`),
     editUser:(data) => fetchAPI.patch(`user/${data.id}/`, data.values),
-
     getTrainerUser: () => fetchAPI.get("user/", { params: { is_assistant: false, is_judge : false, role: "TRAINER" } }),
 
     // documentation

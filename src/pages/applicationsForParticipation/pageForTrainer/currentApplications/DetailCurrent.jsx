@@ -31,7 +31,7 @@ export const DetailCurrent = () => {
         id={appl.applicationById.id}
         status={appl.statusById}
         back={back}
-        open={handleOpenSuccessModal}
+        // open={handleOpenSuccessModal}
       />
       <BackButton to="/main/application/currentApplications" />
       <div className={s.top_blank}>

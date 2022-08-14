@@ -15,6 +15,7 @@ const Input = ({
   minHeight,
     background,
     padding,
+    readOnly
 }) => {
 
   // const [state, setState] = useState(false)
@@ -33,6 +34,7 @@ const Input = ({
           onChange={onChange}
           name={name}
           type={type}
+          readOnly = {readOnly}
         />
           {/* {state && <div></div>}</input> */}
       </div>

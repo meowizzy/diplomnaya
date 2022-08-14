@@ -140,7 +140,7 @@ export const DetailedInfoForNewApplied = () => {
               type="submit"
             />
             </>:
-            <p className={s.accept}>Заявка не принята успешно!</p>
+            <p className={s.accept}>Заявка была отклонена</p>
           }
           </div>
         )}

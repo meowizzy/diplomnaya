@@ -50,6 +50,7 @@ export const editEvent = createAsyncThunk(
       // if (!res) {
       //   throw new Error("ERROR");
       // }
+      data.handleOpneSuccessModal()
       return res.data
     } catch (error) {
         return rejectWithValue(error.message)

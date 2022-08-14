@@ -38,6 +38,8 @@
     .first_p {
         text-align: center;
         flex: 11px;
+        max-width: 50px;
+        min-width: 50px;
     }
 
     p {

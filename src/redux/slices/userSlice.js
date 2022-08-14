@@ -11,12 +11,27 @@ const initialState = {
   userTrainer: [],
   // userSecretary:[],
   user:{}
-
 };
 
 
 export const getAllUser = createAsyncThunk(
   "user/getAllUser",
+  async function(_,{ rejectWithValue}){
+    try {
+      const res = await requests.getAllUser();
+      // console.log("user", res.data)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+
+export const getRequestToRegiter = createAsyncThunk(
+  "user/getRequestToRegiter",
   async function(_,{ rejectWithValue}){
     try {
       const res = await requests.getAllUser();
@@ -37,6 +52,22 @@ export const getUserById = createAsyncThunk(
     try {
       const res = await requests.getUserById(id);
       // console.log("userId", res.data)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+
+export const deleteUser = createAsyncThunk(
+  "user/deleteUser",
+  async function(id,{ rejectWithValue}){
+    try {
+      const res = await requests.deleteUser(id);
+      // console.log("userDelete", res.data)
       if (!res) {
         throw new Error("ERROR");
       }
@@ -69,7 +100,7 @@ export const editUser = createAsyncThunk(
   async (data) => {
         // console.log(data)
         const response = await requests.editUser(data);
-        console.log("edit: ", response.data)
+        // console.log("edit: ", response.data)
         // setTimeout(() => data.handleOpenSuccessModal(), 1500)
         data.handleOpenSuccessModal()
         return response.data
@@ -143,96 +174,113 @@ export const getTrainerUser = createAsyncThunk(
 
 
 const userSlice = createSlice({
-    name: "user",
-    initialState,
-    status: null,
-    error: null,
-    // reducers: {
-    //   getUser: (state, action) => {
-    //     state.event = action.payload;
-    //   },
-    // },
-    extraReducers: {
-      [getJudgeUser.pending]: (state) => {
-        state.status = "loading";
-        state.error = null;
-      },
-      [getJudgeUser.fulfilled]: (state, action) => {
-        state.status = "resolved";
-        state.userJudge = action.payload
-        // console.log("fullfiled");
-      },
-      [getJudgeUser.rejected]: (state, action) => {
-        state.status = "rejected";
-        state.error = action.payload;
-      },
-      [getSecretaryUser.pending]: (state) => {
-        state.status = "loading";
-        state.error = null;
-      },
-      [getSecretaryUser.fulfilled]: (state, action) => {
-        state.status = "resolved";
-        state.userSecretary = action.payload
-        // console.log("fullfiled");
-      },
-      [getSecretaryUser.rejected]: (state, action) => {
-        state.status = "rejected";
-        state.error = action.payload;
-      },
+  name: "user",
+  initialState,
+  status: null,
+  error: null,
+  // reducers: {
+  //   getUser: (state, action) => {
+  //     state.event = action.payload;
+  //   },
+  // },
+  extraReducers: {
+    [getJudgeUser.pending]: (state) => {
+      state.status = "loading";
+      state.error = null;
+    },
+    [getJudgeUser.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.userJudge = action.payload;
+      // console.log("fullfiled");
+    },
+    [getJudgeUser.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+    [getSecretaryUser.pending]: (state) => {
+      state.status = "loading";
+      state.error = null;
+    },
+    [getSecretaryUser.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.userSecretary = action.payload;
+      // console.log("fullfiled");
+    },
+    [getSecretaryUser.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
 
-      [getUserForProfilePage.pending]: (state) => {
-        state.status = "loading";
-        state.error = null;
-      },
-      [getUserForProfilePage.fulfilled]: (state, action) => {
-        state.status = "resolved";
-        state.user = action.payload
-        // console.log("fullfiled");
-      },
-      [getUserForProfilePage.rejected]: (state, action) => {
-        state.status = "rejected";
-        state.error = action.payload;
-      },
-      [getAllUser.pending]: (state) => {
-        state.status = "loading";
-        state.error = null;
-      },
-      [getAllUser.fulfilled]: (state, action) => {
-        state.status = "resolved";
-        state.allUser = action.payload
-        // console.log("fullfiled");
-      },
-      [getAllUser.rejected]: (state, action) => {
-        state.status = "rejected";
-        state.error = action.payload;
-      },
-      [getUserById.pending]: (state) => {
-        state.status = "loading";
-        state.error = null;
-      },
-      [getUserById.fulfilled]: (state, action) => {
-        state.status = "resolved";
-        state.userId = action.payload
-        // console.log("fullfiled");
-      },
-      [getUserById.rejected]: (state, action) => {
-        state.status = "rejected";
-        state.error = action.payload;
-      },
+    [getUserForProfilePage.pending]: (state) => {
+      state.status = "loading";
+      state.error = null;
+    },
+    [getUserForProfilePage.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.user = action.payload;
+      // console.log("fullfiled");
+    },
+    [getUserForProfilePage.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+    [getAllUser.pending]: (state) => {
+      state.status = "loading";
+      state.error = null;
+    },
+    [getAllUser.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.allUser = action.payload;
+      // console.log("fullfiled");
+    },
+    [getAllUser.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+    [getUserById.pending]: (state) => {
+      state.status = "loading";
+      state.error = null;
+    },
+    [getUserById.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.userId = action.payload;
+      // console.log("fullfiled");
+    },
+    [getUserById.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
     [getTrainerUser.pending]: (state) => {
-        state.status = "loading";
-        state.error = null;
+      state.status = "loading";
+      state.error = null;
     },
     [getTrainerUser.fulfilled]: (state, action) => {
-        state.status = "resolved";
-        state.userTrainer = action.payload
+      state.status = "resolved";
+      state.userTrainer = action.payload;
     },
     [getTrainerUser.rejected]: (state, action) => {
-        state.status = "rejected";
-        state.error = action.payload;
+      state.status = "rejected";
+      state.error = action.payload;
     },
+    [deleteUser.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.allUser = state.allUser.filter((el) => el.id !== action.payload);
     },
-  });
+    [getRequestToRegiter.pending]: (state) => {
+      state.status = "loading";
+      state.error = null;
+    },
+    [getRequestToRegiter.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.allUser = action.payload
+      // console.log("fullfiled");
+    },
+    [getRequestToRegiter.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+  },
+});
   
   export const { user } = userSlice.actions;
   
