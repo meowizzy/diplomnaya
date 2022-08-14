@@ -5,8 +5,44 @@ import { requests } from "../api";
 const initialState = {
   userJudge:[],
   userSecretary:[],
-  user:{}
+  user:{},
+  allUser:[],
+  userId:{},
 };
+
+
+export const getAllUser = createAsyncThunk(
+  "user/getAllUser",
+  async function(_,{ rejectWithValue}){
+    try {
+      const res = await requests.getAllUser();
+      // console.log("user", res.data)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+
+export const getUserById = createAsyncThunk(
+  "user/getUserById",
+  async function(id,{ rejectWithValue}){
+    try {
+      const res = await requests.getUserById(id);
+      // console.log("userId", res.data)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+
 
 export const getUserForProfilePage = createAsyncThunk(
   "user/getUserForProfilePage",
@@ -132,6 +168,32 @@ const userSlice = createSlice({
         // console.log("fullfiled");
       },
       [getUserForProfilePage.rejected]: (state, action) => {
+        state.status = "rejected";
+        state.error = action.payload;
+      },
+      [getAllUser.pending]: (state) => {
+        state.status = "loading";
+        state.error = null;
+      },
+      [getAllUser.fulfilled]: (state, action) => {
+        state.status = "resolved";
+        state.allUser = action.payload
+        // console.log("fullfiled");
+      },
+      [getAllUser.rejected]: (state, action) => {
+        state.status = "rejected";
+        state.error = action.payload;
+      },
+      [getUserById.pending]: (state) => {
+        state.status = "loading";
+        state.error = null;
+      },
+      [getUserById.fulfilled]: (state, action) => {
+        state.status = "resolved";
+        state.userId = action.payload
+        // console.log("fullfiled");
+      },
+      [getUserById.rejected]: (state, action) => {
         state.status = "rejected";
         state.error = action.payload;
       },

@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import BackButton from "../../../components/arrowButton/BackButton";
 import Input from "../../../components/input/Input";
 import { ThreeDot } from "../../../components/threeDot/ThreeDot";
@@ -8,22 +8,38 @@ import Button from '../../../components/button/Button'
 import { Link } from "react-router-dom"
 import { close_eye, open_eye, plus } from "../../../images";
 import SuccessModal from "../../../components/modals/SuccessModal";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserById } from "../../../redux/slices/userSlice";
 
 export const UserInfo = () => {
   const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
   const handleOpenSuccessModal = () => setOpenSuccessModal(true);
   const handleCloseSuccessModal = () => setOpenSuccessModal(false);
 
+  // const dispatch = useDispatch()
+  // useEffect(()=>{
+  //   dispatch(getUserById(localStorage.getItem("idForUser")))
+  // },[])
+
+  const user = useSelector(state=>state.user.userId)
+  const status = useSelector(state=>state.user.status)
+  console.log(user)
+  const [active, setActive] = useState(user)
+  const onChange = ()=>{
+    setActive(...active)
+    console.log(active)
+  }
   const formik = useFormik({
     initialValues: {
-      name: "Карина",
-      surname: "Белоусова",
-      position: "Тренер",
-      phone: "+996 000 123 456",
-      email: "Admin111@gmail.com",
-      city: "Киргизия, Бишкек",
+      name: user?.name,
+      surname: user.surname,
+      position: user.is_judge?"Судья":user.is_assistant?"Секретарь":"Тренер",
+      phone: user.number,
+      email: user.email,
+      city: user.address,
       club: "Золотой дракон",
-      password: "******",
+      password: user.password,
+      is_active:active.is_active
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -51,6 +67,7 @@ export const UserInfo = () => {
         <p className={s.text}>Информация о пользователе</p>
         {buttonState === true && <ThreeDot onClick={foggle} text="Вы уверены, что хотите удалить данного пользователя?"/>}
 
+    {status==="resolved"?
         <form onSubmit={formik.handleSubmit}>
           <Input
             valueLabel="Имя"
@@ -122,7 +139,7 @@ export const UserInfo = () => {
           </div>
           <label className={s.status}>
             <p>Активен / Неактивен</p>
-            <input type="radio" className={s.input} />
+            <input type="radio" className={s.input} value={!formik.values.is_active} onChange={(e)=>onChange(e.target.checked)} checked={formik.values.is_active}/>
           </label>
 
           {buttonState === false && (
@@ -133,7 +150,7 @@ export const UserInfo = () => {
               onClick={handleOpenSuccessModal}
             />
           )}
-        </form>
+        </form>:<p>loading...</p>}
       </div>
       {openSuccessModal && (
         <SuccessModal

@@ -31,6 +31,8 @@ export const requests = {
 
     //User
     getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
+    getAllUser:() => fetchAPI.get('user/'),
+    getUserById:(id) => fetchAPI.get(`user/${id}`),
     getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
     getUserForProfile:(id) => fetchAPI.get(`user/${id}`),
     editUser:(data) => fetchAPI.patch(`user/${data.id}/`, data.values),

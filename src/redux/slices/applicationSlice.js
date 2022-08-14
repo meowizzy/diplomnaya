@@ -163,7 +163,6 @@ export const postApplication = createAsyncThunk(
         console.log(data)
         const response = await requests.postApplication(data.values);
         console.log("post: ", response.data)
-        
         data.handleOpenSuccessModal()
         return response.data
       

@@ -90,7 +90,7 @@ export const AppliedTemplate = ({changeTemplate}) => {
       discipline_2:"",
   },
     onSubmit: (values) => {
-      // dispatch(postApplicationTemplate(values))
+      dispatch(postApplicationTemplate(values))
       alert(JSON.stringify(values, null, 2));
     },
   });
