@@ -27,3 +27,4 @@ export const newPassword = async (data) => {
     const res = await requests.newPasswordApi(data);
     console.log(res);
 }
+

@@ -1,11 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "../../users/registered/Registered.module.scss";
 import Input from "../../../components/input/Input";
 import {Link} from "react-router-dom";
 import {Pagination} from "../../../components/pagination/Pagination";
 import {search_icon} from "../../../images";
+import {useDispatch, useSelector} from "react-redux";
+import {getClubs} from "../../../redux/slices/clubSlice";
+import {requests} from "../../../redux/api";
 
 const DefaultClubs = () => {
+
+    const dispatch = useDispatch();
+    const clubs = useSelector(state => state.clubs.clubs)
+
+    useEffect(() => {
+        dispatch(getClubs())
+        window.scrollTo(0, 0);
+        requests.getTrainerUser().then(res => console.log("userss: ", res))
+    }, [])
+
     return (
         <div>
             <div className={s.table_content}>
@@ -20,15 +33,19 @@ const DefaultClubs = () => {
                     <p>Адрес</p>
                     <p>Спортсмены</p>
                 </div>
-                <Link to="/main/clubs/clubDetails">
-                    <div className={s.title}>
-                        <p className={s.first_p}>1</p>
-                        <p>Золотой дракон</p>
-                        <p>Кот  Леопольд</p>
-                        <p>Бишкек, 7 микр. 20 школа</p>
-                        <p>16 человек</p>
-                    </div>
-                </Link>
+                {
+                    clubs.map((club, index) => {
+                        return <Link key={club.id} to={`/main/clubs/clubDetails/${club.id}`}>
+                            <div className={s.title}>
+                                <p className={s.first_p}>{index+1}</p>
+                                <p>{club.name}</p>
+                                <p>Тренер</p>
+                                <p>{club.address}</p>
+                                <p>{club.sum_of_people.split('.')[0]}</p>
+                            </div>
+                        </Link>
+                    })
+                }
                 <Pagination/>
             </div>
         </div>

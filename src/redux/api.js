@@ -36,7 +36,9 @@ export const requests = {
     getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
     getUserForProfile:(id) => fetchAPI.get(`user/${id}`),
     editUser:(data) => fetchAPI.patch(`user/${data.id}/`, data.values),
-    
+
+    getTrainerUser: () => fetchAPI.get("user/", { params: { is_assistant: false, is_judge : false, role: "TRAINER" } }),
+
     // documentation
     getDocs: () => fetchAPI.get("documents/document/"),
     getDoc: (id) => fetchAPI.get(`documents/document/${id}/`),
@@ -68,7 +70,27 @@ export const requests = {
 
     //Athletes
     getAthletes: () => fetchAPI.get(`athletes/`),
-    
+
+
+    // club
+    getClubsApi: () => fetchAPI.get("club/"),
+    getClubApi: (id) => fetchAPI.get(`club/${id}`),
+    postClubApi: (data) => fetchAPI.post("club/", data.data),
+    editClubApi: (data) => fetchAPI.patch(`club/${data.id}/`, data.data),
+    deleteClubApi: (id) => fetchAPI.delete(`club/${id}/`),
+
+    // sportsmen
+    getSportsmenApi: () => fetchAPI.get("athletes/"),
+    getSportsmanApi: (id) => fetchAPI.get(`athletes/${id}`),
+    postSportsmenApi: (data) => fetchAPI.post("athletes/", data.data),
+    editSportsmenApi: (data) => fetchAPI.patch(`athletes/${data.id}/`, data.data),
+    deleteSportsmenApi: (id) => fetchAPI.delete(`athletes/${id}/`),
+
+    // Physical Indicator
+    // getSportsmanApi: (id) => fetchAPI.get(`athletes/${id}`),
+    postPhysicalIndicatorApi: (data) => fetchAPI.post("physical_indicators/", data),
+    editPhysicalIndicatorApi: (data) => fetchAPI.patch(`physical_indicators/${data.id}/`, data.data),
+    // deleteSportsmenApi: (id) => fetchAPI.delete(`athletes/${id}/`),
 }
 
 export const withoutToken = {

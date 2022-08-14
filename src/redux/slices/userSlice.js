@@ -8,6 +8,10 @@ const initialState = {
   user:{},
   allUser:[],
   userId:{},
+  userTrainer: [],
+  // userSecretary:[],
+  user:{}
+
 };
 
 
@@ -105,21 +109,39 @@ export const getSecretaryUser = createAsyncThunk(
       }
     }
   );
-  export const getTrenaireUser = createAsyncThunk(
-    "user/getSecretaryUser",
+  // export const getTrenaireUser = createAsyncThunk(
+  //   "user/getSecretaryUser",
+  //   async function(_,{ rejectWithValue}){
+  //     try {
+  //       const res = await requests.getSecretaryUser();
+  //       // console.log(res.data)
+  //       if (!res) {
+  //         throw new Error("ERROR");
+  //       }
+  //       return res.data
+  //     } catch (error) {
+  //         return rejectWithValue(error.message)
+  //     }
+  //   }
+  // );
+
+export const getTrainerUser = createAsyncThunk(
+    "user/getTrainerUser",
     async function(_,{ rejectWithValue}){
-      try {
-        const res = await requests.getSecretaryUser();
-        // console.log(res.data)
-        if (!res) {
-          throw new Error("ERROR");
+        try {
+            const res = await requests.getTrainerUser();
+            //   console.log(res.data)
+            if (!res) {
+                throw new Error("ERROR");
+            }
+            return res.data
+        } catch (error) {
+            return rejectWithValue(error.message)
         }
-        return res.data
-      } catch (error) {
-          return rejectWithValue(error.message)
-      }
     }
-  );
+);
+
+
 const userSlice = createSlice({
     name: "user",
     initialState,
@@ -197,6 +219,18 @@ const userSlice = createSlice({
         state.status = "rejected";
         state.error = action.payload;
       },
+    [getTrainerUser.pending]: (state) => {
+        state.status = "loading";
+        state.error = null;
+    },
+    [getTrainerUser.fulfilled]: (state, action) => {
+        state.status = "resolved";
+        state.userTrainer = action.payload
+    },
+    [getTrainerUser.rejected]: (state, action) => {
+        state.status = "rejected";
+        state.error = action.payload;
+    },
     },
   });
   

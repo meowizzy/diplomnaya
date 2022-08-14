@@ -1,11 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "../../../users/registered/Registered.module.scss";
 import Input from "../../../../components/input/Input";
 import {search_icon} from "../../../../images";
 import {Link} from "react-router-dom";
 import {Pagination} from "../../../../components/pagination/Pagination";
+import {useParams} from "react-router";
+import {useDispatch, useSelector} from "react-redux";
+import {getSportsmen} from "../../../../redux/slices/sportsmenSlice";
 
 const ListOfClubSportsmen = () => {
+
+    const {id} = useParams();
+    const dispatch = useDispatch();
+    const sportsmen = useSelector(state => state.sportsmen.sportsmen)
+    const clubSportsmen = sportsmen.filter(sportsman => sportsman.club == id)
+
+    useEffect(() => {
+        dispatch(getSportsmen())
+    }, [])
+
     return (
         <div>
             <div className={s.table_content}>
@@ -20,15 +33,20 @@ const ListOfClubSportsmen = () => {
                     <p style={{ flex: 5}}>Номер</p>
                     <p style={{ flex: 10}}>Адрес</p>
                 </div>
-                <Link to="/main/clubs/all_clubs/all_club_details/sportsman_details">
-                    <div className={s.title}>
-                        <p className={s.first_p}>1</p>
-                        <p style={{ flex: 7}}>Стёпка Киборг Убийца</p>
-                        <p style={{ flex: 5}}>20.02.2002 г.</p>
-                        <p style={{ flex: 5}}>+996 000 123 456</p>
-                        <p style={{ flex: 10}}>Солнечная система, галактика Млечн ...</p>
-                    </div>
-                </Link>
+                {
+                    clubSportsmen.map((sportsman, index) => {
+                        return <Link key={sportsman.id} to={`/main/clubs/all_clubs/all_club_details/sportsman_details/${sportsman.id}`}>
+                                    <div className={s.title}>
+                                        <p className={s.first_p}>{index + 1}</p>
+                                        <p style={{ flex: 7}}>{sportsman.name} {sportsman.surname}</p>
+                                        <p style={{ flex: 5}}>{sportsman.birthday}</p>
+                                        <p style={{ flex: 5}}>{sportsman.phone_number}</p>
+                                        <p style={{ flex: 10}}>{sportsman.address}</p>
+                                    </div>
+                                </Link>
+                    })
+                }
+
                 <Pagination/>
             </div>
         </div>

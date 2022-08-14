@@ -7,6 +7,8 @@ import userSlice from './slices/userSlice';
 
 
 import {newSlice} from "./slices/newsSlice";
+import {clubsSlice} from "./slices/clubSlice";
+import {sportsmanSlice} from "./slices/sportsmenSlice";
 import applicationSlice from './slices/applicationSlice';
 import disciplineSlice from './slices/disciplineSlice';
 import athletesSlice from './slices/athletesSlice';
@@ -22,6 +24,8 @@ export const store = configureStore({
     auth: authSlices,
     discipline:disciplineSlice,
     athletes:athletesSlice,
+    clubs: clubsSlice,
+    sportsmen: sportsmanSlice,
 },
 
 });

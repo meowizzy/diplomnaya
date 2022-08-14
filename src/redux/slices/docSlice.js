@@ -27,11 +27,10 @@ export const getDoc = createAsyncThunk(
 );
 
 export const createDoc = createAsyncThunk(
-    'docs/createDocs',
+    'docs/createDoc',
     async (data, {dispatch}) => {
         const response = await requests.postDoc(data);
         console.log("new_doc: ", response.data)
-        dispatch(postMessage(response.data))
         return response.data;
     }
 );
@@ -41,7 +40,6 @@ export const deleteDoc = createAsyncThunk(
     async (id, {dispatch}) => {
         const response = await requests.deleteDoc(id);
         console.log("deleted_doc: ", response.data)
-        dispatch(postMessage(response.data))
         return response.data;
     }
 );

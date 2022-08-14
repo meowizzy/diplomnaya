@@ -11,8 +11,6 @@ import SuccessModal from "../../components/modals/SuccessModal";
 
 const OutputDetails = () => {
 
-    const navigate = useNavigate()
-
     const [openOption, setOpenOption] = useState(false);
     const handleOpenOption = () => {setOpenOption(!openOption)}
 
@@ -82,7 +80,6 @@ const OutputDetails = () => {
                     </div> : <input className={ownStyles.last_input} type="text" value="||"/>}
                 </div>
                 {editButton ? <Button onClick={handleOpenSuccessModal} margin="108px auto 50px" width="600px" classname="button" text="СОХРАНИТЬ"/> : <Button margin="108px auto 50px" width="600px" classname="button" text="ПЕЧАТЬ"/>}
-
             </div>
             {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно отредактировали данные об итогах соревнования!"/>}
             { openDeleteModal && <DeleteModal text="Вы уверены, что хотите удалить данный документ?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }

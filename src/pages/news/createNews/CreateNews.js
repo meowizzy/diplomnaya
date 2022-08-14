@@ -6,7 +6,7 @@ import Button from "../../../components/button/Button";
 import inputStyles from "../../../components/input/Input.module.scss";
 import {useFormik} from "formik";
 import {useNavigate} from "react-router";
-import {camera_icon, checkbox_icon_turned_on} from "../../../images";
+import {camera_icon, checkbox_icon_turned_on, unswitched} from "../../../images";
 import NewsTab from "../defaultNews/NewsTab";
 import SuccessModal from "../../../components/modals/SuccessModal";
 import BackButton from "../../../components/arrowButton/BackButton";
@@ -22,7 +22,9 @@ const CreateNews = () => {
 
     const [img, setImg] = useState();
     const [imgURL, setImgURL] = useState();
-    // const [selectedValue, setSelectValue] = useState("Должность");
+    const [switchBox, setSwitchBox] = useState(false);
+
+    const handleSwitchBox = () => setSwitchBox((!switchBox))
 
     const selectedImg = (event) => {
         setImg(event.target.files[0]);
@@ -73,7 +75,7 @@ const CreateNews = () => {
                         {/*<Input name="more" placeholder="Добавить текст" onChange={formik.handleChange} type="text" width="100%" valueLabel="Дополнительно"/>*/}
                         <div className={ss.checkbox_cont}>
                             <p className="basic_text">Отправить всем?</p>
-                            <img src={checkbox_icon_turned_on} alt="wrong"/>
+                            {switchBox ? <img onClick={handleSwitchBox} src={checkbox_icon_turned_on} alt="wrong"/> : <img onClick={handleSwitchBox} src={unswitched} alt="wrong"/>  }
                         </div>
                         <Button disabled={!(formik.values.description && formik.values.title)} type="submit" width="100%" margin="70px 0px 0px" text="СОЗДАТЬ"/>
                     </form>
