@@ -14,7 +14,7 @@ export const RequestUserInfo = () => {
   const dispatch = useDispatch()
   
   const user = useSelector(state=>state.user.userId)
-  const status = useSelector(state=>state.user.status)
+  // const status = useSelector(state=>state.user.status)
   console.log(user)
   const [active, setActive] = useState(user)
   const onChange = (value) => {
@@ -28,19 +28,20 @@ export const RequestUserInfo = () => {
 
     const formik = useFormik({
       initialValues: {
-        name: active.name,
-        surname: active.surname,
-        position: active.is_judge
+        name: user.name,
+        surname: user.surname,
+        position: user.is_judge
           ? "Судья"
-          : active.is_assistant
+          : user.is_assistant
           ? "Секретарь"
           : "Тренер",
-        phone: active.number,
-        email: active.email,
-        city: active.address,
+        phone: user.number,
+        email: user.email,
+        city: user.address,
         club: "Золотой дракон",
         is_active:true
       },
+      enableReinitialize:true,
       onSubmit: (values) => {
         const id = user.id
         const data = {values, id}

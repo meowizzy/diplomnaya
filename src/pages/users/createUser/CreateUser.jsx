@@ -33,38 +33,60 @@ export const CreateUser = () => {
   const [club, setClub] = useState({name:"", id:""})
   const [check, setCheck] = useState(false)
   const [role, setRole] = useState({
-    role:"",
+    role:"ADMIN",
+    name: "",
+    surname: "",
+    number: "+996",
+    email: "",
+    address: "",
+    password: "",
+    is_active:false,
   })
+  
   const onChange = (value, str)=>{
     if(str==="club"){
       toggle()
       setClub({...club, name:value})
       // console.log(value)
     }else if(str==="active"){
-      setCheck(!check)
+      console.log(value)
+      setRole({...role, is_active:!role.is_active})
+      console.log(role)
     }else if(str==="ad"){
+    console.log(str, value)
       setRole({...role, role:value})
     }else if(str==="tr"){
+    console.log(str, value)
+
       setRole({...role, role:value})
+    }else if(str==="name"){
+      setRole({...role, name:value})
+    }else if(str==="surname"){
+      setRole({...role, surname:value})
+    }else if(str==="number"){
+      setRole({...role, number:value})
+    }else if(str==="email"){
+      setRole({...role, email:value})
+    }else if(str==="address"){
+      setRole({...role, address:value})
+    }else if(str==="password"){
+      setRole({...role, password:value})
     }
   }
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      surname: "",
-      number: "+996",
-      email: "",
-      address: "",
-      password: "",
-      is_active:check,
-      ...role
-    },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      const data = {values, handleOpenSuccessModal}
-      dispatch(createUser(data))
-    },
-  });
+  // const formik = useFormik({
+  //   initialValues: role,
+  //   onSubmit: (values) => {
+  //     alert(JSON.stringify(values, null, 2));
+  //     const data = {values, handleOpenSuccessModal}
+  //     dispatch(createUser(data))
+  //   },
+  // });
+
+  const onSubmit=(e)=>{
+    e.preventDefault();
+
+    console.log(role)
+  }
   console.log(role)
   return (
     <div className={s.info}>
@@ -73,12 +95,12 @@ export const CreateUser = () => {
       <p style={{ fontSize: "22px", marginBottom: "30px", marginTop: "50px" }}>
         Создание пользователя
       </p>
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={onSubmit}>
         <Input
           valueLabel="Имя"
           placeholder="Введите имя"
-          value={formik.values.name}
-          onChange={formik.handleChange}
+          value={role.name}
+          onChange={(e)=>onChange(e.target.value, "name")}
           name="name"
           width="600px"
         />
@@ -86,8 +108,8 @@ export const CreateUser = () => {
         <Input
           placeholder="Введите фамилию"
           valueLabel="Фамилия"
-          value={formik.values.surname}
-          onChange={formik.handleChange}
+          value={role.surname}
+          onChange={(e)=>onChange(e.target.value, "surname")}
           name="surname"
           width="600px"
         />
@@ -96,7 +118,7 @@ export const CreateUser = () => {
             placeholder="Введите должность"
             valueLabel="Должность"
             value={role.role === "TRAINER" ? "Тренер" : "Админ"}
-            onChange={formik.handleChange}
+            onChange={(e)=>onChange(e.target.value, "role")}
             width="600px"
             name="role"
           />
@@ -119,16 +141,16 @@ export const CreateUser = () => {
         <Input
           placeholder="+996"
           valueLabel="Номер телефона"
-          value={formik.values.number}
-          onChange={formik.handleChange}
+          value={role.number}
+          onChange={(e)=>onChange(e.target.value, "number")}
           width="600px"
           name="number"
         />
         <Input
           placeholder="Введите Email"
           valueLabel="Почта"
-          value={formik.values.email}
-          onChange={formik.handleChange}
+          value={role.email}
+          onChange={(e)=>onChange(e.target.value, "email")}
           width="600px"
           name="email"
           type="email"
@@ -136,8 +158,8 @@ export const CreateUser = () => {
         <Input
           placeholder="Веедите страну и город"
           valueLabel="Введите страну и город"
-          value={formik.values.address}
-          onChange={formik.handleChange}
+          value={role.address}
+          onChange={(e)=>onChange(e.target.value, "address")}
           width="600px"
           name="address"
         />
@@ -170,8 +192,8 @@ export const CreateUser = () => {
         <Input
           placeholder="Пароль не менее 6 цифр"
           valueLabel="Пароль"
-          value={formik.values.password}
-          onChange={formik.handleChange}
+          value={role.password}
+          onChange={(e)=>onChange(e.target.value, "password")}
           width="600px"
           type="password"
           name="password"
@@ -182,14 +204,10 @@ export const CreateUser = () => {
           <input
             type="radio"
             className={s.input}
-            value={check}
-            checked={check}
-            onClick={(e) => {
-              onChange(e.target.value, "active");
-            }}
-            onChange={(e) => {
-              onChange(e.target.value, "active");
-            }}
+            // value={role.is_active}
+            checked={role.is_active}
+            onClick={(e)=>onChange(e.target.checked, "active")}
+            // onChange={(e)=>onChange(e.target.checked, "active")}
           />
         </label>
         <Button
@@ -208,6 +226,7 @@ export const CreateUser = () => {
           // }
           margin="82px 0 0"
           type="submit"
+          // onClick={onSubmit}
         />
       </form>
       {openSuccessModal && (

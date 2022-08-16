@@ -10,7 +10,6 @@ const initialState = {
   userId:{},
   userTrainer: [],
   // userSecretary:[],
-  user:{}
 };
 
 
@@ -34,7 +33,7 @@ export const getRequestToRegiter = createAsyncThunk(
   "user/getRequestToRegiter",
   async function(_,{ rejectWithValue}){
     try {
-      const res = await requests.getAllUser();
+      const res = await requests.getNotRegisterUser();
       // console.log("user", res.data)
       if (!res) {
         throw new Error("ERROR");

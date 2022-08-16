@@ -3,7 +3,7 @@ import axios from "axios";
 // const token = localStorage.getItem("token");
 
 const fetchAPI = axios.create({
-    baseURL: "https://wushu-federation.tk/",
+    baseURL: "https://whushu.herokuapp.com/",
     headers: {
         "Content-type": "application/json",
         // Authorization: `Bearer ${token}`,
@@ -11,7 +11,7 @@ const fetchAPI = axios.create({
 });
 
 const notToken = axios.create({
-    baseURL: "https://wushu-federation.tk/",
+    baseURL: "https://whushu.herokuapp.com/",
     headers: {
         "Content-type": "application/json",
     },

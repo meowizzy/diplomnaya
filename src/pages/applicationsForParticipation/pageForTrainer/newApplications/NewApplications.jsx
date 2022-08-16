@@ -21,7 +21,7 @@ export const NewApplications = () => {
   },[])
   const athletes = useSelector(state=>state.athletes.athletes)
   const applicationById = useSelector(state=>state.application.applicationTemplateId)
-  // console.log(applicationById.event.id)
+  console.log(applicationById)
   const [openSuccessModal, setOpenSuccessModal] = useState(false);
   const handleOpenSuccessModal = () => setOpenSuccessModal(true);
   const handleCloseSuccessModal = () => setOpenSuccessModal(false);
@@ -54,7 +54,7 @@ export const NewApplications = () => {
   //   dueling_partner__name:"",
   //   discipline:"", 
   //   trainer:"",
-  //   event:applicationById.event.id,
+  //   // event:applicationById.event.id,
   // }
 
   const [application, setApplication] = useState({
@@ -147,21 +147,23 @@ export const NewApplications = () => {
   }
   // const arr = [application]
   const formik = useFormik({
-    initialValues: {...application},
+    initialValues: {application},
+    enableReinitialize:true,
     onSubmit: (values) => {
-      setApplication({
-        ...application, event:applicationById.event.id
-      })
+      // setApplication({
+      //   ...application, event:applicationById.event.id
+      // })
       alert(JSON.stringify(values, null, 2));
-      const data = {values, handleOpenSuccessModal}
-      dispatch(postApplication(data))
+      // const data = {values, handleOpenSuccessModal}
+      // dispatch(postApplication(data))
     },
   });
 
   console.log(application)
 
   // const plus =()=>{
-  //   arr.push(example)
+  //   // arr.push(example)
+  //   formik.setFieldValue()
   // }
   
   return (

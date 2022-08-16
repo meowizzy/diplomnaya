@@ -19,19 +19,25 @@ export const Profile = () => {
   const user = useSelector(state=>state.user.user)
   // const test = {dsa:"dsa"}
   console.log(user)
-  const [check, setCheck] = useState({
+  // const check = {
+  //     name:"" + user.name,
+  //     surname: user.surname,
+  //     birthday: user.name,
+  //     number: user.number,
+  //     email: user.email,
+  //     password: user.passwrod,
+  // }
+  // console.log(check)
+  const formik = useFormik({
+    initialValues: {
       name:"" + user.name,
       surname: user.surname,
       birthday: user.name,
       number: user.number,
       email: user.email,
       password: user.passwrod,
-  })
-  console.log(check)
-  const formik = useFormik({
-    initialValues: {
-      ...check,
   },
+  enableReinitialize:true,
     onSubmit: (values) => {
       const id = user.id 
       const data = {values, id, handleOpenSuccessModal}
