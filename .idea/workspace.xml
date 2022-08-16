@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="hgj">
+    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="WHUS-234 made protocol, arena and referee logical part">
       <change afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/EditSportsmanDetails.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/redux/slices/protocolSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_07_2022_6_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_07_2022_6_57__Changes_.xml" afterDir="false" />
@@ -143,7 +143,7 @@
       <workItem from="1660472010724" duration="12002000" />
       <workItem from="1660539872411" duration="19961000" />
       <workItem from="1660569818725" duration="15677000" />
-      <workItem from="1660625382616" duration="22735000" />
+      <workItem from="1660625382616" duration="23074000" />
     </task>
     <task id="LOCAL-00001" summary="WHUS-415 made clubs and sportsman logical parts">
       <created>1659717735184</created>
@@ -209,7 +209,8 @@
     <MESSAGE value="merged" />
     <MESSAGE value="created temp file" />
     <MESSAGE value="fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
+    <MESSAGE value="WHUS-234 made protocol, arena and referee logical part" />
+    <option name="LAST_COMMIT_MESSAGE" value="WHUS-234 made protocol, arena and referee logical part" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
