@@ -6,7 +6,6 @@ const initialState = {
   userJudge:[],
   userSecretary:[],
     userTrainer: [],
-  // userSecretary:[],
   user:{}
 };
 

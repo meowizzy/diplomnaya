@@ -81,7 +81,7 @@ export const DetailedInfoForNewApplied = () => {
             {status==="resolved"?applicationById.application_athlete.map((el, index)=>(
             <AppliedLine
               key={index}
-              fullName={el.athlete.surname +" "+ el.athlete.name}
+              fullName={el.athlete.surname + " "+ el.athlete.name}
               club="Золотой Дракон"
               gender={el.athlete.sex==="1"?"Женщина":"Мужчина"}
               age="18"

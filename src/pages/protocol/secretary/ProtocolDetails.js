@@ -145,7 +145,6 @@ const ProtocolDetails = () => {
             <div style={{textAlign: 'center'}}>
                 {editButton && <Button onClick={handleOpenSuccessModal} margin="70px auto 0" width="600px" classname="button" text="СОХРАНИТЬ"/>}
             </div>
-
         </div>
             {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно отредактировали данные о протоколе!"/>}
             { openDeleteModal && <DeleteModal text="Вы уверены, что хотите удалить данный протокол?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }

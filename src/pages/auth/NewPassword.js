@@ -44,7 +44,6 @@ const NewPassword = () => {
               placeholder="******"
               valueLabel="Новый пароль"
               type={open ? "password" : "text"}
-              // value={formik.values.name}
               onChange={formik.handleChange}
               name="password"
             />
@@ -59,8 +58,6 @@ const NewPassword = () => {
               placeholder="******"
               valueLabel="Подтвердить пароль"
               type={secondOpen ? "password" : "text"}
-              // value={formik.values.name}
-              // onChange={formik.handleChange}
               name="confirm_password"
             />
             {secondOpen === false ? (

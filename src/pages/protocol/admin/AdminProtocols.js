@@ -13,8 +13,6 @@ const AdminProtocols = () => {
                     <Routes>
                         <Route path="/all_protocols" element={<AllProtocols />} />
                         <Route path="/all_protocols/protocolDetails" element={<ProtocolDetails />} />
-                        {/*<Route path="/createClub" element={<CreateClub />} />*/}
-                        {/*<Route path="/editClub" element={<EditClub />} />*/}
                     </Routes>
                 </div>
             </div>

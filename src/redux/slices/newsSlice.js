@@ -30,7 +30,8 @@ export const createNew = createAsyncThunk(
     async (data) => {
         const response = await requests.createNewsApi(data);
         console.log("new_new: ", response.data)
-        // dispatch(postMessage(response.data))
+        setTimeout(() => data.navigate("/main/news/all_news"), 1500)
+        data.handleOpenSuccessModal()
         return response.data;
     }
 );
@@ -89,6 +90,5 @@ const newsSlice = createSlice({
     },
 })
 
-// export const { docs } = docSlice.actions;
 export const newSlice = newsSlice.reducer;
 

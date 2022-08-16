@@ -1,11 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "../../users/registered/Registered.module.scss";
 import Input from "../../../components/input/Input";
 import {search_icon} from "../../../images";
 import {Link} from "react-router-dom";
 import {Pagination} from "../../../components/pagination/Pagination";
+import {useDispatch, useSelector} from "react-redux";
+import {getEvent} from "../../../redux/slices/eventSlice";
 
 const NewProtocols = () => {
+
+    const dispatch = useDispatch();
+    const events_list = useSelector(state => state.event.event)
+    const events = events_list.filter(e => e.is_protocoled === true)
+    console.log("events: ", events)
+
+    useEffect(() => {
+        dispatch(getEvent())
+    }, [])
+
     return (
         <div>
             <div className={s.table_content}>
@@ -20,15 +32,19 @@ const NewProtocols = () => {
                     <p style={{flex: 4}}>Спортсмены</p>
                     <p style={{flex: 4}}>Судьи</p>
                 </div>
-                <Link to="/main/protocol/new_protocols/details">
-                    <div className={s.title}>
-                        <p style={{flex: 1, textAlign: "center"}}>1</p>
-                        <p style={{flex: 12}}>Чемпионат Кыргызской Республики по традицион ...</p>
-                        <p style={{flex: 4}}>29 - 30.06.2022г.</p>
-                        <p style={{flex: 4}}>19</p>
-                        <p style={{flex: 4}}>Тестовчи, Тесто ...</p>
-                    </div>
-                </Link>
+                {
+                    events.map((event, index) => {
+                        return <Link to={`/main/protocol/new_protocols/details/${event.id}`}>
+                                    <div className={s.title}>
+                                        <p style={{flex: 1, textAlign: "center"}}>{index + 1}</p>
+                                        <p style={{flex: 12}}>{event.name}</p>
+                                        <p style={{flex: 4}}>{event.start_datetime.substring(0, 10)}</p>
+                                        <p style={{flex: 4}}>{event.id}</p>
+                                        <p style={{flex: 4}}>{event.lead_judge.name} {event.lead_judge.surname}</p>
+                                    </div>
+                                </Link>
+                    })
+                }
                 <Pagination/>
             </div>
         </div>

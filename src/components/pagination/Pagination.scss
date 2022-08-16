@@ -24,6 +24,9 @@
         font-weight: bold;
         cursor: pointer;
     }
+    .pagination_box:active {
+        background: red;
+    }
     .vector_img__next{
         background-image: url(./vector_img__next.svg);
         background-repeat: no-repeat;

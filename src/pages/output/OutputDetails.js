@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import BackButton from "../../components/arrowButton/BackButton";
 import Button from "../../components/button/Button";
-import {useNavigate} from "react-router";
 import ownStyles from "./Output.module.scss"
 import {minus, plus} from "../../images";
 import OptionButton from "../../components/optionButton/OptionButton";

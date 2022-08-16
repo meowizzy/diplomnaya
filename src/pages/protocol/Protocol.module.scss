@@ -1,12 +1,15 @@
 .arena_place {
-  width: 33.3333%;
-  height: 50%;
+  //width: 33.3333%;
+  //height: 50%;
   //width: 33.3%;
 
   background: #F3F3FF;
-  text-align: start;
+  //text-align: start;
   border: 0.5px solid #3548F5;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .arena {
   display: flex;
@@ -14,6 +17,9 @@
   overflow: hidden;
   background: #f3f3ff;
   padding: 0;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .wrapper2 {
   background: #FDFDFF;
@@ -61,7 +67,35 @@
   width: 460px;
   margin: 0 auto;
 }
-
+.count, .active_count {
+  //border: 1px solid red;
+  border-radius: 30px;
+  padding: 10px 16px;
+  width: 45px;
+  height: 45px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  color: #C4C4C4;
+}
+.active_count {
+  border-radius: 8px;
+  color: #fff;
+  background: linear-gradient(270deg, #3548F5 -4.17%, #F58747 110.83%);
+  border-radius: 25px;
+  text-align: center;
+  align-items: center;
+}
+.count_cont {
+  display: flex;
+  gap: 20px;
+  justify-content:center;
+  flex-wrap: wrap;
+}
+.prev {
+  font-size: 30px;
+}
 //.cont_wrapper {
 //  max-width: 1440px;
 //  width: 100%;

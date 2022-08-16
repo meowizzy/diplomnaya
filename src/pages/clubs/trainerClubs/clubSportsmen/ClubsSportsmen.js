@@ -43,7 +43,6 @@ const ClubSportsmen = () => {
                                 </Link>
                     })
                 }
-
                 <Pagination/>
             </div>
         </div>

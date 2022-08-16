@@ -26,9 +26,6 @@ const title = {
 }
 
 export default function SuccessModal({title, open, handleClose}) {
-    // const [open, setOpen] = React.useState(false);
-    // const handleOpen = () => setOpen(true);
-    // const handleClose = () => setOpen(false);
 
     return (
         <div>

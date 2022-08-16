@@ -17,10 +17,6 @@ const Input = ({
     padding,
 }) => {
 
-  // const [state, setState] = useState(false)
-
-  // type === "password" ? setState(true) : setState(false)
-
   return (
     <div className={s.input_container}>
       <label className={s.label}>{valueLabel}</label>
@@ -34,7 +30,6 @@ const Input = ({
           name={name}
           type={type}
         />
-          {/* {state && <div></div>}</input> */}
       </div>
     </div>
   );

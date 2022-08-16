@@ -50,7 +50,7 @@ export const DetailedInfoForHistoryOfApplied = () => {
             </p>
             <p className={s.three_hundred_fifty}>Примечание</p>
           </div>
-          {status==="resolved"?applicationById.application_athlete.map((el, index)=>(
+          {status==="resolved" ? applicationById.application_athlete.map((el, index)=>(
             <AppliedLine
               key={index}
               fullName={el.athlete.surname +" "+ el.athlete.name}

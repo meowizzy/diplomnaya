@@ -53,10 +53,7 @@ const DefaultDocumentation = () => {
                                         <a className={ss.download_icon} href={doc.file} download={doc.file.slice(doc.file.lastIndexOf('.') + 1)}><img src={download} alt=""/></a>
                                     </div>
                         })
-
                     }
-
-
                 <Pagination/>
             </div>
         </div>

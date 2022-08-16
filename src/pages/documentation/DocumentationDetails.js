@@ -3,7 +3,7 @@ import Input from "../../components/input/Input";
 import s from "../clubs/defaultClubs/DefaultClubs.module.scss"
 import BackButton from "../../components/arrowButton/BackButton";
 import OptionButton from "../../components/optionButton/OptionButton";
-import {useParams} from "react-router";
+import {useNavigate, useParams} from "react-router";
 import Options from "../../components/options/Options";
 import DeleteModal from "../../components/modals/DeleteModal";
 import {download} from "../../images";
@@ -23,6 +23,7 @@ const DocumentationDetails = () => {
 
     const {id} = useParams()
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => {
         dispatch(getDoc(id));
@@ -49,7 +50,7 @@ const DocumentationDetails = () => {
 
                 </div>
             </div>
-            { openDeleteModal && <DeleteModal nav_link="/main/documentation/all_documentation" dispatchFunc={deleteDoc(doc.id)} text="Вы уверены, что хотите удалить данный документ?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
+            { openDeleteModal && <DeleteModal nav_link="/main/documentation/all_documentation" dispatchFunc={deleteDoc({id: doc.id, link : () => navigate("/main/documentation/all_documentation")})} text="Вы уверены, что хотите удалить данный документ?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
         </>
 
     );

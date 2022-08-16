@@ -7,7 +7,6 @@ const initialState = {
     sportsman: {},
 }
 
-// Создаем Thunk
 export const getSportsmen = createAsyncThunk(
     'sportsmen/getSportsmen',
     async () => {
@@ -31,7 +30,7 @@ export const createSportsman = createAsyncThunk(
     async (data) => {
         const response = await requests.postSportsmenApi(data);
         console.log("new_sportsman: ", response.data)
-        setTimeout(() => data.navigate("/main/clubs/sportsmen"), 1500)
+        setTimeout(() => data.navigate("/main/clubs/sportsmen"), 1000)
         data.handleOpenSuccessModal()
         return response.data;
     }
@@ -42,7 +41,7 @@ export const editSportsman = createAsyncThunk(
     async (data) => {
         const response = await requests.editSportsmenApi(data);
         console.log("edited_sportsman: ", response.data)
-        setTimeout(() => data.navigate("/main/clubs/all_clubs"), 1500)
+        setTimeout(() => data.navigate("/main/clubs/sportsmen"), 1000)
         data.handleOpenSuccessModal()
         return response.data;
     }

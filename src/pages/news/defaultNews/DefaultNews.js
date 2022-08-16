@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import dfEventStyles from "./../../events/defaultEvents/DefaultEvents.module.scss"
 import s from "./DefaultNews.module.scss"
-
 import {useNavigate} from "react-router";
 import NewsTab from "./NewsTab";
 import NewsCard from "./NewsCard";

@@ -31,7 +31,7 @@ const AllClubsSportsmenDetails = () => {
             <Input valueLabel="Средний балл ОФП" width="600px" value={sportsman.average_of_PHI?.split('.')[0]}/>
             <label className={inputStyles.label}>Изображение</label>
             <div style={{width: "100%", height: "200px", position: "relative"}} className={inputStyles.gradient}>
-                <img className={ss.img_icon_picture} src={sportsman.medical_certificate} alt=""/>
+                <img className={ss.img_icon_picture} src={sportsman.medical_certificate} alt="/"/>
                 <label className={`${inputStyles.input} ${s.label_img}`} htmlFor="image"></label>
                 <input id="image" className={s.img_input} type="file"/>
             </div>

@@ -133,7 +133,6 @@ const ProtocolDetails = () => {
                     <input style={{flex: 7, borderRight: "none"}} className={ownStyles.input} type="text" value="Красная (первая)"/>
                 </div>
             </div>
-            {/*<Pagination/>*/}
         </div>
     );
 };

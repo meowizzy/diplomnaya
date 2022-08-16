@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Input from "../../../../components/input/Input";
 import dfClubsStyles from "../../defaultClubs/DefaultClubs.module.scss"
-import {useNavigate} from "react-router";
 import BackButton from "../../../../components/arrowButton/BackButton";
 import inputStyles from "../../../../components/input/Input.module.scss";
 import s from "../../../news/editNews/EditNews.module.scss";

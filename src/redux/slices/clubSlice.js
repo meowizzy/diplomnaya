@@ -7,7 +7,6 @@ const initialState = {
     club: {},
 }
 
-// Создаем Thunk
 export const getClubs = createAsyncThunk(
     'clubs/getClubs',
     async () => {

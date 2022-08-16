@@ -1,9 +1,15 @@
 import axios from "axios";
 
-// const token = localStorage.getItem("token");
-
 const fetchAPI = axios.create({
-    baseURL: "https://cors-gay-sex.herokuapp.com/http://142.93.181.60/",
+    baseURL: "http://142.93.181.60/",
+    headers: {
+        "Content-type": "application/json",
+        // Authorization: `Bearer ${token}`,
+    },
+});
+
+const fetchHerokuAPI = axios.create({
+    baseURL: "https://whushu.herokuapp.com/",
     headers: {
         "Content-type": "application/json",
         // Authorization: `Bearer ${token}`,
@@ -11,20 +17,20 @@ const fetchAPI = axios.create({
 });
 
 const notToken = axios.create({
-    baseURL: "https://cors-gay-sex.herokuapp.com/http://142.93.181.60/",
+    baseURL: "http://142.93.181.60/",
     headers: {
         "Content-type": "application/json",
     },
 });
 
 export const requests = {
-    authApi: (data) => fetchAPI.post("login/", data),
+    authApi: (data) => fetchHerokuAPI.post("login/", data),
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     newPasswordApi: (data) => fetchAPI.post("password-reset/confirm/", data),
 
     // Events
-    getEvents:() => fetchAPI.get('event/'),
+    getEvents:() => fetchHerokuAPI.get('event/'),
     postEvents:(data) => fetchAPI.post('event/', data),
     editEvents:(data) => fetchAPI.patch(`event/${data.id}/`, data.values),
     deleteEvents:(id) => fetchAPI.delete(`event/${id}/`),
@@ -40,14 +46,14 @@ export const requests = {
     // documentation
     getDocs: () => fetchAPI.get("documents/document/"),
     getDoc: (id) => fetchAPI.get(`documents/document/${id}/`),
-    postDoc: (data) => fetchAPI.post("documents/document/", data),
+    postDoc: (data) => fetchAPI.post("documents/document/", data.data),
     editDoc: (data) => fetchAPI.patch(`documents/document/${data.id}/`, data.fData),
     deleteDoc: (id) => fetchAPI.delete(`documents/document/${id}/`),
 
     // news
     getNewsApi: () => fetchAPI.get("createnew/"),
     getNewApi: (id) => fetchAPI.get(`deletenew/${id}`),
-    createNewsApi: (data) => fetchAPI.post("createnew/", data),
+    createNewsApi: (data) => fetchAPI.post("createnew/", data.data),
     editNewsApi: (data) => fetchAPI.patch(`deletenew/${data.id}`, data.data),
     deleteNewsApi: (id) => fetchAPI.delete(`deletenew/${id}`),
 
@@ -87,8 +93,24 @@ export const requests = {
     // Physical Indicator
     // getSportsmanApi: (id) => fetchAPI.get(`athletes/${id}`),
     postPhysicalIndicatorApi: (data) => fetchAPI.post("physical_indicators/", data),
-    editPhysicalIndicatorApi: (data) => fetchAPI.patch(`physical_indicators/${data.id}/`, data.data),
+    editPhysicalIndicatorApi: ({id, data}) => fetchAPI.patch(`physical_indicators/${id}/`, data),
     // deleteSportsmenApi: (id) => fetchAPI.delete(`athletes/${id}/`),
+
+    // protocol
+    getProtocolApi: () => fetchHerokuAPI.get("subgroup/"),
+    getProtocolByIdApi: (id) => fetchHerokuAPI.get(`subgroup/${id}`),
+    postProtocolApi: (id) => fetchHerokuAPI.post("subgroup/", {event: id}),
+    // formProtocolApi: (data) => fetchHerokuAPI.patch(`subgroup/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
+    formProtocolApi: (data) => fetchHerokuAPI.patch(`subroup_bulk_update/`, data),
+    confirmProtocolApi: ({data}) => fetchHerokuAPI.patch(`subroup_bulk_update/`, data),
+    reasonOfRejectionProtocolApi: ({reason}) => fetchHerokuAPI.patch(`subroup_bulk_update/`, reason),
+
+    // judge
+    getJudgeApi: () => fetchHerokuAPI.get("judge_group/"),
+    // getProtocolApi: (id) => fetchHerokuAPI.get(`judge_group/${id}`),
+    postJudgeApi: (data) => fetchHerokuAPI.post("judge_group/", data),
+    formJudgeApi: (data) => fetchHerokuAPI.patch(`judge_group/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
+    confirmJudgeApi: ({id, par}) => fetchHerokuAPI.patch(`judge_group/${id}/`, {is_confirmed : par}),
 }
 
 export const withoutToken = {

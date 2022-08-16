@@ -35,14 +35,13 @@ export default function DeleteModal({open, handleClose, text, dispatchFunc, nav_
 
     const deleteFunc = () => {
         dispatch(dispatchFunc);
-        navigate(nav_link);
+        // navigate(nav_link);
         handleClose()
     }
 
     const cancelFunc = () => {
         handleClose()
     }
-
 
     return (
         <div>

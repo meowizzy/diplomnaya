@@ -31,16 +31,11 @@ const EditNews = () => {
 
     console.log("newee: ", new_item)
 
-
-
     const formik = useFormik({
         initialValues: new_item,
         enableReinitialize: true,
-        // setFieldValue: (field: picture, value: new_item.picture) => void,
         onSubmit: data => {
             console.log("data: ",data)
-            // handleOpenSuccessModal()
-
             if (img) {
                 console.log(data);
                 const form_data = new FormData();
