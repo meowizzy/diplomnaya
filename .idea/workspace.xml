@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/threeDot/ThreeDot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/threeDot/ThreeDot.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/appliedTemplate/AppliedTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/appliedTemplate/AppliedTemplate.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/newApplied/DetailedInfoForNewApplied.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/newApplied/DetailedInfoForNewApplied.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/Application.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/Application.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/currentApplications/DetailCurrent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/currentApplications/DetailCurrent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/events/changeEvents/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events/changeEvents/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/events/changeEvents/ChangeForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events/changeEvents/ChangeForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/Registered.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/Registered.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/Registered.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/Registered.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/UserInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestToRegistr.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestToRegistr.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestUserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestUserInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/applicationSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/applicationSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/eventSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/eventSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/registerSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/registerSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/userSlice.js" afterDir="false" />
-    </list>
+    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="WHUS-388-styles" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +35,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu/src/pages/clubs/trainerClubs/clubSportsmen&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu/src/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -67,9 +44,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\images" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\pages\clubs\trainerClubs\clubSportsmen" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\redux\slices" />
-      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -87,7 +64,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="hgj" />
+      <changelist id="fd306116-783b-4344-b161-364b8c210ead" name="Changes" comment="merged" />
       <created>1659509286870</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -95,10 +72,6 @@
       <workItem from="1659509300090" duration="532000" />
       <workItem from="1659765865468" duration="588000" />
       <workItem from="1659938940549" duration="2094000" />
-      <workItem from="1660472010724" duration="12002000" />
-      <workItem from="1660539872411" duration="19961000" />
-      <workItem from="1660569818725" duration="15677000" />
-      <workItem from="1660625382616" duration="23074000" />
     </task>
     <task id="LOCAL-00001" summary="WHUS-415 made clubs and sportsman logical parts">
       <created>1659717735184</created>
@@ -163,19 +136,7 @@
     <MESSAGE value="WHUS-415 made clubs and sportsman logical parts" />
     <MESSAGE value="merged" />
     <MESSAGE value="created temp file" />
-    <MESSAGE value="WHUS-234 made protocol, arena and referee logical part" />
     <MESSAGE value="fixed" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/redux/api.js</url>
-          <line>19</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
