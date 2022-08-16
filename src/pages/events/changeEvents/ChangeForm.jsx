@@ -87,9 +87,8 @@ export const ChangeForm = ({
       age_groupe
     },
     onSubmit: (values) => {
-      const data = {values, id}
+      const data = {values, id, handleOpenSuccessModal}
       dispatch(editEvent(data))
-      handleOpenSuccessModal();
       onClick()
       // alert(JSON.stringify(values, null, 2));
     },

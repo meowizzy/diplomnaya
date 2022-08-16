@@ -16,18 +16,19 @@ const location = useLocation()
     <>
       <div className={ss.link_cont}>
         <div className={s.navlink_cont}>
+        <NavLink
+            to="/main/application/currentApplications"
+            className={linkActiveClassName(location,"currentApplications", 3, "link", "active_link")}
+          >
+            Поданные заявки
+          </NavLink>
           <NavLink
             to="/main/application/submittedApplications"
             className={linkActiveClassName(location,"submittedApplications", 3, "link", "active_link")}
           >
             История заявок
           </NavLink>
-          <NavLink
-            to="/main/application/currentApplications"
-            className={linkActiveClassName(location,"currentApplications", 3, "link", "active_link")}
-          >
-            Текущие заявки
-          </NavLink>
+          
           <NavLink
             to="/main/application/listOfTemplate"
             className={linkActiveClassName(location,"listOfTemplate", 3, "link", "active_link")}

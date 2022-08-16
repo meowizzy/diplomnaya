@@ -16,7 +16,7 @@ export const ThreeDot = ({ disabled, type, onClick, text, take, id, status, open
   const deleteThings = (id) =>{
     if(status!=="rejected"){
       dispatch(take(id))
-      open()
+      // open()
       setModalActive(false)
       back()
     }

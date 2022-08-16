@@ -90,7 +90,7 @@ export const Profile = () => {
             name="birthday"
           /> */}
           <Input
-            type="number"
+            // type="number"
             valueLabel="Номер телефона"
             value={formik.values.number}
             onChange={formik.handleChange}

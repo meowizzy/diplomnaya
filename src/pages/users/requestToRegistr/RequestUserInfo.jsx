@@ -1,27 +1,53 @@
 import { useFormik } from 'formik';
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import BackButton from '../../../components/arrowButton/BackButton';
 import Button from '../../../components/button/Button';
 import Input from '../../../components/input/Input';
-import s from '../registered/Registered.module.scss'
 import ss from './RequestToRegistr.module.scss'
+import { useDispatch, useSelector } from 'react-redux/es/exports';
+import { editUser } from '../../../redux/slices/userSlice';
+
 
 export const RequestUserInfo = () => {
+
+  const dispatch = useDispatch()
+  
+  const user = useSelector(state=>state.user.userId)
+  const status = useSelector(state=>state.user.status)
+  console.log(user)
+  const [active, setActive] = useState(user)
+  const onChange = (value) => {
+    setActive({...active, is_active:value})
+    console.log(active)
+  }
+
+  useEffect(()=>{
+    setActive(active)
+  },[active])
+
     const formik = useFormik({
-        initialValues: {
-          name: "Карина",
-          surname: "Белоусова",
-          position: "Тренер",
-          phone: "+996 000 123 456",
-          email: "Admin111@gmail.com",
-          city: "Киргизия, Бишкек",
-          club: "Золотой дракон",
-        },
-        onSubmit: (values) => {
-          alert(JSON.stringify(values, null, 2));
-        },
-      });
+      initialValues: {
+        name: active.name,
+        surname: active.surname,
+        position: active.is_judge
+          ? "Судья"
+          : active.is_assistant
+          ? "Секретарь"
+          : "Тренер",
+        phone: active.number,
+        email: active.email,
+        city: active.address,
+        club: "Золотой дракон",
+        is_active:true
+      },
+      onSubmit: (values) => {
+        const id = user.id
+        const data = {values, id}
+        dispatch(editUser(data))
+        alert(JSON.stringify(values, null, 2));
+      },
+    });
      
       return (
         <>
@@ -38,12 +64,14 @@ export const RequestUserInfo = () => {
                   onChange={formik.handleChange}
                   name="name"
                   width="600px"
+                  readOnly
                 />
                 <Input
                   valueLabel="Фамилия"
                   value={formik.values.surname}
                   onChange={formik.handleChange}
                   name="surname"
+                  readOnly
                   width="600px"
                 />
                 <Input
@@ -51,6 +79,7 @@ export const RequestUserInfo = () => {
                   value={formik.values.position}
                   onChange={formik.handleChange}
                   width="600px"
+                  readOnly
                   name="position"
                 />
                 <Input
@@ -58,6 +87,7 @@ export const RequestUserInfo = () => {
                   value={formik.values.phone}
                   onChange={formik.handleChange}
                   width="600px"
+                  readOnly
                   name="phone"
                 />
                 <Input
@@ -65,6 +95,7 @@ export const RequestUserInfo = () => {
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   width="600px"
+                  readOnly
                   name="email"
                   type="email"
                 />
@@ -73,6 +104,7 @@ export const RequestUserInfo = () => {
                   value={formik.values.city}
                   onChange={formik.handleChange}
                   width="600px"
+                  readOnly
                   name="city"
                 />
                 <Input
@@ -80,6 +112,7 @@ export const RequestUserInfo = () => {
                   value={formik.values.club}
                   onChange={formik.handleChange}
                   width="600px"
+                  readOnly
                   name="club"
                 />
 

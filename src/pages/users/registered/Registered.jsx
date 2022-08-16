@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Input from "../../../components/input/Input";
 import { Pagination } from "../../../components/pagination/Pagination";
 import s from "./Registered.module.scss";
 import { Link } from "react-router-dom";
 import { search_icon } from "../../../images";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllUser, getUserById } from "../../../redux/slices/userSlice";
 
 export const Registered = () => {
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(getAllUser())
+  },[])
+  const user = useSelector(state=>state.user.allUser)
+
+  const getId =(id)=>{
+    dispatch(getUserById(id))
+    // localStorage.setItem("idForUser", id)
+  }
   return (
     <div className={s.table_content}>
       <div className={s.search}>
@@ -21,16 +33,18 @@ export const Registered = () => {
         <p>Клуб</p>
         <p>Почта</p>
       </div>
-      <Link to="/main/users/registered/userInfo">
+      {user.map((el,index)=>(
+      <Link to="/main/users/registered/userInfo" key={index} onClick={()=>getId(el.id)}>
         <div className={s.title}>
-          <p className={s.first_p}>1</p>
-          <p>Карина</p>
-          <p>Белоусова</p>
-          <p>Тренер</p>
-          <p>Золотой дракон</p>
-          <p>Admin111@gmal.com</p>
+          <p className={s.first_p}>{index+1}</p>
+          <p>{el.name}</p>
+          <p>{el.surname}</p>
+          <p>{el.is_judge?"Судья":el.is_assistant?"Секретарь":"Тренер"}</p>
+          <p>Х</p>
+          <p>{el.email}</p>
         </div>
       </Link>
+      ))}
       <Pagination />
     </div>
   );

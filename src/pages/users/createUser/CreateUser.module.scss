@@ -1,3 +1,30 @@
 .cont{
     text-align: center;
 }
+.list{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+}
+.name{
+    width: 600px;
+    height: 45px;
+    background: #F3F3FF;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+.pos{
+    width: 600px;
+    height: 45px;
+    background: #F3F3FF;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+}

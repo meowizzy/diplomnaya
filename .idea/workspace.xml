@@ -1,74 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="WHUS-234 made protocol, arena and referee logical part">
-      <change afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/EditSportsmanDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/slices/protocolSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_07_2022_6_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_07_2022_6_57__Changes_.xml" afterDir="false" />
+    <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/checkbox/Checkbox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/checkbox/Checkbox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/delete/Delete.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/delete/Delete.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals/DeleteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/DeleteModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modals/SuccessModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/SuccessModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/optionButton/OptionButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/optionButton/OptionButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/options/Options.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/options/Options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pagination/Pagination.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pagination/Pagination.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pagination/Pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pagination/Pagination.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/historyOfApplied/DetailedInfoForHistoryOfApplied.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/historyOfApplied/DetailedInfoForHistoryOfApplied.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/threeDot/ThreeDot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/threeDot/ThreeDot.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/appliedTemplate/AppliedTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/appliedTemplate/AppliedTemplate.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/newApplied/DetailedInfoForNewApplied.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/newApplied/DetailedInfoForNewApplied.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/FeedBack.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/FeedBack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/NewPassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/NewPassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/Routing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/Routing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/TrainerClubs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/TrainerClubs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/ClubDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/ClubDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/EditClub.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/EditClub.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/allClubs/AllClubsSportsmenDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/allClubs/AllClubsSportsmenDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/ClubsSportsmen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/ClubsSportsmen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/CreateSportsman.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/CreateSportsman.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/SportsmenDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/SportsmenDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsTrainers/ClubsTrainers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsTrainers/ClubsTrainers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsTrainers/ClubsTrainersDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsTrainers/ClubsTrainersDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/myClubs/EditMyClubsSportsmenDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/myClubs/EditMyClubsSportsmenDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/myClubs/MyClubsSportsmenDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/myClubs/MyClubsSportsmenDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/CreateDocumentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/CreateDocumentation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DefaultDocumentation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DocumentationDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DocumentationDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/documentation/EditDocumentationDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/EditDocumentationDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/createNews/CreateNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/createNews/CreateNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/defaultNews/DefaultNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/defaultNews/DefaultNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/news/editNews/EditNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/news/editNews/EditNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/output/CreateOutput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/output/CreateOutput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/output/Output.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/output/Output.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/output/OutputDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/output/OutputDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/Protocol.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/Protocol.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/ProtocolTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/ProtocolTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/admin/AdminProtocols.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/admin/AdminProtocols.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/admin/ProtocolDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/admin/ProtocolDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/referee/NewProtocolDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/referee/NewProtocolDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/referee/NewProtocols.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/referee/NewProtocols.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeProtocol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeTeam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeTeam.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeTeamDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeTeamDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/AllEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/AllEvents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/CreatedProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/CreatedProtocol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/EventDetails.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/FormArena.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/FormProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/FormProtocol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/ProtocolDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/ProtocolDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/SecretaryProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/SecretaryProtocol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/Store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/Application.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/Application.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/currentApplications/DetailCurrent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/currentApplications/DetailCurrent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/events/changeEvents/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events/changeEvents/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/events/changeEvents/ChangeForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events/changeEvents/ChangeForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/Registered.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/Registered.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/Registered.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/Registered.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/UserInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestToRegistr.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestToRegistr.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestUserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestUserInfo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/authSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/authSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/clubSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/clubSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/docSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/docSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/newsSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/newsSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/sportsmenSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/sportsmenSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/applicationSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/applicationSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/eventSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/eventSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/registerSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/registerSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/slices/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/userSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/routesFunction/linkActiveClass.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/routesFunction/linkActiveClass.module.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="WHUS-388-styles" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -208,16 +163,16 @@
     <MESSAGE value="WHUS-415 made clubs and sportsman logical parts" />
     <MESSAGE value="merged" />
     <MESSAGE value="created temp file" />
-    <MESSAGE value="fixed" />
     <MESSAGE value="WHUS-234 made protocol, arena and referee logical part" />
-    <option name="LAST_COMMIT_MESSAGE" value="WHUS-234 made protocol, arena and referee logical part" />
+    <MESSAGE value="fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/redux/api.js</url>
-          <line>25</line>
+          <line>19</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

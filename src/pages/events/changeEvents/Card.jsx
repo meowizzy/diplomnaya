@@ -107,7 +107,7 @@ const dispatch = useDispatch()
                 text={"Вы уверены, что хотите удалить данное мероприятие?"}
                 take={deleteEvent}
                 id={id}
-                open={handleOpenSuccessModal}
+                // open={handleOpenSuccessModal}
                 status={status}
                 back={toggle}
               />

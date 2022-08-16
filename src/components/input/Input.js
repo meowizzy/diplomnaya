@@ -15,6 +15,7 @@ const Input = ({
   minHeight,
     background,
     padding,
+    readOnly
 }) => {
 
   return (
@@ -29,6 +30,7 @@ const Input = ({
           onChange={onChange}
           name={name}
           type={type}
+          readOnly = {readOnly}
         />
       </div>
     </div>

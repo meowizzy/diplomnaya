@@ -1,15 +1,9 @@
 import axios from "axios";
 
-const fetchAPI = axios.create({
-    baseURL: "http://142.93.181.60/",
-    headers: {
-        "Content-type": "application/json",
-        // Authorization: `Bearer ${token}`,
-    },
-});
+// const token = localStorage.getItem("token");
 
-const fetchHerokuAPI = axios.create({
-    baseURL: "https://whushu.herokuapp.com/",
+const fetchAPI = axios.create({
+    baseURL: "https://wushu-federation.tk/",
     headers: {
         "Content-type": "application/json",
         // Authorization: `Bearer ${token}`,
@@ -17,30 +11,33 @@ const fetchHerokuAPI = axios.create({
 });
 
 const notToken = axios.create({
-    baseURL: "http://142.93.181.60/",
+    baseURL: "https://wushu-federation.tk/",
     headers: {
         "Content-type": "application/json",
     },
 });
 
 export const requests = {
-    authApi: (data) => fetchHerokuAPI.post("login/", data),
+    authApi: (data) => fetchAPI.post("login/", data),
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     newPasswordApi: (data) => fetchAPI.post("password-reset/confirm/", data),
 
     // Events
-    getEvents:() => fetchHerokuAPI.get('event/'),
+    getEvents:() => fetchAPI.get('event/'),
     postEvents:(data) => fetchAPI.post('event/', data),
     editEvents:(data) => fetchAPI.patch(`event/${data.id}/`, data.values),
     deleteEvents:(id) => fetchAPI.delete(`event/${id}/`),
 
     //User
     getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
+    getAllUser:() => fetchAPI.get('user/'),
+    getNotRegisterUser:() => fetchAPI.get('user/'),
+    getUserById:(id) => fetchAPI.get(`user/${id}`),
     getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
     getUserForProfile:(id) => fetchAPI.get(`user/${id}`),
+    deleteUser:(id) => fetchAPI.delete(`user/${id}`),
     editUser:(data) => fetchAPI.patch(`user/${data.id}/`, data.values),
-
     getTrainerUser: () => fetchAPI.get("user/", { params: { is_assistant: false, is_judge : false, role: "TRAINER" } }),
 
     // documentation
@@ -97,20 +94,20 @@ export const requests = {
     // deleteSportsmenApi: (id) => fetchAPI.delete(`athletes/${id}/`),
 
     // protocol
-    getProtocolApi: () => fetchHerokuAPI.get("subgroup/"),
-    getProtocolByIdApi: (id) => fetchHerokuAPI.get(`subgroup/${id}`),
-    postProtocolApi: (id) => fetchHerokuAPI.post("subgroup/", {event: id}),
-    // formProtocolApi: (data) => fetchHerokuAPI.patch(`subgroup/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
-    formProtocolApi: (data) => fetchHerokuAPI.patch(`subroup_bulk_update/`, data),
-    confirmProtocolApi: ({data}) => fetchHerokuAPI.patch(`subroup_bulk_update/`, data),
-    reasonOfRejectionProtocolApi: ({reason}) => fetchHerokuAPI.patch(`subroup_bulk_update/`, reason),
+    getProtocolApi: () => fetchAPI.get("subgroup/"),
+    getProtocolByIdApi: (id) => fetchAPI.get(`subgroup/${id}`),
+    postProtocolApi: (id) => fetchAPI.post("subgroup/", {event: id}),
+    // formProtocolApi: (data) => fetchAPI.patch(`subgroup/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
+    formProtocolApi: (data) => fetchAPI.patch(`subroup_bulk_update/`, data),
+    confirmProtocolApi: ({data}) => fetchAPI.patch(`subroup_bulk_update/`, data),
+    reasonOfRejectionProtocolApi: ({reason}) => fetchAPI.patch(`subroup_bulk_update/`, reason),
 
     // judge
-    getJudgeApi: () => fetchHerokuAPI.get("judge_group/"),
-    // getProtocolApi: (id) => fetchHerokuAPI.get(`judge_group/${id}`),
-    postJudgeApi: (data) => fetchHerokuAPI.post("judge_group/", data),
-    formJudgeApi: (data) => fetchHerokuAPI.patch(`judge_group/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
-    confirmJudgeApi: ({id, par}) => fetchHerokuAPI.patch(`judge_group/${id}/`, {is_confirmed : par}),
+    getJudgeApi: () => fetchAPI.get("judge_group/"),
+    // getProtocolApi: (id) => fetchAPI.get(`judge_group/${id}`),
+    postJudgeApi: (data) => fetchAPI.post("judge_group/", data),
+    formJudgeApi: (data) => fetchAPI.patch(`judge_group/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
+    confirmJudgeApi: ({id, par}) => fetchAPI.patch(`judge_group/${id}/`, {is_confirmed : par}),
 }
 
 export const withoutToken = {
