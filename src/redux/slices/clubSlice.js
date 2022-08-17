@@ -11,7 +11,7 @@ export const getClubs = createAsyncThunk(
     'clubs/getClubs',
     async () => {
         const response = await requests.getClubsApi();
-        console.log("clubs: ", response.data)
+        // console.log("clubs: ", response.data)
         return response.data;
     }
 );

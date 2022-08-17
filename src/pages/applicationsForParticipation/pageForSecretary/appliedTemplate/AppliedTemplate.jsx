@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { getDiscipline } from "../../../../redux/slices/disciplineSlice";
 import { getEvent } from "../../../../redux/slices/eventSlice";
 import { postApplicationTemplate } from "../../../../redux/slices/applicationSlice";
+import { useNavigate } from "react-router";
 
 export const AppliedTemplate = ({changeTemplate}) => {
   const dispatch = useDispatch()
@@ -21,67 +22,44 @@ export const AppliedTemplate = ({changeTemplate}) => {
   const discipline = useSelector(state=>state.discipline.discipline)
   const event = useSelector(state=>state.event.event)
   console.log(event)
+
   const [state, setState] = useState(false)
   const [nameOfEvent, setNameOfEvent] = useState("")
+  const setEvent =(name, id)=>{
+    setNameOfEvent(name)
+    setState(!state)
+    formik.setFieldValue("event", id)
+  }
+
   const toggle = () =>{
     setState(!state)
-    // setNameOfEvent(name)
   }
 
   const [cuanShu, setCuanShu] = useState(false)
   const cuanFunc = ()=>{
     setCuanShu(!cuanShu)
   }
+
   const [cisi, setCisi] = useState(false)
   const cisiFunc =()=>{
     setCisi(!cisi)
   }
-  // const disciplineChoiseFunc=(category, is_individual, with_weapon)=>{
-    
-  //   if(category==="1"&&is_individual===true&&with_weapon===true){
-  //     setTraditional("Традиционная, одиночный, с оружием")
-  //   } else if(category==="1"&&is_individual===false&&with_weapon===false){
-  //     setTraditional("Традиционная, не одиночная, без оружием")
-  //   }else if(category==="1"&&is_individual===true&&with_weapon===false){
-  //     setTraditional("Традиционная, одиночная, без оружием")
-  //   }else if(category==="1"&&is_individual===false&&with_weapon===true){
-  //     setTraditional("Традиционная, не одиночная, с оружием")
-  //   }
 
-  //   else if(category==="2"&&is_individual===true&&with_weapon===true){
-  //     setTraditional("Спортивное, одиночный, с оружием")} 
-  //   else if(category==="2"&&is_individual===false&&with_weapon===false){
-  //     setTraditional("Спортивное, не одиночная, без оружием")
-  //   }else if(category==="2"&&is_individual===true&&with_weapon===false){
-  //     setTraditional("Спортивное, одиночная, без оружием")
-  //   }else if(category==="2"&&is_individual===false&&with_weapon===true){
-  //     setTraditional("Спортивное, не одиночная, с оружием")
-  //   }
-
-  //   else if(category==="3"&&is_individual===true&&with_weapon===true){
-  //     setTraditional("Дуэлянь, одиночный, с оружием")} 
-  //   else if(category==="3"&&is_individual===false&&with_weapon===false){
-  //     setTraditional("Дуэлянь, не одиночная, без оружием")
-  //   }else if(category==="3"&&is_individual===true&&with_weapon===false){
-  //     setTraditional("Дуэлянь, одиночная, без оружием")
-  //   }else if(category==="3"&&is_individual===false&&with_weapon===true){
-  //     setTraditional("Дуэлянь, не одиночная, с оружием")
-  //   }
-  // }
   const [cuanshuComplexName, setCuanshuComplexName] = useState("Название комплекса")
-  const [cuanShuId, setCuanShuId] = useState("")
   const nameOfDiscipline = (text, id)=> {
     setCuanshuComplexName(text)
     setCuanShu(!cuanShu)
-    formik.handleChange()
-    // setCuanShuId(id)
+    formik.setFieldValue("discipline_1", id)
   }
+
   const [cisiComplexName, setCisiComplexName] = useState("Название комплекса")
-  const nameOfCisi = (text)=>{
+  const nameOfCisi = (text, id)=>{
     setCisiComplexName(text)
-    formik.handleChange()
-    setCisi(false)
+    setCisi(!cisi)
+    formik.setFieldValue("discipline_2", id)
   }
+
+  const navigate = useNavigate()
 
   const formik = useFormik({
     initialValues: {
@@ -89,9 +67,11 @@ export const AppliedTemplate = ({changeTemplate}) => {
       discipline_1:"",
       discipline_2:"",
   },
+  enableReinitialize:true,
     onSubmit: (values) => {
-      dispatch(postApplicationTemplate(values))
-      alert(JSON.stringify(values, null, 2));
+      const data = {values, navigate}
+      dispatch(postApplicationTemplate(data))
+      // alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -113,14 +93,7 @@ export const AppliedTemplate = ({changeTemplate}) => {
           <div className={ss.cont_radio}>
             {event.map((el, index)=>(
           <label className={ss.radio} key={index}>
-            <p onClick={()=>setNameOfEvent(el.name)}>{el.name}</p>
-            <input
-              type="radio"
-              value={el.id}
-              name="event"
-              onChange={formik.handleChange}
-              className={ss.radio_input}
-            />
+            <p onClick={()=>setEvent(el.name, el.id)}>{el.name}</p>
           </label>
             ))}
          </div>
@@ -141,10 +114,7 @@ export const AppliedTemplate = ({changeTemplate}) => {
           <div className={ss.cont_radio__}>
 
         {discipline.map((el,index)=>(
-          <label className={s.radio__} key={index}>
-            {/* {disciplineChoiseFunc(el.category, el.is_individual, el.with_weapon)} */}
-            
-           
+          <label className={s.radio__} key={index}> 
             {el.category===1 &&el.is_individual===true&&el.with_weapon===true&&<p onClick={()=>nameOfDiscipline("Традиционная, одиночный, с оружием", el.id)}>Традиционная, одиночный, с оружием</p>}
             {el.category===1 &&el.is_individual===false&&el.with_weapon===false&&<p onClick={()=>nameOfDiscipline("Традиционная, не одиночная, без оружием", el.id)}>Традиционная, не одиночная, без оружием</p>}
             {el.category===1 &&el.is_individual===true&&el.with_weapon===false&&<p onClick={()=>nameOfDiscipline("Традиционная, одиночная, без оружием", el.id)}>Традиционная, одиночная, без оружием</p>}
@@ -159,14 +129,6 @@ export const AppliedTemplate = ({changeTemplate}) => {
             {el.category===3 &&el.is_individual===false&&el.with_weapon===false&&<p onClick={()=>nameOfDiscipline("Дуэлянь, не одиночная, без оружием", el.id)}>Дуэлянь, не одиночная, без оружием</p>}
             {el.category===3 &&el.is_individual===true&&el.with_weapon===false&&<p onClick={()=>nameOfDiscipline("Дуэлянь, одиночная, без оружием", el.id)}>Дуэлянь, одиночная, без оружием</p>}
             {el.category===3 &&el.is_individual===false&&el.with_weapon===true&&<p onClick={(e)=>nameOfDiscipline("Дуэлянь, не одиночная, с оружием", el.id)}>Дуэлянь, не одиночная, с оружием</p>}
-            {/* <p>dsa</p> */} 
-            <input
-              type="radio"
-              value={el.id}
-              name="discipline_1"
-              onChange={formik.handleChange}
-              className={ss.radio_input__}
-            />
           </label>
         ))}
          </div>
@@ -183,27 +145,20 @@ export const AppliedTemplate = ({changeTemplate}) => {
         {discipline.map((el,index)=>(
           <label className={s.radio__} key={index}>
             {/* {disciplineChoiseFunc(el.category, el.is_individual, el.with_weapon)} */}
-            <input
-              type="radio"
-              value={el.id}
-              name="discipline_2"
-              onChange={formik.handleChange}
-              className={ss.radio_input__}
-            />
-            {el.category===1 &&el.is_individual===true&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Традиционная, одиночный, с оружием")}>Традиционная, одиночный, с оружием</p>}
-            {el.category===1 &&el.is_individual===false&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Традиционная, не одиночная, без оружием")}>Традиционная, не одиночная, без оружием</p>}
-            {el.category===1 &&el.is_individual===true&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Традиционная, одиночная, без оружием")}>Традиционная, одиночная, без оружием</p>}
-            {el.category===1 &&el.is_individual===false&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Традиционная, не одиночная, с оружием")}>Традиционная, не одиночная, с оружием</p>}
+            {el.category===1 &&el.is_individual===true&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Традиционная, одиночный, с оружием" , el.id)}>Традиционная, одиночный, с оружием</p>}
+            {el.category===1 &&el.is_individual===false&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Традиционная, не одиночная, без оружием", el.id)}>Традиционная, не одиночная, без оружием</p>}
+            {el.category===1 &&el.is_individual===true&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Традиционная, одиночная, без оружием", el.id)}>Традиционная, одиночная, без оружием</p>}
+            {el.category===1 &&el.is_individual===false&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Традиционная, не одиночная, с оружием", el.id)}>Традиционная, не одиночная, с оружием</p>}
             
-            {el.category===2 &&el.is_individual===true&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Спортивное, одиночный, с оружием")}>Спортивное, одиночный, с оружием</p>}
-            {el.category===2 &&el.is_individual===false&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Спортивное, не одиночная, без оружием")}>Спортивное, не одиночная, без оружием</p>}
-            {el.category===2 &&el.is_individual===true&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Спортивное, одиночная, без оружием")}>Спортивное, одиночная, без оружием</p>}
-            {el.category===2 &&el.is_individual===false&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Спортивное, не одиночная, с оружием")}>Спортивное, не одиночная, с оружием</p>}
+            {el.category===2 &&el.is_individual===true&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Спортивное, одиночный, с оружием", el.id)}>Спортивное, одиночный, с оружием</p>}
+            {el.category===2 &&el.is_individual===false&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Спортивное, не одиночная, без оружием", el.id)}>Спортивное, не одиночная, без оружием</p>}
+            {el.category===2 &&el.is_individual===true&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Спортивное, одиночная, без оружием", el.id)}>Спортивное, одиночная, без оружием</p>}
+            {el.category===2 &&el.is_individual===false&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Спортивное, не одиночная, с оружием", el.id)}>Спортивное, не одиночная, с оружием</p>}
             
-            {el.category===3 &&el.is_individual===true&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Дуэлянь, одиночный, с оружием")}>Дуэлянь, одиночный, с оружием</p>}
-            {el.category===3 &&el.is_individual===false&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Дуэлянь, не одиночная, без оружием")}>Дуэлянь, не одиночная, без оружием</p>}
-            {el.category===3 &&el.is_individual===true&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Дуэлянь, одиночная, без оружием")}>Дуэлянь, одиночная, без оружием</p>}
-            {el.category===3 &&el.is_individual===false&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Дуэлянь, не одиночная, с оружием")}>Дуэлянь, не одиночная, с оружием</p>}
+            {el.category===3 &&el.is_individual===true&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Дуэлянь, одиночный, с оружием", el.id)}>Дуэлянь, одиночный, с оружием</p>}
+            {el.category===3 &&el.is_individual===false&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Дуэлянь, не одиночная, без оружием", el.id)}>Дуэлянь, не одиночная, без оружием</p>}
+            {el.category===3 &&el.is_individual===true&&el.with_weapon===false&&<p onClick={()=>nameOfCisi("Дуэлянь, одиночная, без оружием", el.id)}>Дуэлянь, одиночная, без оружием</p>}
+            {el.category===3 &&el.is_individual===false&&el.with_weapon===true&&<p onClick={()=>nameOfCisi("Дуэлянь, не одиночная, с оружием", el.id)}>Дуэлянь, не одиночная, с оружием</p>}
             {/* <p>{traditional(el.category, el.is_individual, el.with_weapon)}</p> */}
            
           </label>

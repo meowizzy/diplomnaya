@@ -14,7 +14,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="WHUS-388-styles" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,7 +39,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu/src/pages/clubs/trainerClubs/clubSportsmen&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu/src/images&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -48,9 +48,9 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\images" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\pages\clubs\trainerClubs\clubSportsmen" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\redux\slices" />
-      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -68,7 +68,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="hgj" />
+      <changelist id="fd306116-783b-4344-b161-364b8c210ead" name="Changes" comment="merged" />
       <created>1659509286870</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -124,7 +124,21 @@
       <option name="project" value="LOCAL" />
       <updated>1660369058498</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fixed">
+      <created>1660675362016</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1660675362017</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixed">
+      <created>1660678982674</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1660678982674</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +159,6 @@
     <MESSAGE value="WHUS-415 made clubs and sportsman logical parts" />
     <MESSAGE value="merged" />
     <MESSAGE value="created temp file" />
-    <MESSAGE value="WHUS-234 made protocol, arena and referee logical part" />
     <MESSAGE value="fixed" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed" />
   </component>

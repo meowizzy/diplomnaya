@@ -13,9 +13,20 @@ export const LineChart = () => {
           tension: 0.1
         }]
       };
+      const options = {
+        plugins: {
+          legend: {
+            display: false,
+          },
+        },
+        gridLines: {
+          drawBorder: true,
+          display: false
+      }
+      };
   return (
     <div>
-        <Line data={data}/>
+        <Line data={data} options={options}/>
     </div>
   )
 }

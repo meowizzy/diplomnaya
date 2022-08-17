@@ -33,16 +33,17 @@ export const UserInfo = () => {
 
   const formik = useFormik({
     initialValues: {
-      name:''+ active?.name,
-      surname: active.surname,
-      position: active.is_judge?"Судья":active.is_assistant?"Секретарь":"Тренер",
-      phone: active.number,
-      email: active.email,
-      city: active.address,
+      name:''+ user?.name,
+      surname: user.surname,
+      position: user.is_judge?"Судья":user.is_assistant?"Секретарь":"Тренер",
+      phone: user.number,
+      email: user.email,
+      city: user.address,
       club: "Золотой дракон",
-      password: active.password,
-      is_active: active.is_active
+      password: user.password,
+      is_active: user.is_active
     },
+    enableReinitialize:true,
     onSubmit: (values) => {
       const id = user.id
       const data = {handleOpenSuccessModal, values, id}

@@ -1,9 +1,10 @@
 import axios from "axios";
+import { getCookie } from "../utils/cookieFunction/cookieFunction";
 
-// const token = localStorage.getItem("token");
-
+const token = getCookie("token")
+console.log(token)
 const fetchAPI = axios.create({
-    baseURL: "https://wushu-federation.tk/",
+    baseURL: "https://whushu.herokuapp.com/",
     headers: {
         "Content-type": "application/json",
         // Authorization: `Bearer ${token}`,
@@ -19,7 +20,7 @@ const fetchHerokuAPI = axios.create({
 });
 
 const notToken = axios.create({
-    baseURL: "https://wushu-federation.tk/",
+    baseURL: "https://whushu.herokuapp.com/",
     headers: {
         "Content-type": "application/json",
     },
@@ -30,6 +31,8 @@ export const requests = {
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     newPasswordApi: (data) => fetchAPI.post("password-reset/confirm/", data),
+    getFeedback: () => fetchAPI.get("feedback/"),
+    getFeedbackById: (id) => fetchAPI.get(`feedback/${id}`),
 
     // Events
     getEvents:() => fetchHerokuAPI.get('event/'),
@@ -46,6 +49,7 @@ export const requests = {
     getUserForProfile:(id) => fetchAPI.get(`user/${id}`),
     deleteUser:(id) => fetchAPI.delete(`user/${id}`),
     editUser:(data) => fetchAPI.patch(`user/${data.id}/`, data.values),
+    postUserClub:(data) => fetchAPI.post(`user_club/`, data),
     getTrainerUser: () => fetchAPI.get("user/", { params: { is_assistant: false, is_judge : false, role: "TRAINER" } }),
 
     // documentation
@@ -71,6 +75,7 @@ export const requests = {
     getCurrentApplication:(data)=>fetchAPI.get(`application/?trainer=${data.id}&new_application=2022-09-12`),
     getHistoryApplication:(data)=>fetchAPI.get(`application/?trainer=${data.id}&old_application=2022-09-12`),
     postApplicationTemplate: (data) => fetchAPI.post(`template_application/`, data),
+    editApplicationTemplate: (data) => fetchAPI.patch(`template_application/${data.id}`, data),
     getApplicationTemplate:()=>fetchAPI.get("template_application/"),
     getApplicationTemplateById:(id)=>fetchAPI.get(`template_application/${id}`),
 

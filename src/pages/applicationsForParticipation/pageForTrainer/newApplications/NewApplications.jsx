@@ -21,7 +21,7 @@ export const NewApplications = () => {
   },[])
   const athletes = useSelector(state=>state.athletes.athletes)
   const applicationById = useSelector(state=>state.application.applicationTemplateId)
-  // console.log(applicationById.event.id)
+  console.log(athletes)
   const [openSuccessModal, setOpenSuccessModal] = useState(false);
   const handleOpenSuccessModal = () => setOpenSuccessModal(true);
   const handleCloseSuccessModal = () => setOpenSuccessModal(false);
@@ -54,7 +54,7 @@ export const NewApplications = () => {
   //   dueling_partner__name:"",
   //   discipline:"", 
   //   trainer:"",
-  //   event:applicationById.event.id,
+  //   // event:applicationById.event.id,
   // }
 
   const [application, setApplication] = useState({
@@ -89,10 +89,10 @@ export const NewApplications = () => {
       setApplication({
       ...application,
       application_athlete: {
-        ...application.application_athlete, id:value.id,
+        ...application.application_athlete, id:value.id, 
         athlete: {
           ...application.application_athlete.athlete,
-          name: value.name, surname:value.surname, club:{...application.application_athlete.athlete.club, name:value.club.name}, age:value.age
+          name: value.name, surname:value.surname, sex:value.sex, club:{...application.application_athlete.athlete.club, name:value.club.name}, age:value.age
         },
       },
     })}
@@ -147,21 +147,23 @@ export const NewApplications = () => {
   }
   // const arr = [application]
   const formik = useFormik({
-    initialValues: {...application},
+    initialValues: {application},
+    enableReinitialize:true,
     onSubmit: (values) => {
       setApplication({
         ...application, event:applicationById.event.id
       })
-      alert(JSON.stringify(values, null, 2));
       const data = {values, handleOpenSuccessModal}
       dispatch(postApplication(data))
+      alert(JSON.stringify(values, null, 2));
     },
   });
 
-  console.log(application)
+  // console.log(application)
 
   // const plus =()=>{
-  //   arr.push(example)
+  //   // arr.push(example)
+  //   formik.setFieldValue()
   // }
   
   return (
@@ -210,177 +212,156 @@ export const NewApplications = () => {
           </p>
           <p className={s.three_hundred_fifty}>Примечание</p>
         </div>
-          <div className={sss.table_title} >
-            <p className={sss.first_p}>1</p>
-            <div className={sss.three_hundred_fifty}>
-              <input
-                placeholder="ФИО спортсмена"
-                value={
-                  application.application_athlete.athlete.surname
-                }
-                onChange={(e) => onChange("name", e.target.value)}
-                name="name"
-                readOnly
-              />
-              <img
-                src={list_img}
-                className={ss.list_img__}
-                onClick={() => setOpenList(!openList)}
-              />
-              {openList === true && (
-                <div className={ss.cont_radio__}>
-                  {athletes.map((el, index) => (
-                    <label className={s.radio__} key={index}>
-                      <p onClick={() => onChange("id", el)}>
-                        {el.surname} {el.name}
-                      </p>
-                    </label>
-                  ))}
-                </div>
-              )}
-            </div>
-            <div className={sss.hundred_fifty}>
-              <input
-                placeholder="Пол"
-                // value={formik.values.gender}
-                value={application.application_athlete.athlete.gender}
-                onChange={(e) => onChange("sex", e.target.value)}
-                readOnly
-                name="gender"
-              />
-              <img
-                src={list_img}
-                className={ss.list_img__}
-                onClick={() => setOpenListSex(!openListSex)}
-              />
-              {openListSex === true && (
-                <div className={ss.cont_radio__}>
-                  <label className={s.radio__}>
-                    <p
-                      onClick={() => onChange("sex", 1, "Женщина")}
-                      style={{ width: "150px" }}
-                    >
-                      Женщина
+        <div className={sss.table_title}>
+          <p className={sss.first_p}>1</p>
+          <div className={sss.three_hundred_fifty}>
+            <input
+              placeholder="ФИО спортсмена"
+              value={application.application_athlete.athlete.surname}
+              onChange={(e) => onChange("name", e.target.value)}
+              name="name"
+              readOnly
+            />
+            <img
+              src={list_img}
+              className={ss.list_img__}
+              onClick={() => setOpenList(!openList)}
+            />
+            {openList === true && (
+              <div className={ss.cont_radio__}>
+                {athletes.map((el, index) => (
+                  <label className={s.radio__} key={index}>
+                    <p onClick={() => onChange("id", el)}>
+                      {el.surname} {el.name}
                     </p>
                   </label>
-                  <label className={s.radio__}>
-                    <p
-                      onClick={() => onChange("sex", 2, "Мужчина")}
-                      style={{ width: "150px" }}
-                    >
-                      Мужчина
-                    </p>
-                  </label>
-                </div>
-              )}
-            </div>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className={sss.hundred_fifty}>
             <input
-              placeholder="Возраст"
-              className={sss.hundred_fifty}
-              // value={formik.values.age}
-              value={application.application_athlete.athlete.age}
-              onChange={(e) => onChange("age", e.target.value)}
+              placeholder="Пол"
+              // value={formik.values.gender}
+              value={
+                application.application_athlete.athlete.sex === 1
+                  ? "Женщина"
+                  : application.application_athlete.athlete.sex === 2
+                  ? "Мужчина"
+                  : ""
+              }
+              onChange={(e) => onChange("sex", e.target.value)}
               readOnly
-              name="age"
-            />
-            <input
-              placeholder="Название клуба"
-              className={sss.two_hundred_fifty}
-              // value={formik.values.club}
-              value={application.application_athlete.athlete.club.name}
-              onChange={(e) => onChange("club", e.target.value)}
-              readOnly
-              name="club"
-            />
-            <div className={sss.two_hundred_fifty}>
-              <input
-                placeholder="Название комплекса"
-                type="radio"
-                // value={formik.values.complex}
-                value={application.cuanshu}
-                onChange={() => onChange("cuanshu", true)}
-                name="complex"
-              />
-            </div>
-            <div className={sss.two_hundred_fifty}>
-              <input
-                placeholder="Название комплекса"
-                type="radio"
-                // value={formik.values.secondComplex}
-                value={application.cise}
-                onChange={() => onChange("cise", true)}
-                name="complex"
-              />
-            </div>
-            <div className={sss.five_hundred}>
-              <span className={sss.under}>
-                <div className={sss.under_first}>
-                  <input
-                    placeholder="Название комплекса"
-                    type="radio"
-                    // value={formik.values.tsuanshu}
-                    value={application.taizi_cuanshu}
-                    onChange={(e) => onChange("taizi_cuanshu", true)}
-                    name="complex"
-                  />
-                </div>
-                <div className={sss.under_second}>
-                  <input
-                    placeholder="Название комплекса"
-                    type="radio"
-                    // value={formik.values.tsise}
-                    value={application.taizi_cise}
-                    onChange={(e) => onChange("taizi_cise", true)}
-                    name="complex"
-                  />
-                </div>
-              </span>
-            </div>
-            <div className={sss.three_hundred_fifty}>
-              <input
-                placeholder="ФИО партнера"
-                // value={formik.values.partnerName}
-                value={application.dueling_partner__name}
-                onChange={(e) => onChange("dueling_partner", e.target.value)}
-                name="dueling_partner"
-              />
-              <img
-                src={list_img}
-                className={ss.list_img__}
-                onClick={() => setOpenListDueling(!openListDueling)}
-              />
-              {openListDueling === true && (
-                <div className={ss.cont_radio__}>
-                  {athletes.map((el, index) => (
-                    <label className={s.radio__} key={index}>
-                      <p onClick={() => onChange("dueling", el)}>
-                        {el.surname} {el.name}
-                      </p>
-                    </label>
-                  ))}
-                </div>
-              )}
-            </div>
-            <input
-              placeholder="Номер команды"
-              className={sss.two_hundred_fifty}
-              // value={formik.values.numberOfteam}
-              value={application.team_number}
-              onChange={(e) => onChange("team_number", e.target.value)}
-              name="team_number"
-              type="number"
-            />
-
-            <input
-              placeholder="Введите текст"
-              className={sss.three_hundred_fifty}
-              // value={formik.values.note}
-              value={application.note}
-              onChange={(e) => onChange("note", e.target.value)}
-              name="note"
+              name="gender"
             />
           </div>
-  
+          <input
+            placeholder="Возраст"
+            className={sss.hundred_fifty}
+            // value={formik.values.age}
+            value={application.application_athlete.athlete.age}
+            onChange={(e) => onChange("age", e.target.value)}
+            readOnly
+            name="age"
+          />
+          <input
+            placeholder="Название клуба"
+            className={sss.two_hundred_fifty}
+            // value={formik.values.club}
+            value={application.application_athlete.athlete.club.name}
+            onChange={(e) => onChange("club", e.target.value)}
+            readOnly
+            name="club"
+          />
+          <div className={sss.two_hundred_fifty}>
+            <input
+              placeholder="Название комплекса"
+              type="radio"
+              // value={formik.values.complex}
+              value={application.cuanshu}
+              onChange={() => onChange("cuanshu", true)}
+              name="complex"
+            />
+          </div>
+          <div className={sss.two_hundred_fifty}>
+            <input
+              placeholder="Название комплекса"
+              type="radio"
+              // value={formik.values.secondComplex}
+              value={application.cise}
+              onChange={() => onChange("cise", true)}
+              name="complex"
+            />
+          </div>
+          <div className={sss.five_hundred}>
+            <span className={sss.under}>
+              <div className={sss.under_first}>
+                <input
+                  placeholder="Название комплекса"
+                  type="radio"
+                  // value={formik.values.tsuanshu}
+                  value={application.taizi_cuanshu}
+                  onChange={(e) => onChange("taizi_cuanshu", true)}
+                  name="complex"
+                />
+              </div>
+              <div className={sss.under_second}>
+                <input
+                  placeholder="Название комплекса"
+                  type="radio"
+                  // value={formik.values.tsise}
+                  value={application.taizi_cise}
+                  onChange={(e) => onChange("taizi_cise", true)}
+                  name="complex"
+                />
+              </div>
+            </span>
+          </div>
+          <div className={sss.three_hundred_fifty}>
+            <input
+              placeholder="ФИО партнера"
+              // value={formik.values.partnerName}
+              value={application.dueling_partner__name}
+              onChange={(e) => onChange("dueling_partner", e.target.value)}
+              name="dueling_partner"
+            />
+            <img
+              src={list_img}
+              className={ss.list_img__}
+              onClick={() => setOpenListDueling(!openListDueling)}
+            />
+            {openListDueling === true && (
+              <div className={ss.cont_radio__}>
+                {athletes.map((el, index) => (
+                  <label className={s.radio__} key={index}>
+                    <p onClick={() => onChange("dueling", el)}>
+                      {el.surname} {el.name}
+                    </p>
+                  </label>
+                ))}
+              </div>
+            )}
+          </div>
+          <input
+            placeholder="Номер команды"
+            className={sss.two_hundred_fifty}
+            // value={formik.values.numberOfteam}
+            value={application.team_number}
+            onChange={(e) => onChange("team_number", e.target.value)}
+            name="team_number"
+            type="number"
+          />
+
+          <input
+            placeholder="Введите текст"
+            className={sss.three_hundred_fifty}
+            // value={formik.values.note}
+            value={application.note}
+            onChange={(e) => onChange("note", e.target.value)}
+            name="note"
+          />
+        </div>
+
         {/* <AppliedLineLogic
           fullName={application_athlete.athlete.name}
           club={application_athlete.athlete.club.name}

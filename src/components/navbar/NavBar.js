@@ -64,7 +64,7 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
-            to="/main/statistics"
+            to="/main/statistics/progress"
             className={linkActiveClassName("statistics")}
           >
             <span className={s.top_curve}></span>
@@ -123,6 +123,14 @@ export const NavBar = () => {
           >
             <span className={s.top_curve}></span>
             Заявки
+            <span className={s.bottom_curve}></span>
+          </NavLink>
+          <NavLink
+            to="/main/users/registered"
+            className={linkActiveClassName("users")}
+          >
+            <span className={s.top_curve}></span>
+            Пользователи
             <span className={s.bottom_curve}></span>
           </NavLink>
           <NavLink
@@ -298,7 +306,7 @@ export const NavBar = () => {
             <span className={s.bottom_curve}></span>
           </NavLink>
             <NavLink
-                to="/main/statistics"
+                to="/main/statistics/progress"
                 className={linkActiveClassName("statistics")}
             >
                 <span className={s.top_curve}></span>

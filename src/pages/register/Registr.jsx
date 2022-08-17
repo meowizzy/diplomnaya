@@ -1,46 +1,62 @@
 import { useFormik } from "formik";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import { useSelector } from "react-redux/es/exports";
-import { postRegister } from "../../redux/slices/registerSlice";
+import { postRegister, postUserClub } from "../../redux/slices/registerSlice";
 import s from "./Registr.module.scss";
+import { getClubs } from "../../redux/slices/clubSlice";
 
 export const Registr = () => {
-  const [roles, setRoles] = useState(false)
+  const [roles, setRoles] = useState(true)
   const clickRoles = () =>{
     setRoles(!roles)
   }
-  const [role, setRole] = useState("")
-  const [roleName, setRoleName] = useState('')
   const clickAdmin = () => {
-    setRole('Админ')
     setRoles(!roles)
-    setRoleName("ADMIN")
+    formik.setFieldValue("role", "ADMIN")
   }
-  // console.log(roleName)
   const clickTrainer = () => {
-    setRole('Тренер')
     setRoles(!roles)
-    setRoleName("TRAINER")
+    formik.setFieldValue("role", "TRAINER")
   }
-  console.log(roleName)
 
-  const [club, setClub] = useState(false)
+  const [club, setClub] = useState(true)
   const clickClub = () =>{
     setClub(!club)
   }
-  const [pass,setPass] = useState(false)
+  const [pass, setPass] = useState(false)
+
   const navigate = useNavigate()
   const dispatch = useDispatch();
 
+  useEffect(()=>{
+    dispatch(getClubs())
+  },[])
+
+  const clubs = useSelector(state=>state.clubs.clubs)
   const err = useSelector(state=>state.register);
-  // console.log(err)
+  const userId = useSelector(state=>state.register)
 
+  // console.log(userId)
 
+  const [clubForm, setClubForm] = useState({
+    user:userId.userId.id,
+    club:""
+  })
+  const [clubName, setClubName] = useState("")
+  const onChange =(value, id)=>{
+    setClubForm({...clubForm, club:id})
+    setClubName(value)
+  }
 
+  const setUserId = () => {
+    if(userId.status==="resolved"){
+    setClubForm({...clubForm, user:userId.userId.id})
+    dispatch(postUserClub(clubForm))}
+  }
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -50,13 +66,14 @@ export const Registr = () => {
       password: "",
       secondPassword: "",
       city: "",
-      role:roleName,
+      role:"",
       referral_code:"",
     },
+    
     onSubmit: (values) => {
       console.log(values)
       if(values.secondPassword===values.password){
-        let data = {values, navigate}
+        let data = {values, navigate, setUserId}
         dispatch(postRegister(data))
         setPass(false)
       }else{
@@ -66,13 +83,11 @@ export const Registr = () => {
   });
 
   const [open, setOpen] = useState(false);
-
   const toggle = useCallback(() => {
     setOpen(!open);
   }, [open]);
 
   const [secondOpen, setSecondOpen] = useState(false);
-
   const foggle = () => {
     setSecondOpen(!secondOpen);
   };
@@ -106,69 +121,54 @@ export const Registr = () => {
           onChange={formik.handleChange}
           name="surname"
         />
-        <div style={{ position: "relative" }} >
-          {roles === false ? (
-            <>
-              <Input
-                placeholder="Выберите должность"
-                valueLabel="Должность"
-                value={role}
-                // onChange={formik.handleChange}
-                name="role"
-              />
-              <div className={s.list_img} onClick={clickRoles}></div>
-            </>
-          ) : (
-            <>
-              <Input
-                placeholder="Выберите должность"
-                valueLabel="Должность"
-                value={role}
-                name="role"
-                margin="0 0 4px"
-              />
-              <span className={s.list_img} onClick={clickRoles}></span>
+        <div style={{ position: "relative" }}>
+          <>
+            <Input
+              placeholder="Выберите должность"
+              valueLabel="Должность"
+              value={
+                formik.values.role === "TRAINER"
+                  ? "Тренер"
+                  : formik.values.role === "ADMIN"
+                  ? "Админ"
+                  : ""
+              }
+              // onChange={formik.handleChange}
+              name="role"
+              readOnly
+            />
+            <div className={s.list_img} onClick={clickRoles}></div>
+          </>
+          <>
+            {roles === false && (
               <div className={s.list}>
                 <label className={s.label}>
-                  {role === "Админ" ? (
-                    <p onClick={clickAdmin}style={{ backgroundColor: "#F3F3FF" }}>
+                  {formik.values.role === "ADMIN" ? (
+                    <p
+                      onClick={clickAdmin}
+                      style={{ backgroundColor: "#F3F3FF" }}
+                    >
                       Админ
                     </p>
                   ) : (
-                    <p onClick={clickAdmin}>
-                      Админ
-                    </p>
+                    <p onClick={clickAdmin}>Админ</p>
                   )}
-                  {/* <input
-                    type="radio"
-                    value="ADMIN"
-                    // onChange={formik.handleChange}
-                    // name="role"
-                    className={s.radio}
-                  /> */}
                 </label>
                 <label className={s.label}>
-                {role === "Тренер" ? (
-                    <p onClick={clickTrainer}
-                       style={{ backgroundColor: "#F3F3FF" }}>
-                       Тренер
-                    </p>
-                  ) : (
-                    <p onClick={clickTrainer}>
+                  {formik.values.role === "TRAINER" ? (
+                    <p
+                      onClick={clickTrainer}
+                      style={{ backgroundColor: "#F3F3FF" }}
+                    >
                       Тренер
                     </p>
+                  ) : (
+                    <p onClick={clickTrainer}>Тренер</p>
                   )}
-                  {/* <input
-                    type="radio"
-                    value="TRAINER"
-                    // onChange={formik.handleChange}
-                    // name="role"
-                    className={s.radio}
-                  /> */}
                 </label>
               </div>
-            </>
-          )}
+            )}
+          </>
         </div>
         <Input
           placeholder="Введите почту"
@@ -199,7 +199,6 @@ export const Registr = () => {
               onClick={toggle}
               className={
                 s.close_eye
-                // fail.res.message ? s.red_close__eye :
               }
             />
           ) : (
@@ -207,7 +206,6 @@ export const Registr = () => {
               onClick={toggle}
               className={
                 s.open_eye
-                // fail.res.message ? s.red_open__eye :
               }
             />
           )}
@@ -222,70 +220,40 @@ export const Registr = () => {
             name="secondPassword"
           />
           {secondOpen === false ? (
-            <div
-              onClick={foggle}
-              className={
-                s.close_eye
-                // fail.res.message ? s.red_close__eye :
-              }
-            />
+            <div onClick={foggle} className={s.close_eye} />
           ) : (
-            <div
-              onClick={foggle}
-              className={
-                s.open_eye
-                // fail.res.message ? s.red_open__eye :
-              }
-            />
+            <div onClick={foggle} className={s.open_eye} />
           )}
         </div>
-
-        {/* <div style={{ position: "relative" }}>
-          {club === false ? (
-            <>
-              <Input
-                placeholder="Название клуба"
-                valueLabel="Выберите клуб"
-                value={formik.values.club}
-                name="club"
-              />
-              <div className={s.list_img} onClick={clickClub}></div>
-            </>
-          ) : (
-            <>
-              <Input
-                placeholder="Название клуба"
-                valueLabel="Выберите клуб"
-                value={formik.values.club}
-                name="club"
-                margin="0 0 4px"
-              />
-              <span className={s.list_img} onClick={clickClub}></span>
-              <div className={s.list}>
-                <label className={s.label}>
-                  <p onClick={clickAdmin}>Золотой дракон</p>
-                  <input
-                    type="radio"
-                    value="Золотой дракон"
-                    onChange={formik.handleChange}
-                    name="club"
-                    className={s.radio}
-                  />
-                </label>
-                <label className={s.label}>
-                  <p onClick={clickTrainer}>Панда</p>
-                  <input
-                    type="radio"
-                    value="Панда"
-                    onChange={formik.handleChange}
-                    name="club"
-                    className={s.radio}
-                  />
-                </label>
-              </div>
-            </>
+        {formik.values.role==="TRAINER"&&
+        <div style={{ position: "relative" }}>
+          <>
+            <Input
+              placeholder="Название клуба"
+              valueLabel="Выберите клуб"
+              value={clubName}
+              name="club"
+            />
+            <div className={s.list_img} onClick={clickClub}></div>
+          </>
+          {club === false && (
+            <div className={s.list}>
+              {clubs.map((el,index)=>(
+              <label className={s.label} key={index}>
+                <p onClick={()=>onChange(el.name, el.id)}>{el.name}</p>
+                {/* <input
+                  type="radio"
+                  value="Золотой дракон"
+                  onChange={formik.handleChange}
+                  name="club"
+                  className={s.radio}
+                /> */}
+              </label>
+              ))}
+            </div>
           )}
-        </div> */}
+        </div>
+        }
         <Input
           placeholder="Введите страну и город"
           valueLabel="Страна, город"
@@ -293,8 +261,12 @@ export const Registr = () => {
           onChange={formik.handleChange}
           name="city"
         />
-       {err.status==="rejected"&&<p className={s.err}>Такая почта или номер телефона уже существуют...</p>} 
-       {pass===true&&<p className={s.err}>Пароли не похожи...</p>}
+        {err.status === "rejected" && (
+          <p className={s.err}>
+            Такая почта или номер телефона уже существуют...
+          </p>
+        )}
+        {pass === true && <p className={s.err}>Пароли не похожи...</p>}
         {/* <div style={{margin:"50px 0px 60px"}}> */}
         <Button
           text="ЗАРЕГИСТРИРОВАТЬСЯ"
@@ -306,8 +278,6 @@ export const Registr = () => {
           //     formik.values.surname &&
           //     formik.values.number &&
           //     formik.values.city &&
-          //     // formik.values.secondPassword===formik.values.password&&
-          //     // formik.values.club &&
           //     formik.values.secondPassword
           //   )
           // }

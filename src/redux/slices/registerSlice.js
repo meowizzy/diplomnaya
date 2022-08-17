@@ -1,35 +1,54 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { withoutToken } from "../api";
+import { requests, withoutToken } from "../api";
 
 const initialState = {
-  user: {},
+  userId: {},
 };
 
 export const postRegister = createAsyncThunk(
   "register/postRegister",
  
-  async (formData ,{ rejectWithValue, dispatch }) => {
+  async (formData ,{rejectWithValue}) => {
     // console.log("form", formData)
     try {
       const res = await withoutToken.register(formData.values);
-      console.log("res", res)
+      // console.log("register", res.data)
       if (!res) {
         throw new Error("ERROR");
       }
+      setTimeout(() => formData.setUserId("/main/clubs/all_clubs"), 1500)
       formData.navigate('/auth')
-      // return res
+      return res.data
     } catch (error) {
         return rejectWithValue(error.message)
     }
   }
 );
+export const postUserClub = createAsyncThunk(
+  "register/postUserClub",
+ 
+  async (formData ,{rejectWithValue}) => {
+    // console.log("formUser", formData)
+    try {
+      const res = await requests.postUserClub(formData);
+      console.log("register", res.data)
+      if (!res) {
+        throw new Error("ERROR");
+      }
+      return res.data
+    } catch (error) {
+        return rejectWithValue(error.message)
+    }
+  }
+);
+
 export const createUser = createAsyncThunk(
   "register/createUser",
   async (formData ,{ rejectWithValue }) => {
-    // console.log("form", formData)
+    console.log("form", formData)
     try {
-      const res = await withoutToken.register(formData.values);
-      console.log("res", res)
+      const res = await withoutToken.register(formData.role);
+      // console.log("res", res)
       if (!res) {
         throw new Error("ERROR");
       }
@@ -46,20 +65,15 @@ const registerSlice = createSlice({
   initialState,
   status: null,
   error: null,
-  reducers: {
-    userRegister: (state, action) => {
-      state.user = action.payload;
-    },
-  },
   extraReducers: {
     [postRegister.pending]: (state) => {
       state.status = "loading";
       state.error = null;
     },
-    [postRegister.fulfilled]: (state) => {
+    [postRegister.fulfilled]: (state, action) => {
       state.status = "resolved";
-      state.error = null
-      console.log("fullfiled");
+      state.userId = action.payload
+      // console.log("fullfiled");
     },
     [postRegister.rejected]: (state, action) => {
       state.status = "rejected";
