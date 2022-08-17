@@ -34,21 +34,6 @@ export const auth = async (data, navigate) => {
     }
 }
 
-export const resetPassword = async (data) => {
-    const res = await requests.resetPasswordApi(data);
-    console.log(res);
-}
-
-export const feedBack = async (data) => {
-    const res = await requests.feedbackApi(data);
-    console.log(res);
-}
-
-export const newPassword = async (data) => {
-    const res = await requests.newPasswordApi(data);
-    console.log(res);
-}
-
 const authSlice = createSlice({
     name: 'productReleases',
     initialState,

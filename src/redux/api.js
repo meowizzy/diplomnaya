@@ -47,14 +47,14 @@ export const requests = {
     // documentation
     getDocs: () => fetchAPI.get("documents/document/"),
     getDoc: (id) => fetchAPI.get(`documents/document/${id}/`),
-    postDoc: (data) => fetchAPI.post("documents/document/", data),
+    postDoc: (data) => fetchAPI.post("documents/document/", data.data),
     editDoc: (data) => fetchAPI.patch(`documents/document/${data.id}/`, data.fData),
     deleteDoc: (id) => fetchAPI.delete(`documents/document/${id}/`),
 
     // news
     getNewsApi: () => fetchAPI.get("createnew/"),
     getNewApi: (id) => fetchAPI.get(`deletenew/${id}`),
-    createNewsApi: (data) => fetchAPI.post("createnew/", data),
+    createNewsApi: (data) => fetchAPI.post("createnew/", data.data),
     editNewsApi: (data) => fetchAPI.patch(`deletenew/${data.id}`, data.data),
     deleteNewsApi: (id) => fetchAPI.delete(`deletenew/${id}`),
 
@@ -95,8 +95,24 @@ export const requests = {
     // Physical Indicator
     // getSportsmanApi: (id) => fetchAPI.get(`athletes/${id}`),
     postPhysicalIndicatorApi: (data) => fetchAPI.post("physical_indicators/", data),
-    editPhysicalIndicatorApi: (data) => fetchAPI.patch(`physical_indicators/${data.id}/`, data.data),
+    editPhysicalIndicatorApi: ({id, data}) => fetchAPI.patch(`physical_indicators/${id}/`, data),
     // deleteSportsmenApi: (id) => fetchAPI.delete(`athletes/${id}/`),
+
+    // protocol
+    getProtocolApi: () => fetchAPI.get("subgroup/"),
+    getProtocolByIdApi: (id) => fetchAPI.get(`subgroup/${id}`),
+    postProtocolApi: (id) => fetchAPI.post("subgroup/", {event: id}),
+    // formProtocolApi: (data) => fetchAPI.patch(`subgroup/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
+    formProtocolApi: (data) => fetchAPI.patch(`subroup_bulk_update/`, data),
+    confirmProtocolApi: ({data}) => fetchAPI.patch(`subroup_bulk_update/`, data),
+    reasonOfRejectionProtocolApi: ({reason}) => fetchAPI.patch(`subroup_bulk_update/`, reason),
+
+    // judge
+    getJudgeApi: () => fetchAPI.get("judge_group/"),
+    // getProtocolApi: (id) => fetchAPI.get(`judge_group/${id}`),
+    postJudgeApi: (data) => fetchAPI.post("judge_group/", data),
+    formJudgeApi: (data) => fetchAPI.patch(`judge_group/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
+    confirmJudgeApi: ({id, par}) => fetchAPI.patch(`judge_group/${id}/`, {is_confirmed : par}),
 }
 
 export const withoutToken = {

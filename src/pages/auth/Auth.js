@@ -26,12 +26,6 @@ const Auth = () => {
   const dispatch = useDispatch();
   const authError = useSelector(state => state.auth.error)
 
-  const queryParams = new URLSearchParams(window.location.search);
-  const id = queryParams.get('token');
-  const name = queryParams.get('name');
-  const type = queryParams.get('type');
-  console.log(id, name, type);
-
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -39,7 +33,6 @@ const Auth = () => {
     },
     onSubmit: (authData) => {
       console.log(authData);
-      // navigate("/main/events");
       const data = {authData: authData, navigate}
       dispatch(userAuth(data))
     },
@@ -94,7 +87,6 @@ const Auth = () => {
               text="ВОЙТИ"
               margin="35px"
             />
-            {/*<ButtonForActiveChanges type="submit" disabled={!(formik.values.email && formik.values.password)} margin="35px" classname="back_button" text="ВОЙТИ"/>*/}
             <div className={s.forgot_p_cont}>
               <Link to="/registr"><p className={s.register_text}>Зарегистрироваться</p></Link>
             </div>

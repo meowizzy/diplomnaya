@@ -21,11 +21,8 @@ const EditDocumentationDetails = () => {
     const handleOpenSuccessModal = () => setOpenSuccessModal(true);
     const handleCloseSuccessModal = () => setOpenSuccessModal(false);
 
-
-
     const {id} = useParams()
     const dispatch = useDispatch()
-
 
     useEffect(() => {
         dispatch(getDoc(id))
@@ -50,10 +47,8 @@ const EditDocumentationDetails = () => {
                 fData.append("title", data.title);
                 const id = doc.id
                 console.log(data);
-                // dispatch(createDoc(fData))
                 requests.editDoc({fData, id}).then(res => {
                     console.log("edited_doc: ", res.data)
-                    // dispatch(postMessage(response.data))
                     handleOpenSuccessModal()
                     setTimeout(() => navigate("/main/documentation/all_documentation"), 1500)
             })} else {
@@ -61,15 +56,11 @@ const EditDocumentationDetails = () => {
                 fData.append("title", data.title);
                 const id = doc.id
                 console.log(data);
-                // dispatch(createDoc(fData))
                 requests.editDoc({fData, id}).then(res => {
                     console.log("edited_doc: ", res.data)
-                    // dispatch(postMessage(response.data))
                     handleOpenSuccessModal()
                     setTimeout(() => navigate("/main/documentation/all_documentation"), 1500)
             })}
-
-
         },
     });
 

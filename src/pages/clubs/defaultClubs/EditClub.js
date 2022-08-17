@@ -49,8 +49,6 @@ const EditClub = () => {
                 <p className="container_title">Информация о клубе</p>
                 <Input name="name" onChange={formik.handleChange} valueLabel="Клуб" width="100%" value={formik.values.name}/>
                 <Input name="address" onChange={formik.handleChange} valueLabel="Адрес" width="100%" value={formik.values.address}/>
-                {/*<Input onChange={formik.handleChange} valueLabel="Тренер" width="100%" value="Тренер"/>*/}
-                {/*<Input onChange={formik.handleChange} valueLabel="Кол-во спортсменов" width="100%" value={formik.values.sum_of_people}/>*/}
                 <div className="flex">
                     <Input name="min_age" onChange={formik.handleChange} valueLabel="Возраст спортсменов" width="285px" value={formik.values.min_age}/>
                     <div className={s.inp_plus_cont}>

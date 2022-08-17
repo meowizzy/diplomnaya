@@ -11,7 +11,7 @@ const FeedBack = () => {
   const formik = useFormik({
     initialValues: {
       email: "",
-      phone: "string",
+      phone: "",
       text: "",
     },
     onSubmit: (data) => {
@@ -27,25 +27,15 @@ const FeedBack = () => {
           <Input
             placeholder="Введите почту"
             valueLabel="Почта"
-            // value={formik.values.name}
             onChange={formik.handleChange}
             name="email"
           />
           <Input
               placeholder="Введите текст"
               valueLabel="Обращение"
-              // value={formik.values.name}
               onChange={formik.handleChange}
               name="text"
           />
-          {/*<TextArea*/}
-          {/*  placeholder="Введите текст"*/}
-          {/*  valueLabel="Обращение"*/}
-          {/*  // value={formik.values.name}*/}
-          {/*  onChange={formik.handleChange}*/}
-          {/*  name="text"*/}
-          {/*  type="textarea"*/}
-          {/*/>*/}
           <Button
             type="submit"
             disabled={!(formik.values.email && formik.values.text)}

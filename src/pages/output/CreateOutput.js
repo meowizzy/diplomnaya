@@ -2,7 +2,6 @@ import React from 'react';
 import BackButton from "../../components/arrowButton/BackButton";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
-import {useNavigate} from "react-router";
 import ownStyles from "./Output.module.scss"
 import {plus} from "../../images";
 
@@ -17,15 +16,6 @@ const CreateOutput = () => {
                 <Input valueLabel="Подгруппа" width="600px" placeholder="Введите подгруппу"/>
 
                 <div className={ownStyles.input_cont} style={{ fontWeight: "500", marginTop: 10 }}>
-                    {/*<p className={ownStyles.input1}>№</p>*/}
-                    {/*<p className={ownStyles.input2}>Спортсмен</p>*/}
-                    {/*<p className={ownStyles.input}>Судья 1</p>*/}
-                    {/*<p className={ownStyles.input}>Судья 2</p>*/}
-                    {/*<p className={ownStyles.input}>Судья 3</p>*/}
-                    {/*<p className={ownStyles.input}>Средний балл</p>*/}
-                    {/*<p className={ownStyles.input}>Процент призовых мест</p>*/}
-                    {/*<p className={ownStyles.input}>Призовое место</p>*/}
-
                     <input disabled className={ownStyles.title1} value="№"/>
                     <input disabled className={ownStyles.title2} value="Спортсмен"/>
                     <input disabled className={ownStyles.title} value="Судья 1"/>

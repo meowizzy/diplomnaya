@@ -12,6 +12,7 @@ import {sportsmanSlice} from "./slices/sportsmenSlice";
 import applicationSlice from './slices/applicationSlice';
 import disciplineSlice from './slices/disciplineSlice';
 import athletesSlice from './slices/athletesSlice';
+import {protocolsSlice} from "./slices/protocolSlice";
 
 export const store = configureStore({
   reducer: {
@@ -26,6 +27,7 @@ export const store = configureStore({
     athletes:athletesSlice,
     clubs: clubsSlice,
     sportsmen: sportsmanSlice,
+    protocol: protocolsSlice,
 },
 
 });

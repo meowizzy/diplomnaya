@@ -35,8 +35,6 @@ const ClubDetails = () => {
                 <p className="container_title">Информация о клубе</p>
                 <Input valueLabel="Клуб" width="100%" value={club.name}/>
                 <Input valueLabel="Адрес" width="100%" value={club.address}/>
-                {/*<Input valueLabel="Тренер" width="100%" value="Тренер"/>*/}
-                {/*<Input valueLabel="Кол-во спортсменов" width="100%" value={club.sum_of_people}/>*/}
                 <div className="flex">
                     <Input valueLabel="Возраст спортсменов" width="285px" value={`С ${club.min_age} лет`}/>
                     <div className={s.inp_plus_cont}>

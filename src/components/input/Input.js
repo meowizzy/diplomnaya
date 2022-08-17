@@ -18,10 +18,6 @@ const Input = ({
     readOnly
 }) => {
 
-  // const [state, setState] = useState(false)
-
-  // type === "password" ? setState(true) : setState(false)
-
   return (
     <div className={s.input_container}>
       <label className={s.label}>{valueLabel}</label>
@@ -36,7 +32,6 @@ const Input = ({
           type={type}
           readOnly = {readOnly}
         />
-          {/* {state && <div></div>}</input> */}
       </div>
     </div>
   );

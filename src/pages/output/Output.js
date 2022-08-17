@@ -15,8 +15,6 @@ const Output = () => {
                     <Route path="/all_output" element={<DefaultOutput />} />
                     <Route path="/all_output/details" element={<OutputDetails />} />
                     <Route path="/create" element={<CreateOutput />} />
-                    {/*<Route path="/all_output/details" element={<DocumentationDetails />} />*/}
-                    {/*<Route path="/all_output/doc_details/edit_details" element={<EditDocumentationDetails />} />*/}
                 </Routes>
             </div>
         </div>

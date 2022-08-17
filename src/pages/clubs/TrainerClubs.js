@@ -16,6 +16,7 @@ import SportsmenDetails from "./trainerClubs/clubSportsmen/SportsmenDetails";
 import CreateSportsman from "./trainerClubs/clubSportsmen/CreateSportsman";
 import ClubsTrainers from "./trainerClubs/clubsTrainers/ClubsTrainers";
 import ClubsTrainersDetails from "./trainerClubs/clubsTrainers/ClubsTrainersDetails";
+import EditSportsmanDetails from "./trainerClubs/clubSportsmen/EditSportsmanDetails";
 
 const TrainerClubs = () => {
     return (
@@ -38,6 +39,7 @@ const TrainerClubs = () => {
                     {/* sportsmen */}
                     <Route path="/sportsmen" element={<ClubsSportsmen />} />
                     <Route path="/sportsmen/sportsman_details/:id" element={<SportsmenDetails />} />
+                    <Route path="/sportsmen/sportsman_details/edit/:id" element={<EditSportsmanDetails />} />
                     <Route path="/sportsmen/create" element={<CreateSportsman />} />
 
                     {/* trainers */}

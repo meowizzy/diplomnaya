@@ -13,7 +13,7 @@ export const Delete = ({text, take, id, status, open, back}) => {
   // }
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const deleteThings = (id) =>{
+  const deleteThings = () =>{
     if(status!=="rejected"){
       dispatch(take(id))
       open()
@@ -31,7 +31,7 @@ export const Delete = ({text, take, id, status, open, back}) => {
         <div className={s.cont}>
           <p>{text}</p>
           <div className={s.flex}>
-            <ButtonForActiveChanges classname="button" width="210px" text="ДА" onClick={()=>deleteThings(id)}/>
+            <ButtonForActiveChanges classname="button" width="210px" text="ДА" onClick={deleteThings}/>
             <ButtonForActiveChanges classname="button" width="210px" text="НЕТ" onClick={() => setModalActive(false)}/>
           </div>
         </div>

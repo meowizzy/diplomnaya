@@ -17,12 +17,6 @@ function App() {
         <Route path="/registr" element={<Registr />} />
           <Route path="/empty_protocol" element={<EmptyProtocol />} />
       </Routes>
-      {/* <Auth /> */}
-      {/* <Registr /> */}
-      {/* <Protocol /> */}
-      {/* <ForgotPassword /> */}
-      {/* <FeedBack /> */}
-      {/* <NewPassword /> */}
     </div>
   );
 }

@@ -43,7 +43,6 @@ const ClubsTrainers = () => {
                                 </Link>
                     })
                 }
-
                 <Pagination/>
             </div>
         </div>

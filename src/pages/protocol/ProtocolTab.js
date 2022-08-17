@@ -42,7 +42,6 @@ const ProtocolTab = () => {
                     </>
                 }
             </div>
-            {/*<Button onClick={() => navigate("/main/protocol/all_events/form_protocol")} margin={0} text="СОЗДАТЬ"/>*/}
         </div>
     );
 };

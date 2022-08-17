@@ -15,11 +15,11 @@ const SecretaryProtocol = () => {
                 <Routes>
                     {/* new protocols */}
                     <Route path="/new_protocols" element={<NewProtocols />} />
-                    <Route path="/new_protocols/details" element={<NewProtocolDetails />} />
+                    <Route path="/new_protocols/details/:id" element={<NewProtocolDetails />} />
 
-                {/* Referee team */}
+                    {/* Referee team */}
                     <Route path="/referee_team" element={<RefereeTeam />} />
-                    <Route path="/referee_team/details" element={<RefereeTeamDetails />} />
+                    <Route path="/referee_team/details/:id" element={<RefereeTeamDetails />} />
                 </Routes>
             </div>
         </div>

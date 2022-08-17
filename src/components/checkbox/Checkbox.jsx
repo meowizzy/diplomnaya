@@ -12,7 +12,6 @@ export const Checkbox = ({ value, onClick, onChange, name }) => {
         name={name}
         onChange={onChange}
       />
-      <span></span>
     </label>
   );
 };

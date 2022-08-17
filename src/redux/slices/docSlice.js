@@ -7,7 +7,6 @@ const initialState = {
     doc: {},
 }
 
-// Создаем Thunk
 export const getDocs = createAsyncThunk(
     'docs/getDocs',
     async () => {
@@ -28,8 +27,10 @@ export const getDoc = createAsyncThunk(
 
 export const createDoc = createAsyncThunk(
     'docs/createDoc',
-    async (data, {dispatch}) => {
+    async (data) => {
         const response = await requests.postDoc(data);
+        setTimeout(() => data.navigate("/main/documentation/all_documentation"), 1500)
+        data.handleOpenSuccessModal()
         console.log("new_doc: ", response.data)
         return response.data;
     }
@@ -37,8 +38,9 @@ export const createDoc = createAsyncThunk(
 
 export const deleteDoc = createAsyncThunk(
     'docs/deleteDocs',
-    async (id, {dispatch}) => {
+    async ({id, link}, {dispatch}) => {
         const response = await requests.deleteDoc(id);
+        link()
         console.log("deleted_doc: ", response.data)
         return response.data;
     }
@@ -76,6 +78,5 @@ const docSlice = createSlice({
     },
 })
 
-// export const { docs } = docSlice.actions;
 export const docsSlice = docSlice.reducer;
 

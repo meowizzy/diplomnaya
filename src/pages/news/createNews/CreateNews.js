@@ -11,6 +11,9 @@ import NewsTab from "../defaultNews/NewsTab";
 import SuccessModal from "../../../components/modals/SuccessModal";
 import BackButton from "../../../components/arrowButton/BackButton";
 import {requests} from "../../../redux/api";
+import {createDoc} from "../../../redux/slices/docSlice";
+import {useDispatch} from "react-redux";
+import {createNew} from "../../../redux/slices/newsSlice";
 
 const CreateNews = () => {
 
@@ -19,6 +22,7 @@ const CreateNews = () => {
     const handleCloseSuccessModal = () => setOpenSuccessModal(false);
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const [img, setImg] = useState();
     const [imgURL, setImgURL] = useState();
@@ -43,13 +47,8 @@ const CreateNews = () => {
             fData.append("title", data.title);
             fData.append("description", data.description);
             console.log(data);
-            // dispatch(createDoc(fData))
-            requests.createNewsApi(fData).then(res => {
-                console.log("new_new: ", res.data)
-                // dispatch(postMessage(response.data))
-                handleOpenSuccessModal()
-                setTimeout(() => navigate("/main/news/all_news"), 1500)
-            })
+            const par = {data: fData, navigate, handleOpenSuccessModal}
+            dispatch(createNew(par))
         }
     })
     return (
@@ -70,9 +69,7 @@ const CreateNews = () => {
                             {!imgURL && <p className={ss.img_text}>Добавить фото</p>}
                         </div>
                         <Input name="title" placeholder="Добавить заголовок" onChange={formik.handleChange} type="text" width="100%" valueLabel="Заголовок"/>
-                        {/*<Input name="date" placeholder="Дата публикации" onChange={formik.handleChange} type="text" width="100%" valueLabel="Дата"/>*/}
                         <Input name="description" placeholder="Добавить описание" onChange={formik.handleChange} type="text" width="100%" valueLabel="Текст"/>
-                        {/*<Input name="more" placeholder="Добавить текст" onChange={formik.handleChange} type="text" width="100%" valueLabel="Дополнительно"/>*/}
                         <div className={ss.checkbox_cont}>
                             <p className="basic_text">Отправить всем?</p>
                             {switchBox ? <img onClick={handleSwitchBox} src={checkbox_icon_turned_on} alt="wrong"/> : <img onClick={handleSwitchBox} src={unswitched} alt="wrong"/>  }

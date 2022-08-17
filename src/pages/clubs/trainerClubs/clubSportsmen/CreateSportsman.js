@@ -24,7 +24,6 @@ const CreateSportsman = () => {
 
     const [img, setImg] = useState();
     const [imgURL, setImgURL] = useState();
-    // const [selectedValue, setSelectValue] = useState("Должность");
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const clubs = useSelector(state => state.clubs.clubs)
@@ -82,12 +81,6 @@ const CreateSportsman = () => {
                 const par = {data: fData, navigate, handleOpenSuccessModal}
                 dispatch(createSportsman(par))
             })
-            // dispatch(createDoc(fData))
-            // requests.postDoc(fData).then(res => {
-            //     console.log("new_doc: ", res.data)
-            //     handleOpenSuccessModal()
-            //     setTimeout(() => navigate("/main/documentation/all_documentation"), 1500)
-            // })
         },
     });
 
@@ -106,7 +99,6 @@ const CreateSportsman = () => {
                         <select
                             onChange={(e) => formik.handleChange(e)}
                             className={inputStyles.input}
-                            /* value={formik.values.должность} */
                             name="sportsman.sex"
                         >
                             <option className={s.option}>
@@ -122,14 +114,13 @@ const CreateSportsman = () => {
                     </div>
                 </div>
                 <Input onChange={formik.handleChange} name="sportsman.address" valueLabel="Адрес" width="600px" placeholder="Введите адрес"/>
-                <Input valueLabel="Средний балл ОФП" width="600px" placeholder="Введите средний балл"/>
+                {/*<Input valueLabel="Средний балл ОФП" width="600px" placeholder="Введите средний балл"/>*/}
                 <div className={inputStyles.input_container}>
                     <label className={inputStyles.label}>Клуб</label>
                     <div className={inputStyles.gradient} style={{width:"600px"}}>
                         <select
                             onChange={(e) => formik.handleChange(e)}
                             className={inputStyles.input}
-                            /* value={formik.values.должность} */
                             name="sportsman.club"
                         >
                             <option className={s.option}></option>
@@ -156,7 +147,6 @@ const CreateSportsman = () => {
                         <select
                             onChange={(e) => formik.handleChange(e)}
                             className={inputStyles.input}
-                            /* value={formik.values.должность} */
                             name="sportsman.sport_category"
                         >
                             <option className={s.option}>
@@ -195,7 +185,6 @@ const CreateSportsman = () => {
                 <p className="basic_text" style={{margin: "70px auto 20px"}}>Достижения</p>
                 <div className={ownStyles.inp_plus_cont}>
                     <Input onChange={formik.handleChange} name="sportsman.achievements" valueLabel="Достижения" width="600px" placeholder="Введите спортивный достижения"/>
-                    {/*<img className={ownStyles.plus} src={plus} alt="wrong"/>*/}
                 </div>
                 <p className="basic_text" style={{margin: "70px auto 20px"}}>Физические показатели</p>
                 <div className="flex">

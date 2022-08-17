@@ -1,5 +1,4 @@
 import React from 'react';
-// import s from "../../pages/news/defaultNews/DefaultNews.module.scss";
 import s from "./Options.module.scss"
 import ButtonForActiveChanges from "../buttonForActiveChanges/ButtonForActiveChanges";
 import {useNavigate} from "react-router";
