@@ -9,6 +9,8 @@ const initialState = {
   allUser:[],
   userId:{},
   userTrainer: [],
+  feedBackUsers:[],
+  feedBackUser:{},
   // userSecretary:[],
 };
 
@@ -171,6 +173,38 @@ export const getTrainerUser = createAsyncThunk(
     }
 );
 
+export const getFeedback = createAsyncThunk(
+  "user/getFeedback",
+  async function(_,{ rejectWithValue}){
+      try {
+          const res = await requests.getFeedback();
+            // console.log(res.data)
+          if (!res) {
+              throw new Error("ERROR");
+          }
+          return res.data
+      } catch (error) {
+          return rejectWithValue(error.message)
+      }
+  }
+);
+
+export const getFeedbackById = createAsyncThunk(
+  "user/getFeedbackById",
+  async function(id,{ rejectWithValue}){
+      try {
+          const res = await requests.getFeedbackById(id);
+            // console.log(res.data)
+          if (!res) {
+              throw new Error("ERROR");
+          }
+          return res.data
+      } catch (error) {
+          return rejectWithValue(error.message)
+      }
+  }
+);
+
 
 const userSlice = createSlice({
   name: "user",
@@ -277,6 +311,16 @@ const userSlice = createSlice({
     [getRequestToRegiter.rejected]: (state, action) => {
       state.status = "rejected";
       state.error = action.payload;
+    },
+    [getFeedback.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.feedBackUsers = action.payload
+      // console.log("fullfiled");
+    },
+    [getFeedbackById.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.feedBackUser = action.payload
+      // console.log("fullfiled");
     },
   },
 });

@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { getDiscipline } from "../../../../redux/slices/disciplineSlice";
 import { getEvent } from "../../../../redux/slices/eventSlice";
 import { postApplicationTemplate } from "../../../../redux/slices/applicationSlice";
+import { useNavigate } from "react-router";
 
 export const AppliedTemplate = ({changeTemplate}) => {
   const dispatch = useDispatch()
@@ -21,55 +22,28 @@ export const AppliedTemplate = ({changeTemplate}) => {
   const discipline = useSelector(state=>state.discipline.discipline)
   const event = useSelector(state=>state.event.event)
   console.log(event)
+
   const [state, setState] = useState(false)
   const [nameOfEvent, setNameOfEvent] = useState("")
+  const setEvent =(name, id)=>{
+    setNameOfEvent(name)
+    setState(!state)
+    formik.setFieldValue("event", id)
+  }
+
   const toggle = () =>{
     setState(!state)
-    // setNameOfEvent(name)
   }
 
   const [cuanShu, setCuanShu] = useState(false)
   const cuanFunc = ()=>{
     setCuanShu(!cuanShu)
   }
+
   const [cisi, setCisi] = useState(false)
   const cisiFunc =()=>{
     setCisi(!cisi)
   }
-  // const disciplineChoiseFunc=(category, is_individual, with_weapon)=>{
-    
-  //   if(category==="1"&&is_individual===true&&with_weapon===true){
-  //     setTraditional("Традиционная, одиночный, с оружием")
-  //   } else if(category==="1"&&is_individual===false&&with_weapon===false){
-  //     setTraditional("Традиционная, не одиночная, без оружием")
-  //   }else if(category==="1"&&is_individual===true&&with_weapon===false){
-  //     setTraditional("Традиционная, одиночная, без оружием")
-  //   }else if(category==="1"&&is_individual===false&&with_weapon===true){
-  //     setTraditional("Традиционная, не одиночная, с оружием")
-  //   }
-
-  //   else if(category==="2"&&is_individual===true&&with_weapon===true){
-  //     setTraditional("Спортивное, одиночный, с оружием")} 
-  //   else if(category==="2"&&is_individual===false&&with_weapon===false){
-  //     setTraditional("Спортивное, не одиночная, без оружием")
-  //   }else if(category==="2"&&is_individual===true&&with_weapon===false){
-  //     setTraditional("Спортивное, одиночная, без оружием")
-  //   }else if(category==="2"&&is_individual===false&&with_weapon===true){
-  //     setTraditional("Спортивное, не одиночная, с оружием")
-  //   }
-
-  //   else if(category==="3"&&is_individual===true&&with_weapon===true){
-  //     setTraditional("Дуэлянь, одиночный, с оружием")} 
-  //   else if(category==="3"&&is_individual===false&&with_weapon===false){
-  //     setTraditional("Дуэлянь, не одиночная, без оружием")
-  //   }else if(category==="3"&&is_individual===true&&with_weapon===false){
-  //     setTraditional("Дуэлянь, одиночная, без оружием")
-  //   }else if(category==="3"&&is_individual===false&&with_weapon===true){
-  //     setTraditional("Дуэлянь, не одиночная, с оружием")
-  //   }
-  // }
-
-  // const [cuanShuId, setCuanShuId] = useState("")
 
   const [cuanshuComplexName, setCuanshuComplexName] = useState("Название комплекса")
   const nameOfDiscipline = (text, id)=> {
@@ -77,12 +51,15 @@ export const AppliedTemplate = ({changeTemplate}) => {
     setCuanShu(!cuanShu)
     formik.setFieldValue("discipline_1", id)
   }
+
   const [cisiComplexName, setCisiComplexName] = useState("Название комплекса")
   const nameOfCisi = (text, id)=>{
     setCisiComplexName(text)
     setCisi(!cisi)
     formik.setFieldValue("discipline_2", id)
   }
+
+  const navigate = useNavigate()
 
   const formik = useFormik({
     initialValues: {
@@ -92,8 +69,9 @@ export const AppliedTemplate = ({changeTemplate}) => {
   },
   enableReinitialize:true,
     onSubmit: (values) => {
-      // dispatch(postApplicationTemplate(values))
-      alert(JSON.stringify(values, null, 2));
+      const data = {values, navigate}
+      dispatch(postApplicationTemplate(data))
+      // alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -115,14 +93,7 @@ export const AppliedTemplate = ({changeTemplate}) => {
           <div className={ss.cont_radio}>
             {event.map((el, index)=>(
           <label className={ss.radio} key={index}>
-            <p onClick={()=>setNameOfEvent(el.name)}>{el.name}</p>
-            <input
-              type="radio"
-              value={el.id}
-              name="event"
-              onChange={formik.handleChange}
-              className={ss.radio_input}
-            />
+            <p onClick={()=>setEvent(el.name, el.id)}>{el.name}</p>
           </label>
             ))}
          </div>
@@ -143,10 +114,7 @@ export const AppliedTemplate = ({changeTemplate}) => {
           <div className={ss.cont_radio__}>
 
         {discipline.map((el,index)=>(
-          <label className={s.radio__} key={index}>
-            {/* {disciplineChoiseFunc(el.category, el.is_individual, el.with_weapon)} */}
-            
-           
+          <label className={s.radio__} key={index}> 
             {el.category===1 &&el.is_individual===true&&el.with_weapon===true&&<p onClick={()=>nameOfDiscipline("Традиционная, одиночный, с оружием", el.id)}>Традиционная, одиночный, с оружием</p>}
             {el.category===1 &&el.is_individual===false&&el.with_weapon===false&&<p onClick={()=>nameOfDiscipline("Традиционная, не одиночная, без оружием", el.id)}>Традиционная, не одиночная, без оружием</p>}
             {el.category===1 &&el.is_individual===true&&el.with_weapon===false&&<p onClick={()=>nameOfDiscipline("Традиционная, одиночная, без оружием", el.id)}>Традиционная, одиночная, без оружием</p>}

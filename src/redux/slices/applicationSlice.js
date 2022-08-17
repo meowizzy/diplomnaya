@@ -9,7 +9,8 @@ const initialState = {
   applicationTemplateId:{},
   currentApplication:[],
   historyApplication:[],
-  error:{}
+  error:{}, 
+  tempId:{}
 };
 
 export const getApplication = createAsyncThunk(
@@ -97,16 +98,28 @@ export const postApplicationTemplate = createAsyncThunk(
   'application/postApplicationTemplate',
   async (data) => {
     console.log(data)
-        const response = await requests.postApplicationTemplate(data);
+        const response = await requests.postApplicationTemplate(data.values);
+        data.navigate("/main/applied/sendTemplate")
         console.log("post: ", response.data)
+        localStorage.setItem('tempId', response.data.id)
         return response.data
-      
       // data.navigate("/main/news/all_news")
       // setTimeout(() => data.handleOpenSuccessModal(), 1500)
       // data.handleOpenSuccessModal()
     }
 );
-
+export const editApplicationTemplate = createAsyncThunk(
+  'application/editApplicationTemplate',
+  async (data) => {
+    console.log(data)
+        const response = await requests.editApplicationTemplate(data.values);
+        console.log("post: ", response.data)
+        // data.navigate("/main/applied/sendTemplate")
+        // localStorage.setItem('tempId', response.data.id)
+        return response.data;
+      // data.handleOpenSuccessModal()
+    }
+);
 export const getApplicationTemplate = createAsyncThunk(
   "application/getApplicationTemplate",
   async function(_,{ rejectWithValue}){
@@ -172,100 +185,104 @@ export const postApplication = createAsyncThunk(
 );
 
 const applicationSlice = createSlice({
-    name: "application",
-    initialState,
-    status: null,
-    statusById: null,
-    error: null,
-    deleteStatus:null,
-    extraReducers: {
-      [getApplication.pending]: (state) => {
-        state.status = "loading";
-        state.error = null;
-      },
-      [getApplication.fulfilled]: (state, action) => {
-        state.status = "resolved";
-        state.application = action.payload
-        // console.log("fullfiled");
-      },
-      [getApplication.rejected]: (state, action) => {
-        state.status = "rejected";
-        state.error = action.payload;
-      },
-      [getApplicationById.pending]: (state) => {
-        state.statusById = "loading";
-        state.error = null;
-      },
-      [getApplicationById.fulfilled]: (state, action) => {
-        state.statusById = "resolved";
-        state.applicationById = action.payload
-        // console.log("fullfiled");
-      },
-      [getApplicationById.rejected]: (state, action) => {
-        state.statusById = "rejected";
-        state.error = action.payload;
-      },
-      [getApplicationTemplate.pending]: (state) => {
-        state.statusById = "loading";
-        state.error = null;
-      },
-      [getApplicationTemplate.fulfilled]: (state, action) => {
-        state.statusById = "resolved";
-        state.applicationTemplate = action.payload
-        // console.log("fullfiled");
-      },
-      [getApplicationTemplate.rejected]: (state, action) => {
-        state.statusById = "rejected";
-        state.error = action.payload;
-      },
-      [getApplicationTemplateById.pending]: (state) => {
-        state.statusById = "loading";
-        state.error = null;
-      },
-      [getApplicationTemplateById.fulfilled]: (state, action) => {
-        state.statusById = "resolved";
-        state.applicationTemplateId = action.payload
-        // console.log("fullfiled");
-      },
-      [getApplicationTemplateById.rejected]: (state, action) => {
-        state.statusById = "rejected";
-        state.error = action.payload;
-      },
-      [getCurrentApplication.pending]: (state) => {
-        state.statusById = "loading";
-        state.error = null;
-      },
-      [getCurrentApplication.fulfilled]: (state, action) => {
-        state.statusById = "resolved";
-        state.currentApplication = action.payload
-        // console.log("fullfiled");
-      },
-      [getCurrentApplication.rejected]: (state, action) => {
-        state.statusById = "rejected";
-        state.error = action.payload;
-      },
-      [getHistoryApplication.pending]: (state) => {
-        state.statusById = "loading";
-        state.error = null;
-      },
-      [getHistoryApplication.fulfilled]: (state, action) => {
-        state.statusById = "resolved";
-        state.historyApplication = action.payload
-        // console.log("fullfiled");
-      },
-      [getHistoryApplication.rejected]: (state, action) => {
-        state.statusById = "rejected";
-        state.error = action.payload;
-      },
-      [deleteApplication.fulfilled]: (state, action) => {
-        state.statusById = "resolved";
-        state.currentApplication = state.currentApplication.filter(el=>(
-          el.id!==action.payload
-        ))
-        // console.log("fullfiled");
-      },
+  name: "application",
+  initialState,
+  status: null,
+  statusById: null,
+  error: null,
+  deleteStatus: null,
+  extraReducers: {
+    [getApplication.pending]: (state) => {
+      state.status = "loading";
+      state.error = null;
     },
-  });
+    [getApplication.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.application = action.payload;
+      // console.log("fullfiled");
+    },
+    [getApplication.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
+    [getApplicationById.pending]: (state) => {
+      state.statusById = "loading";
+      state.error = null;
+    },
+    [getApplicationById.fulfilled]: (state, action) => {
+      state.statusById = "resolved";
+      state.applicationById = action.payload;
+      // console.log("fullfiled");
+    },
+    [getApplicationById.rejected]: (state, action) => {
+      state.statusById = "rejected";
+      state.error = action.payload;
+    },
+    [getApplicationTemplate.pending]: (state) => {
+      state.statusById = "loading";
+      state.error = null;
+    },
+    [getApplicationTemplate.fulfilled]: (state, action) => {
+      state.statusById = "resolved";
+      state.applicationTemplate = action.payload;
+      // console.log("fullfiled");
+    },
+    [getApplicationTemplate.rejected]: (state, action) => {
+      state.statusById = "rejected";
+      state.error = action.payload;
+    },
+    [getApplicationTemplateById.pending]: (state) => {
+      state.statusById = "loading";
+      state.error = null;
+    },
+    [getApplicationTemplateById.fulfilled]: (state, action) => {
+      state.statusById = "resolved";
+      state.applicationTemplateId = action.payload;
+      // console.log("fullfiled");
+    },
+    [getApplicationTemplateById.rejected]: (state, action) => {
+      state.statusById = "rejected";
+      state.error = action.payload;
+    },
+    [getCurrentApplication.pending]: (state) => {
+      state.statusById = "loading";
+      state.error = null;
+    },
+    [getCurrentApplication.fulfilled]: (state, action) => {
+      state.statusById = "resolved";
+      state.currentApplication = action.payload;
+      // console.log("fullfiled");
+    },
+    [getCurrentApplication.rejected]: (state, action) => {
+      state.statusById = "rejected";
+      state.error = action.payload;
+    },
+    [getHistoryApplication.pending]: (state) => {
+      state.statusById = "loading";
+      state.error = null;
+    },
+    [getHistoryApplication.fulfilled]: (state, action) => {
+      state.statusById = "resolved";
+      state.historyApplication = action.payload;
+      // console.log("fullfiled");
+    },
+    [getHistoryApplication.rejected]: (state, action) => {
+      state.statusById = "rejected";
+      state.error = action.payload;
+    },
+    [deleteApplication.fulfilled]: (state, action) => {
+      state.statusById = "resolved";
+      state.currentApplication = state.currentApplication.filter(
+        (el) => el.id !== action.payload
+      );
+    },
+    [postApplicationTemplate.fulfilled]: (state, action) => {
+      state.statusById = "resolved";
+      state.tempId = action.payload;
+      // console.log("fullfiled");
+    },
+  },
+});
   
   // export const { application } = applicationSlice.actions;
   

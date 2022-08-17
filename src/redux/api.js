@@ -1,7 +1,8 @@
 import axios from "axios";
+import { getCookie } from "../utils/cookieFunction/cookieFunction";
 
-// const token = localStorage.getItem("token");
-
+const token = getCookie("token")
+console.log(token)
 const fetchAPI = axios.create({
     baseURL: "https://whushu.herokuapp.com/",
     headers: {
@@ -18,11 +19,13 @@ const notToken = axios.create({
 });
 
 export const requests = {
-    authApi: (data) => fetchAPI.post("login/", data),
+    authApi: (data) => notToken.post("login/", data),
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     newPasswordApi: (data) => fetchAPI.post("password-reset/confirm/", data),
-
+    getFeedback: () => fetchAPI.get("feedback/"),
+    getFeedbackById: (id) => fetchAPI.get(`feedback/${id}`),
+    
     // Events
     getEvents:() => fetchAPI.get('event/'),
     postEvents:(data) => fetchAPI.post('event/', data),
@@ -38,6 +41,7 @@ export const requests = {
     getUserForProfile:(id) => fetchAPI.get(`user/${id}`),
     deleteUser:(id) => fetchAPI.delete(`user/${id}`),
     editUser:(data) => fetchAPI.patch(`user/${data.id}/`, data.values),
+    postUserClub:(data) => fetchAPI.post(`user_club/`, data),
     getTrainerUser: () => fetchAPI.get("user/", { params: { is_assistant: false, is_judge : false, role: "TRAINER" } }),
 
     // documentation
@@ -63,6 +67,7 @@ export const requests = {
     getCurrentApplication:(data)=>fetchAPI.get(`application/?trainer=${data.id}&new_application=2022-09-12`),
     getHistoryApplication:(data)=>fetchAPI.get(`application/?trainer=${data.id}&old_application=2022-09-12`),
     postApplicationTemplate: (data) => fetchAPI.post(`template_application/`, data),
+    editApplicationTemplate: (data) => fetchAPI.patch(`template_application/${data.id}`, data),
     getApplicationTemplate:()=>fetchAPI.get("template_application/"),
     getApplicationTemplateById:(id)=>fetchAPI.get(`template_application/${id}`),
 

@@ -40,7 +40,9 @@ export const CreateUser = () => {
     email: "",
     address: "",
     password: "",
-    is_active:false,
+    is_active:false, 
+    referral_code:"",
+    // achievements: "",
   })
   
   const onChange = (value, str)=>{
@@ -84,7 +86,8 @@ export const CreateUser = () => {
 
   const onSubmit=(e)=>{
     e.preventDefault();
-
+    const data = {handleOpenSuccessModal, role}
+    dispatch(createUser(data))
     console.log(role)
   }
   console.log(role)

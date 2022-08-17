@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useFormik } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import BackButton from "../../../components/arrowButton/BackButton";
 import Button from "../../../components/button/Button";
@@ -8,14 +8,17 @@ import Input from "../../../components/input/Input";
 import TextArea from "../../../components/input/TextArea";
 import SuccessModal from "../../../components/modals/SuccessModal";
 import s from "./RecoveryRequest.module.scss";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { getFeedback } from "../../../redux/slices/userSlice";
 
 export const RecoveryInfo = () => {
 
-
+  const user = useSelector(state=>state.user.feedBackUser)
+  console.log(user)
   const formik = useFormik({
     initialValues: {
-      recovery: "Помогите, пожалуйста, восстановить пароль",
-      email: "Admin111@gmail.com",
+      text: user.text,
+      email: user.email,
     },
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
@@ -35,14 +38,14 @@ export const RecoveryInfo = () => {
             valueLabel="Электронная почта"
             value={formik.values.email}
             onChange={formik.handleChange}
-            name="name"
+            name="email"
             width="600px"
             type="email"
           />
           <div className="relative">
             <p className={s.obr}>Обращение</p>
             <div className={s.help}>
-              Помогите, пожалуйста, восстановить пароль
+              {user.text}
             </div>
           </div>
           {/* <Input
