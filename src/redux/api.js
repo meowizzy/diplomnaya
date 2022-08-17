@@ -10,6 +10,14 @@ const fetchAPI = axios.create({
     },
 });
 
+const fetchHerokuAPI = axios.create({
+    baseURL: "https://whushu.herokuapp.com/",
+    headers: {
+        "Content-type": "application/json",
+        // Authorization: `Bearer ${token}`,
+    },
+});
+
 const notToken = axios.create({
     baseURL: "https://wushu-federation.tk/",
     headers: {
@@ -18,13 +26,13 @@ const notToken = axios.create({
 });
 
 export const requests = {
-    authApi: (data) => fetchAPI.post("login/", data),
+    authApi: (data) => fetchHerokuAPI.post("login/", data),
     resetPasswordApi: (data) => fetchAPI.post("password-reset/", data),
     feedbackApi: (data) => fetchAPI.post("feedback/", data),
     newPasswordApi: (data) => fetchAPI.post("password-reset/confirm/", data),
 
     // Events
-    getEvents:() => fetchAPI.get('event/'),
+    getEvents:() => fetchHerokuAPI.get('event/'),
     postEvents:(data) => fetchAPI.post('event/', data),
     editEvents:(data) => fetchAPI.patch(`event/${data.id}/`, data.values),
     deleteEvents:(id) => fetchAPI.delete(`event/${id}/`),
@@ -94,18 +102,18 @@ export const requests = {
     // deleteSportsmenApi: (id) => fetchAPI.delete(`athletes/${id}/`),
 
     // protocol
-    getProtocolApi: () => fetchAPI.get("subgroup/"),
-    getProtocolByIdApi: (id) => fetchAPI.get(`subgroup/${id}`),
-    postProtocolApi: (id) => fetchAPI.post("subgroup/", {event: id}),
+    getProtocolApi: () => fetchHerokuAPI.get("subgroup/"),
+    getProtocolByIdApi: (id) => fetchHerokuAPI.get(`subgroup/${id}`),
+    postProtocolApi: (id) => fetchHerokuAPI.post("subgroup/", {event: id}),
     // formProtocolApi: (data) => fetchAPI.patch(`subgroup/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
-    formProtocolApi: (data) => fetchAPI.patch(`subroup_bulk_update/`, data),
-    confirmProtocolApi: ({data}) => fetchAPI.patch(`subroup_bulk_update/`, data),
-    reasonOfRejectionProtocolApi: ({reason}) => fetchAPI.patch(`subroup_bulk_update/`, reason),
+    formProtocolApi: (data) => fetchHerokuAPI.patch(`subroup_bulk_update/`, data),
+    confirmProtocolApi: ({data}) => fetchHerokuAPI.patch(`subroup_bulk_update/`, data),
+    reasonOfRejectionProtocolApi: ({reason}) => fetchHerokuAPI.patch(`subroup_bulk_update/`, reason),
 
     // judge
-    getJudgeApi: () => fetchAPI.get("judge_group/"),
+    getJudgeApi: () => fetchHerokuAPI.get("judge_group/"),
     // getProtocolApi: (id) => fetchAPI.get(`judge_group/${id}`),
-    postJudgeApi: (data) => fetchAPI.post("judge_group/", data),
+    postJudgeApi: (data) => fetchHerokuAPI.post("judge_group/", data),
     formJudgeApi: (data) => fetchAPI.patch(`judge_group/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
     confirmJudgeApi: ({id, par}) => fetchAPI.patch(`judge_group/${id}/`, {is_confirmed : par}),
 }

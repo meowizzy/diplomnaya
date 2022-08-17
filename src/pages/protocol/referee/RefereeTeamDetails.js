@@ -11,7 +11,7 @@ import DeleteModal from "../../../components/modals/DeleteModal";
 import SuccessModal from "../../../components/modals/SuccessModal";
 import {useParams} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
-import {getProtocol, getProtocolById} from "../../../redux/slices/protocolSlice";
+import {getJudge, getProtocol, getProtocolById} from "../../../redux/slices/protocolSlice";
 
 const RefereeTeamDetails = () => {
 
@@ -31,11 +31,13 @@ const RefereeTeamDetails = () => {
     const dispatch = useDispatch();
     const protocols_list = useSelector(state => state.protocol.protocols)
     const protocolById = useSelector(state => state.protocol.protocol)
-    // const judges_list = useSelector(state => state.protocol.judges)
+    const judges_list = useSelector(state => state.protocol.judges)
     const protocols = protocols_list.filter(p => p.event.id == id)
+    const judges = judges_list.filter(t => protocols.find(r => r.id === t.subgroup))
     // const judges = judges_list(judge => judge.id)
     console.log("created_protocolss: ", protocols)
     console.log("protocol_by_id: ", protocolById)
+    console.log("judges: ", judges)
 
     const areas = {
         1: "1fr",
@@ -65,6 +67,7 @@ const RefereeTeamDetails = () => {
 
     useEffect(() => {
         dispatch(getProtocol())
+        dispatch(getJudge())
     }, [])
 
     useEffect(() => {
@@ -185,29 +188,35 @@ const RefereeTeamDetails = () => {
 
                 </div>
 
-                <div className={ownStyles2.referee_cont}>
-                    <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
-                    {openOption && <Options closeOption={handleOpenOption} setEditButton={setEditButton} handleOpenDeleteModal={handleOpenDeleteModal}/>}
-                    <p style={{margin: "0 0 30px", fontSize: "26px", fontWeight:"bold", paddingTop: "30px"}}>Судейская бригада</p>
-                    <div className={ownStyles.input_cont} style={{fontWeight: "500", marginTop: 10}}>
-                        <input disabled className={ownStyles.title1} value="№"/>
-                        <input style={{flex: 5}} disabled className={ownStyles.title2} value="Время"/>
-                        <input style={{flex: 7}} disabled className={ownStyles.title} value="Подгруппа"/>
-                        <input style={{flex: 10}} disabled className={ownStyles.title} value="Судейская бригада" />
-                        <input style={{flex: 7}} disabled className={ownStyles.title} value="Арена" />
-                    </div>
-                    <div className={ownStyles.input_cont}>
-                        <input className={ownStyles.input11} type="text" value="1"/>
-                        <input style={{flex: 5}} className={ownStyles.input2} type="text" value="08:00 - 08:30"/>
-                        <input style={{flex: 7}} className={ownStyles.input} type="text" value="Мальчики, 8 - 12 лет"/>
-                        <input style={{flex: 10}} className={ownStyles.input} type="text" value="Тестовчи, Тестовна, Нетесник "/>
-                        <input style={{flex: 7, borderRight: "none"}} className={ownStyles.input} type="text" value="Красная (первая)"/>
-                    </div>
-
-                    {
-                        editButton && <Button onClick={handleOpenSuccessModal} margin="70px 0 0" width="600px" text="СОХРАНИТЬ" />
-                    }
-                </div>
+            { judges && <div className={ownStyles2.referee_cont}>
+                            <OptionButton onClick={handleOpenOption} top="30px" right="30px"/>
+                            {openOption && <Options closeOption={handleOpenOption} setEditButton={setEditButton}
+                                                    handleOpenDeleteModal={handleOpenDeleteModal}/>}
+                            <p style={{margin: "0 0 30px", fontSize: "26px", fontWeight: "bold", paddingTop: "30px"}}>Судейская
+                                бригада</p>
+                            <div className={ownStyles.input_cont} style={{fontWeight: "500", marginTop: 10}}>
+                                <input disabled className={ownStyles.title1} value="№"/>
+                                <input style={{flex: 5}} disabled className={ownStyles.title2} value="Время"/>
+                                <input style={{flex: 7}} disabled className={ownStyles.title} value="Подгруппа"/>
+                                <input style={{flex: 10}} disabled className={ownStyles.title} value="Судейская бригада"/>
+                            </div>
+                            {
+                                judges.map((judge, index) => {
+                                    return <div className={ownStyles.input_cont}>
+                                        <input className={ownStyles.input11} type="text" value={index + 1}/>
+                                        <input style={{flex: 5}} className={ownStyles.input2} type="text"
+                                               value={`${judge.start_time}-${judge.start_time} `}/>
+                                        <input style={{flex: 7}} className={ownStyles.input} type="text" value={judge.subgroup}/>
+                                        <input style={{flex: 10}} className={ownStyles.last_input} type="text"
+                                               value="Тестовчи, Тестовна, Нетесник "/>
+                                    </div>
+                                })
+                            }
+                            {
+                                editButton &&
+                                <Button onClick={handleOpenSuccessModal} margin="70px 0 0" width="600px" text="СОХРАНИТЬ"/>
+                            }
+                        </div>}
 
         </div>
             {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно отредактировали данные о судейской бригаде!"/>}

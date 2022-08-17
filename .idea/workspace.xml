@@ -3,27 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/threeDot/ThreeDot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/threeDot/ThreeDot.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/appliedTemplate/AppliedTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/appliedTemplate/AppliedTemplate.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/newApplied/DetailedInfoForNewApplied.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/newApplied/DetailedInfoForNewApplied.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/Application.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/Application.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/currentApplications/DetailCurrent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/currentApplications/DetailCurrent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/events/changeEvents/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events/changeEvents/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/events/changeEvents/ChangeForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events/changeEvents/ChangeForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/Registered.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/Registered.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/Registered.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/Registered.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/UserInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestToRegistr.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestToRegistr.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestUserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestUserInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeTeamDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeTeamDetails.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/applicationSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/applicationSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/eventSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/eventSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/registerSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/registerSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/userSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +80,7 @@
       <workItem from="1660539872411" duration="19961000" />
       <workItem from="1660569818725" duration="15677000" />
       <workItem from="1660625382616" duration="23074000" />
+      <workItem from="1660745852855" duration="405000" />
     </task>
     <task id="LOCAL-00001" summary="WHUS-415 made clubs and sportsman logical parts">
       <created>1659717735184</created>
@@ -166,16 +148,5 @@
     <MESSAGE value="WHUS-234 made protocol, arena and referee logical part" />
     <MESSAGE value="fixed" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/redux/api.js</url>
-          <line>19</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
