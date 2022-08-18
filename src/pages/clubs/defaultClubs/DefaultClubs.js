@@ -41,7 +41,7 @@ const DefaultClubs = () => {
                                 <p>{club.name}</p>
                                 <p>Тренер</p>
                                 <p>{club.address}</p>
-                                <p>{club.sum_of_people.split('.')[0]}</p>
+                                <p>{club.sum_of_people}</p>
                             </div>
                         </Link>
                     })
