@@ -23,6 +23,7 @@ const DefaultDocumentation = () => {
 
     useEffect(() => {
         dispatch(getDocs())
+        window.scrollTo(0, 0);
     }, []);
 
     return (

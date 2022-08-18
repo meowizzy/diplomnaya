@@ -33,7 +33,7 @@ const NewsCard = ({openOption, handleOpenOption, data}) => {
                 <p className={s.card__date}>{data.created_date}</p>
                 <ForwardButton className={s.next_button} onClick={handleOpen}/>
             </div>) : (<div style={{marginBottom: 54}} className={s.cards}>
-                <div style={{background: `url(${data.picture})`}}>
+                <div style={{background: `url(${data.picture}) no-repeat`}} className={`${s.card} ${s.card_top}`}>
                     <BackButton onClick={handleOpen}/>
                     <p className={s.card__title}>{data.title}</p>
                     <p className={s.card__date}>{data.created_date}</p>
@@ -51,6 +51,7 @@ const NewsCard = ({openOption, handleOpenOption, data}) => {
             </div>)}
             { openDeleteModal && <DeleteModal dispatchFunc={deleteNew(deleteData)} text="Вы уверены, что хотите удалить данную статью?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
         </>
+
     );
 };
 

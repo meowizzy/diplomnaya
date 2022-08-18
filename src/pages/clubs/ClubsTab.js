@@ -30,7 +30,7 @@ const ClubsTab = () => {
                 }
 
             </div>
-            {VisibleBackButton(location,"list_sportsmen", 5) && <ButtonForActiveChanges classname="back_button" text="вернуться" onClick={() => navigate("/main/clubs/all_clubs/all_club_details")}/> }
+            {VisibleBackButton(location,"list_sportsmen", 5) && <ButtonForActiveChanges classname="back_button" text="вернуться" onClick={() => navigate("/main/clubs/all_clubs/all_club_details/:id")}/> }
             {VisibleBackButton(location,"sportsmen", 3) && <ButtonForActiveChanges classname="no_button" onClick={() => navigate("/main/clubs/sportsmen/create")} margin={0} text="Добавить"/> }
             {
                 role["user role"] === "ADMIN" && <ButtonForActiveChanges classname="no_button" onClick={() => navigate("/main/clubs/createClub")} margin={0} text="СОЗДАТЬ"/>

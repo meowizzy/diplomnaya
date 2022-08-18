@@ -11,12 +11,13 @@ import {createProtocol, getProtocol} from "../../../redux/slices/protocolSlice";
 const AllEvents = () => {
 
     const dispatch = useDispatch();
-    const events_list = useSelector(state => state.event.event)
-    const events = events_list.filter(e => e.is_protocoled !== false)
+    const events = useSelector(state => state.event.event)
+    // const events = events_list.filter(e => e.is_protocoled === false)
     console.log("events: ", events)
 
     useEffect(() => {
         dispatch(getEvent())
+        window.scrollTo(0, 0);
     }, [])
 
     const createNewProtocol = (id) => {

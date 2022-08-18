@@ -125,14 +125,14 @@ export const NavBar = () => {
             Заявки
             <span className={s.bottom_curve}></span>
           </NavLink>
-          <NavLink
-            to="/main/users/registered"
-            className={linkActiveClassName("users")}
-          >
-            <span className={s.top_curve}></span>
-            Пользователи
-            <span className={s.bottom_curve}></span>
-          </NavLink>
+          {/*<NavLink*/}
+          {/*  to="/main/users/registered"*/}
+          {/*  className={linkActiveClassName("users")}*/}
+          {/*>*/}
+          {/*  <span className={s.top_curve}></span>*/}
+          {/*  Пользователи*/}
+          {/*  <span className={s.bottom_curve}></span>*/}
+          {/*</NavLink>*/}
           <NavLink
             to="/main/protocol/all_protocols"
             className={linkActiveClassName("protocol")}
