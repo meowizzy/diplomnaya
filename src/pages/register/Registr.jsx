@@ -40,16 +40,19 @@ export const Registr = () => {
   const err = useSelector(state=>state.register);
   const userId = useSelector(state=>state.register)
 
-  // console.log(userId)
+  console.log(userId)
 
   const [clubForm, setClubForm] = useState({
     user:userId.userId.id,
     club:""
   })
+
   const [clubName, setClubName] = useState("")
+  // const [clubForm, setClubForm] = useState([1])
   const onChange =(value, id)=>{
-    setClubForm({...clubForm, club:id})
+    setClubForm({...clubForm, id:id})
     setClubName(value)
+    clickClub()
   }
 
   const setUserId = () => {
@@ -241,13 +244,6 @@ export const Registr = () => {
               {clubs.map((el,index)=>(
               <label className={s.label} key={index}>
                 <p onClick={()=>onChange(el.name, el.id)}>{el.name}</p>
-                {/* <input
-                  type="radio"
-                  value="Золотой дракон"
-                  onChange={formik.handleChange}
-                  name="club"
-                  className={s.radio}
-                /> */}
               </label>
               ))}
             </div>
@@ -270,17 +266,17 @@ export const Registr = () => {
         {/* <div style={{margin:"50px 0px 60px"}}> */}
         <Button
           text="ЗАРЕГИСТРИРОВАТЬСЯ"
-          // disabled={
-          //   !(
-          //     formik.values.email &&
-          //     formik.values.password &&
-          //     formik.values.name &&
-          //     formik.values.surname &&
-          //     formik.values.number &&
-          //     formik.values.city &&
-          //     formik.values.secondPassword
-          //   )
-          // }
+          disabled={
+            !(
+              formik.values.email &&
+              formik.values.password &&
+              formik.values.name &&
+              formik.values.surname &&
+              formik.values.number &&
+              formik.values.city &&
+              formik.values.secondPassword
+            )
+          }
           type="submit"
         />
         {/* </div> */}

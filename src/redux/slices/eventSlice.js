@@ -12,7 +12,7 @@ export const getEvent = createAsyncThunk(
   async function(_,{ rejectWithValue}){
     try {
       const res = await requests.getEvents();
-      // console.log(res.data)
+      // console.log(res)
       if (!res) {
         throw new Error("ERROR");
       }
@@ -26,14 +26,12 @@ export const getEvent = createAsyncThunk(
 export const createEvent = createAsyncThunk(
   "event/createEvent",
   async (data ,{ rejectWithValue }) => {
-    console.log("form", data.values)
+    // console.log("form", data)
     try {
       const res = await requests.postEvents(data.values);
       data.handleOpneSuccessModal()
-      // console.log("res", res)
-      if (!res) {
-        throw new Error("ERROR");
-      }
+      data.navigate('/main/events/allEvents')
+      return res.data
     } catch (error) {
         return rejectWithValue(error.message)
     }
@@ -43,7 +41,7 @@ export const createEvent = createAsyncThunk(
 export const editEvent = createAsyncThunk(
   "event/editEvent",
   async (data, { rejectWithValue }) => {
-    console.log("form", data.values)
+    // console.log("form", data.values)
     try {
       const res = await requests.editEvents(data);
       console.log("res", data.values)

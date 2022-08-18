@@ -2,7 +2,7 @@ import axios from "axios";
 import { getCookie } from "../utils/cookieFunction/cookieFunction";
 
 const token = getCookie("token")
-console.log(token)
+// console.log(token)
 const fetchAPI = axios.create({
     baseURL: "https://whushu.herokuapp.com/",
     headers: {

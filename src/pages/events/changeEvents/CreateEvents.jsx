@@ -24,29 +24,28 @@ export const CreateEvents = () => {
     dispatch(getSecretaryUser())
   },[])
 
-  const [judge, setJudje] = useState(false)
+  const [judge, setJudje] = useState(true)
   const [nameJudge, setNameJudge] = useState('')
-  const [judgeId, setJudgeId] = useState("")
   const clickJudge = () =>{
     setJudje(!judge)
   }
   const nameJudgeClick = (name, id) =>{
     setNameJudge(name)
     clickJudge()
-    setJudgeId(id)
+    formik.setFieldValue("lead_judge", id)
   }
 
   // console.log(judgeId)
-  const [secretary, setSecretary] = useState(false)
+  const [secretary, setSecretary] = useState(true)
   const [nameSecretary, setNameSecretary] = useState('')
-  const [secretaryId, setSecretaryId] = useState('')
+
   const clickSecretary = () =>{
     setSecretary(!secretary)
   }
   const nameSecretaryClick = (name, id) =>{
     setNameSecretary(name)
     clickSecretary()
-    setSecretaryId(id)
+    formik.setFieldValue("assistant", id)
   }
 
   // console.log(age_groups)
@@ -55,33 +54,27 @@ export const CreateEvents = () => {
   const secretaryUser = useSelector(state=>state.user.userSecretary)
   const status = useSelector(state=>state.event.status)
   const navigate=useNavigate()
-  // console.log(status)
+  console.log(secretaryUser)
+  console.log(judgeUser)
   const [age_groups, setAge_groups] = useState([{
     min_age: '5',
     max_age: '9',
     name: "dsa",
   }])
-  // console.log(secretaryId)
   const formik = useFormik({
     initialValues: {
       name: "",
       finish_datetime: "",
       start_datetime:"",
       place: "",
-      assistant: "6",
-      lead_judge:'7',
+      assistant: "",
+      lead_judge:'',
       note: "",
       age_groups
     },
     onSubmit: (values) => {
-      const data={values}
+      const data={values,handleOpenSuccessModal,navigate}
       dispatch(createEvent(data));
-      if(status==="resolved"){
-        handleOpenSuccessModal()
-        navigate('/main/events/allEvents')
-      }else{
-        return console.log("dsa")
-      }
       // alert(JSON.stringify(values, null, 2));
     },
   });
@@ -105,8 +98,8 @@ export const CreateEvents = () => {
   // },[])
 
   return (
-    <div className={ s.cont }>
-      <BackButton to="/main/events/allEvents"/>
+    <div className={s.cont}>
+      <BackButton to="/main/events/allEvents" />
 
       <p style={{ fontSize: "30px", marginBottom: "40px" }}>
         Создание мероприятие
@@ -130,7 +123,7 @@ export const CreateEvents = () => {
           padding="0 15px 0 20px"
           type="date"
         />
-         <Input
+        <Input
           placeholder="2022-07-17T18:00:00+06:00"
           valueLabel="Введите дату конца"
           value={formik.values.finish_datetime}
@@ -149,105 +142,75 @@ export const CreateEvents = () => {
           name="place"
         />
         <div className="relative">
-        {judge === false?
           <>
-          <Input
-            placeholder="Главный судья"
-            valueLabel="Информация о мероприятии - главный судья"
-            value={nameJudge}
-            onChange={formik.handleChange}
-            width="600px"
-            // name="lead_judge"
+            <Input
+              placeholder="Главный судья"
+              valueLabel="Информация о мероприятии - главный судья"
+              value={nameJudge}
+              onChange={formik.handleChange}
+              width="600px"
+              readOnly
             />
             <div className={ss.list_img} onClick={clickJudge}></div>
           </>
-          :
-          <>
-          <Input
-          placeholder="Главный судья"
-          valueLabel="Информация о мероприятии - главный судья"
-          value={nameJudge}
-          onChange={formik.handleChange}
-          width="600px"
-          // name="lead_judge"
-          />
-          <span className={ss.list_img} onClick={clickJudge}></span>
-          {judgeUser.map(el=>(
-          <div className={s.list}>
-                <label className={s.label}>
-                  {judgeId === el.id ? (
-                    <p onClick={()=>nameJudgeClick(el.name, el.id)} style={{ backgroundColor: "#F3F3FF", paddingLeft:"20px" }}>
-                      {el.name}
-                    </p>
-                  ) : (
-                    <p onClick={()=>nameJudgeClick(el.name, el.id)}>
-                      {el.name}
-                    </p>
-                  )}
-                  <input
-                    type="radio"
-                    value={el.id}
-                    onChange={formik.handleChange}
-                    name="lead_judge"
-                    className={s.radio}
-                  />
-                </label>
-            </div>
-          ))}
-          </>
-          }
-      </div> 
+          {judge === false && (
+            <>
+              {judgeUser.map((el, index) => (
+                <div className={s.list}>
+                  <label className={s.label} key={index}>
+                    {nameJudge === el.name ? (
+                      <p onClick={() => nameJudgeClick(el.name, el.id)}
+                        style={{backgroundColor: "#F3F3FF",paddingLeft: "20px",}}>
+                        {el.name}
+                      </p>
+                    ) : (
+                      <p onClick={() => nameJudgeClick(el.name, el.id)}>
+                        {el.name}
+                      </p>
+                    )}
+                  </label>
+                </div>
+              ))}
+            </>
+          )}
+        </div>
 
-      <div className="relative">
-        {secretary === false?
-          <>
-          <Input
-          placeholder="Секретарь"
-          valueLabel="Информация о мероприятии- секретарь"
-          value={nameSecretary}
-          // onChange={formik.handleChange}
-          width="600px"
-          // name="assistant"
-        />
-            <div className={ss.list_img} onClick={clickSecretary}></div>
+        <div className="relative">
+            <>
+              <Input
+                placeholder="Секретарь"
+                valueLabel="Информация о мероприятии- секретарь"
+                value={nameSecretary}
+                // onChange={formik.handleChange}
+                width="600px"
+                // name="assistant"
+              />
+              <div className={ss.list_img} onClick={clickSecretary}></div>
+            </>
+            <>
+            {secretary === false && (
+            <>
+              {secretaryUser.map((el, index) => (
+                <div className={s.list}>
+                  <label className={s.label} key={index}>
+                    {nameSecretary === el.name ? (
+                      <p onClick={() => nameSecretaryClick(el.name, el.id)}
+                        style={{backgroundColor: "#F3F3FF",paddingLeft: "20px",}}>
+                        {el.name}
+                      </p>
+                    ) : (
+                      <p onClick={() => nameSecretaryClick(el.name, el.id)}>
+                        {el.name}
+                      </p>
+                    )}
+                  </label>
+                </div>
+              ))}
+            </>
+          )}
           </>
-          :
-          <>
-          <Input
-          placeholder="Секретарь"
-          valueLabel="Информация о мероприятии- секретарь"
-          value={nameSecretary}
-          // onChange={formik.handleChange}
-          width="600px"
-          // name="assistant"
-        />
-          <span className={ss.list_img} onClick={clickSecretary}></span>
-          {secretaryUser.map(el=>(
-          <div className={s.list}>
-                <label className={s.label}>
-                  {secretaryId === el.id ? (
-                    <p onClick={()=>nameSecretaryClick(el.name, el.id)} style={{ backgroundColor: "#F3F3FF" }}>
-                      {el.name}
-                    </p>
-                  ) : (
-                    <p onClick={()=>nameSecretaryClick(el.name, el.id)}>
-                      {el.name}
-                    </p>
-                  )}
-                  <input
-                    type="radio"
-                    value={el.id}
-                    onChange={formik.handleChange}
-                    name="assistant"
-                    className={s.radio}
-                  />
-                </label>
-            </div>
-          ))}
-          </>
-          }
-      </div> 
-        
+        </div>
+
         <Input
           placeholder="Введите текст"
           valueLabel="Примечание"
@@ -257,50 +220,64 @@ export const CreateEvents = () => {
           name="note"
         />
 
-        {formik.values.age_groups.map((el, index)=>(
-        <div className={s.age}>
-          <div>
-            <Input
-              placeholder="С"
-              width="285px"
-              value={el.min_age}
-              valueLabel="Возрастная категория"
-              onChange={formik.handleChange}
-              name="min_age"
-            />
+        {formik.values.age_groups.map((el, index) => (
+          <div className={s.age}>
+            <div>
+              <Input
+                placeholder="С"
+                width="285px"
+                value={el.min_age}
+                valueLabel="Возрастная категория"
+                onChange={formik.handleChange}
+                name="min_age"
+              />
 
-            <Input
-              placeholder="По"
-              valueLabel=""
-              width="285px"
-              value={el.max_age}
-              onChange={formik.handleChange}
-              name="max_age"
-            />
-            
-            {index<=0? <span className={s.age_span} onClick={plus}></span>: <img src={minus}className={s.age_span__minus} onClick={()=>minusFunc(index)} />}
-        </div>
-        </div>
+              <Input
+                placeholder="По"
+                valueLabel=""
+                width="285px"
+                value={el.max_age}
+                onChange={formik.handleChange}
+                name="max_age"
+              />
+
+              {index <= 0 ? (
+                <span className={s.age_span} onClick={plus}></span>
+              ) : (
+                <img
+                  src={minus}
+                  className={s.age_span__minus}
+                  onClick={() => minusFunc(index)}
+                />
+              )}
+            </div>
+          </div>
         ))}
         <Button
           text="СОЗДАТЬ"
-          disabled={
-            !(
-              formik.values.name &&
-              formik.values.finish_datetime &&
-              formik.values.start_datetime&&
-              formik.values.place &&
-              formik.values.lead_judge &&
-              formik.values.assistant &&
-              // formik.values.age_groupe &&
-              formik.values.note
-            )
-          }
+          // disabled={
+          //   !(
+          //     formik.values.name &&
+          //     formik.values.finish_datetime &&
+          //     formik.values.start_datetime &&
+          //     formik.values.place &&
+          //     formik.values.lead_judge &&
+          //     formik.values.assistant &&
+          //     // formik.values.age_groupe &&
+          //     formik.values.note
+          //   )
+          // }
           width="600px"
           type="submit"
         />
       </form>
-      {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно создали мероприятие!"/>}
+      {openSuccessModal && (
+        <SuccessModal
+          open={openSuccessModal}
+          handleClose={handleCloseSuccessModal}
+          title="Вы успешно создали мероприятие!"
+        />
+      )}
     </div>
   );
 };

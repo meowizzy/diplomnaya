@@ -17,32 +17,23 @@ export const Profile = () => {
   const handleOpenSuccessModal = () => setOpenSuccessModal(true);
   const handleCloseSuccessModal = () => setOpenSuccessModal(false);
   const user = useSelector(state=>state.user.user)
-  // const test = {dsa:"dsa"}
   console.log(user)
-  // const check = {
-  //     name:"" + user.name,
-  //     surname: user.surname,
-  //     birthday: user.name,
-  //     number: user.number,
-  //     email: user.email,
-  //     password: user.passwrod,
-  // }
-  // console.log(check)
+
   const formik = useFormik({
     initialValues: {
-      name:"" + user.name,
+      name: user.name,
       surname: user.surname,
       birthday: user.name,
       number: user.number,
       email: user.email,
-      password: user.passwrod,
+      password: ""
   },
   enableReinitialize:true,
     onSubmit: (values) => {
       const id = user.id 
       const data = {values, id, handleOpenSuccessModal}
       dispatch(editUser(data))
-      // alert(JSON.stringify(values, null, 2));
+      alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -87,16 +78,7 @@ export const Profile = () => {
             name="surname"
             width="600px"
           />
-          {/* <Input
-            valueLabel="Дата рождения"
-            value={formik.values.birthday}
-            onChange={formik.handleChange}
-            type="text"
-            width="600px"
-            name="birthday"
-          /> */}
           <Input
-            // type="number"
             valueLabel="Номер телефона"
             value={formik.values.number}
             onChange={formik.handleChange}
@@ -119,6 +101,7 @@ export const Profile = () => {
             width="600px"
             type={eye===true?"text":"password"}
             name="password"
+            placeholder="Изменить пароль"
             margin="0 0 32px"
           />
           <img src={eye===true?open_eye:close_eye} onClick={foggle} className="pass"/>
@@ -128,7 +111,6 @@ export const Profile = () => {
               margin="106px 0 0"
               width="600px"
               text="СОХРАНИТЬ"
-              // onClick={toggle}
               type="submit"
             />
           ) : (
