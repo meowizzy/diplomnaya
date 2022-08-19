@@ -69,7 +69,8 @@ export const createJudge = createAsyncThunk(
     'protocol/reasonOfRejectionProtocol',
     async (data) => {
         const response = await requests.postJudgeApi(data);
-        data.navlink();
+        setTimeout(() => data.navlink(), 1500)
+        data.handleOpenSuccessModal()
         console.log("new_judge: ", response.data);
         return response.data;
     }

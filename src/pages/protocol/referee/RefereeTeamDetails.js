@@ -205,10 +205,10 @@ const RefereeTeamDetails = () => {
                                     return <div className={ownStyles.input_cont}>
                                         <input className={ownStyles.input11} type="text" value={index + 1}/>
                                         <input style={{flex: 5}} className={ownStyles.input2} type="text"
-                                               value={`${judge.start_time}-${judge.start_time} `}/>
+                                               value={`${judge.start_time}-${judge.end_time} `}/>
                                         <input style={{flex: 7}} className={ownStyles.input} type="text" value={judge.subgroup}/>
                                         <input style={{flex: 10}} className={ownStyles.last_input} type="text"
-                                               value="Тестовчи, Тестовна, Нетесник "/>
+                                               value={judge.judge_subgroup}/>
                                     </div>
                                 })
                             }

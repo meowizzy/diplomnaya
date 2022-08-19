@@ -20,7 +20,7 @@ const SecretaryProtocol = () => {
 
                     {/* protocols */}
                     <Route path="/protocols" element={<AllProtocols />} />
-                    <Route path="/protocols/details" element={<ProtocolDetails />} />
+                    <Route path="/protocols/details/:id" element={<ProtocolDetails />} />
                 </Routes>
             </div>
         </div>

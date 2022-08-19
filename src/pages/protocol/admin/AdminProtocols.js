@@ -12,7 +12,7 @@ const AdminProtocols = () => {
                 <div className={s.cont}>
                     <Routes>
                         <Route path="/all_protocols" element={<AllProtocols />} />
-                        <Route path="/all_protocols/protocolDetails" element={<ProtocolDetails />} />
+                        <Route path="/all_protocols/protocolDetails/:id" element={<ProtocolDetails />} />
                     </Routes>
                 </div>
             </div>

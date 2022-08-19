@@ -18,6 +18,7 @@ import {
 import {useFormik} from "formik";
 import {useNavigate, useParams} from "react-router";
 import s from "../../news/editNews/EditNews.module.scss";
+import {getJudgeUser} from "../../../redux/slices/userSlice";
 
 const NewProtocolDetails = () => {
 
@@ -25,8 +26,10 @@ const NewProtocolDetails = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const protocols_list = useSelector(state => state.protocol.protocols)
+    const judges = useSelector(state => state.user.userJudge)
     const protocols = protocols_list.filter(p => p.event.id == id)
     console.log("new_protocols: ", protocols)
+    console.log("judges: ", judges)
 
     const confirmNewProtocol = (navlink) => {
         const data = {navlink, data: confirm_data}
@@ -78,6 +81,10 @@ const NewProtocolDetails = () => {
     }
 
     useEffect(() => {
+        dispatch(getJudgeUser())
+    }, [])
+
+    useEffect(() => {
         console.log("judge_form: ", judge_form)
         dispatch(getProtocol())
     }, [judge_form]);
@@ -103,7 +110,8 @@ const NewProtocolDetails = () => {
                 dispatch(reasonOfRejectionProtocol(par))
             } else {
                 console.log("has to be dispatched a function for creating judges")
-                dispatch(createJudge(data))
+                const par = {data: data, navlink: () => navigate("/main/protocol/new_protocols/"), handleOpenSuccessModal}
+                dispatch(createJudge(par))
             }
 
         }
@@ -287,8 +295,8 @@ const NewProtocolDetails = () => {
                                 judge_form.map((inp, index) => {
                                     return <div className={ownStyles.input_cont}>
                                                 <input className={ownStyles.input11} type="text" placeholder={index + 1}/>
-                                                <input onChange={formik.handleChange} name="start_time" style={{flex: 2}} className={ownStyles.input2} type="text" placeholder="00:00"/>
-                                                <input onChange={formik.handleChange} name="end_time" style={{flex: 2}} className={ownStyles.input2} type="text" placeholder="00:00"/>
+                                                <input onChange={formik.handleChange} name="start_time" style={{flex: 5}} className={ownStyles.input2} type="time" placeholder="00:00"/>
+                                                <input onChange={formik.handleChange} name="end_time" style={{flex: 5}} className={ownStyles.input2} type="time" placeholder="00:00"/>
                                                 <select
                                                     style={{flex: 9}}
                                                     onChange={(e) => formik.handleChange(e)}
@@ -307,13 +315,27 @@ const NewProtocolDetails = () => {
                                                         })
                                                     }
                                                 </select>
-                                                {/*<input onChange={formik.handleChange} name="subgroup" style={{flex: 7}} className={ownStyles.input} type="text" placeholder="Введите подгруппу"/>*/}
-                                                <input onChange={(e) => addJudgeId(e.target.value)} style={{flex: 12}} className={ownStyles.last_input} type="text" placeholder="Введите ФИО"/>
+                                                <select
+                                                    style={{flex: 12}}
+                                                    onChange={(e) => addJudgeId(e.target.value)}
+                                                    className={ownStyles.last_input}
+                                                >
+                                                    <option className={s.option}>
+
+                                                    </option>
+                                                    {
+                                                        judges.map(judge => {
+                                                            return <option className={s.option} value={judge.id}>
+                                                                {judge.name} {judge.surname}
+                                                            </option>
+                                                        })
+                                                    }
+                                                </select>
                                             </div>
                                 })
                             }
                                     <ButtonForActiveChanges type="button" onClick={addInputToJudgeForm} margin="70px 0 70px" width="600px" classname="yes_button" text="ДОБАВИТЬ СТРОКУ" />
-                                    <ButtonForActiveChanges type="submit" margin="0px 0 0px" onClick={handleOpenSuccessModal} width="600px" classname="yes_button" text="СОХРАНИТЬ" />
+                                    <ButtonForActiveChanges type="submit" margin="0px 0 0px" width="600px" classname="yes_button" text="СОХРАНИТЬ" />
                                 </form>
                 }})()
                 }
