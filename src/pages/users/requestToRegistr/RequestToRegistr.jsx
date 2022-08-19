@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import s from "./RequestToRegistr.module.scss";
 import ss from '../registered/Registered.module.scss'
-import { getAllUser, getUserById } from "../../../redux/slices/userSlice";
+import { getAllUser, getRequestToRegiter, getUserById } from "../../../redux/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 
 
 export const RequestToRegistr = () => {
   const dispatch = useDispatch()
   useEffect(()=>{
-    dispatch(getAllUser())
+    dispatch(getRequestToRegiter())
   },[])
 
   const user = useSelector(state=>state.user.allUser)

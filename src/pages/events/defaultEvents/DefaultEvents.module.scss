@@ -1,10 +1,11 @@
 .link_cont {
     margin-bottom: 43px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     text-align: center;
-    margin-left: 11px;
+    justify-content: space-between;
+    // margin-left: 11px;
 }
 
 .link {

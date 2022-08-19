@@ -22,6 +22,7 @@ export const ChangeEvents = () => {
   return (
     <div className={s.cont}>
       <div className={s.link_cont}>
+        <div className={ss.link}>
         <NavLink to="/main/events/allEvents" className={linkActiveClassName(location,"allEvents", 3, "link", "active_link")}>
           Все мероприятия
         </NavLink>
@@ -31,10 +32,11 @@ export const ChangeEvents = () => {
         <NavLink to="/main/events/events_2021" className={linkActiveClassName(location,"events_2021", 3, "link", "active_link")}>
           Мероприятия за 2021г.
         </NavLink>
-
+        </div>
         <NavLink to="/main/events/createEvents" className={ss.button} >
           <Button margin="0 0" text="СОЗДАТЬ" />
         </NavLink>
+        
       </div>
 
       <div className={s.content}>

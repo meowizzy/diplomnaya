@@ -19,6 +19,10 @@ export const Profile = () => {
   const user = useSelector(state=>state.user.user)
   console.log(user)
 
+  const [pass, setPass] = useState({})
+  const onChange = (value)=>{
+    setPass({password:value})
+  }
   const formik = useFormik({
     initialValues: {
       name: user.name,
@@ -26,14 +30,14 @@ export const Profile = () => {
       birthday: user.name,
       number: user.number,
       email: user.email,
-      password: ""
+      ...pass
   },
   enableReinitialize:true,
     onSubmit: (values) => {
       const id = user.id 
       const data = {values, id, handleOpenSuccessModal}
       dispatch(editUser(data))
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -96,8 +100,8 @@ export const Profile = () => {
           <div className="relative">
           <Input
             valueLabel="Пароль"
-            value={formik.values.password}
-            onChange={formik.handleChange}
+            value={pass.password}
+            onChange={(e)=>onChange(e.target.value)}
             width="600px"
             type={eye===true?"text":"password"}
             name="password"

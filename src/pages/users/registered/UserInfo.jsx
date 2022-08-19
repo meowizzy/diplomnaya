@@ -20,7 +20,9 @@ export const UserInfo = () => {
   
   const user = useSelector(state=>state.user.userId)
   const status = useSelector(state=>state.user.status)
-  console.log(user)
+  // console.log(user)
+
+
   const [userForm, setUserForm] = useState({})
   const onChange = (str, value) => {
     if(str==="is_assistant"){
@@ -28,14 +30,15 @@ export const UserInfo = () => {
     }else if(str==="is_judge"){
       setUserForm({ ...userForm, [str]: value, is_assistant:false});
     }else if(str==="is_active"){
-      setUserForm({ ...userForm, [str]: !user.is_active});
+      console.log(value)
+      formik.setFieldValue("is_active", !value)
     }else if(str==="password"){
       setUserForm({ ...userForm, [str]: value});
     }else{
       setUserForm({ ...userForm, is_judge:false, is_assistant:false});
     }
-    console.log(userForm)
   }
+  // console.log(user)
 
   // useEffect(()=>{
   //   setActive(active)
@@ -47,7 +50,7 @@ export const UserInfo = () => {
       surname: user.surname,
       phone: user.number,
       email: user.email,
-      city: user.address,
+      address: user.address,
       is_active: user.is_active,
       role:user.role,
       ...userForm
@@ -60,7 +63,7 @@ export const UserInfo = () => {
       alert(JSON.stringify(values, null, 2));
     },
   });
-
+console.log(formik.values)
 
   const [pos, setPos]=useState(false)
   const [position, setPosition] = useState(false)
@@ -142,7 +145,7 @@ export const UserInfo = () => {
                         ? "Судья"
                         : formik.values.position
                         ? "Секретарь"
-                        : "Тренер"
+                        : ""
                     }
                     onChange={formik.handleChange}
                     width="600px"
@@ -191,10 +194,10 @@ export const UserInfo = () => {
             />
             <Input
               valueLabel="Страна, город"
-              value={formik.values.city}
+              value={formik.values.address}
               onChange={formik.handleChange}
               width="600px"
-              name="city"
+              name="address"
             />
             <Input
               valueLabel="Клуб"
@@ -222,15 +225,15 @@ export const UserInfo = () => {
             </div>
             <label className={s.status}>
               <p>Активен / Неактивен</p>
-              {user.is_active === false ? (
+              {formik.values.is_active === false ? (
                 <img
                   src={radio_user__unchecked}
-                  onClick={() => onChange("is_active", user.is_active)}
+                  onClick={() => onChange("is_active", formik.values.is_active)}
                 />
               ) : (
                 <img
                   src={radio_user__checked}
-                  onClick={() => onChange("is_active", user.is_active)}
+                  onClick={() => onChange("is_active", formik.values.is_active)}
                 />
               )}
             </label>

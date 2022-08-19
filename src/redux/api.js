@@ -34,13 +34,13 @@ export const requests = {
 
     //User
     getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
-    getAllUser:() => fetchAPI.get('user/'),
-    getNotRegisterUser:() => fetchAPI.get('user/'),
+    getAllUser:() => fetchAPI.get('user/?is_active=true'),
+    getNotRegisterUser:() => fetchAPI.get('user/?is_active=false'),
     getUserById:(id) => fetchAPI.get(`user/${id}`),
     getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
     getUserForProfile:(id) => fetchAPI.get(`user/${id}`),
     deleteUser:(id) => fetchAPI.delete(`user/${id}`),
-    editUser:(data) => fetchAPI.patch(`user/${data.id}/`, data.values),
+    editUser:(data) => fetchAPI.put(`user/${data.id}/`, data.values),
     postUserClub:(data) => fetchAPI.post(`user_club/`, data),
     getTrainerUser: () => fetchAPI.get("user/", { params: { is_assistant: false, is_judge : false, role: "TRAINER" } }),
 
