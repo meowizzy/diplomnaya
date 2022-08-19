@@ -45,7 +45,7 @@ const CreateClub = () => {
                         <Input name="max_age" onChange={formik.handleChange} width="285px" placeholder="По"/>
                     </div>
                 </div>
-                <Button type="submit" onClick={handleOpenSuccessModal} width="100%" text="СОЗДАТЬ"/>
+                <Button disabled={!(formik.values.name && formik.values.address && formik.values.max_age && formik.values.min_age)} type="submit" onClick={handleOpenSuccessModal} width="100%" text="СОЗДАТЬ"/>
             </form>
             {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно создали клуб!"/>}
         </>

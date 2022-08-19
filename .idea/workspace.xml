@@ -3,21 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/admin/AdminProtocols.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/admin/AdminProtocols.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/admin/AllProtocols.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/admin/AllProtocols.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/admin/ProtocolDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/admin/ProtocolDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/referee/NewProtocolDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/referee/NewProtocolDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/referee/NewProtocols.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/referee/NewProtocols.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeTeam.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeTeam.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeTeamDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/referee/RefereeTeamDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/AllEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/AllEvents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/AllProtocols.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/AllProtocols.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/CreatedProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/CreatedProtocol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/ProtocolDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/ProtocolDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/SecretaryProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/SecretaryProtocol.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/eventSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/eventSlice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/slices/protocolSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/protocolSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +12,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="WHUS-234-protocol-logical-part" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -81,7 +66,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed" />
+      <changelist id="fd306116-783b-4344-b161-364b8c210ead" name="Changes" comment="merged" />
       <created>1659509286870</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -94,8 +79,6 @@
       <workItem from="1660569818725" duration="15677000" />
       <workItem from="1660625382616" duration="23074000" />
       <workItem from="1660745852855" duration="405000" />
-      <workItem from="1660914090197" duration="1748000" />
-      <workItem from="1660933468122" duration="6427000" />
     </task>
     <task id="LOCAL-00001" summary="WHUS-415 made clubs and sportsman logical parts">
       <created>1659717735184</created>

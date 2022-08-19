@@ -83,7 +83,7 @@ const RefereeTeamDetails = () => {
     return (
         <>
         <div className={ownStyles2.wrapper2}>
-            <BackButton to="/main/protocol/all_events/form_protocol/1"/>
+            <BackButton to="/main/protocol/referee_team"/>
             <div className={ownStyles2.header2}>
                 <p style={{ margin: "0 0 70px", fontSize: "26px", fontWeight:"bold" }}>Информация о протоколе</p>
                 <p style={{ margin: "0 0 20px", fontSize: "20px", fontWeight:"bold" }}>
