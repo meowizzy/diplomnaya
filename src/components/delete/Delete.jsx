@@ -31,8 +31,8 @@ export const Delete = ({text, take, id, status, open, back}) => {
         <div className={s.cont}>
           <p>{text}</p>
           <div className={s.flex}>
-            <ButtonForActiveChanges classname="button" width="210px" text="ДА" onClick={deleteThings}/>
-            <ButtonForActiveChanges classname="button" width="210px" text="НЕТ" onClick={() => setModalActive(false)}/>
+            <ButtonForActiveChanges classname="yes_button" width="210px" text="ДА" onClick={deleteThings} margin="0 0"/>
+            <ButtonForActiveChanges classname="no_button" width="210px" text="НЕТ" onClick={() => setModalActive(false)} margin="0 0"/>
           </div>
         </div>
       </Modal>

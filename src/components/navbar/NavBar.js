@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink,useLocation } from "react-router-dom";
 import s from "./NavBar.module.scss";
-import {getCookie} from "../../utils/cookieFunction/cookieFunction";
+import {getCookie, removeCookie} from "../../utils/cookieFunction/cookieFunction";
 
 export const NavBar = () => {
 
@@ -14,7 +14,9 @@ export const NavBar = () => {
       return s.unactive_link;
     };
     const removeRole=()=>{
-      localStorage.removeItem('role')
+      // localStorage.removeItem('role')
+      removeCookie("user_info")
+      console.log("remove cook")
     }
 
     const role = JSON.parse(getCookie("user_info"))
@@ -125,14 +127,6 @@ export const NavBar = () => {
             Заявки
             <span className={s.bottom_curve}></span>
           </NavLink>
-          {/*<NavLink*/}
-          {/*  to="/main/users/registered"*/}
-          {/*  className={linkActiveClassName("users")}*/}
-          {/*>*/}
-          {/*  <span className={s.top_curve}></span>*/}
-          {/*  Пользователи*/}
-          {/*  <span className={s.bottom_curve}></span>*/}
-          {/*</NavLink>*/}
           <NavLink
             to="/main/protocol/all_protocols"
             className={linkActiveClassName("protocol")}

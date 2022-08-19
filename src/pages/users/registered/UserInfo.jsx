@@ -6,7 +6,7 @@ import { ThreeDot } from "../../../components/threeDot/ThreeDot";
 import s from "./Registered.module.scss";
 import Button from '../../../components/button/Button' 
 import { Link, useNavigate } from "react-router-dom"
-import { close_eye, open_eye, plus } from "../../../images";
+import { close_eye, list_img, open_eye, plus, radio_user__checked, radio_user__unchecked } from "../../../images";
 import SuccessModal from "../../../components/modals/SuccessModal";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser, editUser, getUserById } from "../../../redux/slices/userSlice";
@@ -20,47 +20,59 @@ export const UserInfo = () => {
   
   const user = useSelector(state=>state.user.userId)
   const status = useSelector(state=>state.user.status)
-  console.log(user)
-  const [active, setActive] = useState(user)
-  const onChange = (value) => {
-    setActive({...active, is_active:value})
-    console.log(active)
-  }
+  // console.log(user)
 
-  useEffect(()=>{
-    setActive(active)
-  },[active])
+
+  const [userForm, setUserForm] = useState({})
+  const onChange = (str, value) => {
+    if(str==="is_assistant"){
+      setUserForm({ ...userForm, [str]: value, is_judge:false});
+    }else if(str==="is_judge"){
+      setUserForm({ ...userForm, [str]: value, is_assistant:false});
+    }else if(str==="is_active"){
+      console.log(value)
+      formik.setFieldValue("is_active", !value)
+    }else if(str==="password"){
+      setUserForm({ ...userForm, [str]: value});
+    }else{
+      setUserForm({ ...userForm, is_judge:false, is_assistant:false});
+    }
+  }
+  // console.log(user)
+
+  // useEffect(()=>{
+  //   setActive(active)
+  // },[active])
 
   const formik = useFormik({
     initialValues: {
-      name:''+ user?.name,
+      name:user.name,
       surname: user.surname,
-      position: user.is_judge?"Судья":user.is_assistant?"Секретарь":"Тренер",
       phone: user.number,
       email: user.email,
-      city: user.address,
-      club: "Золотой дракон",
-      password: user.password,
-      is_active: user.is_active
+      address: user.address,
+      is_active: user.is_active,
+      role:user.role,
+      ...userForm
     },
     enableReinitialize:true,
     onSubmit: (values) => {
       const id = user.id
       const data = {handleOpenSuccessModal, values, id}
       dispatch(editUser(data))
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
     },
   });
+console.log(formik.values)
 
+  const [pos, setPos]=useState(false)
+  const [position, setPosition] = useState(false)
   const [buttonState, setButtonState] = useState(true);
-
   const foggle = () => {
     setButtonState(!buttonState);
   };
 
-
   const [eye, setEye] = useState(false)
-
   const toggle = () =>{
     setEye(!eye)
   } 
@@ -105,13 +117,63 @@ export const UserInfo = () => {
             <div style={{ position: "relative" }}>
               <Input
                 valueLabel="Должность"
-                value={formik.values.position}
+                value={formik.values.role === "TRAINER" ? "Тренер" : "Админ"}
                 onChange={formik.handleChange}
                 width="600px"
-                name="position"
+                readOnly
+                name="role"
               />
               {buttonState === false && (
-                <img src={plus} alt="wrong" className={s.plus} />
+                <img
+                  src={plus}
+                  alt="wrong"
+                  className={s.plus}
+                  onClick={() => setPos(true)}
+                />
+              )}
+              {pos === true && (
+                <div className="relative">
+                  <Input
+                    valueLabel="Дополнительная должность"
+                    readOnly
+                    value={
+                      userForm.is_assistant
+                        ? "Секретарь"
+                        : userForm.is_judge
+                        ? "Судья"
+                        : formik.values.position
+                        ? "Судья"
+                        : formik.values.position
+                        ? "Секретарь"
+                        : ""
+                    }
+                    onChange={formik.handleChange}
+                    width="600px"
+                    name="position"
+                  />
+                  <img
+                    src={list_img}
+                    alt="wrong"
+                    className={s.list}
+                    onClick={() => setPosition(!position)}
+                  />
+                  {position === true && (
+                    <>
+                      <p
+                        className={s.list_cont}
+                        onClick={() => onChange("is_assistant", true)}
+                      >
+                        Секретарь
+                      </p>
+                      <p
+                        className={s.list_cont}
+                        onClick={() => onChange("is_judge", true)}
+                      >
+                        Судья
+                      </p>
+                    </>
+                  )}
+                </div>
               )}
             </div>
             <Input
@@ -132,14 +194,14 @@ export const UserInfo = () => {
             />
             <Input
               valueLabel="Страна, город"
-              value={formik.values.city}
+              value={formik.values.address}
               onChange={formik.handleChange}
               width="600px"
-              name="city"
+              name="address"
             />
             <Input
               valueLabel="Клуб"
-              value={formik.values.club}
+              value="Золотой дракон"
               onChange={formik.handleChange}
               width="600px"
               name="club"
@@ -147,12 +209,13 @@ export const UserInfo = () => {
             <div className="relative">
               <Input
                 valueLabel="Пароль"
-                value={formik.values.password}
-                onChange={formik.handleChange}
+                value={userForm.password}
+                onChange={(e) => onChange("password", e.target.value)}
                 width="600px"
                 type={eye === true ? "text" : "password"}
                 name="password"
                 margin="0 0 32px"
+                placeholder="Изменить пароьль"
               />
               <img
                 src={eye === true ? open_eye : close_eye}
@@ -162,13 +225,17 @@ export const UserInfo = () => {
             </div>
             <label className={s.status}>
               <p>Активен / Неактивен</p>
-              <input
-                type="radio"
-                className={s.input}
-                value={formik.values.is_active}
-                onChange={(e) => onChange(e.target.checked)}
-                checked={formik.values.is_active}
-              />
+              {formik.values.is_active === false ? (
+                <img
+                  src={radio_user__unchecked}
+                  onClick={() => onChange("is_active", formik.values.is_active)}
+                />
+              ) : (
+                <img
+                  src={radio_user__checked}
+                  onClick={() => onChange("is_active", formik.values.is_active)}
+                />
+              )}
             </label>
 
             {buttonState === false && (

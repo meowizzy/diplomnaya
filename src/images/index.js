@@ -23,6 +23,10 @@ import message_unsend from "./message_unsend.svg"
 import message_sent from "./message_sent.svg"
 import list_img from "./list_img.svg"
 import unswitched from "./unswitched.svg"
+import radio_user__checked from "./radio_user__checked.svg"
+import radio_user__unchecked from "./radio_user__unchecked.svg"
+import applied_radio__checked from "./applied_radio__checked.svg"
+import applied_radio__uncheked from "./applied_radio__uncheked.svg"
 
 export {
     open_eye,
@@ -49,5 +53,9 @@ export {
     message_unsend,
     message_sent,
     list_img,
-    unswitched
+    unswitched,
+    radio_user__checked,
+    radio_user__unchecked,
+    applied_radio__checked,
+    applied_radio__uncheked
 }

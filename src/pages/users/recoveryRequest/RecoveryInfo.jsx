@@ -20,6 +20,7 @@ export const RecoveryInfo = () => {
       text: user.text,
       email: user.email,
     },
+    enableReinitialize:true,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },

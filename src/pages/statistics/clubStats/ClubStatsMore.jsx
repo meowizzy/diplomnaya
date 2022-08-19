@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import BackButton from '../../../components/arrowButton/BackButton'
 import ForwardButton from '../../../components/arrowButton/ForwardButton'
@@ -7,10 +8,13 @@ import { BarChart } from './BarChart'
 import { PieChart } from './PieChart'
 
 export const ClubStatsMore = () => {
+
+  const club = useSelector(state=>state.clubs.club)
+  console.log(club)
   return (
     <>
       <BackButton to="/main/statistics/clubStats" />
-      <p className={s.top_text}>Клуб Тянь - Шань</p>
+      <p className={s.top_text}>Клуб {club.name}</p>
       <p className={s.trainer_name}>Тренер: Леонид Ильич Брежнев</p>
       <p className={s.half}>Средний ОФП клуба: 10</p>
       <BarChart />

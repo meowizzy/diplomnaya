@@ -1,17 +1,14 @@
 import React, {useState} from 'react'
-import { AppliedLine } from '../../../../components/appliedLine/AppliedLine'
 import ss from './NewApplications.module.scss'
 import s from '../../pageForSecretary/newApplied/NewApplied.module.scss'
 import sss from '../../../../components/appliedLine/AppliedLine.module.scss'
 import Button from '../../../../components/button/Button'
 import SuccessModal from '../../../../components/modals/SuccessModal'
 import { useFormik } from 'formik'
-import { AppliedLineLogic } from '../../../../components/appliedLine/AppliedLineLogic'
-import moment from 'moment'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getAthletes } from '../../../../redux/slices/athletesSlice'
-import { list_img } from '../../../../images'
+import { applied_radio__checked, applied_radio__uncheked, list_img } from '../../../../images'
 import { postApplication } from '../../../../redux/slices/applicationSlice'
 
 export const NewApplications = () => {
@@ -274,46 +271,58 @@ export const NewApplications = () => {
             name="club"
           />
           <div className={sss.two_hundred_fifty}>
-            <input
-              placeholder="Название комплекса"
-              type="radio"
-              // value={formik.values.complex}
-              value={application.cuanshu}
-              onChange={() => onChange("cuanshu", true)}
-              name="complex"
-            />
+            {application.cuanshu ? (
+              <img
+                src={applied_radio__checked}
+                onClick={() => onChange("cuanshu", true)}
+              />
+            ) : (
+              <img
+                src={applied_radio__uncheked}
+                onClick={() => onChange("cuanshu", true)}
+              />
+            )}
           </div>
           <div className={sss.two_hundred_fifty}>
-            <input
-              placeholder="Название комплекса"
-              type="radio"
-              // value={formik.values.secondComplex}
-              value={application.cise}
-              onChange={() => onChange("cise", true)}
-              name="complex"
-            />
+          {application.cise ? (
+              <img
+                src={applied_radio__checked}
+                onClick={() => onChange("cise", true)}
+              />
+            ) : (
+              <img
+                src={applied_radio__uncheked}
+                onClick={() => onChange("cise", true)}
+              />
+            )}
           </div>
           <div className={sss.five_hundred}>
             <span className={sss.under}>
               <div className={sss.under_first}>
-                <input
-                  placeholder="Название комплекса"
-                  type="radio"
-                  // value={formik.values.tsuanshu}
-                  value={application.taizi_cuanshu}
-                  onChange={(e) => onChange("taizi_cuanshu", true)}
-                  name="complex"
-                />
+              {application.taizi_cuanshu ? (
+              <img
+                src={applied_radio__checked}
+                onClick={() => onChange("taizi_cuanshu", true)}
+              />
+            ) : (
+              <img
+                src={applied_radio__uncheked}
+                onClick={() => onChange("taizi_cuanshu", true)}
+              />
+            )}
               </div>
               <div className={sss.under_second}>
-                <input
-                  placeholder="Название комплекса"
-                  type="radio"
-                  // value={formik.values.tsise}
-                  value={application.taizi_cise}
-                  onChange={(e) => onChange("taizi_cise", true)}
-                  name="complex"
-                />
+              {application.taizi_cise ? (
+              <img
+                src={applied_radio__checked}
+                onClick={() => onChange("taizi_cise", true)}
+              />
+            ) : (
+              <img
+                src={applied_radio__uncheked}
+                onClick={() => onChange("taizi_cise", true)}
+              />
+            )}
               </div>
             </span>
           </div>
@@ -361,23 +370,6 @@ export const NewApplications = () => {
             name="note"
           />
         </div>
-
-        {/* <AppliedLineLogic
-          fullName={application_athlete.athlete.name}
-          club={application_athlete.athlete.club.name}
-          sex={formik.values.application_athlete.forEach(el=>(el.athlete.sex))}
-          age={formik.values.application_athlete.forEach(el=>(el.athlete.age))}
-          complex={formik.values.complex}
-          secondComplex={formik.values.secondComplex}
-          tsuanshu={formik.values.tsuanshu}
-          tsise={formik.values.tsise}
-          partnerName={formik.values.dueling_partner}
-          numberOfteam={formik.values.team_number}
-          number="1"
-          note={formik.values.note}
-          // // handleChange={formik.handleChange}
-          handleSubmit={formik.handleSubmit}
-        /> */}
 
         <div className={ss.for_scroll}></div>
       </div>

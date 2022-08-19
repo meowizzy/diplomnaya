@@ -9,6 +9,7 @@ const Button = ({ disabled, text = "", type, width, margin, onClick }) => {
       type={type}
       style={{ width: width, margin: margin }}
       onClick={onClick}
+      data-clipboard-target="#foo"
     >
       {text}
     </button>

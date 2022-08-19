@@ -15,7 +15,9 @@ const Input = ({
   minHeight,
     background,
     padding,
-    readOnly
+    readOnly,
+    id,
+    
 }) => {
 
   return (
@@ -31,6 +33,7 @@ const Input = ({
           name={name}
           type={type}
           readOnly = {readOnly}
+          id={id}
         />
       </div>
     </div>
