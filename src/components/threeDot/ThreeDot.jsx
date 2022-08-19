@@ -54,12 +54,12 @@ export const ThreeDot = ({ disabled, type, onClick, text, take, id, status, open
         <div className={ss.cont}>
           <p>{text}</p>
           <div className={ss.flex}>
-            <ButtonForActiveChanges width="210px" text="ДА" onClick={()=>deleteThings(id)} classname="button"/>
+            <ButtonForActiveChanges width="210px" text="ДА" onClick={()=>deleteThings(id)} classname="yes_button"/>
             <ButtonForActiveChanges
               width="210px"
               text="НЕТ"
               onClick={() => setModalActive(false)}
-              classname="button"
+              classname="no_button"
             />
           </div>
         </div>

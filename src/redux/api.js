@@ -41,16 +41,17 @@ export const requests = {
     deleteEvents:(id) => fetchHerokuAPI.delete(`event/${id}/`),
 
     //User
-    getJudgeUser:() => fetchHerokuAPI.get('user/?is_judge=true'),
-    getAllUser:() => fetchHerokuAPI.get('user/'),
-    getNotRegisterUser:() => fetchHerokuAPI.get('user/'),
-    getUserById:(id) => fetchHerokuAPI.get(`user/${id}`),
-    getSecretaryUser:() => fetchHerokuAPI.get('user/?is_assistant=true'),
-    getUserForProfile:(id) => fetchHerokuAPI.get(`user/${id}`),
-    deleteUser:(id) => fetchHerokuAPI.delete(`user/${id}`),
-    editUser:(data) => fetchHerokuAPI.patch(`user/${data.id}/`, data.values),
-    postUserClub:(data) => fetchHerokuAPI.post(`user_club/`, data),
-    getTrainerUser: () => fetchHerokuAPI.get("user/", { params: { is_assistant: false, is_judge : false, role: "TRAINER" } }),
+    getJudgeUser:() => fetchAPI.get('user/?is_judge=true'),
+    getAllUser:() => fetchAPI.get('user/?is_active=true'),
+    getNotRegisterUser:() => fetchAPI.get('user/?is_active=false'),
+    getUserById:(id) => fetchAPI.get(`user/${id}`),
+    getSecretaryUser:() => fetchAPI.get('user/?is_assistant=true'),
+    getUserForProfile:(id) => fetchAPI.get(`user/${id}`),
+    deleteUser:(id) => fetchAPI.delete(`user/${id}`),
+    editUser:(data) => fetchAPI.put(`user/${data.id}/`, data.values),
+    postUserClub:(data) => fetchAPI.post(`user_club/`, data),
+    getTrainerUser: () => fetchAPI.get("user/", { params: { is_assistant: false, is_judge : false, role: "TRAINER" } }),
+
 
     // documentation
     getDocs: () => fetchHerokuAPI.get("documents/document/"),

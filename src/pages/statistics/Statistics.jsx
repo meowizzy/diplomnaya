@@ -9,8 +9,6 @@ import { ClubStatsMore } from './clubStats/ClubStatsMore'
 import { InfoAthletes } from './clubStats/InfoAthletes'
 import { InfoAthletesMore } from './clubStats/InfoAthletesMore'
 
-
-
 export const Statistics = () => {
 
     const location = useLocation()
