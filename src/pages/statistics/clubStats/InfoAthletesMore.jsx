@@ -9,8 +9,8 @@ export const InfoAthletesMore = () => {
   console.log(athlete)
   return (
     <div>
-        <p className={s.top_text}>Клуб - {athlete.club.name}</p>
-        <p className={s.trainer_name}>Спортсмен: {athlete.surname} {athlete.name}</p>
+        <p className={s.top_text}>Клуб - {athlete.club?.name}</p>
+        <p className={s.trainer_name}>Спортсмен: {athlete?.surname} {athlete.name}</p>
         <p className={s.half}>Возраст: {athlete.age}</p>
         <p className={s.half}>Средний ОФП: {athlete.average_of_PHI}</p>
         <LineChart/>

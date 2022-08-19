@@ -60,7 +60,7 @@ export const UserInfo = () => {
       const id = user.id
       const data = {handleOpenSuccessModal, values, id}
       dispatch(editUser(data))
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
     },
   });
 console.log(formik.values)

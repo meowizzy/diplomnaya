@@ -4,7 +4,7 @@ import { getCookie } from "../utils/cookieFunction/cookieFunction";
 const token = getCookie("token")
 // console.log(token)
 const fetchAPI = axios.create({
-    baseURL: "https://whushu.herokuapp.com/",
+    baseURL: "https://wushu-federation.tk/",
     headers: {
         "Content-type": "application/json",
         // Authorization: `Bearer ${token}`,
@@ -12,7 +12,7 @@ const fetchAPI = axios.create({
 });
 
 const fetchHerokuAPI = axios.create({
-    baseURL: "https://whushu.herokuapp.com/",
+    baseURL: "https://wushu-federation.tk/",
     headers: {
         "Content-type": "application/json",
         // Authorization: `Bearer ${token}`,
@@ -20,7 +20,7 @@ const fetchHerokuAPI = axios.create({
 });
 
 const notToken = axios.create({
-    baseURL: "https://whushu.herokuapp.com/",
+    baseURL: "https://wushu-federation.tk/",
     headers: {
         "Content-type": "application/json",
     },
