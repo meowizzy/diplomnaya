@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import {Pagination} from "../../../components/pagination/Pagination";
 import {useDispatch, useSelector} from "react-redux";
 import {getEvent} from "../../../redux/slices/eventSlice";
+import {getJudgeUser} from "../../../redux/slices/userSlice";
 
 const NewProtocols = () => {
 
@@ -16,6 +17,7 @@ const NewProtocols = () => {
 
     useEffect(() => {
         dispatch(getEvent())
+        window.scrollTo(0, 0);
     }, [])
 
     return (

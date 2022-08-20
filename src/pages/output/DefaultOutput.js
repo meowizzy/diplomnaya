@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from "../users/registered/Registered.module.scss";
 import Input from "../../components/input/Input";
 import {search_icon} from "../../images";
@@ -7,6 +7,11 @@ import {Link} from "react-router-dom";
 import {Pagination} from "../../components/pagination/Pagination";
 
 const DefaultOutput = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
     return (
         <div>
             <div className={s.table_content}>

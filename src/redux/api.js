@@ -30,6 +30,7 @@ export const requests = {
 
     // Events
     getEvents:() => fetchAPI.get('event/'),
+    getEvent:(id) => fetchAPI.get(`event/${id}`),
     postEvents:(data) => fetchAPI.post('event/', data),
     editEvents:(data) => fetchAPI.patch(`event/${data.id}/`, data.values),
     deleteEvents:(id) => fetchAPI.delete(`event/${id}/`),
@@ -113,11 +114,11 @@ export const requests = {
     // judge
     getJudgeApi: () => fetchAPI.get("judge_group/"),
     // getProtocolApi: (id) => fetchAPI.get(`judge_group/${id}`),
-    postJudgeApi: (data) => fetchAPI.post("judge_group/", data),
+    postJudgeApi: (data) => fetchAPI.post("judge_group/", data.data),
     formJudgeApi: (data) => fetchAPI.patch(`judge_group/${data.id}/`, {areas_quantity: +data.data.areas_quantity, top_places_percent: data.data.top_places_percent}),
     confirmJudgeApi: ({id, par}) => fetchAPI.patch(`judge_group/${id}/`, {is_confirmed : par}),
 }
 
 export const withoutToken = {
-    register: (formData) => notToken.post('registration/', formData)
+    register: (formData) => fetchAPI.post('registration/', formData)
 }

@@ -25,7 +25,7 @@ const AllClubDetails = () => {
             <Input valueLabel="Клуб" width="100%" value={club.name}/>
             <Input valueLabel="Адрес" width="100%" value={club.address}/>
             <Input valueLabel="Тренер" width="100%" value="Trainer"/>
-            <Input valueLabel="Кол-во спортсменов" width="100%" value={club.sum_of_people?.split('.')[0]}/>
+            <Input valueLabel="Кол-во спортсменов" width="100%" value={club.sum_of_people}/>
             <div style={{marginTop: 30, position: "relative", alignItems: "center"}}  className="flex">
                 <p className="basic_text">Посмотреть список спортсменов</p>
                 <ForwardButton position="sticky" to={`/main/clubs/all_clubs/all_club_details/list_sportsmen/${club.id}`} />

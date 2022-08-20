@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getProtocol, getProtocolById} from "../../../redux/slices/protocolSlice";
 import {Pagination} from "../../../components/pagination/Pagination";
 import {useParams} from "react-router";
+import {getEventById} from "../../../redux/slices/eventSlice";
 
 const CreatedProtocol = () => {
 
@@ -14,6 +15,7 @@ const CreatedProtocol = () => {
     const dispatch = useDispatch();
     const protocols_list = useSelector(state => state.protocol.protocols)
     const protocolById = useSelector(state => state.protocol.protocol)
+    const event = useSelector(state => state.event.event_id)
     const protocols = protocols_list.filter(p => p.event.id == id)
     console.log("created_protocolss: ", protocols)
     console.log("protocol_by_id: ", protocolById)
@@ -46,6 +48,7 @@ const CreatedProtocol = () => {
 
     useEffect(() => {
         dispatch(getProtocol())
+        dispatch(getEventById(id))
     }, [])
 
     useEffect(() => {
@@ -64,10 +67,10 @@ const CreatedProtocol = () => {
             <div className={ownStyles2.header2}>
                 <p style={{ margin: "0 0 70px", fontSize: "26px", fontWeight:"bold" }}>Информация о протоколе</p>
                 <p style={{ margin: "0 0 20px", fontSize: "20px", fontWeight:"bold" }}>
-                    Чемпионат Кыргызской Респубики по традиционному ушу
+                    {event.name}
                 </p>
                 <p style={{ margin: "0 0 50px",}}>
-                    29.06.2022г. - 30.06.2022г.
+                    {event.start_datetime}г. - {event.finish_datetime}г.
                 </p>
                 <p style={{ margin: "0 0 20px",}}>
                     День первый

@@ -4,6 +4,7 @@ import { requests } from "../api";
 
 const initialState = {
   event: [],
+    event_id:{},
   error:{}
 };
 
@@ -21,6 +22,22 @@ export const getEvent = createAsyncThunk(
         return rejectWithValue(error.message)
     }
   }
+);
+
+export const getEventById = createAsyncThunk(
+    "event/getEventById",
+    async function(id,{ rejectWithValue}){
+        try {
+            const res = await requests.getEvent(id);
+            console.log("evtn: ", res.data)
+            if (!res) {
+                throw new Error("ERROR");
+            }
+            return res.data
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
 );
 
 export const createEvent = createAsyncThunk(
@@ -99,6 +116,19 @@ const eventSlice = createSlice({
       state.status = "rejected";
       state.error = action.payload;
     },
+      [getEventById.pending]: (state) => {
+          state.status = "loading";
+          state.error = null;
+      },
+      [getEventById.fulfilled]: (state, action) => {
+          state.status = "resolved";
+          state.event_id = action.payload
+          // console.log("fullfiled");
+      },
+      [getEventById.rejected]: (state, action) => {
+          state.status = "rejected";
+          state.error = action.payload;
+      },
     [deleteEvent.rejected]: (state, action) => {
       state.deleteStatus = "rejected";
       state.error = action.payload;
