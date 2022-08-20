@@ -96,18 +96,19 @@ export const getUserForProfilePage = createAsyncThunk(
     }
   }
 );
-export const editUser = createAsyncThunk(
-  'user/editUser',
-  async (data) => {
-        // console.log(data)
-        const response = await requests.editUser(data);
-        // console.log("edit: ", response.data)
-        // setTimeout(() => data.handleOpenSuccessModal(), 1500)
-        data.handleOpenSuccessModal()
-        return response.data
-      // data.navigate("/main/news/all_news")
-    }
-);
+  export const editUser = createAsyncThunk(
+    'user/editUser',
+    async (data) => {
+          // console.log(data)
+          const response = await requests.editUser(data);
+          // console.log("edit: ", response.data)
+          // setTimeout(() => data.handleOpenSuccessModal(), 1500)
+          data.handleOpenSuccessModal()
+          data.navigate("/main/users/registered")
+          return response.data
+        // data.navigate("/main/news/all_news")
+      }
+  );
 
 
 export const getJudgeUser = createAsyncThunk(

@@ -1,15 +1,19 @@
 import { useFormik } from 'formik';
 import React, {useEffect, useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BackButton from '../../../components/arrowButton/BackButton';
 import Button from '../../../components/button/Button';
 import Input from '../../../components/input/Input';
 import ss from './RequestToRegistr.module.scss'
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { editUser } from '../../../redux/slices/userSlice';
+import SuccessModal from '../../../components/modals/SuccessModal';
 
 
 export const RequestUserInfo = () => {
+  const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
+  const handleOpenSuccessModal = () => setOpenSuccessModal(true);
+  const handleCloseSuccessModal = () => setOpenSuccessModal(false);
 
   const dispatch = useDispatch()
   
@@ -25,6 +29,8 @@ export const RequestUserInfo = () => {
   useEffect(()=>{
     setActive(active)
   },[active])
+
+  const navigate = useNavigate()
 
     const formik = useFormik({
       initialValues: {
@@ -44,7 +50,7 @@ export const RequestUserInfo = () => {
       enableReinitialize:true,
       onSubmit: (values) => {
         const id = user.id
-        const data = {values, id}
+        const data = {values, id, handleOpenSuccessModal, navigate}
         dispatch(editUser(data))
         // alert(JSON.stringify(values, null, 2));
       },
@@ -52,77 +58,82 @@ export const RequestUserInfo = () => {
      
       return (
         <>
-            <div className={ss.info}>
-           <BackButton to="/main/users/requestToRegistr"/>
-              <p className={ss.text}>
-                Информация о пользователе
-              </p>          
- 
-              <form onSubmit={formik.handleSubmit}>
-                <Input
-                  valueLabel="Имя"
-                  value={formik.values.name}
-                  onChange={formik.handleChange}
-                  name="name"
-                  width="600px"
-                  readOnly
-                />
-                <Input
-                  valueLabel="Фамилия"
-                  value={formik.values.surname}
-                  onChange={formik.handleChange}
-                  name="surname"
-                  readOnly
-                  width="600px"
-                />
-                <Input
-                  valueLabel="Должность"
-                  value={formik.values.position}
-                  onChange={formik.handleChange}
-                  width="600px"
-                  readOnly
-                  name="position"
-                />
-                <Input
-                  valueLabel="Номер телефона"
-                  value={formik.values.phone}
-                  onChange={formik.handleChange}
-                  width="600px"
-                  readOnly
-                  name="phone"
-                />
-                <Input
-                  valueLabel="Электронная почта"
-                  value={formik.values.email}
-                  onChange={formik.handleChange}
-                  width="600px"
-                  readOnly
-                  name="email"
-                  type="email"
-                />
-                <Input
-                  valueLabel="Страна, город"
-                  value={formik.values.city}
-                  onChange={formik.handleChange}
-                  width="600px"
-                  readOnly
-                  name="city"
-                />
-                <Input
-                  valueLabel="Клуб"
-                  value={formik.values.club}
-                  onChange={formik.handleChange}
-                  width="600px"
-                  readOnly
-                  name="club"
-                />
+          <div className={ss.info}>
+            <BackButton to="/main/users/requestToRegistr" />
+            <p className={ss.text}>Информация о пользователе</p>
 
-                <p style={{marginTop:'30px'}}>Подтвердить запрос?</p>
+            <form onSubmit={formik.handleSubmit}>
+              <Input
+                valueLabel="Имя"
+                value={formik.values.name}
+                onChange={formik.handleChange}
+                name="name"
+                width="600px"
+                readOnly
+              />
+              <Input
+                valueLabel="Фамилия"
+                value={formik.values.surname}
+                onChange={formik.handleChange}
+                name="surname"
+                readOnly
+                width="600px"
+              />
+              <Input
+                valueLabel="Должность"
+                value={formik.values.position}
+                onChange={formik.handleChange}
+                width="600px"
+                readOnly
+                name="position"
+              />
+              <Input
+                valueLabel="Номер телефона"
+                value={formik.values.phone}
+                onChange={formik.handleChange}
+                width="600px"
+                readOnly
+                name="phone"
+              />
+              <Input
+                valueLabel="Электронная почта"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                width="600px"
+                readOnly
+                name="email"
+                type="email"
+              />
+              <Input
+                valueLabel="Страна, город"
+                value={formik.values.city}
+                onChange={formik.handleChange}
+                width="600px"
+                readOnly
+                name="city"
+              />
+              <Input
+                valueLabel="Клуб"
+                value={formik.values.club}
+                onChange={formik.handleChange}
+                width="600px"
+                readOnly
+                name="club"
+              />
 
-                <Button width="210px" margin="0 30px 0 0" text="НЕТ" disabled/>
-                <Button width="210px" text="ДА" margin="31px 0 0" type="submit"/>
-              </form>
-            </div>
+              <p style={{ marginTop: "30px" }}>Подтвердить запрос?</p>
+
+              <Button width="210px" margin="0 30px 0 0" text="НЕТ" disabled />
+              <Button width="210px" text="ДА" margin="31px 0 0" type="submit" />
+            </form>
+            {openSuccessModal && (
+              <SuccessModal
+                open={openSuccessModal}
+                handleClose={handleCloseSuccessModal}
+                title="Вы успешно приняли заявку на регистрацию"
+              />
+            )}
+          </div>
         </>
       );
 }

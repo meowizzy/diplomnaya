@@ -13,7 +13,7 @@ export const ReferalLink = () => {
   const user = useSelector(state=>state.user.user)
   console.log(user)
 
-  const [value, setValue] = useState(user.referral_token);
+  const [value, setValue] = useState(`https://wushu-federation1.herokuapp.com/registr/?token=${user.referral_token}`);
   const [status, setStatus] = useState(false);
 
   return (
@@ -26,12 +26,12 @@ export const ReferalLink = () => {
         maxWidth="600px"
         minHeight="70px"
         onChange
-        value={user.referral_token}
+        value={value}
       />
       <CopyToClipboard text={value} onCopy={()=>setStatus(true)}>
       <Button text="КОПИРОВАТЬ" width="600px" data-clipboard-target="#foo"/>
       </CopyToClipboard>
-      {status && <p style={{ color: "red" }}> Скопировано!</p>}
+      {status && <p style={{ color: "#3548F5" }}> Скопировано! </p>}
     </div>
   );
 }

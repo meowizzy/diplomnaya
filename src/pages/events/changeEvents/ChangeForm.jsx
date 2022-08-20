@@ -78,8 +78,6 @@ export const ChangeForm = ({
   const formik = useFormik({
     initialValues: {
       name,
-      start_datetime,
-      finish_datetime,
       place,
       lead_judgeId:judgeId,
       assistantId:secretaryId,
@@ -110,14 +108,14 @@ export const ChangeForm = ({
         />
         <Input
           valueLabel="Введите дату начала"
-          value={formik.values.start_datetime}
+          value={start_datetime}
           onChange={formik.handleChange}
           name="date"
           width="600px"
         />
          <Input
           valueLabel="Введите дату конца"
-          value={formik.values.finish_datetime}
+          value={finish_datetime}
           onChange={formik.handleChange}
           name="date"
           width="600px"
@@ -170,6 +168,55 @@ export const ChangeForm = ({
                     value={el.id}
                     onChange={formik.handleChange}
                     name="lead_judge"
+                    className={s.radio}
+                  />
+                </label>
+            </div>
+          ))}
+          </>
+          }
+      </div> 
+      <div className="relative">
+        {secretary === false?
+          <>
+          <Input
+          placeholder="Секретарь"
+          valueLabel="Информация о мероприятии- секретарь"
+          value={nameSecretary}
+          // onChange={formik.handleChange}
+          width="600px"
+          // name="assistant"
+        />
+            <div className={ss.list_img} onClick={clickSecretary}></div>
+          </>
+          :
+          <>
+          <Input
+          placeholder="Секретарь"
+          valueLabel="Информация о мероприятии- секретарь"
+          value={nameSecretary}
+          // onChange={formik.handleChange}
+          width="600px"
+          // name="assistant"
+        />
+          <span className={ss.list_img} onClick={clickSecretary}></span>
+          {secretaryUser.map(el=>(
+          <div className={s.list}>
+                <label className={s.label}>
+                  {secretaryId === el.id ? (
+                    <p onClick={()=>nameSecretaryClick(el.name, el.id)} style={{ backgroundColor: "#F3F3FF" }}>
+                      {el.name}
+                    </p>
+                  ) : (
+                    <p onClick={()=>nameSecretaryClick(el.name, el.id)}>
+                      {el.name}
+                    </p>
+                  )}
+                  <input
+                    type="radio"
+                    value={el.id}
+                    onChange={formik.handleChange}
+                    name="assistant"
                     className={s.radio}
                   />
                 </label>

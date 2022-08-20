@@ -67,12 +67,13 @@ export const CreateEvents = () => {
       finish_datetime: "",
       start_datetime:"",
       place: "",
+      assistant: "",
       lead_judge:'',
       note: "",
       age_groups
     },
     onSubmit: (values) => {
-      const data={values, handleOpenSuccessModal, navigate}
+      const data={values,handleOpenSuccessModal,navigate}
       dispatch(createEvent(data));
       // alert(JSON.stringify(values, null, 2));
     },
@@ -174,6 +175,42 @@ export const CreateEvents = () => {
           )}
         </div>
 
+        <div className="relative">
+            <>
+              <Input
+                placeholder="Секретарь"
+                valueLabel="Информация о мероприятии- секретарь"
+                value={nameSecretary}
+                // onChange={formik.handleChange}
+                width="600px"
+                // name="assistant"
+              />
+              <div className={ss.list_img} onClick={clickSecretary}></div>
+            </>
+            <>
+            {secretary === false && (
+            <>
+              {secretaryUser.map((el, index) => (
+                <div className={s.list}>
+                  <label className={s.label} key={index}>
+                    {nameSecretary === el.name ? (
+                      <p onClick={() => nameSecretaryClick(el.name, el.id)}
+                        style={{backgroundColor: "#F3F3FF",paddingLeft: "20px",}}>
+                        {el.name}
+                      </p>
+                    ) : (
+                      <p onClick={() => nameSecretaryClick(el.name, el.id)}>
+                        {el.name}
+                      </p>
+                    )}
+                  </label>
+                </div>
+              ))}
+            </>
+          )}
+          </>
+        </div>
+
         <Input
           placeholder="Введите текст"
           valueLabel="Примечание"
@@ -218,17 +255,18 @@ export const CreateEvents = () => {
         ))}
         <Button
           text="СОЗДАТЬ"
-          disabled={
-            !(
-              formik.values.name &&
-              formik.values.finish_datetime &&
-              formik.values.start_datetime &&
-              formik.values.place &&
-              formik.values.lead_judge &&
-              formik.values.note
-              // formik.values.age_groupe &&
-            )
-          }
+          // disabled={
+          //   !(
+          //     formik.values.name &&
+          //     formik.values.finish_datetime &&
+          //     formik.values.start_datetime &&
+          //     formik.values.place &&
+          //     formik.values.lead_judge &&
+          //     formik.values.assistant &&
+          //     // formik.values.age_groupe &&
+          //     formik.values.note
+          //   )
+          // }
           width="600px"
           type="submit"
         />

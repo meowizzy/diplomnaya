@@ -54,23 +54,17 @@ export const createEvent = createAsyncThunk(
     }
   }
 );
-
 export const editEvent = createAsyncThunk(
-  "event/editEvent",
-  async (data, { rejectWithValue }) => {
-    // console.log("form", data.values)
-    try {
-      const res = await requests.editEvents(data);
-      console.log("res", data.values)
-      // if (!res) {
-      //   throw new Error("ERROR");
-      // }
-      data.handleOpneSuccessModal()
-      return res.data
-    } catch (error) {
-        return rejectWithValue(error.message)
+  'user/editEvent',
+  async (data) => {
+        // console.log(data)
+        const response = await requests.editEvents(data);
+        // console.log("edit: ", response.data)
+        // setTimeout(() => data.handleOpenSuccessModal(), 1500)
+        data.handleOpenSuccessModal()
+        return response.data
+      // data.navigate("/main/news/all_news")
     }
-  }
 );
 
 export const deleteEvent = createAsyncThunk(
