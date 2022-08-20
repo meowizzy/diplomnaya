@@ -6,10 +6,11 @@ import Input from "../../../components/input/Input";
 import SuccessModal from "../../../components/modals/SuccessModal";
 import s from "./ChangeEvents.module.scss";
 import { useDispatch } from "react-redux/es/hooks/useDispatch";
-import { editEvent } from "../../../redux/slices/eventSlice";
+import { editEvent, getEvent } from "../../../redux/slices/eventSlice";
 import { getJudgeUser, getSecretaryUser } from "../../../redux/slices/userSlice";
 import { useSelector } from "react-redux/es/exports";
 import ss from '../../register/Registr.module.scss'
+import { useNavigate } from "react-router";
 
 export const ChangeForm = ({
   onClick,
@@ -26,7 +27,7 @@ export const ChangeForm = ({
   lead_judgeId
 }) => {
   const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
-  const handleOpenSuccessModal = () => setOpenSuccessModal(true);
+  const handleOpenSuccessModal = () => setOpenSuccessModal(!openSuccessModal);
   const handleCloseSuccessModal = () => setOpenSuccessModal(false);
 
   const dispatch = useDispatch()
@@ -73,7 +74,7 @@ export const ChangeForm = ({
     clickSecretary()
     setSecretaryId(id)
   }
-
+const navigate = useNavigate()
 
   const formik = useFormik({
     initialValues: {
@@ -85,9 +86,8 @@ export const ChangeForm = ({
       age_groupe
     },
     onSubmit: (values) => {
-      const data = {values, id, handleOpenSuccessModal}
+      const data = {values, id, handleOpenSuccessModal, navigate, onClick }
       dispatch(editEvent(data))
-      onClick()
       // alert(JSON.stringify(values, null, 2));
     },
   });

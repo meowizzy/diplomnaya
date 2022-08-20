@@ -18,11 +18,11 @@
 }
 
 #dragon {
-    background: white;
+    // background: white;
     position: relative;
     animation: myfirst 7s ;
     animation-direction: initial;
-
+  z-index: 0;
   }
   
   @keyframes myfirst {

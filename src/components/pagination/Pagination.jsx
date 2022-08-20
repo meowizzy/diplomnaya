@@ -4,7 +4,7 @@ import "./Pagination.scss";
 
 export const Pagination = (props) => {
   const dispatch = useDispatch();
-  const pages = [1, 2, 3];
+  const pages = [1];
   const pagination = (next) => {
     dispatch(props.take(next));
   };
@@ -19,9 +19,13 @@ export const Pagination = (props) => {
         onClick={() => pagination(props.previous)}
       ></div>
       {pages.map((page, index) => (
+        <>
         <div key={index} className="pagination_box">
           {page}
         </div>
+        <div className="pagination_box1">2</div>
+        <div className="pagination_box1">3</div>
+        </>
       ))}
       <div
         className={

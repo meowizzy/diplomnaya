@@ -91,7 +91,7 @@ const dispatch = useDispatch()
               <span>Возрастная категория:{' '}</span>
               {age.map((el, index)=>(
               <span key={index}>
-                с {el.min_age} до {el.max_age},
+                с {el.min_age} до {el.max_age}
               </span>
               ))}
             </div>
