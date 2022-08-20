@@ -11,10 +11,10 @@ export const ReferalLink = () => {
     dispatch(getUserForProfilePage())
   },[])
   const user = useSelector(state=>state.user.user)
-  console.log(user)
-
-  const [value, setValue] = useState(`https://wushu-federation1.herokuapp.com/registr/?token=${user.referral_token}`);
+  
+  const [value, setValue] = useState(`https://wushu-federation1.herokuapp.com/registr/?token=ad@admin.com&T2uNV49AwB2BbTITL6RInQOUOHgfoD`);
   const [status, setStatus] = useState(false);
+  console.log(user.referral_token)
 
   return (
     <div className={s.cont}>

@@ -83,8 +83,8 @@ export const AllEvents = () => {
       )}
       {events.map((el, index) => (
         <Card
-            name={el.name}
-            note={el.note}
+            name={el?.name}
+            note={el?.note}
             key={index}
             finish_date={el.finish_datetime}
             age={el.age_groups}

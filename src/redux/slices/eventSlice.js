@@ -136,13 +136,6 @@ const eventSlice = createSlice({
       ))
       // console.log("fullfiled");
     }, 
-    [editEvent.fulfilled]: (state, action) => {
-      state.status = "resolved";
-      state.event = state.event.map(el=>{
-        
-      })
-      // console.log("fullfiled");
-    },
   },
 });
 
