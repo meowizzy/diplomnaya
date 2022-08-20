@@ -1,7 +1,13 @@
+.content{
+    height: 100vh;
+
+}
 .wrapper {
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
+    height: 100vh;
+    // z-index: 999;
     .header{
         max-width: 1000px;
         width: 90%;
@@ -69,4 +75,7 @@
         }
     }
    
+}
+.dragon{
+    z-index: 0;
 }

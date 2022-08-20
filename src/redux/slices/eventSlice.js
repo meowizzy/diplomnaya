@@ -4,7 +4,7 @@ import { requests } from "../api";
 
 const initialState = {
   event: [],
-    event_id:{},
+  event_id:{},
   error:{}
 };
 
@@ -59,9 +59,11 @@ export const editEvent = createAsyncThunk(
   async (data) => {
         // console.log(data)
         const response = await requests.editEvents(data);
+        data.handleOpenSuccessModal()
+        // data.navigate("/main/events/allEvents")
         // console.log("edit: ", response.data)
         // setTimeout(() => data.handleOpenSuccessModal(), 1500)
-        data.handleOpenSuccessModal()
+        // data.onClick()
         return response.data
       // data.navigate("/main/news/all_news")
     }
@@ -132,6 +134,13 @@ const eventSlice = createSlice({
       state.event = state.event.filter(el=>(
         el.id!==action.payload
       ))
+      // console.log("fullfiled");
+    }, 
+    [editEvent.fulfilled]: (state, action) => {
+      state.status = "resolved";
+      state.event = state.event.map(el=>{
+        
+      })
       // console.log("fullfiled");
     },
   },

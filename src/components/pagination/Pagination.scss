@@ -5,7 +5,7 @@
     margin-top: 56px;
     position: absolute;
     bottom: 20px;
-    left: 42%;
+    left: 37%;
     // margin-left: 40%;
     div{
         margin-right: 20px;
@@ -23,6 +23,20 @@
         justify-content: center;
         font-weight: bold;
         cursor: pointer;
+    }
+    .pagination_box1{
+        width: 45px;
+        height: 45px;
+        border-radius: 8px;
+        color: #fff;
+        border-radius: 25px;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        cursor: pointer;
+        color:grey;
     }
     .pagination_box:active {
         background: red;

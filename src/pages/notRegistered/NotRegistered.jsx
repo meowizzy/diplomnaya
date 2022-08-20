@@ -11,21 +11,31 @@ export const NotRegistered = () => {
     localStorage.removeItem('role')
   },[]);
   return (
-    <div className={s.wrapper}>
-      <header className={s.header}>
-        <div className={s.button}>
-          <Link to="Auth">
-            <Button width="140px" margin="40px 0px 80px" text="ВОЙТИ" />
-          </Link>
-        </div>
-      </header>
-      {/*<Role />*/}
-      <Protocol />
-      <Protocol />
-      <footer className={s.footer}>
-        <p>ФЕДЕРАЦИЯ УШУ КЫРГЫЗСКОЙ РЕСПУБЛИКИ</p>
-        <p>2022</p>
-      </footer>
+    <div className={s.content}>
+        <div id="dragon">
+          <img
+            style={{ width: "800px" }}
+            className="dragon"
+            src="https://i.gifer.com/XwYs.gif"
+            alt=""
+          />
+      </div>
+      <div className={s.wrapper}>
+        <header className={s.header}>
+          <div className={s.button}>
+            <Link to="Auth">
+              <Button width="140px" margin="40px 0px 80px" text="ВОЙТИ" />
+            </Link>
+          </div>
+        </header>
+        {/*<Role />*/}
+        <Protocol />
+        <Protocol />
+        <footer className={s.footer}>
+          <p>ФЕДЕРАЦИЯ УШУ КЫРГЫЗСКОЙ РЕСПУБЛИКИ</p>
+          <p>2022</p>
+        </footer>
+      </div>
     </div>
   );
 }
