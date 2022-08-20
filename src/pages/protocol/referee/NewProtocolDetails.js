@@ -298,7 +298,7 @@ const NewProtocolDetails = () => {
                             {
                                 judge_form.map((inp, index) => {
                                     return <div className={ownStyles.input_cont}>
-                                                <input className={ownStyles.input11} type="text" placeholder={index + 1}/>
+                                                <input style={{color: "black"}} className={ownStyles.input11} type="text" value={index + 1}/>
                                                 <input onChange={formik.handleChange} name="start_time" style={{flex: 5}} className={ownStyles.input2} type="time" placeholder="00:00"/>
                                                 <input onChange={formik.handleChange} name="end_time" style={{flex: 5}} className={ownStyles.input2} type="time" placeholder="00:00"/>
                                                 <select
@@ -314,7 +314,7 @@ const NewProtocolDetails = () => {
                                                     {
                                                         protocols.map(protocol => {
                                                             return <option className={s.option} value={protocol.id}>
-                                                                {protocol.age_group}
+                                                                {protocol.sex === 1 ? "Женский" : "Мужской"}, 12-25 лет
                                                                     </option>
                                                         })
                                                     }

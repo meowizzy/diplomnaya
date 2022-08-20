@@ -28,7 +28,6 @@ const TrainerAllClubs = () => {
                 <div className={s.title} style={{ fontWeight: "500" }}>
                     <p className={s.first_p}>№</p>
                     <p>Название клуба</p>
-                    <p>Тренер</p>
                     <p>Адрес</p>
                     <p>Спортсмены</p>
                 </div>
@@ -38,7 +37,6 @@ const TrainerAllClubs = () => {
                             <div className={s.title}>
                                 <p className={s.first_p}>{index+1}</p>
                                 <p>{club.name}</p>
-                                <p>Тренер</p>
                                 <p>{club.address}</p>
                                 <p>{club?.sum_of_people}</p>
                             </div>
