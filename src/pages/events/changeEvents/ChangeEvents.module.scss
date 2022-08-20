@@ -127,3 +127,8 @@
     text-align: center;
     margin-left: 11px;
 }
+::-webkit-calendar-picker-indicator {
+    color: blue;
+    // background-color: blue;
+    background: url(./callendar.svg);
+}
