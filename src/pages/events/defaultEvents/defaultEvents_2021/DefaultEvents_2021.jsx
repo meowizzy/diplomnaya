@@ -57,8 +57,8 @@ export const DefaultEvents_2021 = () => {
           finish_date={el.finish_datetime}
           age={el.age_groups}
           place={el.place}
-          referee={el.lead_judge.name}
-          secretary={el.assistant.name}
+          referee={el.lead_judge?.name}
+          secretary={el.assistant?.name}
           start_date={el.start_datetime}
         />
       ))}
