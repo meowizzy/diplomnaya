@@ -5,14 +5,18 @@ import {getCookie, setCookie} from "../../utils/cookieFunction/cookieFunction";
 const initialState = {
     error: false,
 };
+const token = getCookie("user_info")
 
 export const userAuth = createAsyncThunk(
     'auth/userAuth',
     async (data) => {
         const res = await requests.authApi(data.authData);
-        // console.log("first",res.data);
+        console.log("first", res.data);
+        console.log("token",token)
         setCookie("user_info", JSON.stringify(res.data), 100);
+        setCookie("access", JSON.stringify(res.data.access), 100);
         localStorage.setItem('userId', res.data.user_id)
+        localStorage.setItem("token", res.data.access)
         const role = JSON.parse(getCookie("user_info"))
         // console.log("role", role)
         if(role.assistant === "True"){

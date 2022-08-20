@@ -30,18 +30,16 @@ export const ClubStats = () => {
     <div className={s.title} style={{ fontWeight: "500" }}>
       <p className={s.first_p}>№</p>
       <p className={s.name}>Клуб </p>
-      <p className={s.name}>Тренер</p>
       <p>Кол-во спортсменов</p>
-      <p>Средний ОФП клуба</p>
+    
     </div>
     {clubs.map((el,index)=>(
     <Link to="/main/statistics/clubStats/clubStatsMore" key={index} onClick={()=>getClubById(el.id)}>
       <div className={s.title}>
         <p className={s.first_p}>{index+1}</p>
         <p className={s.name}>{el.name}</p>
-        <p className={s.name}>Леонид Ильич Брежнев</p>
         <p>{el.sum_of_people}</p>
-        <p>16</p>
+        
       </div>
     </Link>
     ))}

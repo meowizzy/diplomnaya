@@ -26,10 +26,10 @@ export const getEvent = createAsyncThunk(
 export const createEvent = createAsyncThunk(
   "event/createEvent",
   async (data ,{ rejectWithValue }) => {
-    // console.log("form", data)
+    console.log("form", data)
     try {
       const res = await requests.postEvents(data.values);
-      data.handleOpneSuccessModal()
+      data.handleOpenSuccessModal()
       data.navigate('/main/events/allEvents')
       return res.data
     } catch (error) {
@@ -96,19 +96,6 @@ const eventSlice = createSlice({
       // console.log("fullfiled");
     },
     [getEvent.rejected]: (state, action) => {
-      state.status = "rejected";
-      state.error = action.payload;
-    },
-    [createEvent.pending]: (state) => {
-      state.status = "loading";
-      state.error = null;
-    },
-    [createEvent.fulfilled]: (state, action) => {
-      state.status = "resolved";
-      state.event = action.payload
-      // console.log("fullfiled");
-    },
-    [createEvent.rejected]: (state, action) => {
       state.status = "rejected";
       state.error = action.payload;
     },

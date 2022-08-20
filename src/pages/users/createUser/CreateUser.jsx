@@ -216,17 +216,17 @@ export const CreateUser = () => {
         <Button
           width="600px"
           text="СОЗДАТЬ"
-          // disabled={
-          //   !(
-          //     formik.values.name &&
-          //     formik.values.surname &&
-          //     formik.values.position &&
-          //     formik.values.number &&
-          //     formik.values.email &&
-          //     formik.values.address &&
-          //     formik.values.password
-          //   )
-          // }
+          disabled={
+            !(
+              role.name &&
+              role.surname &&
+              role.role &&
+              role.number &&
+              role.email &&
+              role.address &&
+              role.password
+            )
+          }
           margin="82px 0 0"
           type="submit"
           // onClick={onSubmit}

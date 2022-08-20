@@ -89,10 +89,10 @@ export const AllEvents = () => {
             finish_date={el.finish_datetime}
             age={el.age_groups}
             place={el.place}
-            referee={el.lead_judge.name}
-            secretary={el.assistant.name}
-            refereeId={el.lead_judge.id}
-            secretaryId={el.assistant.id}
+            referee={el.lead_judge?.name}
+            secretary={el.assistant?.name}
+            refereeId={el.lead_judge?.id}
+            secretaryId={el.assistant?.id}
             start_date={el.start_datetime}
             id={el.id}
         />

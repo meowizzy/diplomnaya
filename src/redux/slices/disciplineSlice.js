@@ -3,7 +3,7 @@ import { requests } from "../api";
 
 
 const initialState = {
-  discipline:{},
+  discipline:[],
   error:{}
 };
 

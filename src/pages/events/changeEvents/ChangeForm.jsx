@@ -178,55 +178,6 @@ export const ChangeForm = ({
           </>
           }
       </div> 
-      <div className="relative">
-        {secretary === false?
-          <>
-          <Input
-          placeholder="Секретарь"
-          valueLabel="Информация о мероприятии- секретарь"
-          value={nameSecretary}
-          // onChange={formik.handleChange}
-          width="600px"
-          // name="assistant"
-        />
-            <div className={ss.list_img} onClick={clickSecretary}></div>
-          </>
-          :
-          <>
-          <Input
-          placeholder="Секретарь"
-          valueLabel="Информация о мероприятии- секретарь"
-          value={nameSecretary}
-          // onChange={formik.handleChange}
-          width="600px"
-          // name="assistant"
-        />
-          <span className={ss.list_img} onClick={clickSecretary}></span>
-          {secretaryUser.map(el=>(
-          <div className={s.list}>
-                <label className={s.label}>
-                  {secretaryId === el.id ? (
-                    <p onClick={()=>nameSecretaryClick(el.name, el.id)} style={{ backgroundColor: "#F3F3FF" }}>
-                      {el.name}
-                    </p>
-                  ) : (
-                    <p onClick={()=>nameSecretaryClick(el.name, el.id)}>
-                      {el.name}
-                    </p>
-                  )}
-                  <input
-                    type="radio"
-                    value={el.id}
-                    onChange={formik.handleChange}
-                    name="assistant"
-                    className={s.radio}
-                  />
-                </label>
-            </div>
-          ))}
-          </>
-          }
-      </div> 
         <Input
           valueLabel="Примечание"
           value={formik.values.note}

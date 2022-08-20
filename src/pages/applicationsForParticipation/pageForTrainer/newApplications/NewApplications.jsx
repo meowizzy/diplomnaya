@@ -18,7 +18,7 @@ export const NewApplications = () => {
   },[])
   const athletes = useSelector(state=>state.athletes.athletes)
   const applicationById = useSelector(state=>state.application.applicationTemplateId)
-  console.log(athletes)
+  console.log(applicationById)
   const [openSuccessModal, setOpenSuccessModal] = useState(false);
   const handleOpenSuccessModal = () => setOpenSuccessModal(true);
   const handleCloseSuccessModal = () => setOpenSuccessModal(false);
@@ -77,7 +77,6 @@ export const NewApplications = () => {
       note:"",
       dueling_partner__name:"",
       discipline:"",
-      trainer:"",
       event:""
   }) 
   const onChange = (type, value, sex) =>{

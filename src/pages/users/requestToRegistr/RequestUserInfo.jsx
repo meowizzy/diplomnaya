@@ -46,7 +46,7 @@ export const RequestUserInfo = () => {
         const id = user.id
         const data = {values, id}
         dispatch(editUser(data))
-        alert(JSON.stringify(values, null, 2));
+        // alert(JSON.stringify(values, null, 2));
       },
     });
      

@@ -15,7 +15,7 @@ export const NavBar = () => {
     };
     const removeRole=()=>{
       // localStorage.removeItem('role')
-      removeCookie("user_info")
+      removeCookie("access")
       console.log("remove cook")
     }
 

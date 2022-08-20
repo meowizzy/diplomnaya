@@ -30,7 +30,6 @@ export const Registered = () => {
         <p>Имя</p>
         <p>Фамилия</p>
         <p>Должность</p>
-        <p>Клуб</p>
         <p>Почта</p>
       </div>
       {user.map((el,index)=>(
@@ -40,7 +39,6 @@ export const Registered = () => {
           <p>{el.name}</p>
           <p>{el.surname}</p>
           <p>{el.is_judge?"Судья":el.is_assistant?"Секретарь":"Тренер"}</p>
-          <p>Х</p>
           <p>{el.email}</p>
         </div>
       </Link>
