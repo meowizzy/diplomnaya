@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed">
+      <change afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsStatistics/InfoTrainerMore.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsStatistics/LineChartTrainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/ClubsTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/ClubsTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/TrainerClubs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/TrainerClubs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsStatistics/TrainerClubsStatistics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubsStatistics/TrainerClubsStatistics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/output/DefaultOutput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/output/DefaultOutput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/output/OutputDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/output/OutputDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/AllEvents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/AllEvents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/FormProtocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/FormProtocol.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,20 +41,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu/src/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Admin/WebstormProjects/whushu/src/pages/clubs/trainerClubs/clubsStatistics",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\WebstormProjects\whushu\src\pages\clubs\trainerClubs\clubsStatistics" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\images" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\pages\clubs\trainerClubs\clubSportsmen" />
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\redux\slices" />
@@ -79,7 +89,7 @@
       <workItem from="1660569818725" duration="15677000" />
       <workItem from="1660625382616" duration="23074000" />
       <workItem from="1660745852855" duration="405000" />
-      <workItem from="1660971640291" duration="4195000" />
+      <workItem from="1660971640291" duration="7466000" />
     </task>
     <task id="LOCAL-00001" summary="WHUS-415 made clubs and sportsman logical parts">
       <created>1659717735184</created>
@@ -151,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660975065404</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fixed">
+      <created>1660976261257</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1660976261257</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -25,7 +25,7 @@ const ClubsTab = () => {
                         <NavLink to="/main/clubs/my_clubs"  className={linkActiveClassName(location,"my_clubs", 3, s.link, s.active_link)}>Мои клубы</NavLink>
                         <NavLink to="/main/clubs/trainers"  className={linkActiveClassName(location,"trainers", 3, s.link, s.active_link)}>Тренеры</NavLink>
                         <NavLink to="/main/clubs/sportsmen"  className={linkActiveClassName(location,"sportsmen",3, s.link, s.active_link)}>Спортсмены</NavLink>
-                        {/*<NavLink to="/main/clubs/statistics"  className={linkActiveClassName(location,"statistics",3, s.link, s.active_link)}>Статистика</NavLink>*/}
+                        <NavLink to="/main/clubs/statistics"  className={linkActiveClassName(location,"statistics",3, s.link, s.active_link)}>Статистика</NavLink>
                     </>
                 }
 

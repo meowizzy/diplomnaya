@@ -78,6 +78,42 @@ const OutputDetails = () => {
                         <img className={ownStyles.in_plus} src={plus} alt="wrong"/>
                     </div> : <input className={ownStyles.last_input} type="text" value="||"/>}
                 </div>
+                <div className={ownStyles.input_cont}>
+                    <input className={ownStyles.input1} type="text" value="4" />
+                    <input className={ownStyles.input2} style={{width: 300}} type="text" value="Стёпка Киборг Убийца" />
+                    <input className={ownStyles.input} type="text" value="4"/>
+                    <input className={ownStyles.input} type="text" value="4"/>
+                    <input className={ownStyles.input} type="text" value="4"/>
+                    <input className={ownStyles.input} type="text" value="4.2"/>
+                    {editButton ? <div className={ownStyles.last_input} style={{borderRight: "none"}}>
+                        <input className={ownStyles.in_input} type="text" value="||"/>
+                        <img className={ownStyles.in_plus} src={plus} alt="wrong"/>
+                    </div> : <input className={ownStyles.last_input} type="text" value="||"/>}
+                </div>
+                <div className={ownStyles.input_cont}>
+                    <input className={ownStyles.input1} type="text" value="5" />
+                    <input className={ownStyles.input2} style={{width: 300}} type="text" value="Стёпка Киборг Убийца" />
+                    <input className={ownStyles.input} type="text" value="4"/>
+                    <input className={ownStyles.input} type="text" value="4"/>
+                    <input className={ownStyles.input} type="text" value="4"/>
+                    <input className={ownStyles.input} type="text" value="4.2"/>
+                    {editButton ? <div className={ownStyles.last_input} style={{borderRight: "none"}}>
+                        <input className={ownStyles.in_input} type="text" value="||"/>
+                        <img className={ownStyles.in_plus} src={plus} alt="wrong"/>
+                    </div> : <input className={ownStyles.last_input} type="text" value="||"/>}
+                </div>
+                <div className={ownStyles.input_cont}>
+                    <input className={ownStyles.input1} type="text" value="6" />
+                    <input className={ownStyles.input2} style={{width: 300}} type="text" value="Стёпка Киборг Убийца" />
+                    <input className={ownStyles.input} type="text" value="4"/>
+                    <input className={ownStyles.input} type="text" value="4"/>
+                    <input className={ownStyles.input} type="text" value="4"/>
+                    <input className={ownStyles.input} type="text" value="4.2"/>
+                    {editButton ? <div className={ownStyles.last_input} style={{borderRight: "none"}}>
+                        <input className={ownStyles.in_input} type="text" value="||"/>
+                        <img className={ownStyles.in_plus} src={plus} alt="wrong"/>
+                    </div> : <input className={ownStyles.last_input} type="text" value="||"/>}
+                </div>
                 {editButton ? <Button onClick={handleOpenSuccessModal} margin="108px auto 50px" width="600px" classname="button" text="СОХРАНИТЬ"/> : <Button margin="108px auto 50px" width="600px" classname="button" text="ПЕЧАТЬ"/>}
             </div>
             {openSuccessModal && <SuccessModal open={openSuccessModal} handleClose={handleCloseSuccessModal} title="Вы успешно отредактировали данные об итогах соревнования!"/>}
