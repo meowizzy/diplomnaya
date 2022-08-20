@@ -8,7 +8,8 @@
     font-weight: normal;
     padding: 100px 0px 100px 0px;
     margin-bottom: 100px;
-    z-index: 999;
+    z-index: 999 !important;
+
     .header{
         p{
             line-height: 28px;

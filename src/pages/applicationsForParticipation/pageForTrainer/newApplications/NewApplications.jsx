@@ -274,10 +274,12 @@ export const NewApplications = () => {
               <img
                 src={applied_radio__checked}
                 onClick={() => onChange("cuanshu", true)}
+                className={ss.check}
               />
             ) : (
               <img
                 src={applied_radio__uncheked}
+                className={ss.check}
                 onClick={() => onChange("cuanshu", true)}
               />
             )}
@@ -286,11 +288,13 @@ export const NewApplications = () => {
           {application.cise ? (
               <img
                 src={applied_radio__checked}
+                className={ss.check}
                 onClick={() => onChange("cise", true)}
               />
             ) : (
               <img
                 src={applied_radio__uncheked}
+                className={ss.check}
                 onClick={() => onChange("cise", true)}
               />
             )}
@@ -301,11 +305,13 @@ export const NewApplications = () => {
               {application.taizi_cuanshu ? (
               <img
                 src={applied_radio__checked}
+                className={ss.check}
                 onClick={() => onChange("taizi_cuanshu", true)}
               />
             ) : (
               <img
                 src={applied_radio__uncheked}
+                className={ss.check}
                 onClick={() => onChange("taizi_cuanshu", true)}
               />
             )}
@@ -314,11 +320,13 @@ export const NewApplications = () => {
               {application.taizi_cise ? (
               <img
                 src={applied_radio__checked}
+                className={ss.check}
                 onClick={() => onChange("taizi_cise", true)}
               />
             ) : (
               <img
                 src={applied_radio__uncheked}
+                className={ss.check}
                 onClick={() => onChange("taizi_cise", true)}
               />
             )}

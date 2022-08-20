@@ -11,8 +11,10 @@ export const NotRegistered = () => {
     localStorage.removeItem('role')
   },[]);
   return (
-    <div className={s.content}>
-        <div id="dragon">
+    <>
+        
+      <div className={s.wrapper}>
+      <div id="dragon">
           <img
             style={{ width: "800px" }}
             className="dragon"
@@ -20,7 +22,6 @@ export const NotRegistered = () => {
             alt=""
           />
       </div>
-      <div className={s.wrapper}>
         <header className={s.header}>
           <div className={s.button}>
             <Link to="Auth">
@@ -36,6 +37,6 @@ export const NotRegistered = () => {
           <p>2022</p>
         </footer>
       </div>
-    </div>
+    </>
   );
 }

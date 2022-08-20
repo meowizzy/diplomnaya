@@ -57,6 +57,7 @@
         border-top: solid 0.2px #4254EC;
         border-bottom: solid 0.2px #4254EC;
         border-left: solid 0.5px #4254EC;
+        position: relative;
     }
 
     .two_hundred_fifty_double {
@@ -99,6 +100,7 @@
             display: flex;
             flex-direction: row;
             height: 45px;
+            position: relative;
 
             .under_first {
                 min-width: 250px;
@@ -113,6 +115,7 @@
                 min-width: 250px;
                 align-items: center;
                 // display: flex;
+                position: relative;
             }
         }
     }
