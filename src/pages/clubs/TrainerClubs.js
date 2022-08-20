@@ -17,6 +17,8 @@ import CreateSportsman from "./trainerClubs/clubSportsmen/CreateSportsman";
 import ClubsTrainers from "./trainerClubs/clubsTrainers/ClubsTrainers";
 import ClubsTrainersDetails from "./trainerClubs/clubsTrainers/ClubsTrainersDetails";
 import EditSportsmanDetails from "./trainerClubs/clubSportsmen/EditSportsmanDetails";
+import {LineChartTrainer} from "./trainerClubs/clubsStatistics/LineChartTrainer";
+import {InfoTrainerMore} from "./trainerClubs/clubsStatistics/InfoTrainerMore";
 
 const TrainerClubs = () => {
     return (
@@ -48,6 +50,7 @@ const TrainerClubs = () => {
 
                     {/* statistics */}
                     <Route path="/statistics" element={<TrainerClubsStatistics />} />
+                    <Route path="/statistics/details" element={<InfoTrainerMore />} />
                 </Routes>
             </div>
         </div>

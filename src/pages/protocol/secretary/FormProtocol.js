@@ -72,10 +72,9 @@ const FormProtocol = () => {
     console.log("array: ", formArray)
 
     return (
-        <form onSubmit={formik.handleSubmit} style={{textAlign: "center"}} className={ownStyles2.wrapper2}>
-            <BackButton to="/main/protocol/all_events" />
-            {
-                !error && <div className={ownStyles2.header2}>
+            <form onSubmit={formik.handleSubmit} style={{textAlign: "center"}} className={ownStyles2.wrapper2}>
+                <BackButton to="/main/protocol/all_events" />
+                <div className={ownStyles2.header2}>
                     <p style={{ margin: "0px 0 30px", fontSize: "26px", fontWeight:"bold" }}>ПРОТОКОЛ</p>
                     <p style={{ margin: "0px 0 20px", fontSize: "20px", fontWeight:"bold" }}>
                         Чемпионат Кыргызской Респубики по традиционному ушу
@@ -88,37 +87,29 @@ const FormProtocol = () => {
                     </p>
                     <p style={{ margin: "0px 0 60px",fontWeight:"bold" }}>29 июня</p>
                 </div>
-            }
 
-            {
-                error ? <>
-                    <div style={{fontWeight: "bold"}}>ПРИМЕЧАНИЕ</div><br/>
-                    <p>{error}</p>
-                </> : <>
-                    <div className={ownStyles.input_cont} style={{ fontWeight: "500", marginTop: 10 }}>
-                        <input disabled className={ownStyles.title1} value="№"/>
-                        <input disabled className={ownStyles.title2} value="Подгруппа/возраст"/>
-                        <input disabled className={ownStyles.title} value="Кол-во человек"/>
-                        <input disabled className={ownStyles.title} value="Кол-во мест на арене" />
-                        <input disabled className={ownStyles.title} value="Процент призовых мест" />
-                    </div>
-                    {
-                        protocols?.map((protocol, index) => {
+                <div className={ownStyles.input_cont} style={{ fontWeight: "500", marginTop: 10 }}>
+                    <input disabled className={ownStyles.title1} value="№"/>
+                    <input disabled className={ownStyles.title2} value="Подгруппа/возраст"/>
+                    <input disabled className={ownStyles.title} value="Кол-во человек"/>
+                    <input disabled className={ownStyles.title} value="Кол-во мест на арене" />
+                    <input disabled className={ownStyles.title} value="Процент призовых мест" />
+                </div>
+                {
+                    protocols?.map((protocol, index) => {
+                        // написать ончейнж для последних инпутов с проверкой на их наличие и передать айдишки
+                        return <div onClick={() => setFormId(protocol.id)} className={ownStyles.input_cont}>
+                            <input className={ownStyles.input1} type="text" value={index + 1} />
+                            <input className={ownStyles.input2} style={{width: 300}} type="text" value={protocol.age_group}/>
+                            <input className={ownStyles.input} type="text" value={protocol.athlete_count} />
+                            <input name="areas_quantity" onChange={(e) => formik.handleChange(e)} className={ownStyles.input} type="text" placeholder="Введите число"/>
+                            <input name="top_places_percent" onChange={formik.handleChange} className={ownStyles.last_input} type="text" placeholder="Введите число"/>
+                        </div>
+                    })
+                }
+                <Button type="submit" width="600px" text="ДАЛЕЕ" />
+            </form>
 
-                            // написать ончейнж для последних инпутов с проверкой на их наличие и передать айдишки
-                            return <div onClick={() => setFormId(protocol.id)} className={ownStyles.input_cont}>
-                                <input className={ownStyles.input1} type="text" value={index + 1} />
-                                <input className={ownStyles.input2} style={{width: 300}} type="text" value={protocol.age_group}/>
-                                <input className={ownStyles.input} type="text" value={protocol.athlete_count} />
-                                <input name="areas_quantity" onChange={(e) => formik.handleChange(e)} className={ownStyles.input} type="text" placeholder="Введите число"/>
-                                <input name="top_places_percent" onChange={formik.handleChange} className={ownStyles.last_input} type="text" placeholder="Введите число"/>
-                            </div>
-                        })
-                    }
-                    <Button type="submit" width="600px" text="ДАЛЕЕ" />
-                </>
-            }
-        </form>
     );
 };
 

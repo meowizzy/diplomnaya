@@ -20,7 +20,7 @@ const TrainerClubStatistics = () => {
                     <p>Адрес</p>
                     <p>Спортсмены</p>
                 </div>
-                <Link to="/main/clubs/sportsmen/sportsman_details">
+                <Link to="/main/clubs/statistics/details">
                     <div className={s.title}>
                         <p className={s.first_p}>1</p>
                         <p>Золотой дракон</p>
