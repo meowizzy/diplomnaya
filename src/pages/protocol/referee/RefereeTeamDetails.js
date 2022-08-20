@@ -12,6 +12,7 @@ import SuccessModal from "../../../components/modals/SuccessModal";
 import {useParams} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
 import {getJudge, getProtocol, getProtocolById} from "../../../redux/slices/protocolSlice";
+import {getEventById} from "../../../redux/slices/eventSlice";
 
 const RefereeTeamDetails = () => {
 
@@ -33,6 +34,7 @@ const RefereeTeamDetails = () => {
     const protocolById = useSelector(state => state.protocol.protocol)
     const judges_list = useSelector(state => state.protocol.judges)
     const protocols = protocols_list.filter(p => p.event.id == id)
+    const event = useSelector(state => state.event.event_id)
     const judges = judges_list.filter(t => protocols.find(r => r.id === t.subgroup))
     // const judges = judges_list(judge => judge.id)
     console.log("created_protocolss: ", protocols)
@@ -68,6 +70,7 @@ const RefereeTeamDetails = () => {
     useEffect(() => {
         dispatch(getProtocol())
         dispatch(getJudge())
+        dispatch(getEventById(id))
     }, [])
 
     useEffect(() => {
@@ -87,7 +90,7 @@ const RefereeTeamDetails = () => {
             <div className={ownStyles2.header2}>
                 <p style={{ margin: "0 0 70px", fontSize: "26px", fontWeight:"bold" }}>Информация о протоколе</p>
                 <p style={{ margin: "0 0 20px", fontSize: "20px", fontWeight:"bold" }}>
-                    Чемпионат Кыргызской Респубики по традиционному ушу
+                    {event.name}
                 </p>
                 <p style={{ margin: "0 0 50px",}}>
                     29.06.2022г. - 30.06.2022г.
@@ -208,7 +211,7 @@ const RefereeTeamDetails = () => {
                                                value={`${judge.start_time}-${judge.end_time} `}/>
                                         <input style={{flex: 7}} className={ownStyles.input} type="text" value={judge.subgroup}/>
                                         <input style={{flex: 10}} className={ownStyles.last_input} type="text"
-                                               value={judge.judge_subgroup}/>
+                                               value={judge.id}/>
                                     </div>
                                 })
                             }

@@ -19,6 +19,7 @@ import {useFormik} from "formik";
 import {useNavigate, useParams} from "react-router";
 import s from "../../news/editNews/EditNews.module.scss";
 import {getJudgeUser} from "../../../redux/slices/userSlice";
+import {getEventById} from "../../../redux/slices/eventSlice";
 
 const NewProtocolDetails = () => {
 
@@ -28,6 +29,7 @@ const NewProtocolDetails = () => {
     const protocols_list = useSelector(state => state.protocol.protocols)
     const judges = useSelector(state => state.user.userJudge)
     const protocols = protocols_list.filter(p => p.event.id == id)
+    const event = useSelector(state => state.event.event_id)
     console.log("new_protocols: ", protocols)
     console.log("judges: ", judges)
 
@@ -82,6 +84,8 @@ const NewProtocolDetails = () => {
 
     useEffect(() => {
         dispatch(getJudgeUser())
+        dispatch(getEventById(id))
+        dispatch(getEventById(id))
     }, [])
 
     useEffect(() => {
@@ -160,7 +164,7 @@ const NewProtocolDetails = () => {
             <div className={ownStyles2.header2}>
                 <p style={{ margin: "0 0 70px", fontSize: "26px", fontWeight:"bold" }}>Информация о протоколе</p>
                 <p style={{ margin: "0 0 20px", fontSize: "20px", fontWeight:"bold" }}>
-                    Чемпионат Кыргызской Респубики по традиционному ушу
+                    {event.name}
                 </p>
                 <p style={{ margin: "0 0 50px",}}>
                     29.06.2022г. - 30.06.2022г.
