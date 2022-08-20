@@ -32,7 +32,6 @@ const NewProtocols = () => {
                     <p style={{flex: 12}}>Название</p>
                     <p style={{flex: 4}}>Дата</p>
                     <p style={{flex: 4}}>Спортсмены</p>
-                    <p style={{flex: 4}}>Судьи</p>
                 </div>
                 {
                     events.map((event, index) => {
@@ -42,7 +41,6 @@ const NewProtocols = () => {
                                         <p style={{flex: 12}}>{event.name}</p>
                                         <p style={{flex: 4}}>{event.start_datetime.substring(0, 10)}</p>
                                         <p style={{flex: 4}}>{event.id}</p>
-                                        <p style={{flex: 4}}>{event.lead_judge.name} {event.lead_judge.surname}</p>
                                     </div>
                                 </Link>
                     })
