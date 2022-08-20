@@ -5,7 +5,8 @@ const initialState = {
     loading: false,
     protocols: [],
     protocol: {},
-    judges: []
+    judges: [],
+    error: ""
 }
 
 export const getProtocol = createAsyncThunk(
@@ -123,6 +124,10 @@ const protocolSlice = createSlice({
         },
         [getJudge.rejected]: (state) => {
             state.loading = false
+        },
+        [createProtocol.fulfilled]: (state, action) => {
+            state.loading = false
+            state.error = action.payload
         },
     },
 })

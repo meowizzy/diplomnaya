@@ -34,6 +34,7 @@ const ProtocolDetails = () => {
     const protocolById = useSelector(state => state.protocol.protocol)
     const judges_list = useSelector(state => state.protocol.judges)
     const protocols = protocols_list.filter(p => p.event.id == id)
+    const event = useSelector(state => state.event.event_id)
     const judges = judges_list.filter(t => protocols.find(r => r.id === t.subgroup))
     // const judges = judges_list(judge => judge.id)
     console.log("created_protocolss: ", protocols)
@@ -209,7 +210,7 @@ const ProtocolDetails = () => {
                                        value={`${judge.start_time}-${judge.end_time} `}/>
                                 <input style={{flex: 7}} className={ownStyles.input} type="text" value={judge.subgroup}/>
                                 <input style={{flex: 10}} className={ownStyles.last_input} type="text"
-                                       value={judge.judge_subgroup}/>
+                                       value={judge.id}/>
                             </div>
                         })
                     }
