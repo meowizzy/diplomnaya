@@ -5,7 +5,7 @@ import {getCookie, setCookie} from "../../utils/cookieFunction/cookieFunction";
 const initialState = {
     error: false,
 };
-const token = getCookie("user_info")
+const token = getCookie("access")
 
 export const userAuth = createAsyncThunk(
     'auth/userAuth',

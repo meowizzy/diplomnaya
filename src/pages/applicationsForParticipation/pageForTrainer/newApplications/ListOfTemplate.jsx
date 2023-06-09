@@ -32,7 +32,7 @@ export const ListOfTemplate = () => {
       <p>Адрес</p>
     </div>
     {template.map((el,index)=>(
-    <Link to="/main/application/listOfTemplate/newApplications" key={index} onClick={()=>getTemplateById(el.id)}>
+    <Link to={`/main/application/listOfTemplate/newApplications/${el.id}/`} key={index} onClick={()=>getTemplateById(el.id)}>
       <div className={s.title}>
         <p className={s.first_p}>{index+1}</p>
         <p className={s.name}>{el.event?.name}</p>

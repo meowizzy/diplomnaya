@@ -20,6 +20,9 @@ const ProtocolTab = () => {
                     role["user role"] === "ADMIN" && <NavLink className={linkActiveClassName(location,"all_protocols", 3, s.link, s.active_link)} to="/main/protocol/all_protocols">Все протоколы</NavLink>
 
                 }
+              {
+                role["user role"] === "1" && <NavLink className={linkActiveClassName(location,"all_protocols", 3, s.link, s.active_link)} to="/main/protocol/all_protocols">Все протоколы</NavLink>
+              }
                 {
                    ( role["user role"] === "TRAINER" && role.assistant === "False" && role.judge === "False") && <NavLink className={linkActiveClassName(location,"all_protocols", 3, s.link, s.active_link)} to="/main/protocol/all_protocols">Все протоколы</NavLink>
 

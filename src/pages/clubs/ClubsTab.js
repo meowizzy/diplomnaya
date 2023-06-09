@@ -19,6 +19,9 @@ const ClubsTab = () => {
                     role["user role"] === "ADMIN" && <NavLink className={linkActiveClassName(location,"all_clubs", 3, s.link, s.active_link)} to="/main/clubs/all_clubs">Все клубы</NavLink>
                 }
                 {
+                  role["user role"] === "1" && <NavLink className={linkActiveClassName(location,"all_clubs", 3, s.link, s.active_link)} to="/main/clubs/all_clubs">Все клубы</NavLink>
+                }
+                {
                     role["user role"] === "TRAINER" &&
                     <>
                         <NavLink className={linkActiveClassName(location,"all_clubs", 3, s.link, s.active_link)} to="/main/clubs/all_clubs">Все клубы</NavLink>

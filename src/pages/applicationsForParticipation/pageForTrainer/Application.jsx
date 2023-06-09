@@ -43,7 +43,7 @@ const location = useLocation()
           <Route path="/submittedApplications/detail" element={<Detail />} />
           <Route path="/currentApplications" element={<CurrentApplications />} />
           <Route path="/currentApplications/detail" element={<DetailCurrent />} />
-          <Route path="/listOfTemplate/newApplications" element={<NewApplications />} />
+          <Route path="/listOfTemplate/newApplications/:id" element={<NewApplications />} />
           <Route path="/listOfTemplate" element={<ListOfTemplate />} />
         </Routes>
       </>

@@ -56,7 +56,7 @@ const EditDocumentationDetails = () => {
                 fData.append("title", data.title);
                 const id = doc.id
                 console.log(data);
-                requests.editDoc({fData, id}).then(res => {
+                requests.editDoc({fData, id}).then(async res => {
                     console.log("edited_doc: ", res.data)
                     handleOpenSuccessModal()
                     setTimeout(() => navigate("/main/documentation/all_documentation"), 1500)

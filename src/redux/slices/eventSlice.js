@@ -47,7 +47,10 @@ export const createEvent = createAsyncThunk(
     try {
       const res = await requests.postEvents(data.values);
       data.handleOpenSuccessModal()
-      data.navigate('/main/events/allEvents')
+      setTimeout(() => {
+        data.navigate('/main/events/allEvents')
+      }, 1500)
+
       return res.data
     } catch (error) {
         return rejectWithValue(error.message)
@@ -56,14 +59,18 @@ export const createEvent = createAsyncThunk(
 );
 export const editEvent = createAsyncThunk(
   'user/editEvent',
-  async (data) => {
+  async (data, {dispatch}) => {
         // console.log(data)
         const response = await requests.editEvents(data);
         data.handleOpenSuccessModal()
-        // data.navigate("/main/events/allEvents")
+        setTimeout(() => {
+          data.handleCloseSuccessModal()
+        }, 1500)
+        dispatch(getEvent())
+        data.navigate("/main/events/allEvents")
         // console.log("edit: ", response.data)
         // setTimeout(() => data.handleOpenSuccessModal(), 1500)
-        // data.onClick()
+        data.onClick()
         return response.data
       // data.navigate("/main/news/all_news")
     }
@@ -72,10 +79,11 @@ export const editEvent = createAsyncThunk(
 export const deleteEvent = createAsyncThunk(
   "event/deleteEvent",
  
-  async (id ,{ rejectWithValue }) => {
+  async ({id, setModalActive} ,{ rejectWithValue }) => {
     console.log("form", id)
     try {
       const res = await requests.deleteEvents(id);
+      setModalActive(false)
       console.log("res", res)
       // if (!res) {
       //   throw new Error("ERROR");

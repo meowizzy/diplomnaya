@@ -8,6 +8,7 @@ const Clubs = () => {
     return (
         <>
             { role["user role"] === "ADMIN" && <AdminClubs /> }
+            { role["user role"] === "1" && <AdminClubs /> }
             { role["user role"] === "TRAINER" && <TrainerClubs /> }
         </>
     );

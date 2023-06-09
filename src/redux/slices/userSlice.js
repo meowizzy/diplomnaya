@@ -65,9 +65,10 @@ export const getUserById = createAsyncThunk(
 
 export const deleteUser = createAsyncThunk(
   "user/deleteUser",
-  async function(id,{ rejectWithValue}){
+  async function(id,{ rejectWithValue, dispatch}){
     try {
       const res = await requests.deleteUser(id);
+      dispatch(getAllUser())
       // console.log("userDelete", res.data)
       if (!res) {
         throw new Error("ERROR");
@@ -98,17 +99,62 @@ export const getUserForProfilePage = createAsyncThunk(
 );
   export const editUser = createAsyncThunk(
     'user/editUser',
-    async (data) => {
+    async (data, {dispatch}) => {
+      console.log("vsl", data.values)
+          if(data.password.length && data.password !== data.prev_password) {
+            await dispatch(changePassword(data))
+            await requests.editUser(data);
+          }else{
+            await requests.editUser(data);
+          }
           // console.log(data)
-          const response = await requests.editUser(data);
+
           // console.log("edit: ", response.data)
           // setTimeout(() => data.handleOpenSuccessModal(), 1500)
           data.handleOpenSuccessModal()
-          data.navigate("/main/users/registered")
-          return response.data
+          setTimeout(() => {
+            data.handleCloseSuccessModal()
+            data.toggle()
+            data.foggle()
+            // data.navigate("/main/users/registered")
+          }, 1500)
         // data.navigate("/main/news/all_news")
       }
   );
+
+export const acceptUserRequest = createAsyncThunk(
+  'user/acceptUserRequest',
+  async (data, {dispatch}) => {
+    console.log("vsl", data.values)
+    await requests.editUser(data);
+    // console.log(data)
+
+    // console.log("edit: ", response.data)
+    // setTimeout(() => data.handleOpenSuccessModal(), 1500)
+    data.handleOpenSuccessModal()
+    setTimeout(() => {
+      data.handleCloseSuccessModal()
+      data.toggle()
+      data.foggle()
+      // data.navigate("/main/users/registered")
+    }, 1500)
+    // data.navigate("/main/news/all_news")
+  }
+);
+
+export const changePassword = createAsyncThunk(
+  'user/changePassword',
+  async (data) => {
+    // console.log(data)
+    const response = await requests.changePasswordApi(data);
+    // console.log("edit: ", response.data)
+    // setTimeout(() => data.handleOpenSuccessModal(), 1500)
+    // data.handleOpenSuccessModal()
+    // data.navigate("/main/users/registered")
+    return response.data
+    // data.navigate("/main/news/all_news")
+  }
+);
 
 
 export const getJudgeUser = createAsyncThunk(

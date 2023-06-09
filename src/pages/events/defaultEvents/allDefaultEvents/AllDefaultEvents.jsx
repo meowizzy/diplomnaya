@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import BackButton from '../../../../components/arrowButton/BackButton';
 import Button from '../../../../components/button/Button';
 import { Delete } from '../../../../components/delete/Delete';
+import {NavBar} from "../../../../components/navbar/NavBar";
 
 export const AllDefaultEvents = () => {
   const events = useSelector(state=>state.event.event)

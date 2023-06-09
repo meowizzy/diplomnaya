@@ -16,6 +16,7 @@ const DefaultClubs = () => {
     useEffect(() => {
         dispatch(getClubs())
         window.scrollTo(0, 0);
+        console.log('jjj')
         requests.getTrainerUser().then(res => console.log("userss: ", res))
     }, [])
 

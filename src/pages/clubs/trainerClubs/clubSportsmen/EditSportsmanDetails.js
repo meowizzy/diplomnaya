@@ -40,7 +40,7 @@ const EditSportsmanDetails = () => {
         enableReinitialize: true,
         onSubmit: data => {
             console.log("data: ",data)
-            const par = {id: data.sportsman.physical_indicators.id, data: data.sportsman.physical_indicators}
+            const par = {id: data.sportsman.physical_indicators.id, data: data.sportsman.physical_indicators, handleOpenSuccessModal, handleCloseSuccessModal}
             requests.editPhysicalIndicatorApi(par).then(res => {
                 console.log("indd: ", res);
                 const par = {data: {
@@ -68,7 +68,7 @@ const EditSportsmanDetails = () => {
                     fData.append("sex", data.sportsman.sex);
                     fData.append("sport_category", data.sportsman.sport_category);
                     fData.append("club", data.sportsman.club.id);
-                    const par2 = {data: fData,id:id, navigate, handleOpenSuccessModal};
+                    const par2 = {data: fData,id:id, navigate, handleOpenSuccessModal, handleCloseSuccessModal};
                     dispatch(editSportsman(par2))
                 } else {
                     dispatch(editSportsman(par))

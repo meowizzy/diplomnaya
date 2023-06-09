@@ -53,6 +53,10 @@ export const createUser = createAsyncThunk(
         throw new Error("ERROR");
       }
       formData.handleOpenSuccessModal()
+      setTimeout(() => {
+        formData.handleCloseSuccessModal()
+        formData.navigate('/main/users/requestToRegistr')
+      }, 1500)
       // return res
     } catch (error) {
         return rejectWithValue(error.message)

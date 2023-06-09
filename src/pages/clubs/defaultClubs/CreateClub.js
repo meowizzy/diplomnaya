@@ -23,7 +23,8 @@ const CreateClub = () => {
             address: "",
             name: "",
             min_age: "",
-            max_age: ""
+            max_age: "",
+            // sum_of_people: 0,
         },
         onSubmit: (postData) => {
             console.log(postData);
@@ -39,6 +40,7 @@ const CreateClub = () => {
                 <p className="container_title">Создать клуб</p>
                 <Input name="name" onChange={formik.handleChange} valueLabel="Клуб" width="100%" placeholder="Название клуба"/>
                 <Input name="address" onChange={formik.handleChange} valueLabel="Адрес" width="100%" placeholder="Адрес клуба"/>
+                {/*<Input name="sum_of_people" onChange={formik.handleChange} valueLabel="Адрес" width="100%" placeholder="Количество человек"/>*/}
                 <div className="flex">
                     <Input name="min_age" onChange={formik.handleChange} valueLabel="Возраст спортсменов" width="285px" placeholder="C"/>
                     <div className={s.inp_plus_cont}>

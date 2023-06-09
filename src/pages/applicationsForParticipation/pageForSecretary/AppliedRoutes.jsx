@@ -54,7 +54,7 @@ export const AppliedRoutes = () => {
       <>
         <Routes>
           <Route path="/newApplied" element={<NewApplied />} />
-          <Route path="/newApplied/detailedInformation" element={<DetailedInfoForNewApplied />} />
+          <Route path="/newApplied/detailedInformation/:id" element={<DetailedInfoForNewApplied />} />
           <Route path="/historyOfApplied" element={<HistoryOfApplied />} />
           <Route path="/historyOfApplied/detailedInformation" element={<DetailedInfoForHistoryOfApplied />} />
           <Route path="/appliedTemplate" element={<AppliedTemplate changeTemplate={changeTemplate}/>} />

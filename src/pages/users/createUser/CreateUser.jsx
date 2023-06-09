@@ -14,6 +14,7 @@ import { list_img } from "../../../images";
 import { useState } from "react";
 import sss from "../../../components/input/Input.module.scss"
 import { createUser } from "../../../redux/slices/registerSlice";
+import {useNavigate} from "react-router";
 
 export const CreateUser = () => {
   const [openSuccessModal, setOpenSuccessModal] = React.useState(false);
@@ -24,6 +25,7 @@ export const CreateUser = () => {
     setState(!state)
   }
   const [pos, setPos] = useState(false)
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getClubs());
@@ -86,7 +88,7 @@ export const CreateUser = () => {
 
   const onSubmit=(e)=>{
     e.preventDefault();
-    const data = {handleOpenSuccessModal, role}
+    const data = {handleOpenSuccessModal, handleCloseSuccessModal, role, navigate}
     dispatch(createUser(data))
     console.log(role)
   }

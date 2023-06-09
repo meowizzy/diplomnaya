@@ -48,19 +48,14 @@ export const ThreeDot = ({ disabled, type, onClick, text, take, id, status, open
       <Modal
         active={modalActive}
         setActive={setModalActive}
-        width="530px"
+        width="570px"
         height="265px"
       >
         <div className={ss.cont}>
           <p>{text}</p>
-          <div className={ss.flex}>
-            <ButtonForActiveChanges width="210px" text="ДА" onClick={()=>deleteThings(id)} classname="yes_button"/>
-            <ButtonForActiveChanges
-              width="210px"
-              text="НЕТ"
-              onClick={() => setModalActive(false)}
-              classname="no_button"
-            />
+          <div style={{padding: "0 40px"}} className="flex">
+            <ButtonForActiveChanges onClick={()=>deleteThings(id)} classname="yes_button" margin="68px 0 0" width="210px" text="ДА" />
+            <ButtonForActiveChanges onClick={() => setModalActive(false)} classname="no_button" margin="68px 0 0" width="210px" text="НЕТ"/>
           </div>
         </div>
       </Modal>

@@ -15,9 +15,9 @@ export const Delete = ({text, take, id, status, open, back}) => {
   const dispatch = useDispatch()
   const deleteThings = () =>{
     if(status!=="rejected"){
-      dispatch(take(id))
+      dispatch(take({id, setModalActive}))
       open()
-      setModalActive(false)
+      // setModalActive(false)
       back()
     }
   }

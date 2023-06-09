@@ -41,8 +41,11 @@ export const editSportsman = createAsyncThunk(
     async (data) => {
         const response = await requests.editSportsmenApi(data);
         console.log("edited_sportsman: ", response.data)
-        setTimeout(() => data.navigate("/main/clubs/sportsmen"), 1000)
+        // setTimeout(() => data.navigate("/main/clubs/sportsmen"), 1000)
         data.handleOpenSuccessModal()
+        setTimeout(() => {
+          data.handleCloseSuccessModal()
+        }, 1500)
         return response.data;
     }
 );

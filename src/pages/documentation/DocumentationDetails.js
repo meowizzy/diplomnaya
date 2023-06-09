@@ -47,12 +47,10 @@ const DocumentationDetails = () => {
                 <div style={{margin: "46px 20px 0"}}  className="input_flex">
                     <p className="basic_text">Скачать файл</p>
                     <a href={doc.file} download="My_File.pdf"><img style={{cursor: "pointer"}} src={download} alt="wrong"/></a>
-
                 </div>
             </div>
             { openDeleteModal && <DeleteModal nav_link="/main/documentation/all_documentation" dispatchFunc={deleteDoc({id: doc.id, link : () => navigate("/main/documentation/all_documentation")})} text="Вы уверены, что хотите удалить данный документ?" open={openDeleteModal} handleClose={handleCloseDeleteModal}/> }
         </>
-
     );
 };
 

@@ -43,7 +43,16 @@ export const UserInfo = () => {
   // useEffect(()=>{
   //   setActive(active)
   // },[active])
+  const [pos, setPos]=useState(false)
+  const [position, setPosition] = useState(false)
+  const [buttonState, setButtonState] = useState(true);
+  const [password, setPassword] = useState('');
+  const prev_password = user.password
+  const navigate = useNavigate()
+  const foggle = () => {
+    setButtonState(!buttonState);
 
+  };
   const formik = useFormik({
     initialValues: {
       name:user.name,
@@ -58,26 +67,20 @@ export const UserInfo = () => {
     enableReinitialize:true,
     onSubmit: (values) => {
       const id = user.id
-      const data = {handleOpenSuccessModal, values, id}
+      const data = {handleOpenSuccessModal, handleCloseSuccessModal, foggle, values, navigate, id, password, prev_password}
       dispatch(editUser(data))
       // alert(JSON.stringify(values, null, 2));
     },
   });
+
+
+
 console.log(formik.values)
-
-  const [pos, setPos]=useState(false)
-  const [position, setPosition] = useState(false)
-  const [buttonState, setButtonState] = useState(true);
-  const foggle = () => {
-    setButtonState(!buttonState);
-  };
-
   const [eye, setEye] = useState(false)
   const toggle = () =>{
     setEye(!eye)
-  } 
 
-  const navigate = useNavigate()
+  }
   const back =()=>{
     navigate("/main/users/registered")
   }
@@ -209,13 +212,13 @@ console.log(formik.values)
             <div className="relative">
               <Input
                 valueLabel="Пароль"
-                value={userForm.password}
-                onChange={(e) => onChange("password", e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 width="600px"
                 type={eye === true ? "text" : "password"}
                 name="password"
                 margin="0 0 32px"
-                placeholder="Изменить пароьль"
+                placeholder="Изменить пароль"
               />
               <img
                 src={eye === true ? open_eye : close_eye}

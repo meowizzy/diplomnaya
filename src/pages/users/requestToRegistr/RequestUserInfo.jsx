@@ -6,7 +6,7 @@ import Button from '../../../components/button/Button';
 import Input from '../../../components/input/Input';
 import ss from './RequestToRegistr.module.scss'
 import { useDispatch, useSelector } from 'react-redux/es/exports';
-import { editUser } from '../../../redux/slices/userSlice';
+import {acceptUserRequest, editUser} from '../../../redux/slices/userSlice';
 import SuccessModal from '../../../components/modals/SuccessModal';
 
 
@@ -50,8 +50,8 @@ export const RequestUserInfo = () => {
       enableReinitialize:true,
       onSubmit: (values) => {
         const id = user.id
-        const data = {values, id, handleOpenSuccessModal, navigate}
-        dispatch(editUser(data))
+        const data = {values, id, handleOpenSuccessModal, handleCloseSuccessModal, navigate}
+        dispatch(acceptUserRequest(data))
         // alert(JSON.stringify(values, null, 2));
       },
     });

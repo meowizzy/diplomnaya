@@ -8,15 +8,18 @@ import s from './NewApplied.module.scss'
 import { useFormik } from "formik";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { editApplication } from '../../../../redux/slices/applicationSlice';
+import {useNavigate, useParams} from "react-router";
 
  
 export const DetailedInfoForNewApplied = () => {
   const applicationById = useSelector(state=>state.application.applicationById)
   const applicationId = useSelector(state=>state.application.applicationById.id)
   const status = useSelector(state=>state.application.statusById)
+  const navigate = useNavigate()
+  const {id} = useParams()
   // console.log(applicationId)
 
-  const [choise, setChoise] = useState({is_confirmed:true, applicationId:applicationId })
+  const [choise, setChoise] = useState({is_confirmed:true, applicationId:id })
   const [state, setState] = useState(false)
   const [place, setPlace] = useState(false)
   const toggle = () =>{
@@ -29,7 +32,7 @@ export const DetailedInfoForNewApplied = () => {
   const formik = useFormik({
     initialValues: {choise, comment:{comment:'', applicationId:applicationId}},
     onSubmit: (values) => {
-      const data = {values, state}
+      const data = {values, state, navigate}
       dispatch(editApplication(data))
       setPlace(true)
       // console.log(values)

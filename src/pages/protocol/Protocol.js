@@ -9,6 +9,7 @@ const Protocol = () => {
     return (
         <>
             {role["user role"] === 'ADMIN' && <AdminProtocols/>}
+            {role["user role"] === '1' && <AdminProtocols/>}
             {(role["user role"] === 'TRAINER' && role.assistant === "False" && role.judge === 'False') && <AdminProtocols/>}
             {role.assistant === 'True' && <SecretaryProtocol />}
             {role.judge === 'True' && <RefereeProtocol />}

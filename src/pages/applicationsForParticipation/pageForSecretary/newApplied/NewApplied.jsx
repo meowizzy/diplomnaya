@@ -21,6 +21,7 @@ export const NewApplied = () => {
     dispatch(getApplication());
   }, []);
   const application = useSelector((state) => state.application.application);
+  const new_application = application.filter(el => !el.is_confirmed)
  
   console.log(application);
   return (
@@ -30,10 +31,10 @@ export const NewApplied = () => {
         <p>Отправитель</p>
         <p>Название заявки</p>
       </div>
-      {application.map((el, index)=>(
+      {new_application.map((el, index)=>(
       <NavLink
         key={index}
-        to="/main/applied/newApplied/detailedInformation"
+        to={`/main/applied/newApplied/detailedInformation/${el.id}/`}
         className={clickColor === true ? s.title : `${s.title} ${s.clicked}`}
         onClick={()=>toggle(el.id)}
       >

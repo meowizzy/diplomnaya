@@ -86,7 +86,7 @@ const navigate = useNavigate()
       age_groupe
     },
     onSubmit: (values) => {
-      const data = {values, id, handleOpenSuccessModal, navigate, onClick }
+      const data = {values, id, handleOpenSuccessModal, handleCloseSuccessModal, navigate, onClick }
       dispatch(editEvent(data))
       // alert(JSON.stringify(values, null, 2));
     },

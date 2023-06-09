@@ -7,6 +7,7 @@ import { close_eye, open_eye } from "../../images";
 import { useDispatch, useSelector } from "react-redux";
 import { editUser, getUserForProfilePage } from "../../redux/slices/userSlice";
 import SuccessModal from "../../components/modals/SuccessModal";
+import {useNavigate} from "react-router";
 
 export const Profile = () => {
   const dispatch = useDispatch()
@@ -20,9 +21,18 @@ export const Profile = () => {
   console.log(user)
 
   const [pass, setPass] = useState({})
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate()
+  const prev_password = user.password
   const onChange = (value)=>{
     setPass({password:value})
   }
+  const [state, setState] = useState(false)
+
+  const toggle = ()=>{
+    setState(!state)
+  }
+
   const formik = useFormik({
     initialValues: {
       name: user.name,
@@ -34,18 +44,12 @@ export const Profile = () => {
   },
   enableReinitialize:true,
     onSubmit: (values) => {
-      const id = user.id 
-      const data = {values, id, handleOpenSuccessModal}
+      const id = user.id
+      const data = {handleOpenSuccessModal, handleCloseSuccessModal, foggle, values, navigate, id, password, prev_password}
       dispatch(editUser(data))
       // alert(JSON.stringify(values, null, 2));
     },
   });
-
-  const [state, setState] = useState(false)
-
-  const toggle = ()=>{
-    setState(!state)
-  }
 
   const [eye, setEye] = useState(false)
 
@@ -98,16 +102,16 @@ export const Profile = () => {
             type="email"
           />
           <div className="relative">
-          <Input
-            valueLabel="Пароль"
-            value={pass.password}
-            onChange={(e)=>onChange(e.target.value)}
-            width="600px"
-            type={eye===true?"text":"password"}
-            name="password"
-            placeholder="Изменить пароль"
-            margin="0 0 32px"
-          />
+            <Input
+              valueLabel="Пароль"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              width="600px"
+              type={eye === true ? "text" : "password"}
+              name="password"
+              margin="0 0 32px"
+              placeholder="Изменить пароль"
+            />
           <img src={eye===true?open_eye:close_eye} onClick={foggle} className="pass"/>
           </div>
           {state === true ? (

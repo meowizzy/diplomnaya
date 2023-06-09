@@ -81,6 +81,7 @@ export const editApplication = createAsyncThunk(
     console.log(data)
       if(data.state===false){
         const response = await requests.editApplicationById(data.values.choise);
+        data.navigate('/main/applied/newApplied')
         console.log("edit: ", response.data)
         return response.data
       }else{
@@ -141,6 +142,7 @@ export const getApplicationTemplateById = createAsyncThunk(
   async function(id,{ rejectWithValue}){
     try {
       const res = await requests.getApplicationTemplateById(id);
+      localStorage.setItem('event_id', res.data.event.id)
       // console.log(res.data)
       if (!res) {
         throw new Error("ERROR");
@@ -177,6 +179,10 @@ export const postApplication = createAsyncThunk(
         const response = await requests.postApplication(data.values);
         console.log("post: ", response.data)
         data.handleOpenSuccessModal()
+        setTimeout(() => {
+          data.handleCloseSuccessModal()
+          data.navigate('/main/application/listOfTemplate')
+        }, 1500)
         return response.data
       
       // data.navigate("/main/news/all_news")

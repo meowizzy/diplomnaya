@@ -1,10 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="312b1eff-1481-49f3-853f-05613d483460" name="Changes" comment="fixed">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_07_2022_6_57__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_07_2022_6_57__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/Protocol.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/Protocol.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/protocol/secretary/ProtocolDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/secretary/ProtocolDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/delete/Delete.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/delete/Delete.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modals/DeleteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modals/DeleteModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbar/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbar/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/threeDot/ThreeDot.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/threeDot/ThreeDot.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/AppliedRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/AppliedRoutes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/appliedTemplate/AppliedTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/appliedTemplate/AppliedTemplate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/newApplied/DetailedInfoForNewApplied.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/newApplied/DetailedInfoForNewApplied.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/newApplied/NewApplied.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForSecretary/newApplied/NewApplied.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/Application.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/Application.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/newApplications/ListOfTemplate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/newApplications/ListOfTemplate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/newApplications/NewApplications.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/applicationsForParticipation/pageForTrainer/newApplications/NewApplications.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/Clubs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/Clubs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/ClubsTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/ClubsTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/CreateClub.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/CreateClub.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/DefaultClubs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/defaultClubs/DefaultClubs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/EditSportsmanDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/clubs/trainerClubs/clubSportsmen/EditSportsmanDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/DocumentationDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/DocumentationDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/documentation/EditDocumentationDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/documentation/EditDocumentationDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/events/changeEvents/ChangeForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events/changeEvents/ChangeForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/events/defaultEvents/allDefaultEvents/AllDefaultEvents.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/events/defaultEvents/allDefaultEvents/AllDefaultEvents.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/protocol/Protocol.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/Protocol.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/protocol/ProtocolTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/protocol/ProtocolTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/createUser/CreateUser.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/registered/UserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/registered/UserInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestUserInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/users/requestToRegistr/RequestUserInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/applicationSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/applicationSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/authSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/authSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/eventSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/eventSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/registerSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/registerSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/sportsmenSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/sportsmenSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/slices/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/slices/userSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +55,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/WebStorm2022.1/javascript/typings/react-router-dom/5.3.3/node_modules/@types/react/index.d.ts" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/App.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -34,18 +68,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Admin/WebstormProjects/whushu/src/pages/clubs/trainerClubs/clubsStatistics",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/WebstormProjects/whushu&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Admin\WebstormProjects\whushu\src\pages\clubs\trainerClubs\clubsStatistics" />
@@ -83,6 +118,14 @@
       <workItem from="1660625382616" duration="23074000" />
       <workItem from="1660745852855" duration="405000" />
       <workItem from="1660971640291" duration="12719000" />
+      <workItem from="1683326508329" duration="1535000" />
+      <workItem from="1683376643566" duration="7911000" />
+      <workItem from="1684219828187" duration="8007000" />
+      <workItem from="1684321631705" duration="558000" />
+      <workItem from="1684340569352" duration="10879000" />
+      <workItem from="1684428938096" duration="9030000" />
+      <workItem from="1684496243991" duration="23400000" />
+      <workItem from="1684572561261" duration="10755000" />
     </task>
     <task id="LOCAL-00001" summary="WHUS-415 made clubs and sportsman logical parts">
       <created>1659717735184</created>

@@ -33,10 +33,11 @@ export default function DeleteModal({open, handleClose, text, dispatchFunc, nav_
 
     console.log("dispatchFunc: ", dispatchFunc)
 
-    const deleteFunc = () => {
-        dispatch(dispatchFunc);
+    const deleteFunc = async () => {
+        await dispatch(dispatchFunc);
         // navigate(nav_link);
         handleClose()
+        navigate(nav_link)
     }
 
     const cancelFunc = () => {
